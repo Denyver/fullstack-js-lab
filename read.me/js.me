@@ -1,0 +1,257 @@
+// Métodos de Exibição de Alertas e Solicitação de Dados
+alert("Mensagem na Janela");
+window.alert("Janela do mesmo tipo");
+window.confirm("Janela de Confirmação");
+window.prompt('');
+
+// Solicitação e Conversão de Entradas do Usuário
+let num1 = window.prompt("Digite o primeiro número:");
+let num2 = window.prompt("Digite o segundo número:");
+
+num1 = parseFloat(num1);
+num2 = parseFloat(num2);
+
+
+
+
+
+// Manipulação e Exibição de Número com Informações Detalhadas
+const numero = Number(prompt("Digite um número:"));
+const numeroPrincipal = document.getElementById("numP");
+const texto = document.getElementById("texto");
+
+numeroPrincipal.innerHTML = numero;
+texto.innerHTML = ``;
+texto.innerHTML += `<p>É NaN: ${Number.isNaN(numero)}</p>`;
+texto.innerHTML += `<p>Seu tipo é: ${typeof(numero)}</p>`;
+texto.innerHTML += `<p>A raiz quadrada de ${numero} é: ${numero ** 0.5}</p>`;
+texto.innerHTML += `<p>${numero} é inteiro: ${Number.isInteger(numero)}</p>`;
+texto.innerHTML += `<p>Arredondando pra baixo: ${Math.floor(numero)}</p>`;
+texto.innerHTML += `<p>Arredondando pra cima: ${Math.ceil(numero)}</p>`;
+texto.innerHTML += `<p>Arredondando pro mais próximo: ${Math.round(numero)}</p>`;
+texto.innerHTML += `<p>Com duas casas decimais: ${numero.toFixed(2)}</p>`;
+
+
+
+
+
+
+// Prevenção de Ação Padrão em Formulário
+const form = document.querySelector(".form");
+form.onsubmit = function (event) {
+    event.preventDefault();
+    alert("preventDefault foi executado");
+};
+
+
+
+
+
+// Verificação do Tipo de Variável com typeof
+let x = 1;
+console.log(typeof(x));
+x = "a";
+console.log(typeof(x));
+
+
+
+
+
+// Formatação de Número para Duas Casas Decimais
+let numero = 123.45678;
+let numeroFormatado = numero.toFixed(2);
+console.log(numeroFormatado);
+
+
+
+
+
+// Template Strings com Variáveis
+let nome = "João";
+let sobrenome = "Silva";
+let idade = 25;
+let peso = 70;
+let alturaEmM = 1.75;
+let indiceMassaCorporal = peso / (alturaEmM ** 2);
+
+console.log(`Meu nome é ${nome} ${sobrenome}, tenho ${idade}`);
+console.log(`Meu peso é ${peso} e minha altura ${alturaEmM}`);
+console.log(`Meu IMC é ${indiceMassaCorporal.toFixed(2)}`);
+
+
+
+
+// Incrementos de Variável
+let contador = 1;
+contador++;
+console.log(contador);
+
+let contador2 = 1;
+contador2 += 2;
+console.log(contador2);
+
+
+
+
+
+
+// Operações com Diferentes Tipos de Dados
+const num1 = 1;
+const num2 = "1";
+console.log(num1 + num2);
+
+const num3 = 1;
+const num4 = parseInt("1");
+console.log(num3 + num4);
+console.log(typeof num4);
+
+
+
+
+
+// Métodos de Busca em Strings
+const umaString = 'Um texto';
+console.log(umaString.search(/[a-z]/));
+console.log(`A letra 'o' está na posição`, umaString.search(/o/));
+console.log(`A letra 'o' está na posição ${umaString.indexOf('o')}`);
+
+
+
+
+
+
+// Substituição de Substrings com replace
+let outroString = 'João';
+console.log(outroString.replace('Jo', 'Pedr'));
+
+let novoString = outroString.replace('João', 'O rato roeu a roupa do rei de roma.');
+console.log(novoString);
+console.log(novoString.replace(/r/g, '#'));
+
+
+
+
+
+
+
+// Divisão de String com split
+console.log(novoString.split(' '));
+console.log(novoString.split(' ', 2));
+
+
+
+
+
+// Remoção de Espaços Extras em String
+let texto = "   Olá, mundo!   ";
+let limpo = texto.replace(/^\s+|\s+$/g, '');
+console.log(limpo);
+
+
+
+
+
+
+// Validação e Formatação de Telefone
+let telefone = "123-456-7890";
+let formatado = telefone.replace(/(\d{3})-(\d{3})-(\d{4})/, "($1) $2-$3");
+console.log(formatado);
+
+
+
+
+
+// Operações Matemáticas com Math
+let num1 = 9.4124;
+const resultado1 = Math.floor(num1);
+const resultado2 = Math.ceil(num1);
+const resultado3 = Math.round(num1);
+console.log(Math.max(1, 10, 100, 50, 20, 30, 0));
+console.log(Math.min(1, 10, 100, 50, 20, 30, 0));
+
+const d20 = Math.round(Math.random() * (20 - 1) + 1);
+console.log(d20);
+
+
+
+
+
+// Manipulação de Arrays
+const numeros = [1, 2, 3];
+numeros.push(4);
+numeros.unshift(5);
+numeros.pop();
+numeros.shift();
+console.log(numeros);
+
+// Função para Somar Dois Números
+function soma(x, y) {
+    const resultado = x + y;
+    return resultado;
+}
+console.log(soma(1, 1));
+
+
+
+
+
+
+// Função para Criar um Objeto Pessoa
+function criarPessoa(nome, sobrenome, idade) {
+    return {
+        nome: nome,
+        sobrenome: sobrenome,
+        idade: idade
+    };
+}
+const pessoa1 = criarPessoa('Denyver', 'Francisco', 22);
+console.log(pessoa1);
+
+
+
+
+
+// Objeto com Propriedades e Métodos
+const comida = {
+    nome: 'Pizza',
+    preco: 20,
+    fala() {
+        console.log(`Minha comida favorita é ${this.nome}`);
+    },
+    taxa() {
+        console.log(`O valor da comida agora é ${this.preco++}`);
+    }
+};
+comida.fala();
+comida.taxa();
+
+
+
+
+// Criação e Atualização de Objeto Pessoa
+const pessoa1 = {
+    nome: null,
+    sobrenome: null,
+    idade: null
+};
+pessoa1.nome = 'Denyver';
+pessoa1.sobrenome = 'Francisco';
+pessoa1.idade = 22;
+console.log(pessoa1);
+
+
+
+
+
+// Função para Formatar Data e Hora
+function formatData(data) {
+    const dia = data.getDate();
+    const mes = data.getMonth() + 1;
+    const ano = data.getFullYear();
+    const horas = data.getHours();
+    const min = data.getMinutes();
+    const seg = data.getSeconds();
+    return `${dia}/${mes}/${ano}\n${horas}:${min}`;
+}
+const data = new Date();
+console.log(formatData(data));

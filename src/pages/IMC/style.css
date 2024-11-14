@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0px;
+    flex-direction: column; /* Alinha o conteúdo em coluna */
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row; /* Alinha as divs lado a lado */
+    gap: 50px; /* Espaçamento entre as divs */
+  }
+
+  #peso,
+  #resultado {
+    background-color: rgb(224, 224, 224);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens dentro dos divs */
+    padding: 20px;
+    border: 1px solid #ccc; /* Apenas para visualização */
+    border-radius: 5px;
+  }
+
+  .inputs {
+    display: flex;
+    flex-direction: column; /* Alinha os inputs em uma coluna */
+    gap: 10px; /* Espaçamento entre os inputs */
+    margin-top: 20px; /* Espaçamento superior para separação */
+  }
+  input {
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 100px;
+  }

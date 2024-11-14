@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>RPG</title>
+    <script src="/mmo_rpg/script.js" defer></script>
+  </head>
+  <body>
+    <h1>Batalha de RPG</h1>
+
+    <div class="character" id="char1">
+      <h2 id="nome1_HTML"></h2>
+      <p>Vida: <span id="char1-life"></span></p>
+      <div class="actions">
+        <button onclick="attack('atk1')">Atacar</button>
+        <button onclick="defense('def1')">Defender</button>
+      </div>
+    </div>
+
+    <div class="character" id="char2">
+      <h2 id="nome2_HTML"></h2>
+      <p>Vida: <span id="char2-life"></span></p>
+      <div class="actions">
+        <button onclick="attack('atk2')">Atacar</button>
+        <button onclick="defense('def2')">Defender</button>
+      </div>
+    </div>
+  </body>
+</html>

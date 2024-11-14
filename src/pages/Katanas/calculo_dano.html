@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dano das Katanas</title>
+    <link rel="stylesheet" href="/src/pages/Katanas/style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Calculadora de Dano</h1>
+        <label for="damage">Dano</label>
+        <input type="text" id="damage" placeholder="Valor do Dano" required>
+
+        <label for="percentage">Porcentagens</label>
+        <input type="text" id="percentage" placeholder="Valor da Porcentagem" required>
+
+        <label for="addition">Soma por Turno</label>
+        <input type="text" id="sum_per_turn" placeholder="Porcentagens que são somados a cada ataque">
+
+        <label for="critical">Crítico</label>
+        <input type="text" id="critical" placeholder="Multiplicador crítico (ex: 2.5)" required>
+
+        <button onclick="calculateDamage()">Calcular</button>
+
+        <div class="result" id="result">O dano será exibido aqui.</div>
+    </div>
+
+    <script src="/src/pages/Katanas/script.js"></script>
+</body>
+</html>
