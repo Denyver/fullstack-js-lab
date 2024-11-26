@@ -9,11 +9,15 @@ themeButton.addEventListener("click", () => {
 function danoCritical(damage, percentage, criticalMultiplier) {
     let total
     if (percentage) {
-        total = ((damage * (percentage/100+1)) * criticalMultiplier)
+        total = Math.round((damage * (percentage/100+1)) * criticalMultiplier)
     } else {
         total = (damage * criticalMultiplier)
     }
     return total
+}
+
+function deucerto() {
+    alert('deu certo')
 }
 
 function calculateDamage() {

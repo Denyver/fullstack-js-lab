@@ -1,3 +1,48 @@
+@keyframes pulse-light {
+    0% {
+        box-shadow: 0 0 10px rgba(128, 203, 196, 0.2); /* Verde suave */
+    }
+    50% {
+        box-shadow: 0 0 20px rgb(128, 203, 195);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(128, 203, 196, 0.2);
+    }
+}
+
+@keyframes pulse-dark {
+    0% {
+        box-shadow: 0 0 10px #6b1616; /* Vermelho escuro */
+    }
+    50% {
+        box-shadow: 0 0 20px #b64d4d; /* Vermelho mais claro */
+    }
+    100% {
+        box-shadow: 0 0 10px #6b1616;
+    }
+}
+
+input[type="text"] {
+    width: 90%;
+    max-width: 350px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #80cbc4;
+    border-radius: 18px;
+    font-size: 1em;
+    animation: pulse-light 5s infinite;
+    background-color: #f9f9f9;
+    color: #80cbc4;
+    transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+body.dark-theme input[type="text"] {
+    background-color: #555555;
+    color: #eaeaea;
+    border: 2px solid #b64d4d;
+    animation: pulse-dark 5s infinite; /* Troca para animação escura */
+}
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -9,56 +54,50 @@ body {
     padding: 15px;
     font-weight: bold;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, color 0.3s; /* Transição suave */
+}
+
+body.dark-theme {
+    background: linear-gradient(0deg, #000000, #333333);
+    color: #eaeaea;
 }
 
 .calculator-container {
-    background-color: #ffffff; /* Fundo branco para simplicidade */
-    color: #000000; /* Texto cinza escuro */
+    background-color: #ffffff;
+    color: #000000;
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
     text-align: center;
+    transition: background 0.3s, color 0.3s;
 }
 
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 10px rgba(128, 203, 196, 0.2); /* Tom esverdeado suave */
-    }
-    50% {
-        box-shadow: 0 0 20px rgb(128, 203, 195);
-    }
-    100% {
-        box-shadow: 0 0 10px rgba(128, 203, 196, 0.2);
-    }
+body.dark-theme .calculator-container {
+    background-color: #444444;
+    color: #f1f1f1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
     color: #000000;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+body.dark-theme h1 {
+    color: #f1f1f1;
 }
 
 label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-input[type="text"] {
-    width: 70%; 
-    padding: 10px;
-    margin-top: 10px;
-    border: 2px solid #80cbc4; 
-    border-radius: 18px;
-    font-size: 1em;
-    animation: pulse 5s infinite;
-    background-color: #f9f9f9; 
-    color: #80cbc4;
+    display: block; 
+    margin-top: 25px; 
+    font-size: 20px; 
 }
 
 button {
-    margin-top: 15px;
+    margin-top: 35px;
     background-color: #80cbc4;
     color: white;
     border: none;
@@ -72,38 +111,21 @@ button {
 }
 
 button:hover {
-    background-color: #4db6ac; 
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
-    transform: translateY(-2px); 
+    background-color: #4db6ac;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
 }
 
-button:active {
-    background-color: #00897b;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-    transform: translateY(0); 
+body.dark-theme button {
+    background-color: #6b1616;
 }
 
-.result {
-    margin: 20px;
-    font-size: 1.2em;
-    color: #444444; /* Cinza médio */
-    font-weight: bold;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Suave destaque */
+body.dark-theme button:hover {
+    background-color: #b64d4d;
 }
 
-.dark-theme {
-    background: linear-gradient(0deg, #000000, #333333); /* Fundo escuro */
-    color: #eaeaea;
-    h1 {
-        color: #eaeaea;
-    }
-    .result {
-        color: white;
-    }
-}
-
-.dark-theme .calculator-container {
-    background-color: #444444;
-    color: #f1f1f1;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+#result {
+    font-size: 20px;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
