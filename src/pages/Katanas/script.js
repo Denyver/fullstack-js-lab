@@ -1,13 +1,32 @@
+const body = document.body;
+const themeButton = document.getElementById("theme-btn");
+
+themeButton.addEventListener("click", () => {
+    body.classList.toggle("dark-theme");
+});
+
+
+function danoCritical(damage, percentage, criticalMultiplier) {
+    let total
+    if (percentage) {
+        total = ((damage * (percentage/100+1)) * criticalMultiplier)
+    } else {
+        total = (damage * criticalMultiplier)
+    }
+    return total
+}
+
 function calculateDamage() {
     const damage = parseFloat(document.getElementById("damage").value);
     const percentage = parseFloat(document.getElementById("percentage").value);
-    const sum_per_turn = parseFloat(document.getElementById("sum_per_turn").value)
-    const critical = parseFloat(document.getElementById("critical").value);
+    const criticalMultiplier = parseFloat(document.getElementById("critical").value);
+    let total = document.getElementById('result');
 
-    if (isNaN(damage) || isNaN(percentage) || isNaN(critical)) {
-        document.getElementById("result").innerText = "Por favor, insira valores.";
-        return;
+    if (isNaN(damage)) {
+        document.getElementById("result").innerText = "Por favor, insira os valores.";
+    } else {
+        let resultotal = danoCritical(damage, percentage, criticalMultiplier)
+        total.innerHTML = resultotal;
+        /* document.getElementById("result").innerText = `Dano causado: ${Math.round(total)}`; */
     }
-
-    document.getElementById("result").innerText = `Dano causado: ${damage.toFixed(2)}`;
 }

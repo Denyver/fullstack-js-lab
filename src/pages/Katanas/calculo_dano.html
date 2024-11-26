@@ -8,18 +8,16 @@
 </head>
 <body>
     <div class="calculator-container">
+        <button id="theme-btn"></button>
         <h1>Calculadora de Dano</h1>
         <label for="damage">Dano</label>
-        <input type="text" id="damage" placeholder="Valor do Dano" required>
+        <input type="text" id="damage" required>
 
         <label for="percentage">Porcentagens</label>
-        <input type="text" id="percentage" placeholder="Valor da Porcentagem" required>
-
-        <label for="addition">Soma por Turno</label>
-        <input type="text" id="sum_per_turn" placeholder="Porcentagens que são somados a cada ataque">
+        <input type="text" id="percentage">
 
         <label for="critical">Crítico</label>
-        <input type="text" id="critical" placeholder="Multiplicador crítico (ex: 2.5)" required>
+        <input type="text" id="critical" required>
 
         <button onclick="calculateDamage()">Calcular</button>
 

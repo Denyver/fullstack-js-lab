@@ -5,60 +5,105 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f9;
+    background: linear-gradient(#eaeaea, #444444);
+    padding: 15px;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
+
 .calculator-container {
-    background-color: #fff;
+    background-color: #ffffff; /* Fundo branco para simplicidade */
+    color: #000000; /* Texto cinza escuro */
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
     max-width: 400px;
     width: 100%;
     text-align: center;
 }
-h1 {
-    color: #333;
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(128, 203, 196, 0.2); /* Tom esverdeado suave */
+    }
+    50% {
+        box-shadow: 0 0 20px rgb(128, 203, 195);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(128, 203, 196, 0.2);
+    }
 }
+
+h1 {
+    color: #000000;
+    font-weight: bold;
+}
+
 label {
     display: block;
     margin-top: 10px;
     font-weight: bold;
 }
+
 input[type="text"] {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    width: 70%; 
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #80cbc4; 
+    border-radius: 18px;
     font-size: 1em;
+    animation: pulse 5s infinite;
+    background-color: #f9f9f9; 
+    color: #80cbc4;
 }
+
 button {
     margin-top: 15px;
-    background-color: #000000;
+    background-color: #80cbc4;
     color: white;
     border: none;
     padding: 12px 24px;
     font-size: 16px;
     font-weight: bold;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 button:hover {
-    background-color: #45a049; /* Cor mais escura no hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
-    transform: translateY(-2px); /* Efeito de elevação */
+    background-color: #4db6ac; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-2px); 
 }
 
 button:active {
-    background-color: #3e8e41; /* Cor um pouco mais escura ao clicar */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra reduzida */
-    transform: translateY(0); /* Retira a elevação ao clicar */
+    background-color: #00897b;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    transform: translateY(0); 
 }
+
 .result {
     margin: 20px;
     font-size: 1.2em;
-    color: #333;
+    color: #444444; /* Cinza médio */
     font-weight: bold;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Suave destaque */
+}
+
+.dark-theme {
+    background: linear-gradient(0deg, #000000, #333333); /* Fundo escuro */
+    color: #eaeaea;
+    h1 {
+        color: #eaeaea;
+    }
+    .result {
+        color: white;
+    }
+}
+
+.dark-theme .calculator-container {
+    background-color: #444444;
+    color: #f1f1f1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
