@@ -12,3 +12,16 @@ function adicionarItem() {
     novoItem.textContent = "Item adicionado com JavaScript";
     document.getElementById("lista").appendChild(novoItem);
 }
+
+const contentSection = document.querySelector('.content-section');
+let ps = document.querySelectorAll('p');
+
+let styleBody = getComputedStyle(document.body);
+let backgroundColorStyle = styleBody.backgroundColor;
+console.log(backgroundColorStyle);
+
+
+for (let p of ps) {
+    p.style.backgroundColor = backgroundColorStyle;
+    p.style.color = '#000'
+}
