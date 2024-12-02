@@ -3,30 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
-    <link rel="stylesheet" href="/src/pages/Katanas/style.css">
+    <title>Dano das Katanas</title>
+    <link rel="stylesheet" href="/src/pages/RPG Site/style.css">
 </head>
+<style>
+    #percentage {
+        width: 60%;
+    }
+
+    #lifebar {
+        width: 60%;
+        margin-bottom: 10px;
+    }
+</style>
 <body>
     <div class="calculator-container">
-        
         <button id="theme-btn">Dark</button>
-        <button onclick="location.href='mestre.html'">Mestre</button>
+        <button onclick="location.href='calculo_dano.html'">Jogador</button>
+        <h1>Área do Mestre</h1>
 
-        <h1>Calculador de Dano</h1>
         <label for="damage">Dano</label>
         <input type="text" id="damage" required>
-
+        
         <label for="percentage">Porcentagens</label>
-        <input type="text" id="percentage">
-
+        <input type="text" id="percentage"> <button id="fix-percentage">fixar</button>
+        
         <label for="critical">Crítico</label>
         <input type="text" id="critical" required>
-
+        
         <button onclick="calculateDamage()">Calcular</button>
-
         <div class="result" id="result">O dano será exibido aqui.</div>
+        
+        <label for="life">Vida</label>
+        <input type="text" id="lifebar"> <button id="fix-life">Add</button>
     </div>
-
-    <script src="/src/pages/Katanas/script.js"></script>
+<script src="/src/pages/RPG Site/script.js"></script>
 </body>
 </html>

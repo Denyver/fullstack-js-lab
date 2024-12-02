@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .item-card {
+    background-color: #ffffff;
+    border: 3px solid #007bff;
+    border-radius: 12px;
+    width: 280px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .item-card p {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  
+  .item-name {
+    color: #007bff; /* Blue text for the item name */
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .attributes p {
+    margin: 8px 0;
+  }
+  
+  .attribute-name {
+    color: #ff5722; /* Orange for attribute name */
+    font-weight: bold;
+  }
+  
+  .attribute-value {
+    color: #4caf50; /* Green for attribute value */
+    font-weight: bold;
+  }
+  
+  
