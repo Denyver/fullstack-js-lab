@@ -1,11 +1,3 @@
-const body = document.body;
-const themeButton = document.getElementById("theme-btn");
-
-themeButton.addEventListener("click", () => {
-    body.classList.toggle("dark-theme");
-});
-
-
 function danoCritical(damage, percentage, criticalMultiplier) {
     let total
     if (percentage) {

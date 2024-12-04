@@ -7,9 +7,11 @@
   <link rel="stylesheet" href="/src/pages/RPG Site/styles/ficha.css">
 </head>
 <body>
+  </nav>
   <div class="sheet">
     <header>
-      <div class="title">World of Eder</div>
+      <button id="theme-btn">Dark</button>
+      <div class="title"><img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="" style="max-height: 100px;"></div>
       <div class="basic-info">
         <div><label>Nome do Personagem:</label> <input type="text"></div>
         <div><label>Nome do Jogador:</label> <input type="text"></div>
@@ -17,7 +19,6 @@
         <div><label>Nível:</label> <input type="number" min="1"></div>
       </div>
     </header>
-
     <section class="stats">
       <div class="stat"><label>Sabedoria:</label> <input type="number" min="0" max="20"></div>
       <div class="stat"><label>Carisma:</label> <input type="number" min="0" max="20"></div>
@@ -116,4 +117,12 @@
     </section>
   </div>
 </body>
+<script>
+  const body = document.body;
+  const themeButton = document.getElementById("theme-btn");
+  
+  themeButton.addEventListener("click", () => {
+      body.classList.toggle("dark-theme");
+  });
+  </script>
 </html>

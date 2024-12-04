@@ -78,12 +78,6 @@ input[type="text"] {
     transition: background 0.3s, color 0.3s, border 0.3s;
 }
 
-body.dark-theme input[type="text"] {
-    background-color: #555555;
-    color: #eaeaea;
-    border: 2px solid #b64d4d;
-    animation: pulse-dark 5s infinite; /* Troca para animação escura */
-}
 
 body {
     font-family: Arial, sans-serif;
@@ -102,6 +96,13 @@ body {
 body.dark-theme {
     background: linear-gradient(0deg, #000000, #333333);
     color: #eaeaea;
+}
+
+body.dark-theme input[type="text"] {
+    background-color: #555555;
+    color: #eaeaea;
+    border: 2px solid #b64d4d;
+    animation: pulse-dark 5s infinite;
 }
 
 .calculator-container {
