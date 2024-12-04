@@ -1,0 +1,132 @@
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #1e1e2f;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .sheet {
+    background: #2d2d44;
+    border: 3px solid #4a4a6a;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffcc00;
+    text-shadow: 2px 2px 4px #000;
+    margin-bottom: 10px;
+  }
+  
+  .basic-info div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .basic-info label {
+    width: 30%;
+    font-weight: bold;
+  }
+  
+  input[type="text"], input[type="number"] {
+    width: 65%;
+    background: #44445e;
+    color: #fff;
+    border: 1px solid #4a4a6a;
+    padding: 5px;
+    border-radius: 4px;
+  }
+  
+  section {
+    margin-bottom: 20px;
+    border-top: 1px solid #4a4a6a;
+    padding-top: 10px;
+  }
+  
+  .stats .stat {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .stats .stat label {
+    width: 50%;
+    font-weight: bold;
+  }
+  
+  .skills h3, .weapons h3 {
+    font-size: 20px;
+    text-decoration: underline;
+    margin-bottom: 10px;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .skills label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .attributes div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .attributes label {
+    width: 50%;
+    font-weight: bold;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    border: 1px solid #4a4a6a;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  table th {
+    background-color: #33334c;
+    color: #ffcc00;
+  }
+  
+  table td {
+    background-color: #44445e;
+  }
+  
+  input[type="text"], input[type="number"] {
+    padding: 5px;
+    background-color: #44445e;
+    color: #f5f5f5;
+  }
+  
+  input:focus {
+    border-color: #ffcc00;
+    outline: none;
+    box-shadow: 0 0 8px #ffcc00;
+  }
+  

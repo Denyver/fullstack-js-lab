@@ -1,3 +1,45 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .nav-links a:hover {
+    color: #1e90ff;
+  }
+
+
+
 @keyframes pulse-light {
     0% {
         box-shadow: 0 0 10px rgba(128, 203, 196, 0.2); /* Verde suave */
@@ -51,7 +93,7 @@ body {
     height: 100vh;
     margin: 0;
     background: linear-gradient(#eaeaea, #444444);
-    padding: 15px;
+    padding-top: 60px;
     font-weight: bold;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     transition: background 0.3s, color 0.3s; /* Transição suave */
