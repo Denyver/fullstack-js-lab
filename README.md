@@ -10,7 +10,7 @@ Este repositório contém uma coleção de projetos, exercícios e estudos desen
 
 Abaixo está a estrutura principal do repositório:
 
-**Em foco: RPG Site**
+### Em foco: RPG Site
 
 ```plaintext
 src/               - Contém todo o código-fonte principal.
