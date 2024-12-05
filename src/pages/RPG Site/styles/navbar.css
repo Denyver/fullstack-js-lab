@@ -1,0 +1,74 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .logo img {
+    max-height: 50px;
+    height: auto;
+    width: auto;
+    display: block;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: -220px; /* Posicionado fora da tela inicialmente */
+    background-color: #333;
+    width: 200px;
+    border-radius: 8px;
+    transform: translateX(100%); /* Inicia escondido */
+    transition: transform 0.3s ease-in-out, right 0.3s ease-in-out; /* Transição suave */
+  }
+  
+  .nav-links.active {
+    transform: translateX(0); /* Entra na tela */
+    right: 20px;
+  }
+  
+  .nav-links li {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .nav-links a:hover {
+    color: #1e90ff;
+  }
+  
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: block;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  }

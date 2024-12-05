@@ -1,3 +1,17 @@
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+document.addEventListener('click', (e) => {
+  if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+    navLinks.classList.remove('active');
+  }
+});
+
+
 const body = document.body;
 const themeButton = document.getElementById("theme-btn");
 
