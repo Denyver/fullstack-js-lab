@@ -290,50 +290,37 @@
             document.getElementById("damage-result").innerText = "Dano Final: " + totalDamage.toFixed(2);
         });
 
-        // Função para atualizar a vida máxima e atual
-        document.getElementById("set-max-life").addEventListener("click", function () {
-            let maxLife = document.getElementById("max-life").value;
-            if (maxLife && !isNaN(maxLife) && maxLife > 0) {
-                document.getElementById("lifebar").value = maxLife;
-                updateHealthBar(maxLife);
-            } else {
-                alert("Por favor, insira um valor válido para a vida máxima.");
-            }
+         // Definir a Vida Máxima
+         document.getElementById("set-max-life").addEventListener("click", function () {
+            maxLife = parseInt(document.getElementById("max-life").value);
+            currentLife = maxLife; // Inicializa a vida atual com a vida máxima
+            document.getElementById("lifebar").value = currentLife;
+            updateLifeBar();
         });
 
-        document.getElementById("fix-life").addEventListener("click", function () {
-            let currentLife = document.getElementById("lifebar").value;
-            updateHealthBar(currentLife);
-        });
-
+        // Reduzir Vida Atual
         document.getElementById("reduce-life-btn").addEventListener("click", function () {
-            let reduceLife = document.getElementById("reduce-life").value;
-            let maxLife = document.getElementById("max-life").value;
-            if (reduceLife.includes("%")) {
-                let percentage = parseFloat(reduceLife.replace("%", "").trim());
-                if (!isNaN(percentage)) {
-                    let reducedValue = (percentage / 100) * maxLife;
-                    maxLife -= reducedValue;
-                    document.getElementById("max-life").value = maxLife;
-                    document.getElementById("lifebar").value = maxLife;
-                    updateHealthBar(maxLife);
-                }
+            let reduceValue = document.getElementById("reduce-life").value.trim();
+            let valueToReduce = 0;
+
+            if (reduceValue.includes("%")) {
+                // Redução por porcentagem
+                let percentage = parseFloat(reduceValue.replace("%", ""));
+                valueToReduce = (percentage / 100) * currentLife;
             } else {
-                let value = parseFloat(reduceLife.trim());
-                if (!isNaN(value)) {
-                    maxLife -= value;
-                    document.getElementById("max-life").value = maxLife;
-                    document.getElementById("lifebar").value = maxLife;
-                    updateHealthBar(maxLife);
-                }
+                // Redução por valor absoluto
+                valueToReduce = parseInt(reduceValue);
             }
+
+            currentLife = Math.max(0, currentLife - valueToReduce);
+            document.getElementById("lifebar").value = currentLife;
+            updateLifeBar();
         });
 
-        function updateHealthBar(life) {
-            let maxLife = document.getElementById("max-life").value;
-            let lifeBar = document.getElementById("life-bar");
-            let percentage = (life / maxLife) * 100;
-            lifeBar.style.width = percentage + "%";
+        // Atualizar Barra de Vida
+        function updateLifeBar() {
+            let lifePercentage = (currentLife / maxLife) * 100;
+            document.getElementById("life-bar").style.width = lifePercentage + "%";
         }
     </script>
 </body>
