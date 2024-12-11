@@ -8,14 +8,21 @@
     <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo"><img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt=""></div>
-        <ul class="nav-links">
-          <li><a href="/src/pages/RPG Site/html/calculo_dano.html">Calculador de Dano</a></li>
-          <li><a href="/src/pages/RPG Site/html/gerador_item.html">Gerador de Itens</a></li>
-          <li><a href="#contact">Login</a></li>
-        </ul>
-      </nav>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo">
+    </div>
+    <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false" onclick="toggleMenu()">
+      ☰
+    </button>
+    <ul class="nav-links">
+      <li><a href="/src/pages/RPG Site/html/calculo_dano.html">Calculador de Dano</a></li>
+      <li><a href="/src/pages/RPG Site/html/gerador_item.html">Gerador de Itens</a></li>
+      <li><a href="/src/pages/RPG Site/html/ficha.html">Ficha</a></li>
+      <li><a href="#contact">Login</a></li>
+    </ul>
+  </nav>
+  
     <div class="calculator-container">
         <button id="theme-btn">Dark</button>
         <button onclick="location.href='mestre.html'">Mestre</button>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Login</title>
+  <link rel="stylesheet" href="/src/pages/RPG Site/styles/login.css">
+  <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+          <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo">
+        </div>
+        <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false" onclick="toggleMenu()">
+          ☰
+        </button>
+        <ul class="nav-links">
+          <li><a href="/src/pages/RPG Site/html/calculo_dano.html">Calculador de Dano</a></li>
+          <li><a href="/src/pages/RPG Site/html/gerador_item.html">Gerador de Itens</a></li>
+          <li><a href="#contact">Login</a></li>
+        </ul>
+      </nav>
+  <div class="login-container">
+    <div class="login-box">
+      <h1>Login</h1>
+      <form action="/login" method="POST">
+        <div class="input-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+        </div>
+        <div class="actions">
+          <button type="submit" class="login-btn">Entrar</button>
+          <p><a href="#">Esqueceu sua senha?</a></p>
+        </div>
+      </form>
+      <p class="register-text">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+    </div>
+  </div>
+</body>
+</html>
