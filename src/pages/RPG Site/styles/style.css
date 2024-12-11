@@ -51,7 +51,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(#eaeaea, #444444);
+    background: linear-gradient(135deg, #eaeaea, #444444);
     padding-top: 60px;
     font-weight: bold;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);

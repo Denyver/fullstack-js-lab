@@ -24,7 +24,7 @@
 
 body {
   font-family: 'Times New Roman', serif;
-  background: linear-gradient(#eaeaea, #444444);
+  background: linear-gradient(135deg, #eaeaea, #444444);
   color: #f5f5f5;
   margin: 0;
   padding: 20px;
@@ -41,9 +41,143 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Cabeçalho Moderno */
 header {
-  text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #1a1a1a; /* Fundo escuro para um visual mais elegante */
+  border-radius: 10px; /* Bordas arredondadas para um toque moderno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para destacar o cabeçalho */
+}
+
+header .logo img {
+  max-width: 150px; /* Aumentando um pouco o tamanho da logo */
+  transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
+}
+
+header .logo img:hover {
+  transform: scale(
+    1.1
+  ); /* Efeito de zoom quando passar o mouse sobre a logo */
+}
+
+header .menu ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+header .menu ul li {
+  margin: 0 20px; /* Maior espaçamento entre os itens */
+}
+
+header .menu ul li a {
+  text-decoration: none;
+  color: #fff; /* Texto branco para contraste */
+  font-weight: 600; /* Font-weight mais leve para um estilo moderno */
+  font-size: 16px; /* Aumentando um pouco o tamanho da fonte */
+  letter-spacing: 1px; /* Espaçamento entre as letras para dar uma sensação de sofisticação */
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease; /* Transições suaves para hover */
+}
+
+header .menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff; /* Linha de destaque abaixo do link */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+header .menu ul li a:hover {
+  color: #007bff; /* Cor de destaque ao passar o mouse */
+}
+
+header .menu ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Menu Hamburguer para dispositivos móveis */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 999; /* Garantir que o menu hambúrguer fique acima dos outros elementos */
+}
+
+.menu-toggle span {
+  background-color: #fff;
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    width: 100%;
+    display: none; /* Inicialmente escondido */
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 15px;
+  }
+
+  .menu.active {
+    display: flex; /* Mostrar o menu ao clicar no ícone do hambúrguer */
+  }
+
+  header .menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  header .menu ul li {
+    margin: 10px 0; /* Ajustar o espaçamento entre os itens no mobile */
+  }
+
+  header .menu ul li a {
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+    text-align: left; /* Alinhar os links à esquerda */
+  }
+
+  .menu-toggle {
+    display: flex; /* Mostrar o ícone de menu hambúrguer */
+  }
+}
+
+/* Responsividade para telas muito pequenas (como smartphones em modo retrato) */
+@media (max-width: 480px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  header .logo img {
+    max-width: 120px; /* Ajustar o tamanho da logo para telas muito pequenas */
+  }
+
+  header .menu ul li a {
+    font-size: 16px; /* Ajustar o tamanho da fonte para telas menores */
+  }
 }
 
 .title {

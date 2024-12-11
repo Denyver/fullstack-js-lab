@@ -1,39 +1,25 @@
-/* Estilo global */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #eaeaea, #444444);
-    color: #333;
-    margin-top: 100px;
-  }
-  
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px; /* Ajuste para manter o header responsivo */
-    background-color: #1a1a1a;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    top: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%; /* Usa uma largura relativa para responsividade */
-    max-width: 1000px; /* Limita a largura máxima para telas maiores */
-    z-index: 1000;
-  }
-  
-  
-  body {
-    padding-top: 80px; /* Adicione um espaçamento para evitar que o conteúdo fique oculto atrás do header */
-  }
-  
+      /* Estilo geral */
+      body {
+        margin-top: 5px; /* Remove margens */
+        font-family: "Roboto", sans-serif;
+        background: linear-gradient(135deg, #eaeaea, #444444);
+        color: #333;
+        padding: 0;
+        height: 100%; /* Garante que o background ocupe toda a altura da tela */
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Cabeçalho Moderno */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+        background-color: #1a1a1a; /* Fundo escuro para um visual mais elegante */
+        border-radius: 10px; /* Bordas arredondadas para um toque moderno */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para destacar o cabeçalho */
+      }
 
       header .logo img {
         max-width: 150px; /* Aumentando um pouco o tamanho da logo */
@@ -161,122 +147,128 @@
           font-size: 16px; /* Ajustar o tamanho da fonte para telas menores */
         }
       }
-  
-  /* Container principal */
-  .register-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 10%;
+
+      /* Layout principal */
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-around;
+        padding: 20px;
+      }
+
+      .section {
+        background-color: #f4f4f4;
+        border-radius: 15px;
+        padding: 20px;
+        width: 30%;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .section:hover {
+        transform: scale(1.05);
+      }
+
+      /* Cabeçalhos */
+      .section h2 {
+        font-size: 24px;
+        color: #2196f3;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+      }
+
+      /* Estilos de input e botões */
+      input,
+      button {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 10px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        background-color: #ffffff;
+        color: #333;
+        transition: all 0.3s ease;
+      }
+
+      input:focus,
+      button:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(33, 150, 243, 0.7);
+      }
+
+      button {
+        background-color: #2196f3;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #1976d2;
+        transform: scale(1.05);
+      }
+
+      /* Barra de vida */
+      #lifebar,
+      #max-life,
+      #reduce-life {
+        width: 100%;
+        margin-bottom: 10px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        padding: 10px;
+        color: #333;
+        background-color: #f4f4f4;
+      }
+
+      .bar {
+        width: 100%;
+        height: 20px;
+        background-color: #ccc;
+        border-radius: 10px;
+        margin-top: 5px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .bar .filled {
+        height: 100%;
+        border-radius: 10px;
+      }
+
+      .health-bar {
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      /* Resultado do dado */
+      #dice-result {
+        font-size: 18px;
+        margin-top: 10px;
+        color: #ffcc00;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      /* Timer */
+      #timer {
+        font-size: 22px;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      #timer span {
+        color: #2196f3;
+      }
+
+          /* Rodapé */
+    footer {
+      margin-top: 80px;
+      text-align: center;
+      font-size: 14px;
+      color: #000000;
   }
-  
-  /* Caixa de cadastro */
-  .register-box {
-    background: #ffffff;
-    border-radius: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    padding: 40px;
-    width: 100%;
-    max-width: 500px;
-    animation: fadeIn 0.5s ease-in-out;
-    text-align: center;
-  }
-  
-  /* Animação de entrada */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Cabeçalho */
-  .register-box h1 {
-    font-size: 28px;
-    color: #333333;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  
-  /* Grupos de input */
-  .input-group {
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  .input-group label {
-    display: block;
-    font-size: 14px;
-    color: #555555;
-    margin-bottom: 8px;
-  }
-  
-  .input-group input {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s, box-shadow 0.3s;
-  }
-  
-  .input-group input:focus {
-    border-color: #1e90ff;
-    box-shadow: 0 0 8px rgba(30, 144, 255, 0.5);
-    outline: none;
-  }
-  
-  /* Botão de cadastro */
-  .register-btn {
-    width: 100%;
-    background: linear-gradient(90deg, #4caf50, #1e90ff);
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .register-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(30, 144, 255, 0.4);
-  }
-  
-  /* Links e texto */
-  .actions p {
-    font-size: 14px;
-    color: #666666;
-    margin-top: 10px;
-  }
-  
-  .actions a {
-    color: #1e90ff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-  
-  .actions a:hover {
-    color: #4caf50;
-    text-decoration: underline;
-  }
-  
-  /* Mobile Responsivo */
-  @media (max-width: 480px) {
-    .register-box {
-      padding: 20px;
-    }
-  
-    .register-btn {
-      font-size: 16px;
-    }
-  }
-  

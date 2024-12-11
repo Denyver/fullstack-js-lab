@@ -5,274 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WOE - Batalha</title>
     <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css" />
-    <style>
-      /* Estilo geral */
-      body {
-        margin-top: 5px; /* Remove margens */
-        font-family: "Roboto", sans-serif;
-        background: linear-gradient(#333, #1a1a1a); /* Gradiente */
-        color: #333;
-        padding: 0;
-        height: 100vh; /* Garante que o background ocupe toda a altura da tela */
-        display: flex;
-        flex-direction: column;
-      }
-
-      /* Cabeçalho Moderno */
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 30px;
-        background-color: #1a1a1a; /* Fundo escuro para um visual mais elegante */
-        border-radius: 10px; /* Bordas arredondadas para um toque moderno */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para destacar o cabeçalho */
-      }
-
-      header .logo img {
-        max-width: 150px; /* Aumentando um pouco o tamanho da logo */
-        transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
-      }
-
-      header .logo img:hover {
-        transform: scale(
-          1.1
-        ); /* Efeito de zoom quando passar o mouse sobre a logo */
-      }
-
-      header .menu ul {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        padding: 0;
-      }
-
-      header .menu ul li {
-        margin: 0 20px; /* Maior espaçamento entre os itens */
-      }
-
-      header .menu ul li a {
-        text-decoration: none;
-        color: #fff; /* Texto branco para contraste */
-        font-weight: 600; /* Font-weight mais leve para um estilo moderno */
-        font-size: 16px; /* Aumentando um pouco o tamanho da fonte */
-        letter-spacing: 1px; /* Espaçamento entre as letras para dar uma sensação de sofisticação */
-        position: relative;
-        transition: color 0.3s ease, transform 0.3s ease; /* Transições suaves para hover */
-      }
-
-      header .menu ul li a::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #007bff; /* Linha de destaque abaixo do link */
-        transform: scaleX(0);
-        transform-origin: bottom right;
-        transition: transform 0.3s ease;
-      }
-
-      header .menu ul li a:hover {
-        color: #007bff; /* Cor de destaque ao passar o mouse */
-      }
-
-      header .menu ul li a:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
-
-      /* Menu Hamburguer para dispositivos móveis */
-      .menu-toggle {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        z-index: 999; /* Garantir que o menu hambúrguer fique acima dos outros elementos */
-      }
-
-      .menu-toggle span {
-        background-color: #fff;
-        height: 3px;
-        width: 25px;
-        margin: 4px 0;
-        border-radius: 2px;
-      }
-
-      /* Responsividade para telas pequenas */
-      @media (max-width: 768px) {
-        header {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .menu {
-          width: 100%;
-          display: none; /* Inicialmente escondido */
-          flex-direction: column;
-          align-items: flex-start;
-          padding-top: 15px;
-        }
-
-        .menu.active {
-          display: flex; /* Mostrar o menu ao clicar no ícone do hambúrguer */
-        }
-
-        header .menu ul {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          width: 100%;
-        }
-
-        header .menu ul li {
-          margin: 10px 0; /* Ajustar o espaçamento entre os itens no mobile */
-        }
-
-        header .menu ul li a {
-          font-size: 18px;
-          padding: 10px;
-          width: 100%;
-          text-align: left; /* Alinhar os links à esquerda */
-        }
-
-        .menu-toggle {
-          display: flex; /* Mostrar o ícone de menu hambúrguer */
-        }
-      }
-
-      /* Responsividade para telas muito pequenas (como smartphones em modo retrato) */
-      @media (max-width: 480px) {
-        header {
-          padding: 15px 20px;
-        }
-
-        header .logo img {
-          max-width: 120px; /* Ajustar o tamanho da logo para telas muito pequenas */
-        }
-
-        header .menu ul li a {
-          font-size: 16px; /* Ajustar o tamanho da fonte para telas menores */
-        }
-      }
-
-      /* Layout principal */
-      .container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: space-around;
-        padding: 30px;
-      }
-
-      .section {
-        background-color: #f4f4f4;
-        border-radius: 15px;
-        padding: 20px;
-        width: 30%;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease-in-out;
-      }
-
-      .section:hover {
-        transform: scale(1.05);
-      }
-
-      /* Cabeçalhos */
-      .section h2 {
-        font-size: 24px;
-        color: #2196f3;
-        text-align: center;
-        text-transform: uppercase;
-        margin-bottom: 15px;
-      }
-
-      /* Estilos de input e botões */
-      input,
-      button {
-        width: 100%;
-        padding: 12px;
-        margin: 10px 0;
-        border-radius: 10px;
-        font-size: 16px;
-        border: 2px solid #ccc;
-        background-color: #ffffff;
-        color: #333;
-        transition: all 0.3s ease;
-      }
-
-      input:focus,
-      button:focus {
-        outline: none;
-        box-shadow: 0 0 10px rgba(33, 150, 243, 0.7);
-      }
-
-      button {
-        background-color: #2196f3;
-        color: white;
-        border: none;
-        cursor: pointer;
-      }
-
-      button:hover {
-        background-color: #1976d2;
-        transform: scale(1.05);
-      }
-
-      /* Barra de vida */
-      #lifebar,
-      #max-life,
-      #reduce-life {
-        width: 100%;
-        margin-bottom: 10px;
-        border: 2px solid #ddd;
-        border-radius: 10px;
-        padding: 10px;
-        color: #333;
-        background-color: #f4f4f4;
-      }
-
-      .bar {
-        width: 100%;
-        height: 20px;
-        background-color: #ccc;
-        border-radius: 10px;
-        margin-top: 5px;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-      }
-
-      .bar .filled {
-        height: 100%;
-        border-radius: 10px;
-      }
-
-      .health-bar {
-        width: 100%;
-        margin-top: 10px;
-      }
-
-      /* Resultado do dado */
-      #dice-result {
-        font-size: 18px;
-        margin-top: 10px;
-        color: #ffcc00;
-        text-align: center;
-        font-weight: bold;
-      }
-
-      /* Timer */
-      #timer {
-        font-size: 22px;
-        font-weight: bold;
-        color: #333;
-        text-align: center;
-        margin-top: 20px;
-      }
-
-      #timer span {
-        color: #2196f3;
-      }
-    </style>
+    <link rel="stylesheet" href="/src/pages/RPG Site/styles/combat.css">
   </head>
   <body>
     <header>
@@ -282,28 +15,25 @@
       <nav class="menu">
         <ul>
           <li>
-            <a href="/src/pages/RPG Site/html/cadastro.html">Cadastro</a>
+            <a href="/src/pages/RPG Site/html/cadastro.html">Cadastre-se</a>
           </li>
           <li>
-            <a href="/src/pages/RPG Site/html/calculo_dano.html.html"
-              >Cálculo de Dano</a
+            <a href="/src/pages/RPG Site/html/combat.html"
+              >Combate</a
             >
           </li>
           <li>
-            <a href="/src/pages/RPG Site/html/ficha.html.html"
+            <a href="/src/pages/RPG Site/html/ficha.html"
               >Ficha de Personagem</a
             >
           </li>
           <li>
-            <a href="/src/pages/RPG Site/html/gerador_item.html.html"
+            <a href="/src/pages/RPG Site/html/gerador_item.html"
               >Gerador de Itens</a
             >
           </li>
           <li>
-            <a href="/src/pages/RPG Site/html/login.html.html">Login</a>
-          </li>
-          <li>
-            <a href="/src/pages/RPG Site/html/mestre.html.html">Mestre</a>
+            <a href="/src/pages/RPG Site/html/login.html">Login</a>
           </li>
         </ul>
       </nav>
@@ -387,6 +117,11 @@
         </div>
       </div>
     </div>
+          <!-- Rodapé -->
+          <footer>
+            <p>&copy; 2024 Todos os direitos reservados.</p>
+          </footer>
+        </div>
     <script src="/src/pages/RPG Site/js/navbar.js"></script>
     <script>
       // Função para rolar dados com modificadores
