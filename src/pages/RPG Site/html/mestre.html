@@ -223,14 +223,16 @@
             <!-- Controle de Turnos -->
             <div>
                 <label for="turn">Turno do Jogador</label>
-                <input type="number" id="turn" value="1">
-                <button onclick="nextTurn()">Próximo Turno</button>
+                <input type="number" id="turn" value="1" disabled>
+                <button id="next-turn">Próximo Turno</button>
             </div>
 
             <!-- Relógio de Sessão -->
             <div id="timer">
                 <p>Sessão em andamento: <span id="timer-value">00:00</span></p>
-                <button onclick="startTimer()">Iniciar Timer</button>
+                <button id="start-timer">Iniciar Timer</button>
+                <button id="stop-timer" disabled>Parar Timer</button>
+                <button id="reset-timer" disabled>Resetar Timer</button>
             </div>
         </div>
     </div>
@@ -322,6 +324,53 @@
             let lifePercentage = (currentLife / maxLife) * 100;
             document.getElementById("life-bar").style.width = lifePercentage + "%";
         }
+
+        // Variáveis do Timer
+        let timerInterval;
+        let seconds = 0;
+        let isTimerRunning = false;
+
+        // Turno do Jogador
+        let turn = 1;
+        document.getElementById("next-turn").addEventListener("click", function () {
+            turn++;
+            document.getElementById("turn").value = turn;
+        });
+
+        // Timer da Sessão
+        document.getElementById("start-timer").addEventListener("click", function () {
+            if (!isTimerRunning) {
+                isTimerRunning = true;
+                timerInterval = setInterval(function () {
+                    seconds++;
+                    let minutes = Math.floor(seconds / 60);
+                    let remainingSeconds = seconds % 60;
+                    document.getElementById("timer-value").innerText = `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
+                }, 1000);
+                document.getElementById("stop-timer").disabled = false;
+                document.getElementById("reset-timer").disabled = false;
+                document.getElementById("start-timer").disabled = true;
+            }
+        });
+
+        // Parar Timer
+        document.getElementById("stop-timer").addEventListener("click", function () {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            document.getElementById("start-timer").disabled = false;
+            document.getElementById("stop-timer").disabled = true;
+        });
+
+        // Resetar Timer
+        document.getElementById("reset-timer").addEventListener("click", function () {
+            clearInterval(timerInterval);
+            seconds = 0;
+            document.getElementById("timer-value").innerText = "00:00";
+            isTimerRunning = false;
+            document.getElementById("start-timer").disabled = false;
+            document.getElementById("stop-timer").disabled = true;
+            document.getElementById("reset-timer").disabled = true;
+        });
     </script>
 </body>
 </html>
