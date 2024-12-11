@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WOE - Batalha</title>
+    <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css" />
+    <style>
+      /* Estilo geral */
+      body {
+        margin-top: 5px; /* Remove margens */
+        font-family: "Roboto", sans-serif;
+        background: linear-gradient(#333, #1a1a1a); /* Gradiente */
+        color: #333;
+        padding: 0;
+        height: 100vh; /* Garante que o background ocupe toda a altura da tela */
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Cabeçalho Moderno */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+        background-color: #1a1a1a; /* Fundo escuro para um visual mais elegante */
+        border-radius: 10px; /* Bordas arredondadas para um toque moderno */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para destacar o cabeçalho */
+      }
+
+      header .logo img {
+        max-width: 150px; /* Aumentando um pouco o tamanho da logo */
+        transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
+      }
+
+      header .logo img:hover {
+        transform: scale(
+          1.1
+        ); /* Efeito de zoom quando passar o mouse sobre a logo */
+      }
+
+      header .menu ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+
+      header .menu ul li {
+        margin: 0 20px; /* Maior espaçamento entre os itens */
+      }
+
+      header .menu ul li a {
+        text-decoration: none;
+        color: #fff; /* Texto branco para contraste */
+        font-weight: 600; /* Font-weight mais leve para um estilo moderno */
+        font-size: 16px; /* Aumentando um pouco o tamanho da fonte */
+        letter-spacing: 1px; /* Espaçamento entre as letras para dar uma sensação de sofisticação */
+        position: relative;
+        transition: color 0.3s ease, transform 0.3s ease; /* Transições suaves para hover */
+      }
+
+      header .menu ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #007bff; /* Linha de destaque abaixo do link */
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease;
+      }
+
+      header .menu ul li a:hover {
+        color: #007bff; /* Cor de destaque ao passar o mouse */
+      }
+
+      header .menu ul li a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+
+      /* Menu Hamburguer para dispositivos móveis */
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        z-index: 999; /* Garantir que o menu hambúrguer fique acima dos outros elementos */
+      }
+
+      .menu-toggle span {
+        background-color: #fff;
+        height: 3px;
+        width: 25px;
+        margin: 4px 0;
+        border-radius: 2px;
+      }
+
+      /* Responsividade para telas pequenas */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .menu {
+          width: 100%;
+          display: none; /* Inicialmente escondido */
+          flex-direction: column;
+          align-items: flex-start;
+          padding-top: 15px;
+        }
+
+        .menu.active {
+          display: flex; /* Mostrar o menu ao clicar no ícone do hambúrguer */
+        }
+
+        header .menu ul {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+        }
+
+        header .menu ul li {
+          margin: 10px 0; /* Ajustar o espaçamento entre os itens no mobile */
+        }
+
+        header .menu ul li a {
+          font-size: 18px;
+          padding: 10px;
+          width: 100%;
+          text-align: left; /* Alinhar os links à esquerda */
+        }
+
+        .menu-toggle {
+          display: flex; /* Mostrar o ícone de menu hambúrguer */
+        }
+      }
+
+      /* Responsividade para telas muito pequenas (como smartphones em modo retrato) */
+      @media (max-width: 480px) {
+        header {
+          padding: 15px 20px;
+        }
+
+        header .logo img {
+          max-width: 120px; /* Ajustar o tamanho da logo para telas muito pequenas */
+        }
+
+        header .menu ul li a {
+          font-size: 16px; /* Ajustar o tamanho da fonte para telas menores */
+        }
+      }
+
+      /* Layout principal */
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-around;
+        padding: 30px;
+      }
+
+      .section {
+        background-color: #f4f4f4;
+        border-radius: 15px;
+        padding: 20px;
+        width: 30%;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .section:hover {
+        transform: scale(1.05);
+      }
+
+      /* Cabeçalhos */
+      .section h2 {
+        font-size: 24px;
+        color: #2196f3;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+      }
+
+      /* Estilos de input e botões */
+      input,
+      button {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 10px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        background-color: #ffffff;
+        color: #333;
+        transition: all 0.3s ease;
+      }
+
+      input:focus,
+      button:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(33, 150, 243, 0.7);
+      }
+
+      button {
+        background-color: #2196f3;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #1976d2;
+        transform: scale(1.05);
+      }
+
+      /* Barra de vida */
+      #lifebar,
+      #max-life,
+      #reduce-life {
+        width: 100%;
+        margin-bottom: 10px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        padding: 10px;
+        color: #333;
+        background-color: #f4f4f4;
+      }
+
+      .bar {
+        width: 100%;
+        height: 20px;
+        background-color: #ccc;
+        border-radius: 10px;
+        margin-top: 5px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .bar .filled {
+        height: 100%;
+        border-radius: 10px;
+      }
+
+      .health-bar {
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      /* Resultado do dado */
+      #dice-result {
+        font-size: 18px;
+        margin-top: 10px;
+        color: #ffcc00;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      /* Timer */
+      #timer {
+        font-size: 22px;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      #timer span {
+        color: #2196f3;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo" />
+      </div>
+      <nav class="menu">
+        <ul>
+          <li>
+            <a href="/src/pages/RPG Site/html/cadastro.html">Cadastro</a>
+          </li>
+          <li>
+            <a href="/src/pages/RPG Site/html/calculo_dano.html.html"
+              >Cálculo de Dano</a
+            >
+          </li>
+          <li>
+            <a href="/src/pages/RPG Site/html/ficha.html.html"
+              >Ficha de Personagem</a
+            >
+          </li>
+          <li>
+            <a href="/src/pages/RPG Site/html/gerador_item.html.html"
+              >Gerador de Itens</a
+            >
+          </li>
+          <li>
+            <a href="/src/pages/RPG Site/html/login.html.html">Login</a>
+          </li>
+          <li>
+            <a href="/src/pages/RPG Site/html/mestre.html.html">Mestre</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <!-- Seção de Dano -->
+      <div class="section">
+        <h2>Calculadora de Dano</h2>
+        <div>
+          <label for="damage">Dano Base:</label>
+          <input type="number" id="damage" placeholder="Dano Base" />
+        </div>
+        <div>
+          <label for="percentages">Porcentagens (separadas por vírgula):</label>
+          <input type="text" id="percentages" placeholder="Ex: 10, 20, 30" />
+        </div>
+        <div>
+          <label for="critical">Crítico (Multiplicador):</label>
+          <input type="number" step="0.01" id="critical" placeholder="Ex: 1" />
+        </div>
+        <div>
+          <button id="calculate-damage">Calcular Dano</button>
+        </div>
+        <div id="damage-result">O dano será exibido aqui.</div>
+      </div>
+
+      <!-- Seção de Vida -->
+      <div class="section">
+        <h2>Controle de Vida</h2>
+
+        <label for="max-life">Vida Máxima</label>
+        <input type="number" id="max-life" required />
+        <button id="set-max-life">Definir Vida Máxima</button>
+
+        <label for="reduce-life">Reduzir Vida Máxima</label>
+        <input type="text" id="reduce-life" placeholder="Ex: 10 ou 10%" />
+
+        <button id="reduce-life-btn">Reduzir Vida Máxima</button>
+
+        <label for="life">Vida Atual</label>
+        <input type="number" id="lifebar" />
+        <button id="fix-life">Atualizar Vida</button>
+
+        <div class="health-bar">
+          <div class="bar">
+            <div
+              id="life-bar"
+              class="filled"
+              style="width: 100%; background-color: #2196f3"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção de Controle Adicional -->
+      <div class="section">
+        <h2>Controle Adicional</h2>
+
+        <!-- Rolagem de Dados -->
+        <div>
+          <label for="dice">Rolagem de Dados (ex: 1d20)</label>
+          <input type="text" id="dice" />
+          <button onclick="rollDice()">Rolar</button>
+          <div id="dice-result">Resultado do Dado</div>
+        </div>
+
+        <!-- Controle de Turnos -->
+        <div>
+          <label for="turn">Turno do Jogador</label>
+          <input type="number" id="turn" value="1" disabled />
+          <button id="next-turn">Próximo Turno</button>
+        </div>
+
+        <!-- Relógio de Sessão -->
+        <div id="timer">
+          <p>Sessão em andamento: <span id="timer-value">00:00</span></p>
+          <button id="start-timer">Iniciar Timer</button>
+          <button id="stop-timer" disabled>Parar Timer</button>
+          <button id="reset-timer" disabled>Resetar Timer</button>
+        </div>
+      </div>
+    </div>
+    <script src="/src/pages/RPG Site/js/navbar.js"></script>
+    <script>
+      // Função para rolar dados com modificadores
+      function rollDice() {
+        let diceInput = document.getElementById("dice").value;
+        let parts = diceInput.split("d");
+        let modifier = 0;
+
+        if (parts.length === 2) {
+          let diceParts = parts[0].trim();
+          let sidesParts = parts[1].split("+");
+          let sides = parseInt(sidesParts[0].trim());
+          if (sidesParts[1]) {
+            modifier = parseInt(sidesParts[1].trim());
+          }
+
+          let rolls = parseInt(diceParts);
+          let result = [];
+          let total = 0;
+          for (let i = 0; i < rolls; i++) {
+            let rollResult = Math.floor(Math.random() * sides) + 1;
+            result.push(rollResult);
+            total += rollResult;
+          }
+
+          let finalResult = total + modifier;
+          document.getElementById("dice-result").innerText =
+            "Resultado do Dado: " +
+            result.join(", ") +
+            " (Total: " +
+            total +
+            " + Modificador: " +
+            modifier +
+            " = Final: " +
+            finalResult +
+            ")";
+        } else {
+          document.getElementById("dice-result").innerText =
+            "Formato inválido. Use como 1d20, 2d6 ou 2d20+15.";
+        }
+      }
+
+      // Função para calcular o dano com múltiplas porcentagens e crítico como multiplicador
+      document
+        .getElementById("calculate-damage")
+        .addEventListener("click", function () {
+          let damage = parseFloat(document.getElementById("damage").value);
+          let percentagesInput = document.getElementById("percentages").value;
+          let criticalInput = parseFloat(
+            document.getElementById("critical").value
+          );
+
+          if (isNaN(damage) || damage <= 0) {
+            alert("Por favor, insira um valor válido para o dano base.");
+            return;
+          }
+
+          if (isNaN(criticalInput) || criticalInput <= 0) {
+            alert(
+              "Por favor, insira um número válido para o multiplicador de crítico."
+            );
+            return;
+          }
+
+          let percentages = percentagesInput
+            .split(",")
+            .map((p) => parseInt(p.trim()))
+            .filter((p) => !isNaN(p));
+          let totalPercentage = percentages.reduce((acc, val) => acc + val, 0);
+
+          // Calculando o dano final com o multiplicador de crítico
+          let totalDamage =
+            damage * (1 + totalPercentage / 100) * criticalInput;
+          document.getElementById("damage-result").innerText =
+            "Dano Final: " + totalDamage.toFixed(2);
+        });
+
+      // Definir a Vida Máxima
+      document
+        .getElementById("set-max-life")
+        .addEventListener("click", function () {
+          maxLife = parseInt(document.getElementById("max-life").value);
+          currentLife = maxLife; // Inicializa a vida atual com a vida máxima
+          document.getElementById("lifebar").value = currentLife;
+          updateLifeBar();
+        });
+
+      // Reduzir Vida Atual
+      document
+        .getElementById("reduce-life-btn")
+        .addEventListener("click", function () {
+          let reduceValue = document.getElementById("reduce-life").value.trim();
+          let valueToReduce = 0;
+
+          if (reduceValue.includes("%")) {
+            // Redução por porcentagem
+            let percentage = parseFloat(reduceValue.replace("%", ""));
+            valueToReduce = (percentage / 100) * currentLife;
+          } else {
+            // Redução por valor absoluto
+            valueToReduce = parseInt(reduceValue);
+          }
+
+          currentLife = Math.max(0, currentLife - valueToReduce);
+          document.getElementById("lifebar").value = currentLife;
+          updateLifeBar();
+        });
+
+      // Atualizar Barra de Vida
+      function updateLifeBar() {
+        let lifePercentage = (currentLife / maxLife) * 100;
+        document.getElementById("life-bar").style.width = lifePercentage + "%";
+      }
+
+      // Variáveis do Timer
+      let timerInterval;
+      let seconds = 0;
+      let isTimerRunning = false;
+
+      // Turno do Jogador
+      let turn = 1;
+      document
+        .getElementById("next-turn")
+        .addEventListener("click", function () {
+          turn++;
+          document.getElementById("turn").value = turn;
+        });
+
+      // Timer da Sessão
+      document
+        .getElementById("start-timer")
+        .addEventListener("click", function () {
+          if (!isTimerRunning) {
+            isTimerRunning = true;
+            timerInterval = setInterval(function () {
+              seconds++;
+              let minutes = Math.floor(seconds / 60);
+              let remainingSeconds = seconds % 60;
+              document.getElementById("timer-value").innerText = `${String(
+                minutes
+              ).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
+            }, 1000);
+            document.getElementById("stop-timer").disabled = false;
+            document.getElementById("reset-timer").disabled = false;
+            document.getElementById("start-timer").disabled = true;
+          }
+        });
+
+      // Parar Timer
+      document
+        .getElementById("stop-timer")
+        .addEventListener("click", function () {
+          clearInterval(timerInterval);
+          isTimerRunning = false;
+          document.getElementById("start-timer").disabled = false;
+          document.getElementById("stop-timer").disabled = true;
+        });
+
+      // Resetar Timer
+      document
+        .getElementById("reset-timer")
+        .addEventListener("click", function () {
+          clearInterval(timerInterval);
+          seconds = 0;
+          document.getElementById("timer-value").innerText = "00:00";
+          isTimerRunning = false;
+          document.getElementById("start-timer").disabled = false;
+          document.getElementById("stop-timer").disabled = true;
+          document.getElementById("reset-timer").disabled = true;
+        });
+    </script>
+  </body>
+</html>
