@@ -10,20 +10,31 @@
         font-family: 'Arial', sans-serif;
         background: linear-gradient(135deg, #eaeaea, #444444);
         color: #333;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Garante que o conteúdo ocupe toda a altura da viewport */
     }
     
     /* Container principal */
     .container {
-        max-width: 1200px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 90%;
         margin: 0 auto;
         padding: 20px;
         background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     }
     
+    .card {
+        flex: 1 1 300px; /* Crie cards com largura mínima de 300px e que se adaptam ao espaço disponível */
+        margin: 10px;
+      }
     /* Cabeçalho Moderno */
 header {
+    margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -164,26 +175,27 @@ header .menu ul li a:hover::after {
     margin-bottom: 40px;
     position: relative;
     overflow: hidden;
+    border: 4px solid #000000;
+    border-radius: 20px;
 }
 
 /* Ajuste do container do swiper */
 .swiper-container {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px; /* Bordas arredondadas no carrossel */
+    
+    width: 800px;
+    height: 500px;
 }
 
 /* Estilo da imagem */
 .swiper-slide img {
-    border-radius: 20px;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease; /* Transição suave para o hover */
 }
 
 .swiper-slide:hover img {
-    transform: scale(1.05); /* Efeito de zoom suave ao passar o mouse */
+    transform: scale(1.15) rotate(5deg) skew(2deg) translateY(-10px);
+    transition: all 0.3s ease-in-out; /* Ajuste o tempo e a curva da animação */
 }
 
 /* Estilo do link */
@@ -208,9 +220,7 @@ header .menu ul li a:hover::after {
 /* Navegação - Botões de setas */
 .swiper-button-next,
 .swiper-button-prev {
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
+    color: #ddd;
     width: 40px;
     height: 40px;
     display: flex;
@@ -222,12 +232,12 @@ header .menu ul li a:hover::after {
     transform: translateY(-50%);
 }
 
-.swiper-button-next {
-    right: 10px;
+.swiper-slide-next {
+    transform: translateX(20px);
 }
 
-.swiper-button-prev {
-    left: 10px;
+.swiper-slide-prev {
+    transform: translateX(-20px);
 }
 
 @media (max-width: 768px) {
@@ -396,10 +406,10 @@ header .menu ul li a:hover::after {
     }
     
     
-    /* Rodapé */
     footer {
-        margin-top: 40px;
+        border-radius: 100px;
         text-align: center;
-        font-size: 14px;
-        color: #777;
+        width: 100%;
+        margin-top: auto; /* Empurra o footer para o final da página */
+        padding: 20px;
     }
