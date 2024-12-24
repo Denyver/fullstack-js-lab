@@ -83,8 +83,9 @@
             <div
               id="life-bar"
               class="filled"
-              style="width: 100%; background-color: #2196f3"
+              style="width: 100%; background-color: #008d47"
             ></div>
+            <p style="text-align: center;">Vida</p>
           </div>
         </div>
       </div>
@@ -208,6 +209,22 @@
           document.getElementById("lifebar").value = currentLife;
           updateLifeBar();
         });
+
+        function updateHealthBar(percentage) {
+  const lifeBar = document.getElementById("life-bar");
+
+  // Atualiza o tamanho da barra de vida
+  lifeBar.style.width = `${percentage}%`;
+
+  // Define a cor baseada no percentual restante
+  if (percentage <= 30) {
+    lifeBar.style.backgroundColor = "#ff0000"; // Vermelho
+  } else if (percentage <= 50) {
+    lifeBar.style.backgroundColor = "#ffc107"; // Amarelo
+  } else {
+    lifeBar.style.backgroundColor = "#008d47"; // Verde
+  }
+}
 
       // Reduzir Vida Atual
       document

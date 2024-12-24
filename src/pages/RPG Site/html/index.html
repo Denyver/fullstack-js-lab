@@ -3,40 +3,262 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página Principal</title>
+    <title>Página Principal - RPG</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="/src/pages/RPG Site/styles/index.css" />
+    <link rel="stylesheet" href="/src/pages/RPG Site/styles/index.css">
+    <style>
+      /* Estilos Básicos */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        background-color: #181818;
+        color: #ddd;
+        overflow-x: hidden;
+        transition: background-color 0.3s ease;
+        min-height: 100vh; /* Para garantir que o corpo ocupe toda a altura da tela */
+      }
+
+      .container {
+        width: 50%;
+        max-width: 70%;
+        margin: 0 auto;
+        padding: 15px;
+        opacity: 0;
+        animation: fadeIn 1s forwards 0.5s; /* Animação de entrada */
+        flex: 1;
+      }
+
+      /* Animação de Fade In */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* Barra Lateral */
+      .sidebar {
+        width: 210px;
+        background-color: #2c2c2c;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        padding-top: 20px;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        transform: translateX(-100%);
+        animation: slideIn 0.5s forwards 1s;
+      }
+
+      @keyframes slideIn {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .sidebar a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        margin: 10px 0;
+        font-size: 16px;
+        transition: color 0.3s ease;
+      }
+
+      .sidebar a:hover {
+        color: #007bff;
+      }
+
+      #logo {
+        display: flex;
+        justify-content: center;  /* Centraliza o conteúdo */
+        align-items: center;
+        padding: 0;  /* Remove qualquer espaçamento extra */
+        margin: 0;   /* Remove margens que possam estar afetando o layout */
+        width: 100%;
+        height: 50vh; /* O cabeçalho vai ocupar 50% da altura da tela */
+        overflow: hidden;  /* Garante que qualquer parte da imagem que ultrapasse o limite do cabeçalho seja cortada */
+      }
+
+      #logo img {
+        display: block;
+        width: 100%;  /* A imagem vai ocupar 100% da largura do cabeçalho */
+        height: 100%; /* A imagem vai ocupar 100% da altura do cabeçalho */
+        object-fit: contain;  /* A imagem será ajustada para não ser cortada e preservar sua proporção */
+        margin: 0;  /* Remove qualquer margem que possa estar afetando */
+      }
+
+      .menu ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+      }
+
+      .menu a {
+        text-decoration: none;
+        color: #ccc;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+
+      .menu a:hover {
+        color: #007bff;
+      }
+
+      /* Swiper Styles */
+      .swiper-container {
+        width: 100%;
+        height: 300px;
+        margin-top: 40px;
+        opacity: 0;
+        animation: fadeIn 1s forwards 1s;
+      }
+
+      .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .swiper-button-next, .swiper-button-prev {
+        color: #fff;
+      }
+
+      /* Notificação */
+      .notification {
+        background-color: #28a745;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        z-index: 1000;
+        border-radius: 8px;
+        opacity: 0;
+        animation: fadeIn 1s forwards 1.5s;
+      }
+
+      /* Rodapé */
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #222;
+        color: white;
+        opacity: 0;
+        animation: fadeIn 1s forwards 2s;
+        margin-top: 40px;
+      }
+
+      /* Botão de Rolar para o Topo */
+      #scrollToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        display: none;
+        border-radius: 50%;
+      }
+
+      #scrollToTopBtn:hover {
+        background-color: #0056b3;
+      }
+
+      /* Carregando */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        animation: fadeIn 1s forwards;
+      }
+
+      .loading-screen p {
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      /* Responsividade */
+      @media (max-width: 768px) {
+        .menu ul {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .sidebar {
+          width: 100%;
+          position: relative;
+          padding-top: 10px;
+          background-color: #444;
+          flex-direction: row;
+          overflow-x: scroll;
+          gap: 10px;
+        }
+
+        .sidebar a {
+          font-size: 14px;
+        }
+
+        header {
+          margin-left: 0; /* Remove o deslocamento da barra lateral */
+        }
+      }
+    </style>
   </head>
   <body>
+    <!-- Tela de Carregamento -->
+    <div class="loading-screen" id="loadingScreen">
+      <p>Carregando...</p>
+    </div>
+
+    <!-- Barra Lateral -->
+    <div class="sidebar">
+      <a href="loja.html">Loja</a>
+      <a href="inventario.html">Inventário</a>
+      <a href="guias.html">Guias</a>
+      <a href="equipes.html">Equipes</a>
+      <a href="salas.html">Salas de Aventura</a>
+      <a href="faq.html">FAQ</a>
+      <a href="cadastro.html">Cadastro</a>
+      <a href="calculo_dano.html">Cálculo de Dano</a>
+      <a href="ficha.html">Ficha de Personagem</a>
+      <a href="gerador_item.html">Gerador de Itens</a>
+      <a href="login.html">Login</a>
+      <a href="mestre.html">Mestre</a>
+    </div>
+
+    <!-- Conteúdo Principal -->
     <div class="container">
       <!-- Cabeçalho -->
-      <header>
-        <div class="logo">
+        <div id="logo">
           <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo" />
         </div>
-        <nav class="menu">
-          <ul>
-            <li>
-              <a href="/src/pages/RPG Site/html/cadastro.html">Cadastro</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/calculo_dano.html.html">Cálculo de Dano</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/ficha.html.html">Ficha de Personagem</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/gerador_item.html.html">Gerador de Itens</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/login.html.html">Login</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/mestre.html.html">Mestre</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+
 
       <!-- Seção de Slide (Carrossel) -->
       <section class="slider">
@@ -44,19 +266,13 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img src="/src/pages/RPG Site/imgs/generator.png" alt="Slide 1" />
-              <a
-                href="/src/pages/RPG Site/html/gerador_item.html"
-                class="slide-link"
-              ></a>
+              <a href="gerador_item.html" class="slide-link"></a>
             </div>
             <div class="swiper-slide">
-              <img
-                src="/src/pages/RPG Site/imgs/calculador.png"
-                alt="Slide 2"
-              />
+              <img src="/src/pages/RPG Site/imgs/calculador.png" alt="Slide 2" />
             </div>
             <div class="swiper-slide">
-              <img src="/src/pages/RPG Site/imgs/.jpg" alt="Slide 3" />
+              <img src="/src/pages/RPG Site/imgs/nome_da_imagem.jpg" alt="Slide 3" />
             </div>
           </div>
           <!-- Adicionando setas de navegação -->
@@ -66,73 +282,55 @@
         <div class="swiper-pagination"></div>
       </section>
 
-      <!-- Notícias e Atualizações -->
+      <!-- Notificação de Atualização -->
+      <div class="notification" id="notification">
+        Nova atualização disponível! Verifique a página de atualizações.
+      </div>
+
+      <!-- Seção de Notícias -->
       <section class="news">
         <h2>Últimas Notícias</h2>
         <div class="news-grid">
           <div class="news-item">
-            <h3>Index mais estilizado</h3>
-            <p>
-              fazendo um teste pra colocar os intens mais responsivos e perfeitamente separados em categoria
-            </p>
+            <h3>Notícia 1</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
           </div>
           <div class="news-item">
             <h3>Notícia 2</h3>
-            <p>
-              Proin sed turpis egestas, commodo ipsum vitae, feugiat arcu. Donec
-              eget mi id magna.
-            </p>
+            <p>Proin sed turpis egestas, commodo ipsum vitae...</p>
           </div>
           <div class="news-item">
             <h3>Notícia 3</h3>
-            <p>
-              Fusce id sem at lorem tincidunt malesuada. Etiam euismod nibh vel
-              augue fermentum.
-            </p>
+            <p>Fusce id sem at lorem tincidunt malesuada...</p>
           </div>
         </div>
-      </section>
-
-      <!-- Seção de Atualizações -->
-      <section class="updates">
-        <h2>Atualizações Recentes</h2>
-        <div class="updates-list">
-          <div class="update">
-            <h4>Atualização 1</h4>
-            <p>Detalhes sobre a atualização mais recente do sistema.</p>
-          </div>
-          <div class="update">
-            <h4>Atualização 2</h4>
-            <p>
-              Novas funcionalidades foram adicionadas ao sistema de combate.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Seção pra adicionar lembretes -->
-      <section class="lembretes-section">
-        <h1>Lembretes</h1>
-        <div class="input-group">
-          <input
-            type="text"
-            id="lembreteInput"
-            placeholder="Digite um lembrete..."
-          />
-          <button onclick="adicionarLembrete()">Adicionar</button>
-        </div>
-        <ul id="listaLembretes"></ul>
       </section>
 
       <!-- Rodapé -->
       <footer>
         <p>&copy; 2024 Todos os direitos reservados.</p>
       </footer>
+
+      <!-- Botão de Rolar para o Topo -->
+      <button onclick="scrollToTop()" id="scrollToTopBtn">↑</button>
     </div>
 
     <!-- Carregar o script do Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
+      // Função para esconder a tela de carregamento
+      window.onload = function() {
+        document.getElementById("loadingScreen").style.display = "none";
+      };
+
+      // Exibir a notificação
+      setTimeout(function() {
+        document.getElementById("notification").style.display = "block";
+        setTimeout(function() {
+          document.getElementById("notification").style.display = "none";
+        }, 5000);
+      }, 2000);
+
       const swiper = new Swiper(".swiper-container", {
         loop: true,
         effect: "fade",
@@ -153,41 +351,18 @@
         },
       });
 
-      function adicionarLembrete() {
-        const input = document.getElementById("lembreteInput");
-        const texto = input.value.trim();
-
-        if (texto === "") {
-          alert("Digite um lembrete antes de adicionar.");
-          return;
+      // Mostrar o botão de rolar para o topo
+      window.onscroll = function() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+          document.getElementById("scrollToTopBtn").style.display = "block";
+        } else {
+          document.getElementById("scrollToTopBtn").style.display = "none";
         }
+      };
 
-        const ul = document.getElementById("listaLembretes");
-
-        const li = document.createElement("li");
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.addEventListener("change", function () {
-          if (checkbox.checked) {
-            li.classList.add("completed");
-            setTimeout(() => ul.removeChild(li), 500);
-          }
-        });
-
-        const textoNode = document.createTextNode(texto);
-
-        const deleteButton = document.createElement("button");
-        deleteButton.textContent = "x";
-        deleteButton.onclick = function () {
-          ul.removeChild(li);
-        };
-
-        li.appendChild(checkbox);
-        li.appendChild(textoNode);
-        li.appendChild(deleteButton);
-
-        ul.appendChild(li);
-        input.value = "";
+      // Função de rolar para o topo
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     </script>
   </body>
