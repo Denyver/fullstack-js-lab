@@ -13,21 +13,58 @@
         margin: 0;
         padding: 0;
         display: flex;
+        flex-direction: column;
         background-color: #181818;
         color: #ddd;
         overflow-x: hidden;
         transition: background-color 0.3s ease;
-        min-height: 100vh; /* Para garantir que o corpo ocupe toda a altura da tela */
+        min-height: 100vh;
       }
 
       .container {
-        width: 50%;
-        max-width: 70%;
+        width: 90%;
+        max-width: 100%;
         margin: 0 auto;
         padding: 15px;
         opacity: 0;
-        animation: fadeIn 1s forwards 0.5s; /* Animação de entrada */
+        animation: fadeIn 1s forwards 0.5s;
         flex: 1;
+      }
+
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+        .container {
+          width: 100%;
+          padding: 10px;
+        }
+
+        .sidebar {
+          width: 200px;
+        }
+
+        .toggle-btn {
+          padding: 8px 12px;
+          font-size: 0.9em;
+        }
+
+        .hide-btn {
+          padding: 8px 12px;
+          font-size: 0.9em;
+        }
+
+        .container .box {
+          width: 100%;
+          padding: 15px;
+        }
+
+        .container .box h3 {
+          font-size: 1em;
+        }
+
+        .container .box p {
+          font-size: 0.9em;
+        }
       }
 
       /* Animação de Fade In */
@@ -42,7 +79,7 @@
 
       /* Barra Lateral */
       .sidebar {
-        width: 210px;
+        width: 250px;
         background-color: #2c2c2c;
         color: white;
         position: fixed;
@@ -53,9 +90,67 @@
         padding-left: 20px;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
         transform: translateX(-100%);
-        animation: slideIn 0.5s forwards 1s;
+        transition: transform 0.3s ease;
+        z-index: 1000;
+      }
+
+      .sidebar.active {
+        transform: translateX(0);
+      }
+
+      .sidebar a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        margin: 10px 0;
+        font-size: 18px;
+        transition: color 0.3s ease;
+      }
+
+      .sidebar a:hover {
+        color: #007bff;
+      }
+
+      .toggle-btn {
+        position: fixed;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        transition: transform 0.3s ease;
+      }
+
+      .toggle-btn::before {
+        content: '\25B6'; /* Símbolo de seta para a direita */
+        font-size: 24px;
+        color: #fff;
+      }
+
+      .toggle-btn.active::before {
+        content: '\25C0'; /* Símbolo de seta para a esquerda */
+      }
+
+      .hide-btn {
+        position: fixed;
+        top: 60px;
+        left: 20px;
+        background-color: #ff4c4c;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 1001;
+        display: none;
+      }
+
+      .hide-btn:hover {
+        background-color: #b30000;
       }
 
       @keyframes slideIn {
@@ -228,6 +323,210 @@
           margin-left: 0; /* Remove o deslocamento da barra lateral */
         }
       }
+      /* Reset básico para a página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+    color: #eaeaea;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Navbar lateral */
+.navbar {
+    width: 250px;
+    background-color: #1a1a1a;
+    color: #eaeaea;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin-bottom: 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #eaeaea;
+    padding: 10px;
+    border-radius: 8px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #333;
+    color: #00bcd4;
+}
+
+.navbar ul li a.active {
+    background-color: #00bcd4;
+    color: #1a1a1a;
+}
+
+/* Ajuste do conteúdo principal */
+.main-content {
+    margin-left: 250px;
+    flex: 1;
+    padding: 20px;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 30px;
+}
+
+/* Cabeçalho */
+header {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+}
+
+header .menu ul {
+    list-style: none;
+    display: flex;
+}
+
+header .menu ul li {
+    margin: 0 20px;
+}
+
+header .menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+header .menu ul li a:hover {
+    color: #007BFF;
+}
+
+/* Menu Hamburguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .swiper-container {
+        height: 250px;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        width: 30px;
+        height: 30px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+/* Seção de Slide */
+.slider {
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.swiper-container {
+    width: 800px;
+    height: 500px;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Seção de Notícias */
+.news {
+    margin-bottom: 40px;
+}
+
+.news h2 {
+    font-size: 28px;
+    color: #eaeaea;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.news-item {
+    background-color: #2c2c2c;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    border-radius: 10px;
+}
     </style>
   </head>
   <body>
@@ -235,6 +534,12 @@
     <div class="loading-screen" id="loadingScreen">
       <p>Carregando...</p>
     </div>
+
+    <!-- Botão para exibir a barra lateral -->
+    <button class="toggle-btn" id="showSidebar"></button>
+
+    <!-- Botão para ocultar a barra lateral -->
+    <button class="hide-btn" id="hideSidebar"></button>
 
     <!-- Barra Lateral -->
     <div class="sidebar">
@@ -275,11 +580,9 @@
               <img src="/src/pages/RPG Site/imgs/nome_da_imagem.jpg" alt="Slide 3" />
             </div>
           </div>
-          <!-- Adicionando setas de navegação -->
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
         </div>
-        <div class="swiper-pagination"></div>
       </section>
 
       <!-- Notificação de Atualização -->
@@ -317,6 +620,24 @@
 
     <!-- Carregar o script do Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+      // Alternar exibição da barra lateral
+      const showSidebar = document.getElementById('showSidebar');
+      const hideSidebar = document.getElementById('hideSidebar');
+      const sidebar = document.getElementById('sidebar');
+
+      showSidebar.addEventListener('click', () => {
+        sidebar.classList.add('active');
+        showSidebar.style.display = 'none';
+        hideSidebar.style.display = 'block';
+      });
+
+      hideSidebar.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+        showSidebar.style.display = 'block';
+        hideSidebar.style.display = 'none';
+      });
+    </script>
     <script>
       // Função para esconder a tela de carregamento
       window.onload = function() {

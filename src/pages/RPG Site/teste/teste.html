@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World of Eder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cinzel', serif;
+            background-color: #0d0d0d;
+            color: #ffffff;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(145deg, #1f1f1f, #292929);
+            padding: 20px;
+            height: 100vh;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            border-right: 2px solid #555;
+        }
+
+        .sidebar .logo {
+            font-size: 2em;
+            font-weight: bold;
+            color: #f0d78c;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #f0d78c, 0 0 20px #705a32;
+            border-bottom: 2px solid #705a32;
+            padding-bottom: 10px;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .sidebar nav ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+            text-shadow: 0 0 5px #666;
+        }
+
+        .sidebar nav ul li a:hover {
+            color: #f0d78c;
+            transform: scale(1.1);
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            font-weight: bold;
+            color: #f0d78c;
+            text-shadow: 0 0 10px #f0d78c, 0 0 20px #705a32;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #cccccc;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, #1f1f1f, #292929);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel .slide {
+            min-width: 100%;
+            text-align: center;
+            padding: 40px;
+            font-size: 1.5em;
+            color: #f0d78c;
+            text-shadow: 0 0 10px #705a32;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid #f0d78c;
+            color: #f0d78c;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            z-index: 10;
+            transition: transform 0.3s;
+        }
+
+        .carousel-button:hover {
+            transform: scale(1.2);
+        }
+
+        .carousel-button.prev {
+            left: 10px;
+        }
+
+        .carousel-button.next {
+            right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px 0;
+            background: linear-gradient(145deg, #1f1f1f, #292929);
+            border-top: 2px solid #555;
+        }
+
+        footer h2 {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #f0d78c;
+            text-shadow: 0 0 10px #705a32;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin: 10px 0;
+            font-size: 1.1em;
+            color: #cccccc;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .container .box {
+            background: linear-gradient(145deg, #1f1f1f, #292929);
+            border: 2px solid #705a32;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .container .box h3 {
+            font-size: 1.5em;
+            color: #f0d78c;
+            margin-bottom: 10px;
+        }
+
+        .container .box p {
+            color: #cccccc;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        .container .box button {
+            background-color: #f0d78c;
+            color: #0d0d0d;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .container .box button:hover {
+            background-color: #705a32;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">World of Eder</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Guides</a></li>
+                <li><a href="#">Store</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Welcome to World of Eder</h1>
+            <p>Explore the immersive RPG experience.</p>
+        </header>
+
+        <div class="container">
+            <div class="box">
+                <h3>Damage Calculator</h3>
+                <p>Input your stats and calculate the potential damage.</p>
+                <button>Calculate</button>
+            </div>
+            <div class="box">
+                <h3>Character Sheet</h3>
+                <p>Track your character's progress and stats.</p>
+                <button>View Sheet</button>
+            </div>
+            <div class="box">
+                <h3>Equipment Guide</h3>
+                <p>Discover the best gear for your adventures.</p>
+                <button>Learn More</button>
+            </div>
+        </div>
+
+        <div class="carousel">
+            <div class="carousel-slides">
+                <div class="slide">Slide 1 Content</div>
+                <div class="slide">Slide 2 Content</div>
+                <div class="slide">Slide 3 Content</div>
+            </div>
+            <button class="carousel-button prev">&#8249;</button>
+            <button class="carousel-button next">&#8250;</button>
+        </div>
+    </div>
+
+    <footer>
+        <h2>Stay Connected</h2>
+        <ul>
+            <li>Twitter: @WorldOfEder</li>
+            <li>Discord: Join our community</li>
+            <li>Email: contact@worldofeder.com</li>
+        </ul>
+    </footer>
+</body>
+</html>
