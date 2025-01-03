@@ -1,83 +1,72 @@
-/* Navbar */
-.navbar {
+/* Cabeçalho Moderno */
+header {
+  position: fixed; /* Fixa o cabeçalho no topo */
+  top: 0; /* Posiciona o cabeçalho no topo da página */
+  left: 50%; /* Centraliza o cabeçalho horizontalmente */
+  transform: translateX(-50%); /* Ajusta o deslocamento para centralizar corretamente */
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  padding: 10px 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
+  padding: 20px 30px;
+  background-color: #1a1a1a; /* Fundo escuro para um visual mais elegante */
+  border-radius: 10px; /* Bordas arredondadas para um toque moderno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para destacar o cabeçalho */
+  width: 90%; /* Garante que o cabeçalho ocupe toda a largura da página */
+  z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+  margin-top: 10px;
 }
 
-.navbar.hidden {
-  transform: translateY(-100%);
-  opacity: 0;
+header .logo img {
+  max-width: 150px; /* Aumentando um pouco o tamanho da logo */
+  transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
 }
 
-.logo img {
-  max-height: 50px;
-  height: auto;
-  width: auto;
+header .logo img:hover {
+  transform: scale(
+    1.1
+  ); /* Efeito de zoom quando passar o mouse sobre a logo */
 }
 
-.nav-links {
+header .menu ul {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
-  gap: 20px; 
 }
 
-.nav-links li {
-  text-align: center;
+header .menu ul li {
+  margin: 0 20px; /* Maior espaçamento entre os itens */
 }
 
-.nav-links a {
-  color: white;
+header .menu ul li a {
   text-decoration: none;
-  font-size: 16px;
+  color: #fff; /* Texto branco para contraste */
+  font-weight: 600; /* Font-weight mais leve para um estilo moderno */
+  font-size: 16px; /* Aumentando um pouco o tamanho da fonte */
+  letter-spacing: 1px; /* Espaçamento entre as letras para dar uma sensação de sofisticação */
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease; /* Transições suaves para hover */
 }
 
-.nav-links a:hover {
-  color: #1e90ff;
+header .menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff; /* Linha de destaque abaixo do link */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
 }
 
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
+header .menu ul li a:hover {
+  color: #007bff; /* Cor de destaque ao passar o mouse */
 }
 
-/* Ajuste para mobile */
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color: #333;
-    width: 200px;
-    padding: 10px;
-    border-radius: 8px;
-    visibility: hidden; 
-    opacity: 0;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  }
-
-  .nav-links.active {
-    visibility: visible; 
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .menu-toggle {
-    display: block; 
-  }
+header .menu ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

@@ -1,297 +1,738 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WOE: Gerador de NPC</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WOE: Gerador de NPC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
+  <style>
+    :root {
+      --cor-fonte-p: #ffffff;
+      --cor-fundo-primaria: #1e1e2f;
+      /* Fundo mais escuro e elegante */
+      --cor-destaque: #00ff73;
+      /* Laranja vibrante, mas suave */
+      --cor-borda: #333333;
+      --cor-texto: #e4e4e4;
+      --cor-hover: #47ffa9;
+      /* Amarelo suave para hover */
+      --cor-input-bg: #3a3a47;
+      /* Cor de fundo mais escura e confortável */
+      --cor-input-focus: #575768;
+      /* Cor de foco suave */
+      font-family: "Cyber", sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #2a2a44, #1f1f2f);
+      /* Gradiente sutil e moderno */
+      color: var(--cor-texto);
+      font-family: 'Raleway', sans-serif;
+      margin: 0;
+    }
+
+    #container {
+      margin-top: 50px;
+      text-align: center;
+      width: 500px;
+      height: 720px;
+      background-color: var(--cor-fundo-primaria);
+      color: var(--cor-texto);
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      overflow: auto;
+      /* Isso permite que barras de rolagem apareçam se o conteúdo exceder o tamanho do container */
+    }
+
+    /* Estilizando a barra de rolagem */
+    #container::-webkit-scrollbar {
+      width: 10px;
+      /* Largura da barra de rolagem vertical */
+      height: 10px;
+      /* Altura da barra de rolagem horizontal */
+      transition: all 0.3s ease;
+      /* Transição suave para qualquer mudança */
+    }
+
+    /* Trilho da barra de rolagem */
+    #container::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+      /* Cor do trilho com transparência */
+      border-radius: 5px;
+      /* Cantos arredondados no trilho */
+    }
+
+    /* Parte que o usuário pode arrastar (polegar) */
+    #container::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #444444, #4a4a4a);
+      /* Gradiente sutil e elegante */
+      border-radius: 5px;
+      /* Cantos arredondados */
+      transition: background 0.3s ease, transform 0.3s ease;
+      /* Transição suave para mudanças e animação */
+    }
+
+    /* Efeito de hover para o polegar da barra de rolagem */
+    #container::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(135deg, #eaeaea, #919191);
+      transform: scale(1.1);
+      /* Aumenta o tamanho quando o usuário interage */
+    }
+
+    /* Animação de "pulse" para o polegar da barra de rolagem */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
       }
 
-      body {
-        font-family: 'Roboto', sans-serif;
-        background-color: #f5f5f5;
-        color: #333;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        padding: 20px;
+      50% {
+        transform: scale(1.2);
+        /* Aumenta o tamanho */
       }
 
-      #container {
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-        width: 60%;
-        max-width: 900px;
-        margin: auto;
+      100% {
+        transform: scale(1);
+        /* Volta ao tamanho original */
+      }
+    }
+
+    /* Aplique a animação de "pulse" no polegar da barra de rolagem */
+    #container::-webkit-scrollbar-thumb {
+      animation: pulse 2s infinite;
+      /* A animação será contínua e suave */
+    }
+
+    /* Efeito de foco ao rolar */
+    #container::-webkit-scrollbar:horizontal {
+      background: rgba(0, 0, 0, 0.1);
+      /* Cor de fundo suave para a barra horizontal */
+    }
+
+    #container::-webkit-scrollbar:vertical {
+      background: rgba(0, 0, 0, 0.1);
+      /* Cor de fundo suave para a barra vertical */
+    }
+
+    h1 {
+      color: var(--cor-fonte-p);
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 4px var(--cor-fonte-p);
+    }
+
+    #bloco1,
+    #bloco2 {
+      margin: auto;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.05);
+      /* Fundo suave */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    #bloco2 {
+      display: none;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+      color: #fff;
+    }
+
+    /* Estilo geral das células */
+    #td_b1,
+    #td_b2 {
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    /* Títulos explicativos acima dos números */
+    #td_b1 span,
+    #td_b2 span {
+      display: block;
+      font-size: 12px;
+      color: #bbb;
+      margin-bottom: 5px;
+    }
+
+    /* Estilo para os números e valores */
+    #char_stats,
+    #char_atributes {
+      width: 100%;
+      margin: auto;
+      border-collapse: collapse;
+    }
+
+    /* Destacar as células de atributos */
+    #char_atributes .mod {
+      font-size: 16px;
+      color: #ffd700;
+      font-weight: bold;
+      padding: 5px;
+      background-color: #333;
+      border-radius: 5px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    #char_atributes .mod.highlight {
+      background: linear-gradient(45deg, #ff0000, #660000);
+      /* Gradiente forte para números altos */
+    }
+
+    #char_atributes .mod.low-level {
+      background: linear-gradient(45deg, #7f7fff, #b0b0ff);
+      /* Gradiente suave para números baixos */
+    }
+
+    table {
+      margin: auto;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td {
+      padding: 10px;
+      color: var(--cor-texto);
+      border-bottom: 1px solid var(--cor-borda);
+    }
+
+    input[type="text"],
+    select {
+      text-align: center;
+      background-color: var(--cor-input-bg);
+      color: var(--cor-texto);
+      font-weight: bold;
+      border: 2px solid var(--cor-borda);
+      border-radius: 50px;
+      padding: 8px;
+      margin: 5px 0;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    #vida_base,
+    #armadura,
+    #nivel {
+      width: 20%;
+    }
+
+    #atributesLeft input,
+    #atributesRight input {
+      width: 30%;
+    }
+
+    input[type="number"],
+    select {
+      text-align: center;
+      background-color: var(--cor-input-bg);
+      color: var(--cor-texto);
+      font-weight: bold;
+      border: 2px solid var(--cor-borda);
+      border-radius: 50px;
+      width: 50%;
+      padding: 8px;
+      margin: 5px 0;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    input[type="text"]:focus,
+    select:focus {
+      outline: none;
+      background-color: var(--cor-input-focus);
+      border-color: var(--cor-hover);
+      box-shadow: 0 0 6px var(--cor-hover);
+    }
+
+    button {
+      padding: 12px 20px;
+      background-color: var(--cor-fundo-primaria);
+      color: var(--cor-texto);
+      font-weight: bold;
+      border: 1px solid var(--cor-borda);
+      border-radius: 5px;
+      transition: background-color 0.4s, box-shadow 0.4s;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    button:hover {
+      background: var(--cor-texto);
+      color: var(--cor-fundo-primaria);
+      box-shadow: 0 0 6px var(--cor-hover);
+    }
+
+    button:active {
+      transform: scale(0.98);
+      box-shadow: none;
+    }
+
+    .checkbox {
+      width: 15px;
+      height: 15px;
+      appearance: none;
+      background-color: var(--cor-fundo-primaria);
+      border: 2px solid var(--cor-borda);
+      border-radius: 3px;
+      cursor: pointer;
+      display: inline-block;
+      vertical-align: middle;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    .checkbox:checked {
+      background-color: var(--cor-hover);
+    }
+
+    #add_escola {
+      height: 200px;
+      overflow-y: auto;
+      background-color: rgba(255, 255, 255, 0.05);
+      color: var(--cor-texto);
+      font-weight: bold;
+      border: 1px solid var(--cor-borda);
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    #add_escola:hover {
+      background-color: var(--cor-hover);
+      color: var(--cor-texto);
+    }
+
+    .singleSchool {
+      margin: 10px auto;
+      padding: 10px;
+      width: 90%;
+      background-color: rgba(255, 255, 255, 0.05);
+      color: var(--cor-texto);
+      font-weight: bold;
+      border-radius: 8px;
+      border: 1px solid var(--cor-borda);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .singleSchool:hover {
+      background-color: var(--cor-hover);
+      color: var(--cor-texto);
+    }
+
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
       }
 
-      h1 {
-        font-size: 2.2rem;
-        color: #4a90e2;
-        margin-bottom: 30px;
-        text-align: center;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
 
-      label {
-        font-weight: 500;
-        margin-bottom: 8px;
-        display: block;
-      }
+    button,
+    input,
+    select,
+    .checkbox {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+  </style>
+</head>
 
-      input[type="text"],
-      input[type="number"],
-      select {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        margin-bottom: 20px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 1rem;
-      }
-
-      table {
-        width: 100%;
-        margin-bottom: 30px;
-        border-collapse: collapse;
-      }
-
-      th,
-      td {
-        text-align: left;
-        padding: 12px;
-        border-bottom: 1px solid #f0f0f0;
-      }
-
-      th {
-        background-color: #f8f8f8;
-        font-size: 1.1rem;
-        font-weight: 600;
-      }
-
-      .button {
-        display: inline-block;
-        padding: 12px 25px;
-        margin-top: 20px;
-        background-color: #4a90e2;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        width: 100%;
-      }
-
-      .button:hover {
-        background-color: #357ab7;
-      }
-
-      .checkbox-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin-top: 20px;
-      }
-
-      .checkbox-container label {
-        flex-basis: 30%;
-        font-size: 1rem;
-      }
-
-      .numberRight {
-        text-align: right;
-      }
-
-      .cybr-btn {
-        display: inline-block;
-        background-color: #ff6f61;
-        color: white;
-        padding: 12px 25px;
-        border-radius: 6px;
-        text-decoration: none;
-        font-size: 1rem;
-        margin-top: 20px;
-        width: 100%;
-      }
-
-      .cybr-btn:hover {
-        background-color: #d45647;
-      }
-
-      #card_char {
-        margin-top: 30px;
-        padding: 20px;
-        background-color: #f8f8f8;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      #char_name {
-        font-size: 1.5rem;
-        color: #4a90e2;
-        font-weight: 600;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-
-      #char_stats,
-      #char_atributes {
-        width: 100%;
-        margin-top: 15px;
-        border-collapse: collapse;
-      }
-
-      #char_stats td,
-      #char_atributes td {
-        text-align: left;
-        padding: 10px;
-        border-bottom: 1px solid #f0f0f0;
-      }
-
-      #char_stats th,
-      #char_atributes th {
-        font-weight: 600;
-        background-color: #f1f1f1;
-        padding: 12px;
-      }
-    </style>
-  </head>
-  <body onload="set_pc()">
-    <div id="container">
-      <h1>Gerador de NPC</h1>
-      <form>
-        <table>
-          <tr>
-            <td>
-              <label for="nome">Nome:</label>
-              <input type="text" id="nome" name="nome" value="Sem Nome" />
-            </td>
-            <td>
-              <label for="nivel">Nível:</label>
-              <input
-                type="number"
-                id="nivel"
-                name="nivel"
-                min="1"
-                max="20"
-                value="1"
-                class="numberRight"
-                onchange="checkNivel()"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label for="vida_base">Vida Base:</label>
-              <input
-                type="number"
-                id="vida_base"
-                name="vida_base"
-                min="10"
-                value="10"
-              />
-            </td>
-            <td>
-              <label for="armadura">Armadura:</label>
-              <input
-                type="number"
-                id="armadura"
-                name="armadura"
-                class="numberRight"
-                min="0"
-                value="0"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label for="tier">Tier:</label>
-              <select id="tier">
-                <option value="Normal" selected>Normal</option>
-                <option value="Elite">Elite</option>
-                <option value="Boss">Boss</option>
-              </select>
-            </td>
-            <td>
-              <label for="arma">Arma:</label>
-              <select id="arma">
-                <option value="Adaga">Adaga [DES]</option>
-                <option value="Arco">Arco [DES]</option>
-                <option value="Besta">Besta [FOR]</option>
-                <option value="Espada">Espada [DES]</option>
-                <option value="Machado">Machado [DES]</option>
-                <option value="Cajado">Cajado [INT]</option>
-                <option value="Sem Arma" selected>Sem Arma [DES]+[FOR]</option>
-              </select>
-            </td>
-          </tr>
-        </table>
-
-        <h2>Atributos</h2>
-        <table>
-          <tr>
-            <td>
-              <label for="for">Força (FOR):</label>
-              <input type="number" id="for" name="for" min="1" max="30" value="10" class="numberRight" />
-            </td>
-            <td>
-              <label for="des">Destreza (DES):</label>
-              <input type="number" id="des" name="des" min="1" max="30" value="10" class="numberRight" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label for="con">Constituição (CON):</label>
-              <input type="number" id="con" name="con" min="1" max="30" value="10" class="numberRight" />
-            </td>
-            <td>
-              <label for="int">Inteligência (INT):</label>
-              <input type="number" id="int" name="int" min="1" max="30" value="10" class="numberRight" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label for="sab">Sabedoria (SAB):</label>
-              <input type="number" id="sab" name="sab" min="1" max="30" value="10" class="numberRight" />
-            </td>
-            <td>
-              <label for="car">Carisma (CAR):</label>
-              <input type="number" id="car" name="car" min="1" max="30" value="10" class="numberRight" />
-            </td>
-          </tr>
-        </table>
-
-        <div class="checkbox-container">
-          <label><input type="checkbox" name="random" id="aleatorio" /> Gerar Atributos Aleatórios</label>
-        </div>
-
-        <button type="button" class="button" onclick="gerar_inimigo()">Gerar NPC</button>
-      </form>
-
-      <div id="card_char">
-        <h2 id="char_name"></h2>
-        <table id="char_stats"></table>
-        <table id="char_atributes"></table>
-      </div>
-
-      <a class="cybr-btn" href="/45187ee3-d56f-3afc-89b3-5d7905a131cf.html">Voltar</a>
+<body onload="set_pc()">
+  <header>
+    <div class="logo">
+      <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo" />
     </div>
+    <nav class="menu">
+      <ul>
+        <li>
+          <a href="/src/pages/RPG Site/html/cadastro.html">Cadastre-se</a>
+        </li>
+        <li>
+          <a href="/src/pages/RPG Site/html/combat.html">Combate</a>
+        </li>
+        <li>
+          <a href="/src/pages/RPG Site/html/ficha.html">Ficha de Personagem</a>
+        </li>
+        <li>
+          <a href="/src/pages/RPG Site/html/gerador_item.html">Gerador de Itens</a>
+        </li>
+        <li>
+          <a href="/src/pages/RPG Site/html/login.html">Login</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div id="container">
+    <div id="bloco1">
+      <h1>Gerador Simples de NPCs</h1>
+      <br />
+      <table>
+        <tr>
+          <td id="firstStatusb1">
+            <label for="nome">Nome:</label><br />
+            <input type="text" id="nome" name="nome" value="No Name" /><br /><br />
+
+            <label for="vida_base">Vida Base:</label><br />
+            <input type="number" class="numberRight" id="vida_base" name="vida_base" min="10" value="10" />
+            <br /><br />
+
+            <label for="tier">Tier:</label><br />
+            <select id="tier">
+              <option value="Normal" selected>Normal</option>
+              <option value="Elite">Elite</option>
+              <option value="Boss">Boss</option>
+            </select>
+          </td>
+
+          <td id="firstStatusb2">
+            <label for="nivel">Nível:</label><br />
+            <input type="number" id="nivel" name="nivel" min="1" max="20" value="1" class="numberLeft"
+              onchange="checkNivel()" /><br /><br />
+            <label for="armadura">Armadura:</label><br />
+            <input type="number" id="armadura" name="armadura" class="numberLeft" min="0" value="0" /><br /><br />
+
+            <label for="arma">Arma:</label><br />
+            <select id="arma">
+              <option value="Adaga">Adaga [DES]</option>
+              <option value="Arco">Arco [DES]</option>
+              <option value="Besta">Besta [FOR]</option>
+              <option value="Firegun">Firegun [DES]</option>
+              <option value="Espada">Espada [DES]</option>
+              <option value="Espadão">Espadão [FOR]</option>
+              <option value="Machado">Machado [DES]</option>
+              <option value="Machadão">Machadão [FOR]</option>
+              <option value="Foice">Foice [DES]</option>
+              <option value="Orbe">Orbe [INT]</option>
+              <option value="Cajado">Cajado [INT]</option>
+              <option value="Dual">Dual [DES]</option>
+              <option value="Lança">Lança [FOR]</option>
+              <option value="Swallow">Swallow [FOR]</option>
+              <option value="Haloblade">Haloblade [DES]</option>
+              <option value="Katana">Katana [FOR]</option>
+              <option value="Estilingue">Estilingue [DES]</option>
+              <option value="Soqueira">Soqueira [FOR]</option>
+              <option value="Martelo">Martelo [FOR]</option>
+              <option value="Bordão">Bordão [FOR]</option>
+              <option value="Alabarda">Alabarda [FOR]</option>
+              <option value="Chainblade">Chainblade [FOR]</option>
+              <option value="Maça">Maça [FOR]</option>
+              <option value="Sem Arma" selected>Sem Arma [DES]+[FOR]</option>
+              <option value="FORÇA">Dano de FORÇA</option>
+              <option value="DESTREZA">Dano de DESTREZA</option>
+              <option value="CONSTITUIÇÃO">Dano de CONSTITUIÇÃO</option>
+              <option value="INTELIGÊNCIA">Dano de INTELIGÊNCIA</option>
+              <option value="SABEDORIA">Dano de SABEDORIA</option>
+              <option value="CARISMA">Dano de CARISMA</option>
+
+            </select>
+          </td>
+        </tr>
+      </table>
+      <br />
+      <div id="escolas">
+        <table id="escolas_T">
+          <tr>
+            <th colspan="2">Escola : Rank</th>
+          </tr>
+          <td>
+            <select name="" id="schools" onchange="show_rank()">
+              <option disabled selected value="none">
+                Escolha uma Escola
+              </option>
+              <optgroup label="Elementais">
+                <option value="Trovão">Trovão</option>
+                <option value="Glacial">Glacial</option>
+                <option value="Oceano">Oceano</option>
+                <option value="Festiva">Festiva</option>
+                <option value="Solar">Solar</option>
+                <option value="Lunar">Lunar</option>
+                <option value="Natureza">Natureza</option>
+                <option value="Dureza">Dureza</option>
+                <option value="Luxuria">Luxuria</option>
+              </optgroup>
+              <optgroup label="Proibidas">
+                <option value="Morte">Morte</option>
+                <option value="Destruição">Destruição</option>
+                <option value="Vazio">Vazio</option>
+              </optgroup>
+              <optgroup label="Esquecidas">
+                <option value="Ar">Ar</option>
+                <option value="Luz">Luz</option>
+              </optgroup>
+
+              <optgroup label="Epiragon (Mundo)">
+                <option value="Ink Magic">Ink Magic</option>
+                <option value="Mons'Moncê">Mons'Moncê</option>
+                <option value="Thrownbadder">Thrownbadder</option>
+                <option value="Arcana Arsenal">Arcana Arsenal</option>
+                <option value="Time Lord">Time Lord</option>
+                <option value="Cyrus Knight">Cyrus Knight</option>
+                <option value="Necromancia">Necromancia</option>
+                <option value="Magi's">Magi's</option>
+                <option value="Unvatellus">Unvatellus</option>
+              </optgroup>
+              <optgroup label="Novyatt (Mundo)">
+                <option value="Smokeyaëgger">Smokeyaëgger</option>
+                <option value="Witchaegger">Witchaegger</option>
+                <option value="Ninja">Ninja</option>
+                <option value="Moppusutairu">Moppusutairu</option>
+                <option value="Monge Guardião">Monge Guardião</option>
+                <option value="Hiero Star">Hiero Star</option>
+                <option value="Dream Eater">Dream Eeater (Vampiro)</option>
+                <option value="Nightweaver">Nightweaver (Vampiro)</option>
+              </optgroup>
+              <optgroup label="Siaahra (Mundo)">
+                <option value="Geomante">Geomante</option>
+                <option value="Cartomante">Cartomante</option>
+                <option value="Crystal Singer">Crystal Singer</option>
+                <option value="Sand Mage">Sand Mage</option>
+                <option value="Chaos Mage">Chaos Mage</option>
+              </optgroup>
+              <optgroup label="Thundaera (Mundo)">
+                <option value="Alquimista">Alquimista</option>
+                <option value="Mana Scholar">Mana Scholar</option>
+                <option value="Exorcista">Exorcista</option>
+              </optgroup>
+              <optgroup label="Yggbrasil (Mundo)">
+                <option value="Herbalista">Herbalista</option>
+                <option value="Fairy Prophet">Fairy Prophet</option>
+                <option value="Druida">Druida</option>
+                <option value="Warggaër">Warggaër (Skinwalker)</option>
+              </optgroup>
+              <optgroup label="Glaciterno (Mundo)">
+                <option value="Drainär">Drainär</option>
+              </optgroup>
+              <optgroup label="Maera (Mundo)">
+                <option value="Magic Trickster">Magic Trickster</option>
+                <option value="Soul'Diear">Soul'Diear</option>
+                <option value="Army Of Awara">Army Of Awara</option>
+              </optgroup>
+              <optgroup label="Especiais (Mundo)">
+                <option value="Elementalista">Elementalista</option>
+                <option value="Imaginadoom">Imaginadoom</option>
+                <option value="Guerreiro Ethereal">Guerreiro Ethereal</option>
+              </optgroup>
+              <optgroup label="Guardião da Árvore Celestial">
+                <option value="Cerejeira Celestial">Cerejeira Celestial</option>
+                <option value="Bordo Celestial">Bordo Celestial</option>
+                <option value="Mangueira Celestial">Mangueira Celestial</option>
+                <option value="Ypê Celestial">Ypê Celestial</option>
+                <option value="Calcaria Celestial">Calcaria Celestial</option>
+                <option value="Cajueiro Celestial">Cajueiro Celestial</option>
+                <option value="Jaqueira Celestial">Jaqueira Celestial</option>
+                <option value="Goiabeira Celestial">Goiabeira Celestial</option>
+                <option value="Pinheiro Celestial">Pinheiro Celestial</option>
+                <option value="Árvore Celestial Marinha">Árvore Celestial Marinha</option>
+                <option value="Pitombeira Celestial">Pitombeira Celestial</option>
+                <option value="Jacarandá Celestial">Jacarandá Celestial</option>
+                <option value="Baobá Celestial">Baobá Celestial</option>
+                <option value="Jambeiro Celestial">Jambeiro Celestial</option>
+                <option value="Açaizeiro Celestial">Açaizeiro Celestial</option>
+                <option value="Jabuticabeira Celestial">Jabuticabeira Celestial</option>
+              </optgroup>
+            </select>
+          </td>
+          <td>
+            <input type="number" name="" class="numberRight" max="5" min="1" id="rank" value="1"
+              style="display: None" />
+          </td>
+        </table>
+        <p>Pontos de Conhecimento: <span id="ponto_conhecimento"></span></p>
+        <br />
+        <span id="add_escola" onclick="list_schools()">Adicionar Escola</span>
+        <br />
+        <div id="escolas_add"></div>
+      </div>
+      <br />
+      <h2>Atributos</h2>
+      <table>
+        <tr>
+          <td id="atributesLeft">
+            <label for="for">FOR:</label><br />
+            <input type="number" id="for" name="for" min="1" max="30" value="10" class="numberRight" /><br /><br />
+
+            <label for="des">DES:</label><br />
+            <input type="number" id="des" name="des" min="1" max="30" value="10" class="numberRight" /><br /><br />
+
+            <label for="con">CON:</label><br />
+            <input type="number" id="con" name="con" min="1" max="30" value="10" class="numberRight" /><br /><br />
+          </td>
+          <td id="atributesRight">
+            <label for="int">INT:</label><br />
+            <input type="number" id="int" name="int" min="1" max="30" value="10" class="numberLeft" /><br /><br />
+
+            <label for="sab">SAB:</label><br />
+            <input type="number" id="sab" name="sab" min="1" max="30" value="10" class="numberLeft" /><br /><br />
+
+            <label for="car">CAR:</label><br />
+            <input type="number" id="car" name="car" min="1" max="30" value="10" class="numberLeft" /><br /><br />
+          </td>
+        </tr>
+      </table>
+      <label>
+        <input class="checkbox" id="aleatorio" type="checkbox" name="random" value="random" />
+        Gerar Atributos Aleatórios </label><br />
+      <div id="hidden_box_tank">
+        <label id="tank_type_label">
+          <input class="checkbox" id="tank_type" type="checkbox" name="tank-type" value="tank" disabled="true" />
+          TANK Talent
+          <span class="information_t1">(REF: Na progressão ao atingir nivel 17 o jogador pode escolher
+            entre 3 talentos passivos. Esse aumenta a vida máxima em
+            35%.)</span></label>
+      </div>
+      <button class="noselect" onclick="gerar_inimigo()">
+        Gerar NPC<span aria-hidden></span>
+      </button>
+      <button class="cybr-btn" onclick="location.href='/45187ee3-d56f-3afc-89b3-5d7905a131cf.html'">
+        Voltar<span aria-hidden></span>
+      </button>
+    </div>
+    <br />
+
+    <div id="bloco2">
+      <h1>Personagem Gerado</h1>
+      <div id="card_char">
+        <br /><br />
+        <pname id="char_name"></pname>
+
+        <table id="char_stats">
+          <tr>
+            <td id="td_b1">
+              <span>Nível:</span><br />
+              <ns1 id="char_lvl"></ns1>
+            </td>
+            <td id="td_b1">
+              <span>Tier:</span><br />
+              <span id="char_tier"></span>
+            </td>
+          </tr>
+          <tr>
+            <td id="td_b1">
+              <span>Mana:</span><br />
+              <ns1 id="char_mana"></ns1>
+            </td>
+            <td id="td_b1">
+              <span>Vida:</span><br />
+              <ns1 id="char_vida"></ns1>
+            </td>
+          </tr>
+          <tr>
+            <td id="td_b1">
+              <span>CA (Classe de Armadura):</span><br />
+              <ns1 id="char_ca"></ns1>
+            </td>
+            <td id="td_b1">
+              <span>Armadura:</span><br />
+              <ns1 id="char_armadura"></ns1>
+            </td>
+          </tr>
+          <tr>
+            <td id="td_b1" colspan="2">
+              <span>Arma:</span><br />
+              <ns1 id="char_arma"></ns1>
+            </td>
+          </tr>
+          <tr>
+            <td id="td_b1" colspan="2">
+              <span>Ataque:</span><br />
+              <ns1 id="char_ataque"></ns1>
+            </td>
+          </tr>
+          <tr>
+            <td id="td_b1" colspan="2">
+              <span>Dano:</span><br />
+              <ns1 id="char_dano"></ns1>
+            </td>
+          </tr>
+        </table>
+        <br /><br />
+
+        <table id="char_atributes">
+          <tr>
+            <td id="td_b2">
+              <span>Força:</span><br />
+              <ns2 id="e_forca" class="atrb"></ns2>&nbsp;<ns2 id="mod_for" class="mod"></ns2>
+            </td>
+            <td id="td_b2">
+              <span>Inteligência:</span><br />
+              <ns2 id="e_inteligencia" class="atrb"></ns2>&nbsp;<ns2 id="mod_int" class="mod"></ns2>
+            </td>
+          </tr>
+          <tr>
+            <td id="td_b2">
+              <span>Destreza:</span><br />
+              <ns2 id="e_destreza" class="atrb"></ns2>&nbsp;<ns2 id="mod_des" class="mod"></ns2>
+            </td>
+            <td id="td_b2">
+              <span>Sabedoria:</span><br />
+              <ns2 id="e_sabedoria" class="atrb"></ns2>&nbsp;<ns2 id="mod_sab" class="mod"></ns2>
+            </td>
+          </tr>
+          <tr>
+            <td id="td_b2">
+              <span>Constituição:</span><br />
+              <ns2 id="e_constituicao" class="atrb"></ns2>&nbsp;<ns2 id="mod_con" class="mod"></ns2>
+            </td>
+            <td id="td_b2">
+              <span>Carisma:</span><br />
+              <ns2 id="e_carisma" class="atrb"></ns2>&nbsp;<ns2 id="mod_car" class="mod"></ns2>
+            </td>
+          </tr>
+        </table>
+        <br /><br />
+        <h2>Escolas</h2>
+        <div id="myschools"></div>
+
+        <br /><br /><br />
+      </div>
+      <button id="reload" onclick="reloadPage()">Novo NPC</button><br />
+    </div>
+
 
     <script src="/src/pages/RPG Site/js/criador_npc.js"></script>
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
-  </body>
+    <script>
+      function highlightCells() {
+        // Seleciona todas as células com a classe td_b1
+        const cells = document.querySelectorAll('#td_b1');
+
+        cells.forEach(cell => {
+          const value = parseInt(cell.textContent); // Obtém o valor numérico da célula
+
+          // Aplica estilos com base no valor do número
+          if (value >= 15) {
+            cell.classList.add('highlight'); // Para valores altos (>=15), aplica gradiente forte
+            cell.classList.remove('low-level');
+          } else if (value >= 5) {
+            cell.classList.add('low-level'); // Para valores intermediários (>=5), aplica gradiente suave
+            cell.classList.remove('highlight');
+          } else {
+            cell.classList.remove('highlight', 'low-level'); // Para valores baixos (<5), remove qualquer estilo de destaque
+          }
+        });
+      }
+
+      // Chama a função para aplicar os destaques nas células quando necessário
+      highlightCells();
+
+    </script>
+</body>
+
 </html>

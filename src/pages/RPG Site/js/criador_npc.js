@@ -705,26 +705,23 @@ function normalize_limit(valor) {
 function make_char_card(elemento) {
     elemento.addEventListener('click', function () {
         alertify.confirm('Salvar Card', 'Deseja salvar o item como PNG.', function () {
-          //var div = document.getElementById("card_char");
-          var scale = 1.15; // Aumentar a escala por 2 (pode ajustar conforme necessário)
-        
-          // Definir a largura e a altura da div com base na escala
-          elemento.style.width = elemento.offsetWidth * scale + "px";
-          elemento.style.height = elemento.offsetHeight * scale + "px";
-        
-          html2canvas(elemento, { scale: scale }).then(function(canvas) {
-            var img = canvas.toDataURL("image/png");
-            var link = document.createElement('a');
-            link.href = img;
-            link.download = 'elemento_imagem.png';
-            link.click();
-        
-            // Redefinir a largura e a altura da elemento para o valor original
-            elemento.style.width = "";
-            elemento.style.height = "";
-          });
-        }
-            , function () { alertify.error('Cancelado!') });
+            var scale = 1.15; // Ajustar a escala para o canvas
+
+            html2canvas(elemento, { 
+                scale: scale,
+                useCORS: true // Garantir que imagens externas sejam processadas corretamente
+            }).then(function(canvas) {
+                var img = canvas.toDataURL("image/png");
+                var link = document.createElement('a');
+                link.href = img;
+                link.download = 'elemento_imagem.png';
+                link.click();
+            }).catch(function(error) {
+                console.error("Erro ao capturar o elemento:", error);
+            });
+        }, function () { 
+            alertify.error('Cancelado!'); 
+        });
     });
 }
 

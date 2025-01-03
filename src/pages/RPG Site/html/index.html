@@ -116,7 +116,8 @@ body {
   font-weight: bold;
   font-size: 16px;
   padding: 10px;
-  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;  margin-left: 20px; /* Para dar um leve afastamento dos links da lateral */
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+  margin-left: 20px; /* Para dar um leve afastamento dos links da lateral */
 }
 
 .sidebar a:hover {
@@ -139,34 +140,40 @@ body {
   position: fixed;
   top: 50%;
   left: 0;
-  transform: translateY(-50%);
-  background-color: #007bff;
+  transform: translateY(-50%) rotate(0deg); /* Inicialmente sem rotação */
+  background-color: transparent; /* Remove o fundo do botão */
   border: none;
   color: white;
   padding: 10px;
   cursor: pointer;
   z-index: 1001;
   border-radius: 5px;
-  transition: left 0.3s ease;
+  transition: transform 0.5s ease; /* Transição suave para rotação */
+  display: block; /* Assegura que o botão está sendo exibido */
 }
 
 .toggle-btn::before {
   content: "\25B6"; /* Triângulo para o botão */
   font-size: 24px;
   color: #fff;
+  transition: transform 0.3s ease; /* Transição suave para o ícone do triângulo */
+}
+
+.toggle-btn.active {
+  transform: translateY(-50%) rotate(360deg); /* Gira o botão 90 graus para a direita quando ativo */
 }
 
 .toggle-btn.active::before {
   content: "\25C0"; /* Inverte o triângulo quando ativo */
+  transform: rotate(0deg); /* Triângulo não gira, apenas se inverte */
 }
 
+/* Ajuste para o botão de alternância se mover */
 .sidebar.active + .toggle-btn {
-  left: 250px;
+  left: 250px; /* Desloca o botão para a direita quando a sidebar estiver ativa */
 }
 
-.sidebar.active + .hide-btn {
-  display: block;
-}
+
 
 /* Logo */
 #logo {
@@ -312,26 +319,123 @@ footer {
 /* Seção de Notícias */
 .news {
   margin-bottom: 40px;
-}
-
-.news h2 {
-  font-size: 28px;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #eaeaea;
+  overflow-x: hidden; /* Evita o desbordamento horizontal */
+  position: relative; /* Necessário para o controle da camada */
+  z-index: 9999; /* Garante que o conteúdo da seção de notícias apareça na frente */
 }
 
+/* Título da seção de notícias */
+.news h2 {
+  font-size: 32px;
+  color: #eaeaea;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Grade de notícias */
 .news-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  display: flex;
+  gap: 30px; /* Espaçamento entre os itens */
+  white-space: nowrap; /* Evita quebra de linha */
+  overflow: hidden; /* Esconde o excesso de conteúdo */
+  animation: slideNews 15s linear infinite; /* Animação para mover os itens em loop */
 }
 
+/* Animação para deslizar os itens da direita para a esquerda */
+@keyframes slideNews {
+  0% {
+    transform: translateX(100%); /* Começa a partir da direita */
+  }
+  20% {
+    transform: translateX(0); /* Vai para a posição inicial (visível) */
+  }
+  80% {
+    transform: translateX(0); /* Fica visível no meio do movimento */
+  }
+  100% {
+    transform: translateX(-100%); /* Move para a esquerda */
+  }
+}
+
+/* Itens da notícia */
 .news-item {
   background-color: #2c2c2c;
-  padding: 15px;
-  border-radius: 8px;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 300px; /* Definindo largura fixa para todos os itens */
+  height: 200px; /* Definindo altura fixa para os itens */
+  flex-shrink: 0; /* Impede que os itens encolham */
+  opacity: 1; /* Agora os itens começam visíveis */
 }
 
-    </style>
+/* Efeito de hover nos itens de notícias */
+.news-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Título das notícias dentro dos itens */
+.news-item h3 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+}
+
+.news-item p {
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  text-align: justify;
+  white-space: normal; /* Permite que o texto quebre a linha normalmente */
+  word-wrap: break-word; /* Quebra palavras longas que ultrapassam a largura */
+}
+
+/* Botão ou link de "Leia mais" */
+.news-item a {
+  color: #1e90ff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.news-item a:hover {
+  text-decoration: underline;
+  color: #0066cc;
+}
+
+/* Media Queries para ajustes responsivos */
+@media (max-width: 768px) {
+  .news h2 {
+    font-size: 24px;
+  }
+
+  .news-item {
+    padding: 15px;
+    max-width: 280px;
+  }
+
+  .news-grid {
+    gap: 20px;
+  }
+}
+
+  </style>
   </head>
 
   <body>
@@ -377,14 +481,32 @@ footer {
             </div>
             <div class="swiper-slide">
               <img
-                src="/src/pages/RPG Site/imgs/calculador.png"
+                src="/src/pages/RPG Site/imgs/damage.jpg"
                 alt="Slide 2"
               />
             </div>
             <div class="swiper-slide">
               <img
-                src="/src/pages/RPG Site/imgs/nome_da_imagem.jpg"
+                src="/src/pages/RPG Site/imgs/combat.jpg"
                 alt="Slide 3"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="/src/pages/RPG Site/imgs/academia.jpg"
+                alt="Slide 4"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="/src/pages/RPG Site/imgs/escola_mundo.jpg"
+                alt="Slide 5"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="/src/pages/RPG Site/imgs/proibida.jpg"
+                alt="Slide 6"
               />
             </div>
           </div>
@@ -404,7 +526,7 @@ footer {
         <div class="news-grid">
           <div class="news-item">
             <h3>Notícia 1</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            <p>Lorem</p>
           </div>
           <div class="news-item">
             <h3>Notícia 2</h3>
@@ -429,25 +551,20 @@ footer {
     <!-- Carregar o script do Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const sidebar = document.querySelector(".sidebar");
-        const toggleBtn = document.getElementById("showSidebar");
-        const hideBtn = document.getElementById("hideSidebar");
+document.addEventListener("DOMContentLoaded", () => {
+  const sidebar = document.querySelector(".sidebar");
+  const toggleBtn = document.getElementById("showSidebar");
 
-        toggleBtn.addEventListener("click", () => {
-          sidebar.classList.toggle("active");
-          toggleBtn.classList.toggle("active");
-          hideBtn.style.display = sidebar.classList.contains("active")
-            ? "block"
-            : "none";
-        });
+  toggleBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("active");
+    toggleBtn.classList.toggle("active");
 
-        hideBtn.addEventListener("click", () => {
-          sidebar.classList.remove("active");
-          toggleBtn.classList.remove("active");
-          hideBtn.style.display = "none";
-        });
-      });
+    // Mover o botão junto com a sidebar
+    toggleBtn.style.transition = "transform 0.5s ease"; // Transição suave para o movimento
+    toggleBtn.style.transform = sidebar.classList.contains("active") ? "translateX(250px)" : "translateX(0)";
+  });
+});
+
 
       // Função para esconder a tela de carregamento
       window.onload = function () {
