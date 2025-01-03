@@ -4,536 +4,386 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Página Principal - RPG</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="/src/pages/RPG Site/styles/index.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
     <style>
-      /* Estilos Básicos */
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        background-color: #181818;
-        color: #ddd;
-        overflow-x: hidden;
-        transition: background-color 0.3s ease;
-        min-height: 100vh;
-      }
-
-      .container {
-        width: 90%;
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 15px;
-        opacity: 0;
-        animation: fadeIn 1s forwards 0.5s;
-        flex: 1;
-      }
-
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-        .container {
-          width: 100%;
-          padding: 10px;
-        }
-
-        .sidebar {
-          width: 200px;
-        }
-
-        .toggle-btn {
-          padding: 8px 12px;
-          font-size: 0.9em;
-        }
-
-        .hide-btn {
-          padding: 8px 12px;
-          font-size: 0.9em;
-        }
-
-        .container .box {
-          width: 100%;
-          padding: 15px;
-        }
-
-        .container .box h3 {
-          font-size: 1em;
-        }
-
-        .container .box p {
-          font-size: 0.9em;
-        }
-      }
-
-      /* Animação de Fade In */
-      @keyframes fadeIn {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-
-      /* Barra Lateral */
-      .sidebar {
-        width: 250px;
-        background-color: #2c2c2c;
-        color: white;
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        padding-top: 20px;
-        padding-left: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        z-index: 1000;
-      }
-
-      .sidebar.active {
-        transform: translateX(0);
-      }
-
-      .sidebar a {
-        text-decoration: none;
-        color: white;
-        font-weight: bold;
-        margin: 10px 0;
-        font-size: 18px;
-        transition: color 0.3s ease;
-      }
-
-      .sidebar a:hover {
-        color: #007bff;
-      }
-
-      .toggle-btn {
-        position: fixed;
-        top: 50%;
-        left: 10px;
-        transform: translateY(-50%);
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        z-index: 1001;
-        transition: transform 0.3s ease;
-      }
-
-      .toggle-btn::before {
-        content: '\25B6'; /* Símbolo de seta para a direita */
-        font-size: 24px;
-        color: #fff;
-      }
-
-      .toggle-btn.active::before {
-        content: '\25C0'; /* Símbolo de seta para a esquerda */
-      }
-
-      .hide-btn {
-        position: fixed;
-        top: 60px;
-        left: 20px;
-        background-color: #ff4c4c;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-        z-index: 1001;
-        display: none;
-      }
-
-      .hide-btn:hover {
-        background-color: #b30000;
-      }
-
-      @keyframes slideIn {
-        0% {
-          transform: translateX(-100%);
-        }
-        100% {
-          transform: translateX(0);
-        }
-      }
-
-      .sidebar a {
-        text-decoration: none;
-        color: white;
-        font-weight: bold;
-        margin: 10px 0;
-        font-size: 16px;
-        transition: color 0.3s ease;
-      }
-
-      .sidebar a:hover {
-        color: #007bff;
-      }
-
-      #logo {
-        display: flex;
-        justify-content: center;  /* Centraliza o conteúdo */
-        align-items: center;
-        padding: 0;  /* Remove qualquer espaçamento extra */
-        margin: 0;   /* Remove margens que possam estar afetando o layout */
-        width: 100%;
-        height: 50vh; /* O cabeçalho vai ocupar 50% da altura da tela */
-        overflow: hidden;  /* Garante que qualquer parte da imagem que ultrapasse o limite do cabeçalho seja cortada */
-      }
-
-      #logo img {
-        display: block;
-        width: 100%;  /* A imagem vai ocupar 100% da largura do cabeçalho */
-        height: 100%; /* A imagem vai ocupar 100% da altura do cabeçalho */
-        object-fit: contain;  /* A imagem será ajustada para não ser cortada e preservar sua proporção */
-        margin: 0;  /* Remove qualquer margem que possa estar afetando */
-      }
-
-      .menu ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        gap: 20px;
-      }
-
-      .menu a {
-        text-decoration: none;
-        color: #ccc;
-        font-weight: bold;
-        transition: color 0.3s ease;
-      }
-
-      .menu a:hover {
-        color: #007bff;
-      }
-
-      /* Swiper Styles */
-      .swiper-container {
-        width: 100%;
-        height: 300px;
-        margin-top: 40px;
-        opacity: 0;
-        animation: fadeIn 1s forwards 1s;
-      }
-
-      .swiper-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .swiper-button-next, .swiper-button-prev {
-        color: #fff;
-      }
-
-      /* Notificação */
-      .notification {
-        background-color: #28a745;
-        color: white;
-        padding: 10px;
-        text-align: center;
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: none;
-        z-index: 1000;
-        border-radius: 8px;
-        opacity: 0;
-        animation: fadeIn 1s forwards 1.5s;
-      }
-
-      /* Rodapé */
-      footer {
-        text-align: center;
-        padding: 20px;
-        background-color: #222;
-        color: white;
-        opacity: 0;
-        animation: fadeIn 1s forwards 2s;
-        margin-top: 40px;
-      }
-
-      /* Botão de Rolar para o Topo */
-      #scrollToTopBtn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        cursor: pointer;
-        display: none;
-        border-radius: 50%;
-      }
-
-      #scrollToTopBtn:hover {
-        background-color: #0056b3;
-      }
-
-      /* Carregando */
-      .loading-screen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        animation: fadeIn 1s forwards;
-      }
-
-      .loading-screen p {
-        font-size: 20px;
-        font-weight: bold;
-        color: #fff;
-      }
-
-      /* Responsividade */
-      @media (max-width: 768px) {
-        .menu ul {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .sidebar {
-          width: 100%;
-          position: relative;
-          padding-top: 10px;
-          background-color: #444;
-          flex-direction: row;
-          overflow-x: scroll;
-          gap: 10px;
-        }
-
-        .sidebar a {
-          font-size: 14px;
-        }
-
-        header {
-          margin-left: 0; /* Remove o deslocamento da barra lateral */
-        }
-      }
-      /* Reset básico para a página */
+/* Estilos Básicos */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Corpo da página */
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
-    color: #eaeaea;
-    display: flex;
-    min-height: 100vh;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+  color: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #181818;
+  transition: background-color 0.3s ease;
 }
 
-/* Navbar lateral */
-.navbar {
-    width: 250px;
-    background-color: #1a1a1a;
-    color: #eaeaea;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-}
-
-.navbar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.navbar ul li {
-    margin-bottom: 15px;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: #eaeaea;
-    padding: 10px;
-    border-radius: 8px;
-    display: block;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.navbar ul li a:hover {
-    background-color: #333;
-    color: #00bcd4;
-}
-
-.navbar ul li a.active {
-    background-color: #00bcd4;
-    color: #1a1a1a;
-}
-
-/* Ajuste do conteúdo principal */
-.main-content {
-    margin-left: 250px;
-    flex: 1;
-    padding: 20px;
-}
-
-/* Container principal */
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #1a1a1a;
-    border-radius: 30px;
-}
-
-/* Cabeçalho */
-header {
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #1a1a1a;
-    border-radius: 10px;
-}
-
-header .menu ul {
-    list-style: none;
-    display: flex;
-}
-
-header .menu ul li {
-    margin: 0 20px;
-}
-
-header .menu ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 600;
-    font-size: 16px;
-    letter-spacing: 1px;
-    transition: color 0.3s;
-}
-
-header .menu ul li a:hover {
-    color: #007BFF;
-}
-
-/* Menu Hamburguer */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    background-color: #fff;
-    height: 3px;
-    width: 25px;
-    margin: 4px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 30px;
+  opacity: 0;
+  animation: fadeIn 1s forwards 0.5s;
+  flex: 1;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-    }
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
 
-    .menu {
-        display: none;
-        flex-direction: column;
-    }
+  .sidebar a {
+    font-size: 14px;
+  }
 
-    .menu.active {
-        display: flex;
-    }
+  header {
+    margin-left: 0;
+  }
 
-    .swiper-container {
-        height: 250px;
-    }
+  .menu ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .swiper-button-next, .swiper-button-prev {
-        width: 30px;
-        height: 30px;
-    }
+  .swiper-container {
+    height: 250px;
+  }
 
-    .menu-toggle {
-        display: flex;
-    }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 30px;
+    height: 30px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* Animação de Fade In */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  z-index: 999; /* Garante que a barra lateral fique à frente de outros elementos */
+  display: flex; /* Organiza os itens em coluna */
+  flex-direction: column; /* Organiza os itens verticalmente */
+  padding-top: 20px; /* Espaço acima dos itens */
+  gap: 10px; /* Espaço entre os links */
+}
+
+.sidebar.active {
+  transform: translateX(0);
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+  transition: color 0.3s ease;
+  margin-left: 20px; /* Para dar um leve afastamento dos links da lateral */
+}
+
+.sidebar a:hover {
+  color: #007bff;
+}
+
+.sidebar a:last-child {
+  margin-bottom: 20px; /* Espaço inferior para o último item */
+}
+
+/* Adicionar um espaçamento uniforme entre os itens */
+.sidebar a:first-child {
+  margin-top: 20px; /* Espaço superior para o primeiro item */
+}
+
+/* Botão de alternância */
+.toggle-btn {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1001;
+  border-radius: 5px;
+  transition: left 0.3s ease;
+}
+
+.toggle-btn::before {
+  content: "\25B6"; /* Triângulo para o botão */
+  font-size: 24px;
+  color: #fff;
+}
+
+.toggle-btn.active::before {
+  content: "\25C0"; /* Inverte o triângulo quando ativo */
+}
+
+.sidebar.active + .toggle-btn {
+  left: 250px;
+}
+
+.hide-btn {
+  position: fixed;
+  top: 60px;
+  left: 270px;
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  display: none;
+  transition: left 0.3s ease;
+}
+
+.sidebar.active + .hide-btn {
+  display: block;
+}
+
+.hide-btn:hover {
+  background-color: #b30000;
+}
+
+/* Logo */
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+#logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin: 0;
+}
+
+/* Menu */
+.menu ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #ccc;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #007bff;
+}
+
+/* Swiper Styles */
+.swiper-container {
+  width: 100%;
+  height: 300px;
+  margin-top: 40px;
+  opacity: 0;
+  animation: fadeIn 1s forwards 1s;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+}
+
+/* Notificação */
+.notification {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  z-index: 1000;
+  border-radius: 8px;
+  opacity: 0;
+  animation: fadeIn 1s forwards 1.5s;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  border-radius: 10px;
+}
+
+/* Navbar lateral */
+.navbar {
+  width: 250px;
+  background-color: #1a1a1a;
+  color: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin-bottom: 15px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #eaeaea;
+  padding: 10px;
+  border-radius: 8px;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar ul li a:hover {
+  background-color: #333;
+  color: #00bcd4;
+}
+
+.navbar ul li a.active {
+  background-color: #00bcd4;
+  color: #1a1a1a;
+}
+
+/* Ajuste do conteúdo principal */
+.main-content {
+  margin-left: 250px;
+  flex: 1;
+  padding: 20px;
+}
+
+/* Menu Hamburguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  background-color: #fff;
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
 }
 
 /* Seção de Slide */
 .slider {
-    margin-bottom: 40px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 20px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
 .swiper-container {
-    width: 800px;
-    height: 500px;
+  width: 800px;
+  height: 500px;
 }
 
 .swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Seção de Notícias */
 .news {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .news h2 {
-    font-size: 28px;
-    color: #eaeaea;
+  font-size: 28px;
+  color: #eaeaea;
 }
 
 .news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .news-item {
-    background-color: #2c2c2c;
-    padding: 15px;
-    border-radius: 8px;
+  background-color: #2c2c2c;
+  padding: 15px;
+  border-radius: 8px;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    width: 100%;
-    margin-top: auto;
-    padding: 20px;
-    background-color: #1a1a1a;
-    color: #f0f0f0;
-    border-radius: 10px;
-}
     </style>
   </head>
+
   <body>
     <!-- Tela de Carregamento -->
     <div class="loading-screen" id="loadingScreen">
-      <p>Carregando...</p>
-    </div>
+    <p>Carregando...</p>
+  </div>
 
     <!-- Botão para exibir a barra lateral -->
     <button class="toggle-btn" id="showSidebar"></button>
@@ -560,10 +410,9 @@ footer {
     <!-- Conteúdo Principal -->
     <div class="container">
       <!-- Cabeçalho -->
-        <div id="logo">
-          <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo" />
-        </div>
-
+      <div id="logo">
+        <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo" />
+      </div>
 
       <!-- Seção de Slide (Carrossel) -->
       <section class="slider">
@@ -574,10 +423,16 @@ footer {
               <a href="gerador_item.html" class="slide-link"></a>
             </div>
             <div class="swiper-slide">
-              <img src="/src/pages/RPG Site/imgs/calculador.png" alt="Slide 2" />
+              <img
+                src="/src/pages/RPG Site/imgs/calculador.png"
+                alt="Slide 2"
+              />
             </div>
             <div class="swiper-slide">
-              <img src="/src/pages/RPG Site/imgs/nome_da_imagem.jpg" alt="Slide 3" />
+              <img
+                src="/src/pages/RPG Site/imgs/nome_da_imagem.jpg"
+                alt="Slide 3"
+              />
             </div>
           </div>
           <div class="swiper-button-next"></div>
@@ -621,33 +476,35 @@ footer {
     <!-- Carregar o script do Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
-      // Alternar exibição da barra lateral
-      const showSidebar = document.getElementById('showSidebar');
-      const hideSidebar = document.getElementById('hideSidebar');
-      const sidebar = document.getElementById('sidebar');
+      document.addEventListener("DOMContentLoaded", () => {
+        const sidebar = document.querySelector(".sidebar");
+        const toggleBtn = document.getElementById("showSidebar");
+        const hideBtn = document.getElementById("hideSidebar");
 
-      showSidebar.addEventListener('click', () => {
-        sidebar.classList.add('active');
-        showSidebar.style.display = 'none';
-        hideSidebar.style.display = 'block';
+        toggleBtn.addEventListener("click", () => {
+          sidebar.classList.toggle("active");
+          toggleBtn.classList.toggle("active");
+          hideBtn.style.display = sidebar.classList.contains("active")
+            ? "block"
+            : "none";
+        });
+
+        hideBtn.addEventListener("click", () => {
+          sidebar.classList.remove("active");
+          toggleBtn.classList.remove("active");
+          hideBtn.style.display = "none";
+        });
       });
 
-      hideSidebar.addEventListener('click', () => {
-        sidebar.classList.remove('active');
-        showSidebar.style.display = 'block';
-        hideSidebar.style.display = 'none';
-      });
-    </script>
-    <script>
       // Função para esconder a tela de carregamento
-      window.onload = function() {
+      window.onload = function () {
         document.getElementById("loadingScreen").style.display = "none";
       };
 
       // Exibir a notificação
-      setTimeout(function() {
+      setTimeout(function () {
         document.getElementById("notification").style.display = "block";
-        setTimeout(function() {
+        setTimeout(function () {
           document.getElementById("notification").style.display = "none";
         }, 5000);
       }, 2000);
@@ -673,8 +530,11 @@ footer {
       });
 
       // Mostrar o botão de rolar para o topo
-      window.onscroll = function() {
-        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 200 ||
+          document.documentElement.scrollTop > 200
+        ) {
           document.getElementById("scrollToTopBtn").style.display = "block";
         } else {
           document.getElementById("scrollToTopBtn").style.display = "none";
@@ -683,7 +543,7 @@ footer {
 
       // Função de rolar para o topo
       function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
     </script>
   </body>
