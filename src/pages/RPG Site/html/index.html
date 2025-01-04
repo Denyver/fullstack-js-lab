@@ -8,441 +8,14 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
-    <style>
-/* Estilos Básicos */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Arial", sans-serif;
-  background: linear-gradient(135deg, #707070, #1a1a1a);
-  color: #eaeaea;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: #181818;
-  transition: background-color 0.3s ease;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 90%;
-  margin: 0 auto;
-  padding: 30px;
-  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(26, 26, 26, 1));
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  animation: fadeIn 1s forwards 0.5s;
-  flex: 1;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .container {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .sidebar a {
-    font-size: 14px;
-  }
-
-  header {
-    margin-left: 0;
-  }
-
-  .menu ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .swiper-container {
-    height: 250px;
-  }
-
-  .swiper-button-next,
-  .swiper-button-prev {
-    width: 30px;
-    height: 30px;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-}
-
-/* Animação de Fade In */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 100%;
-  background-image: linear-gradient(90deg, #222222, #ffffff00);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform: translateX(-100%);
-  z-index: 999; /* Garante que a barra lateral fique à frente de outros elementos */
-  display: flex; /* Organiza os itens em coluna */
-  flex-direction: column; /* Organiza os itens verticalmente */
-  padding-top: 20px; /* Espaço acima dos itens */
-  gap: 10px; /* Espaço entre os links */
-}
-
-.sidebar.active {
-  transform: translateX(0);
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  padding: 10px;
-  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
-  margin-left: 20px; /* Para dar um leve afastamento dos links da lateral */
-}
-
-.sidebar a:hover {
-  color: #00ffb3; /* Cor quando o link é hover */
-  transform: scale(1.1); /* Aumenta o tamanho do link */
-  text-shadow: 0 0 10px #00ffb3, 0 0 20px #00ffb3, 0 0 30px #00ffb3, 0 0 40px #00ffb3; /* Efeito de brilho */
-}
-
-.sidebar a:last-child {
-  margin-bottom: 20px; /* Espaço inferior para o último item */
-}
-
-/* Adicionar um espaçamento uniforme entre os itens */
-.sidebar a:first-child {
-  margin-top: 20px; /* Espaço superior para o primeiro item */
-}
-
-/* Botão de alternância */
-.toggle-btn {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%) rotate(0deg); /* Inicialmente sem rotação */
-  background-color: transparent; /* Remove o fundo do botão */
-  border: none;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 1001;
-  border-radius: 5px;
-  transition: transform 0.5s ease; /* Transição suave para rotação */
-  display: block; /* Assegura que o botão está sendo exibido */
-}
-
-.toggle-btn::before {
-  content: "\25B6"; /* Triângulo para o botão */
-  font-size: 24px;
-  color: #fff;
-  transition: transform 0.3s ease; /* Transição suave para o ícone do triângulo */
-}
-
-.toggle-btn.active {
-  transform: translateY(-50%) rotate(360deg); /* Gira o botão 90 graus para a direita quando ativo */
-}
-
-.toggle-btn.active::before {
-  content: "\25C0"; /* Inverte o triângulo quando ativo */
-  transform: rotate(0deg); /* Triângulo não gira, apenas se inverte */
-}
-
-/* Ajuste para o botão de alternância se mover */
-.sidebar.active + .toggle-btn {
-  left: 250px; /* Desloca o botão para a direita quando a sidebar estiver ativa */
-}
-
-
-
-/* Logo */
-#logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 50vh;
-  overflow: hidden;
-}
-
-#logo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  margin: 0;
-}
-
-/* Menu */
-.menu ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-}
-
-.menu a {
-  text-decoration: none;
-  color: #ccc;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.menu a:hover {
-  color: #007bff;
-}
-
-/* Swiper Styles */
-.swiper-container {
-  width: 100%;
-  height: 300px;
-  margin-top: 40px;
-  opacity: 0;
-  animation: fadeIn 1s forwards 1s;
-}
-
-.swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  color: #fff;
-}
-
-/* Notificação */
-.notification {
-  background-color: #28a745;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: none;
-  z-index: 1000;
-  border-radius: 8px;
-  opacity: 0;
-  animation: fadeIn 1s forwards 1.5s;
-}
-
-/* Rodapé */
-footer {
-  text-align: center;
-  width: 100%;
-  margin-top: auto;
-  padding: 20px;
-  background-color: #1a1a1a;
-  color: #f0f0f0;
-  border-radius: 10px;
-}
-
-/* Navbar lateral */
-.navbar {
-  width: 250px;
-  background-color: #1a1a1a;
-  color: #eaeaea;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-}
-
-/* Ajuste do conteúdo principal */
-.main-content {
-  margin-left: 250px;
-  flex: 1;
-  padding: 20px;
-}
-
-/* Menu Hamburguer */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  background-color: #fff;
-  height: 3px;
-  width: 25px;
-  margin: 4px 0;
-}
-
-/* Seção de Slide */
-.slider {
-  margin-bottom: 40px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-}
-
-.swiper-container {
-  width: 800px;
-  height: 500px;
-}
-
-.swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Seção de Notícias */
-.news {
-  margin-bottom: 40px;
-  padding: 20px;
-  background-color: #1e1e1e;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: #eaeaea;
-  overflow-x: hidden; /* Evita o desbordamento horizontal */
-  position: relative; /* Necessário para o controle da camada */
-  z-index: 9999; /* Garante que o conteúdo da seção de notícias apareça na frente */
-}
-
-/* Título da seção de notícias */
-.news h2 {
-  font-size: 32px;
-  color: #eaeaea;
-  margin-bottom: 20px;
-  font-family: 'Arial', sans-serif;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* Grade de notícias */
-.news-grid {
-  display: flex;
-  gap: 30px; /* Espaçamento entre os itens */
-  white-space: nowrap; /* Evita quebra de linha */
-  overflow: hidden; /* Esconde o excesso de conteúdo */
-  animation: slideNews 15s linear infinite; /* Animação para mover os itens em loop */
-}
-
-/* Animação para deslizar os itens da direita para a esquerda */
-@keyframes slideNews {
-  0% {
-    transform: translateX(100%); /* Começa a partir da direita */
-  }
-  20% {
-    transform: translateX(0); /* Vai para a posição inicial (visível) */
-  }
-  80% {
-    transform: translateX(0); /* Fica visível no meio do movimento */
-  }
-  100% {
-    transform: translateX(-100%); /* Move para a esquerda */
-  }
-}
-
-/* Itens da notícia */
-.news-item {
-  background-color: #2c2c2c;
-  padding: 20px;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  width: 300px; /* Definindo largura fixa para todos os itens */
-  height: 200px; /* Definindo altura fixa para os itens */
-  flex-shrink: 0; /* Impede que os itens encolham */
-  opacity: 1; /* Agora os itens começam visíveis */
-}
-
-/* Efeito de hover nos itens de notícias */
-.news-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Título das notícias dentro dos itens */
-.news-item h3 {
-  font-size: 24px;
-  color: #fff;
-  margin-bottom: 10px;
-  font-weight: bold;
-  font-family: 'Arial', sans-serif;
-}
-
-.news-item p {
-  font-size: 16px;
-  color: #ccc;
-  line-height: 1.8;
-  margin-bottom: 15px;
-  text-align: justify;
-  white-space: normal; /* Permite que o texto quebre a linha normalmente */
-  word-wrap: break-word; /* Quebra palavras longas que ultrapassam a largura */
-}
-
-/* Botão ou link de "Leia mais" */
-.news-item a {
-  color: #1e90ff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-  display: inline-block;
-  margin-top: 10px;
-}
-
-.news-item a:hover {
-  text-decoration: underline;
-  color: #0066cc;
-}
-
-/* Media Queries para ajustes responsivos */
-@media (max-width: 768px) {
-  .news h2 {
-    font-size: 24px;
-  }
-
-  .news-item {
-    padding: 15px;
-    max-width: 280px;
-  }
-
-  .news-grid {
-    gap: 20px;
-  }
-}
-
-  </style>
+    <link rel="stylesheet" href="/src/pages/RPG Site/styles/index.css">
   </head>
 
   <body>
     <!-- Tela de Carregamento -->
     <div class="loading-screen" id="loadingScreen">
-    <p>Carregando...</p>
-  </div>
+      <p>Carregando...</p>
+    </div>
 
     <!-- Botão para exibir a barra lateral -->
     <button class="toggle-btn" id="showSidebar"></button>
@@ -451,7 +24,7 @@ footer {
     <div class="sidebar">
       <a href="loja.html">Loja</a>
       <a href="inventario.html">Inventário</a>
-      <a href="guias.html">Guias</a>
+      <a href="guia.html">Guia</a>
       <a href="equipes.html">Equipes</a>
       <a href="salas.html">Salas de Aventura</a>
       <a href="faq.html">FAQ</a>
@@ -480,34 +53,22 @@ footer {
               <a href="gerador_item.html" class="slide-link"></a>
             </div>
             <div class="swiper-slide">
-              <img
-                src="/src/pages/RPG Site/imgs/damage.jpg"
-                alt="Slide 2"
-              />
+              <img src="/src/pages/RPG Site/imgs/damage.jpg" alt="Slide 2" />
             </div>
             <div class="swiper-slide">
-              <img
-                src="/src/pages/RPG Site/imgs/combat.jpg"
-                alt="Slide 3"
-              />
+              <img src="/src/pages/RPG Site/imgs/combat.jpg" alt="Slide 3" />
             </div>
             <div class="swiper-slide">
-              <img
-                src="/src/pages/RPG Site/imgs/academia.jpg"
-                alt="Slide 4"
-              />
+              <img src="/src/pages/RPG Site/imgs/academia.jpg" alt="Slide 4" />
             </div>
             <div class="swiper-slide">
-              <img
-                src="/src/pages/RPG Site/imgs/escola_mundo.jpg"
-                alt="Slide 5"
-              />
+              <img src="/src/pages/RPG Site/imgs/escola_mundo.jpg" alt="Slide 5" />
             </div>
             <div class="swiper-slide">
-              <img
-                src="/src/pages/RPG Site/imgs/proibida.jpg"
-                alt="Slide 6"
-              />
+              <img src="/src/pages/RPG Site/imgs/proibida.png" alt="Slide 6" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/src/pages/RPG Site/imgs/comunidade.png" alt="Slide 7" />
             </div>
           </div>
           <div class="swiper-button-next"></div>
@@ -525,16 +86,24 @@ footer {
         <h2>Últimas Notícias</h2>
         <div class="news-grid">
           <div class="news-item">
-            <h3>Notícia 1</h3>
-            <p>Lorem</p>
+            <h3>Atualização 0.1</h3>
+            <p>A mais nova edição do Manual dos Aventurantes chegou! Agora com regras simplificadas para criação de personagens, novos talentos regionais e habilidades exclusivas para cada classe. Descubra como essas mudanças podem transformar sua próxima campanha!</p>
           </div>
           <div class="news-item">
-            <h3>Notícia 2</h3>
-            <p>Proin sed turpis egestas, commodo ipsum vitae...</p>
+            <h3>Evento Especial</h3>
+            <p>Participe do torneio que vai coroar o maior herói da temporada! Monte seu grupo, escolha suas melhores estratégias e prepare-se para enfrentar desafios épicos. Inscrições abertas até 15/01/2025. Premiação especial para os vencedores!</p>
           </div>
           <div class="news-item">
-            <h3>Notícia 3</h3>
-            <p>Fusce id sem at lorem tincidunt malesuada...</p>
+            <h3>Lançamento</h3>
+            <p>A descoberta recente no universo de Dracônia Eterna revelou segredos sobre os dragões adormecidos. Conheça a origem dos "Filhos da Escama" e como eles podem ser inseridos em sua campanha como aliados ou inimigos mortais.</p>
+          </div>
+          <div class="news-item">
+            <h3>Dica para Mestres</h3>
+            <p>Quer levar suas campanhas a um novo nível? Confira 10 dicas práticas para criar sessões memoráveis, manter seus jogadores envolvidos e transformar cada encontro em uma experiência inesquecível.</p>
+          </div>
+          <div class="news-item">
+            <h3>Enquete</h3>
+            <p>Qual o Melhor Vilão de RPG?</p>
           </div>
         </div>
       </section>
@@ -551,20 +120,21 @@ footer {
     <!-- Carregar o script do Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const sidebar = document.querySelector(".sidebar");
-  const toggleBtn = document.getElementById("showSidebar");
+      document.addEventListener("DOMContentLoaded", () => {
+        const sidebar = document.querySelector(".sidebar");
+        const toggleBtn = document.getElementById("showSidebar");
 
-  toggleBtn.addEventListener("click", () => {
-    sidebar.classList.toggle("active");
-    toggleBtn.classList.toggle("active");
+        toggleBtn.addEventListener("click", () => {
+          sidebar.classList.toggle("active");
+          toggleBtn.classList.toggle("active");
 
-    // Mover o botão junto com a sidebar
-    toggleBtn.style.transition = "transform 0.5s ease"; // Transição suave para o movimento
-    toggleBtn.style.transform = sidebar.classList.contains("active") ? "translateX(250px)" : "translateX(0)";
-  });
-});
-
+          // Mover o botão junto com a sidebar
+          toggleBtn.style.transition = "transform 0.5s ease"; // Transição suave para o movimento
+          toggleBtn.style.transform = sidebar.classList.contains("active")
+            ? "translateX(250px)"
+            : "translateX(0)";
+        });
+      });
 
       // Função para esconder a tela de carregamento
       window.onload = function () {
