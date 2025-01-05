@@ -3,14 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/src/pages/RPG Site/styles/index.css" />
     <title>Página Principal - RPG</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="/src/pages/RPG Site/styles/index.css">
   </head>
-
   <body>
     <!-- Tela de Carregamento -->
     <div class="loading-screen" id="loadingScreen">
@@ -23,18 +20,13 @@
     <!-- Barra Lateral -->
     <div class="sidebar">
       <a href="loja.html">Loja</a>
-      <a href="inventario.html">Inventário</a>
       <a href="guia.html">Guia</a>
+      <a href="atualizacoes.html">Atualizações</a>
       <a href="equipes.html">Equipes</a>
-      <a href="salas.html">Salas de Aventura</a>
-      <a href="faq.html">FAQ</a>
-      <a href="cadastro.html">Cadastro</a>
-      <a href="calculo_dano.html">Cálculo de Dano</a>
+      <a href="calculo_dano.html">Combate</a>
       <a href="ficha.html">Ficha de Personagem</a>
       <a href="gerador_item.html">Gerador de Itens</a>
-      <a href="login.html">Login</a>
-      <a href="mestre.html">Mestre</a>
-      <a href="atualizacoes.html">Atualizações</a>
+      <a href="academias.html">Academias</a>
     </div>
 
     <!-- Conteúdo Principal -->
@@ -62,13 +54,19 @@
               <img src="/src/pages/RPG Site/imgs/academia.jpg" alt="Slide 4" />
             </div>
             <div class="swiper-slide">
-              <img src="/src/pages/RPG Site/imgs/escola_mundo.jpg" alt="Slide 5" />
+              <img
+                src="/src/pages/RPG Site/imgs/escola_mundo.jpg"
+                alt="Slide 5"
+              />
             </div>
             <div class="swiper-slide">
               <img src="/src/pages/RPG Site/imgs/proibida.png" alt="Slide 6" />
             </div>
             <div class="swiper-slide">
-              <img src="/src/pages/RPG Site/imgs/comunidade.png" alt="Slide 7" />
+              <img
+                src="/src/pages/RPG Site/imgs/comunidade.png"
+                alt="Slide 7"
+              />
             </div>
           </div>
           <div class="swiper-button-next"></div>
@@ -87,19 +85,39 @@
         <div class="news-grid">
           <div class="news-item">
             <h3>Atualização 0.1</h3>
-            <p>A mais nova edição do Manual dos Aventurantes chegou! Agora com regras simplificadas para criação de personagens, novos talentos regionais e habilidades exclusivas para cada classe. Descubra como essas mudanças podem transformar sua próxima campanha!</p>
+            <p>
+              A mais nova edição do Manual dos Aventurantes chegou! Agora com
+              regras simplificadas para criação de personagens, novos talentos
+              regionais e habilidades exclusivas para cada classe. Descubra como
+              essas mudanças podem transformar sua próxima campanha!
+            </p>
           </div>
           <div class="news-item">
             <h3>Evento Especial</h3>
-            <p>Participe do torneio que vai coroar o maior herói da temporada! Monte seu grupo, escolha suas melhores estratégias e prepare-se para enfrentar desafios épicos. Inscrições abertas até 15/01/2025. Premiação especial para os vencedores!</p>
+            <p>
+              Participe do torneio que vai coroar o maior herói da temporada!
+              Monte seu grupo, escolha suas melhores estratégias e prepare-se
+              para enfrentar desafios épicos. Inscrições abertas até 15/01/2025.
+              Premiação especial para os vencedores!
+            </p>
           </div>
           <div class="news-item">
             <h3>Lançamento</h3>
-            <p>A descoberta recente no universo de Dracônia Eterna revelou segredos sobre os dragões adormecidos. Conheça a origem dos "Filhos da Escama" e como eles podem ser inseridos em sua campanha como aliados ou inimigos mortais.</p>
+            <p>
+              A descoberta recente no universo de Dracônia Eterna revelou
+              segredos sobre os dragões adormecidos. Conheça a origem dos
+              "Filhos da Escama" e como eles podem ser inseridos em sua campanha
+              como aliados ou inimigos mortais.
+            </p>
           </div>
           <div class="news-item">
             <h3>Dica para Mestres</h3>
-            <p>Quer levar suas campanhas a um novo nível? Confira 10 dicas práticas para criar sessões memoráveis, manter seus jogadores envolvidos e transformar cada encontro em uma experiência inesquecível.</p>
+            <p>
+              Quer levar suas campanhas a um novo nível? Confira 10 dicas
+              práticas para criar sessões memoráveis, manter seus jogadores
+              envolvidos e transformar cada encontro em uma experiência
+              inesquecível.
+            </p>
           </div>
           <div class="news-item">
             <h3>Enquete</h3>
@@ -110,12 +128,15 @@
 
       <!-- Rodapé -->
       <footer>
-        <p>&copy; 2024 Todos os direitos reservados.</p>
-      </footer>
-
-      <!-- Botão de Rolar para o Topo -->
-      <button onclick="scrollToTop()" id="scrollToTopBtn">↑</button>
-    </div>
+        <div class="container">
+            <p>&copy; 2025 Guia de Links. Todos os direitos reservados.</p>
+            <div class="footer-icons">
+                <a href="https://github.com/Denyver" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.spotify.com" target="_blank"><i class="fab fa-spotify"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
 
     <!-- Carregar o script do Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
@@ -180,11 +201,6 @@
           document.getElementById("scrollToTopBtn").style.display = "none";
         }
       };
-
-      // Função de rolar para o topo
-      function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
     </script>
   </body>
 </html>

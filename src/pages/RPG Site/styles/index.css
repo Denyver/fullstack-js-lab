@@ -25,16 +25,15 @@
         max-width: 90%;
         margin: 0 auto;
         padding: 30px;
-        background-image: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.1),
-          rgba(26, 26, 26, 1)
-        );
+        background-image: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(26, 26, 26, 1));
         border-radius: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         opacity: 0;
         animation: fadeIn 1s forwards 0.5s;
         flex: 1;
+        z-index: 10;
       }
 
       /* Responsividade */
@@ -77,6 +76,7 @@
         0% {
           opacity: 0;
         }
+
         100% {
           opacity: 1;
         }
@@ -92,11 +92,16 @@
         background-image: linear-gradient(90deg, #222222, #ffffff00);
         transition: transform 0.3s ease, opacity 0.3s ease;
         transform: translateX(-100%);
-        z-index: 999; /* Garante que a barra lateral fique à frente de outros elementos */
-        display: flex; /* Organiza os itens em coluna */
-        flex-direction: column; /* Organiza os itens verticalmente */
-        padding-top: 20px; /* Espaço acima dos itens */
-        gap: 10px; /* Espaço entre os links */
+        z-index: 999;
+        /* Garante que a barra lateral fique à frente de outros elementos */
+        display: flex;
+        /* Organiza os itens em coluna */
+        flex-direction: column;
+        /* Organiza os itens verticalmente */
+        padding-top: 20px;
+        /* Espaço acima dos itens */
+        gap: 10px;
+        /* Espaço entre os links */
       }
 
       .sidebar.active {
@@ -110,23 +115,29 @@
         font-size: 16px;
         padding: 10px;
         transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
-        margin-left: 20px; /* Para dar um leve afastamento dos links da lateral */
+        margin-left: 20px;
+        /* Para dar um leve afastamento dos links da lateral */
       }
 
       .sidebar a:hover {
-        color: #00ffb3; /* Cor quando o link é hover */
-        transform: scale(1.1); /* Aumenta o tamanho do link */
+        color: #00ffb3;
+        /* Cor quando o link é hover */
+        transform: scale(1.1);
+        /* Aumenta o tamanho do link */
         text-shadow: 0 0 10px #00ffb3, 0 0 20px #00ffb3, 0 0 30px #00ffb3,
-          0 0 40px #00ffb3; /* Efeito de brilho */
+          0 0 40px #00ffb3;
+        /* Efeito de brilho */
       }
 
       .sidebar a:last-child {
-        margin-bottom: 20px; /* Espaço inferior para o último item */
+        margin-bottom: 20px;
+        /* Espaço inferior para o último item */
       }
 
       /* Adicionar um espaçamento uniforme entre os itens */
       .sidebar a:first-child {
-        margin-top: 20px; /* Espaço superior para o primeiro item */
+        margin-top: 20px;
+        /* Espaço superior para o primeiro item */
       }
 
       /* Botão de alternância */
@@ -134,37 +145,47 @@
         position: fixed;
         top: 50%;
         left: 0;
-        transform: translateY(-50%) rotate(0deg); /* Inicialmente sem rotação */
-        background-color: transparent; /* Remove o fundo do botão */
+        transform: translateY(-50%) rotate(0deg);
+        /* Inicialmente sem rotação */
+        background-color: transparent;
+        /* Remove o fundo do botão */
         border: none;
         color: white;
         padding: 10px;
         cursor: pointer;
         z-index: 1001;
         border-radius: 5px;
-        transition: transform 0.5s ease; /* Transição suave para rotação */
-        display: block; /* Assegura que o botão está sendo exibido */
+        transition: transform 0.5s ease;
+        /* Transição suave para rotação */
+        display: block;
+        /* Assegura que o botão está sendo exibido */
       }
 
       .toggle-btn::before {
-        content: "\25B6"; /* Triângulo para o botão */
+        content: "\25B6";
+        /* Triângulo para o botão */
         font-size: 24px;
         color: #fff;
-        transition: transform 0.3s ease; /* Transição suave para o ícone do triângulo */
+        transition: transform 0.3s ease;
+        /* Transição suave para o ícone do triângulo */
       }
 
       .toggle-btn.active {
-        transform: translateY(-50%) rotate(360deg); /* Gira o botão 90 graus para a direita quando ativo */
+        transform: translateY(-50%) rotate(360deg);
+        /* Gira o botão 90 graus para a direita quando ativo */
       }
 
       .toggle-btn.active::before {
-        content: "\25C0"; /* Inverte o triângulo quando ativo */
-        transform: rotate(0deg); /* Triângulo não gira, apenas se inverte */
+        content: "\25C0";
+        /* Inverte o triângulo quando ativo */
+        transform: rotate(0deg);
+        /* Triângulo não gira, apenas se inverte */
       }
 
       /* Ajuste para o botão de alternância se mover */
-      .sidebar.active + .toggle-btn {
-        left: 250px; /* Desloca o botão para a direita quando a sidebar estiver ativa */
+      .sidebar.active+.toggle-btn {
+        left: 250px;
+        /* Desloca o botão para a direita quando a sidebar estiver ativa */
       }
 
       /* Logo */
@@ -233,25 +254,95 @@
         padding: 10px;
         text-align: center;
         position: fixed;
-        bottom: 20px;
+        margin-top: 30px;
+        /* Começa fora da tela, acima da página */
         left: 50%;
         transform: translateX(-50%);
-        display: none;
-        z-index: 1000;
+        display: block;
+        z-index: 10000;
         border-radius: 8px;
         opacity: 0;
-        animation: fadeIn 1s forwards 1.5s;
+        /* Inicialmente invisível */
+        animation: slideIn 3s forwards, slideOut 1s 3s forwards;
+        /* Animação de entrar e sair */
       }
 
-      /* Rodapé */
+      /* Animação para aparecer */
+      @keyframes slideIn {
+        0% {
+          top: -50px;
+          opacity: 0;
+        }
+
+        100% {
+          top: 20px;
+          /* Ajuste a posição do topo após o efeito */
+          opacity: 1;
+        }
+      }
+
+      /* Animação para desaparecer */
+      @keyframes slideOut {
+        0% {
+          top: 20px;
+          opacity: 1;
+        }
+
+        100% {
+          top: -50px;
+          /* Volta para fora da tela */
+          opacity: 0;
+        }
+      }
+
+      /* Estilos do rodapé */
       footer {
+        color: white;
+        padding: 20px 0;
         text-align: center;
-        width: 100%;
-        margin-top: auto;
-        padding: 20px;
-        background-color: #1a1a1a;
-        color: #f0f0f0;
-        border-radius: 10px;
+      }
+
+      footer p {
+        font-size: 1em;
+        margin-bottom: 20px;
+      }
+
+      /* Ícones no rodapé */
+      .footer-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .footer-icons a {
+        font-size: 2em;
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .footer-icons a:hover {
+        color: #3498DB;
+        transform: translateY(-5px);
+      }
+
+      /* Responsividade para dispositivos móveis */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2em;
+        }
+
+        .category h2 {
+          font-size: 1.8em;
+        }
+
+        .category ul li a {
+          font-size: 1em;
+        }
+
+        .footer-icons a {
+          font-size: 1.5em;
+        }
       }
 
       /* Navbar lateral */
@@ -310,51 +401,48 @@
 
       /* Seção de Notícias */
       .news {
-        margin-bottom: 40px;
+        margin-bottom: 200px;
         padding: 20px;
-        background-color: #1e1e1e;
+        background-color: #1e1e1e00;
         border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         color: #eaeaea;
-        overflow-x: hidden; /* Evita o desbordamento horizontal */
-        position: relative; /* Necessário para o controle da camada */
-        z-index: 9999; /* Garante que o conteúdo da seção de notícias apareça na frente */
+        overflow-x: hidden;
+        position: relative;
+        z-index: 1;
       }
 
       /* Título da seção de notícias */
       .news h2 {
         font-size: 32px;
         color: #eaeaea;
-        margin-bottom: 20px;
         font-family: "Arial", sans-serif;
         font-weight: bold;
         text-align: center;
-        text-transform: uppercase;
         letter-spacing: 2px;
       }
 
-      /* Grade de notícias */
       .news-grid {
         display: flex;
-        gap: 30px; /* Espaçamento entre os itens */
-        white-space: nowrap; /* Evita quebra de linha */
-        overflow: hidden; /* Esconde o excesso de conteúdo */
-        animation: slideNews 15s linear infinite; /* Animação para mover os itens em loop */
+        gap: 30px; /* Aumenta o espaçamento entre os itens */
+        animation: slideNews 35s linear infinite;
+        width: 100%; /* Ou qualquer valor que você deseja para a largura da grade */
+        height: 250px; /* Ajuste a altura da grade conforme necessário */
+        margin: 0 auto; /* Centraliza a grade */
       }
 
       /* Animação para deslizar os itens da direita para a esquerda */
       @keyframes slideNews {
         0% {
-          transform: translateX(100%); /* Começa a partir da direita */
+          transform: translateX(100%);
         }
-        20% {
-          transform: translateX(0); /* Vai para a posição inicial (visível) */
-        }
+
+        20%,
         80% {
-          transform: translateX(0); /* Fica visível no meio do movimento */
+          transform: translateX(0);
         }
+
         100% {
-          transform: translateX(-100%); /* Move para a esquerda */
+          transform: translateX(-100%);
         }
       }
 
@@ -363,18 +451,26 @@
         background-color: #2c2c2c;
         padding: 20px;
         border-radius: 12px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        width: 300px; /* Definindo largura fixa para todos os itens */
-        height: 200px; /* Definindo altura fixa para os itens */
-        flex-shrink: 0; /* Impede que os itens encolham */
-        opacity: 1; /* Agora os itens começam visíveis */
+        transition: transform 0.3s ease, box-shadow 5s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        width: 300px;
+        min-width: 300px;
+        height: 200px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transform-origin: top;
       }
 
       /* Efeito de hover nos itens de notícias */
       .news-item:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px); 
+        height: 250px; 
+        max-height: 500px; 
+        z-index: 2;
+        transition: transform 1s ease, height 1s ease; 
       }
 
       /* Título das notícias dentro dos itens */
@@ -384,16 +480,19 @@
         margin-bottom: 10px;
         font-weight: bold;
         font-family: "Arial", sans-serif;
+        word-wrap: break-word;
       }
 
+      /* Texto das notícias */
       .news-item p {
         font-size: 16px;
         color: #ccc;
-        line-height: 1.8;
-        margin-bottom: 15px;
-        text-align: justify;
-        white-space: normal; /* Permite que o texto quebre a linha normalmente */
-        word-wrap: break-word; /* Quebra palavras longas que ultrapassam a largura */
+        line-height: 1.5; /* Reduz o espaçamento entre as linhas */
+        margin-bottom: 10px; /* Ajusta o espaçamento inferior */
+        text-align: justify; /* Justifica o texto para uma aparência mais organizada */
+        white-space: normal; /* Permite que o texto quebre naturalmente */
+        word-wrap: break-word; /* Quebra palavras longas se necessário */
+        overflow-wrap: break-word; /* Garante que palavras longas não causem overflow */
       }
 
       /* Botão ou link de "Leia mais" */
@@ -409,6 +508,19 @@
       .news-item a:hover {
         text-decoration: underline;
         color: #0066cc;
+      }
+
+      /* Animação de fade-in para itens de notícias */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
       }
 
       /* Media Queries para ajustes responsivos */

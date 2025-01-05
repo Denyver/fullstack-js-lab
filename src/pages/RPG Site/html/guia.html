@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
+    <title>Guia de Links</title>
+    <style>
+      /* Estilos Básicos */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(135deg, #707070, #1a1a1a);
+        color: #eaeaea;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        background-color: #181818;
+        transition: background-color 0.3s ease;
+    }
+    
+    /* Estilos para as categorias e os links */
+    .category {
+        margin-top: 100px;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .category h2 {
+        font-size: 2em;
+        color: #ffffff;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+      }
+
+      /* Modificações para colocar as seções lado a lado */
+      main {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 40px;
+        padding: 20px;
+      }
+
+      /* Modificações apenas para os itens de lista fora do header */
+      main .menu ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      main li {
+        list-style: none;
+        position: relative;
+        padding: 12px 20px;
+        background: #222;
+        border-radius: 8px;
+        margin: 0;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        text-align: center;
+      }
+
+      main li:hover {
+        transform: scale(1.05);
+        background-color: #333;
+      }
+
+      main li a {
+        text-decoration: none;
+        color: #eaeaea;
+        font-weight: bold;
+        font-size: 18px;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+      }
+
+      main li a:hover {
+        color: #00ffb3;
+        text-shadow: 0 0 10px #00ffb3, 0 0 20px #00ffb3;
+      }
+
+      footer {
+        margin-top: auto;
+        background-color: #222222;
+        color: #ccc;
+        padding: 20px;
+        text-align: center;
+      }
+
+      footer a {
+        color: #ccc;
+        margin: 0 10px;
+        font-size: 1.5em;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: #00ffb3;
+      }
+
+      .footer-icons {
+        margin-top: 10px;
+      }
+
+      /* Responsividade */
+      @media (max-width: 768px) {
+        header {
+          padding: 15px;
+        }
+
+        .category h2 {
+          font-size: 1.5em;
+        }
+
+        main {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        main li {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+        <div class="logo">
+          <a href="/src/pages/RPG Site/html/index.html">
+            <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo" />
+          </a>
+        </div>
+        <nav class="menu">
+          <ul>
+            <li>
+              <a href="/src/pages/RPG Site/html/cadastro.html">Cadastre-se</a>
+            </li>
+            <li>
+              <a href="/src/pages/RPG Site/html/combat.html"
+                >Combate</a
+              >
+            </li>
+            <li>
+              <a href="/src/pages/RPG Site/html/ficha.html"
+                >Ficha de Personagem</a
+              >
+            </li>
+            <li>
+              <a href="/src/pages/RPG Site/html/gerador_item.html"
+                >Gerador de Itens</a
+              >
+            </li>
+            <li>
+              <a href="/src/pages/RPG Site/html/login.html">Login</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+    <main>
+      <section class="category">
+        <h2>Escolas</h2>
+        <ul class="menu">
+          <li><a href="#">Escolas Elementais</a></li>
+          <li><a href="#">Escolas Proibidas</a></li>
+          <li><a href="#">Escolas Esquecidas</a></li>
+          <li><a href="#">Escolas do mundo de Epiragon</a></li>
+          <li><a href="#">Escolas do mundo de Thundaera</a></li>
+          <li><a href="#">Escolas do mundo de Novyat</a></li>
+          <li><a href="#">Escolas do mundo de Yggybrasil</a></li>
+          <li><a href="#">Escolas do mundo de Glaciterno</a></li>
+          <li><a href="#">Escolas do mundo de Siaahra</a></li>
+          <li><a href="#">Escolas do mundo de Maera</a></li>
+          <li><a href="#">Escolas do mundo de Ybyty</a></li>
+          <li><a href="#">Escolas do mundo de Pyr</a></li>
+          <li><a href="#">Especializações das Escolas do Mundo</a></li>
+          <li><a href="#">Eixos Elementais</a></li>
+        </ul>
+      </section>
+
+      <section class="category">
+        <h2>Treinamentos</h2>
+        <ul class="menu">
+          <li><a href="#">First Way</a></li>
+          <li><a href="#">Second Way</a></li>
+          <li><a href="#">Outer Ways</a></li>
+          <li><a href="#">Forgotten Powers</a></li>
+          <li><a href="#">Ultilidade</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Guia de Links. Todos os direitos reservados.</p>
+      <div class="footer-icons">
+        <a href="https://github.com/Denyver" target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="https://www.spotify.com" target="_blank"
+          ><i class="fab fa-spotify"></i
+        ></a>
+        <a href="https://www.youtube.com" target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
+      </div>
+    </footer>
+  </body>
+</html>

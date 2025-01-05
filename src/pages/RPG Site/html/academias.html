@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WOE: Notas de Atualização</title>
-    <link rel="stylesheet" href="/css/patchnotes.css"/>
-    <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
+    <link rel="stylesheet" href="/css/patchnotes.css" />
+    <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css" />
     <style>
       /* Estilos Gerais */
       * {
@@ -19,13 +19,11 @@
         font-family: 'Times New Roman', serif;
         background: linear-gradient(135deg, #707070, #1a1a1a);
         color: #f5f5f5;
-        margin: 0;
         padding: 20px;
       }
 
-      /* Header e Footer */
+      /* Header */
       header {
-        margin-bottom: 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -33,6 +31,7 @@
         background-color: #1a1a1a;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
       }
 
       header .logo img {
@@ -47,12 +46,10 @@
       header .menu ul {
         list-style: none;
         display: flex;
-        margin: 0;
-        padding: 0;
       }
 
       header .menu ul li {
-        margin: 0 20px;
+        margin: 0 15px;
       }
 
       header .menu ul li a {
@@ -60,13 +57,12 @@
         color: #fff;
         font-weight: 600;
         font-size: 16px;
-        letter-spacing: 1px;
         position: relative;
-        transition: color 0.3s ease, transform 0.3s ease;
+        transition: color 0.3s ease;
       }
 
       header .menu ul li a::after {
-        content: "";
+        content: '';
         position: absolute;
         bottom: -5px;
         left: 0;
@@ -87,7 +83,7 @@
         transform-origin: bottom left;
       }
 
-      /* Menu Hamburguer para dispositivos móveis */
+      /* Menu Hamburguer para Dispositivos Móveis */
       .menu-toggle {
         display: none;
         flex-direction: column;
@@ -103,19 +99,16 @@
         border-radius: 2px;
       }
 
-      /* Responsividade para telas pequenas */
       @media (max-width: 768px) {
         header {
-          flex-direction: column;
-          align-items: flex-start;
+          flex-wrap: wrap;
         }
 
         .menu {
-          width: 100%;
           display: none;
           flex-direction: column;
-          align-items: flex-start;
-          padding-top: 15px;
+          align-items: center;
+          width: 100%;
         }
 
         .menu.active {
@@ -123,21 +116,12 @@
         }
 
         header .menu ul {
-          display: flex;
           flex-direction: column;
-          align-items: flex-start;
-          width: 100%;
+          align-items: center;
         }
 
         header .menu ul li {
           margin: 10px 0;
-        }
-
-        header .menu ul li a {
-          font-size: 18px;
-          padding: 10px;
-          width: 100%;
-          text-align: left;
         }
 
         .menu-toggle {
@@ -145,10 +129,9 @@
         }
       }
 
-      /* Responsividade para telas muito pequenas */
       @media (max-width: 480px) {
         header {
-          padding: 15px 20px;
+          padding: 10px 15px;
         }
 
         header .logo img {
@@ -156,48 +139,22 @@
         }
 
         header .menu ul li a {
-          font-size: 16px;
+          font-size: 14px;
         }
       }
 
-      /* Estilo do Iframe */
-      #b1 {
+/* Estilo do Iframe */
+#b1 {
         display: flex;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 50px;
       }
 
       .patch {
-        width: 100%;
-        max-width: 700px;
+        width: 90%;
         height: 900px;
         border-radius: 15px;
         box-shadow: 0 0 20px rgba(0, 255, 179, 0.2);
-        transition: transform 2s ease;
-      }
-
-      .patch:hover {
-        transform: scale(1.05);
-      }
-
-      /* Animações */
-      @keyframes pulse-light {
-        0% {
-          box-shadow: 0 0 10px rgba(128, 203, 196, 0.2);
-        }
-        50% {
-          box-shadow: 0 0 20px rgb(128, 203, 195);
-        }
-        100% {
-          box-shadow: 0 0 10px rgba(128, 203, 196, 0.2);
-        }
-      }
-
-      input:focus {
-        border: 1px solid #80cbc4;
-        outline: none;
-        animation: pulse-light 5s infinite;
-        transition: all 0.3s ease;
       }
 
       footer {
@@ -212,39 +169,48 @@
   </head>
   <body>
     <header>
-      <div class="logo">
-        <a href="/src/pages/RPG Site/html/index.html">
-          <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo" />
-        </a>
+        <div class="logo">
+            <a href="/src/pages/RPG Site/html/index.html">
+              <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo" />
+            </a>
+          </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="/src/pages/RPG Site/html/cadastro.html">Cadastre-se</a></li>
+          <li><a href="/src/pages/RPG Site/html/combat.html">Combate</a></li>
+          <li><a href="/src/pages/RPG Site/html/ficha.html">Ficha de Personagem</a></li>
+          <li><a href="/src/pages/RPG Site/html/gerador_item.html">Gerador de Itens</a></li>
+          <li><a href="/src/pages/RPG Site/html/login.html">Login</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-        <nav class="menu">
-          <ul>
-            <li>
-              <a href="/src/pages/RPG Site/html/cadastro.html">Cadastre-se</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/combat.html">Combate</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/ficha.html">Ficha de Personagem</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/gerador_item.html">Gerador de Itens</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/login.html">Login</a>
-            </li>
-          </ul>
-        </nav>
     </header>
     <main>
-      <h1>Eventos</h1>
+      <h1>Academias</h1>
       <div id="b1">
-        <iframe class="patch" src="https://docs.google.com/document/d/e/2PACX-1vQcfgFr0o4JPrkkYJq2MPVSo2loiXe5siE9RMOCjXlVgCd7E0D58AKeiWQ0Zo4oFEFpi2iu66b2UQQV/pub?embedded=true"></iframe>
+        <iframe
+          class="patch"
+          src="https://docs.google.com/document/d/1KeiSNHl_8Poe3Vn-1s5PnlSZJA3BM8AFkWVhOTUJxzw/edit?tab=t.0#heading=h.6lx6xabqg6bz"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
       </div>
     </main>
     <footer>
       <p>&copy; 2024 Todos os direitos reservados.</p>
     </footer>
+    <script>
+      // Script para alternar o menu em dispositivos móveis
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('.menu');
+
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+    </script>
   </body>
 </html>
