@@ -150,6 +150,7 @@
 
       /* Layout principal */
       .container {
+        margin-top: 6%;
         display: flex;
         flex-wrap: wrap;
         gap: 20px;

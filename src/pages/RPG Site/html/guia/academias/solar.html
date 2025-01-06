@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
+  <title>Academia Solar</title>
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('/src/pages/RPG Site/imgs/elementais/solar.jpg');
+  background-size: cover; /* Faz a imagem cobrir toda a tela */
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  background-attachment: fixed; /* Faz a imagem rolar lentamente */
+  background-position: center; /* Centraliza a imagem */
+  margin: 0; /* Remove margens para ocupar toda a página */
+  line-height: 1.6;
+  color: #333;
+}
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #ffffffcb;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #ff6600;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      border: 2px solid transparent; /* Inicializa a borda como transparente */
+      transition: border 0.3s ease-in-out; /* Animação suave para a borda */
+      margin: 10px 0;
+      padding: 10px 20px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    li:hover {
+      transform: translateX(10px);
+      animation: fireAround 1s ease-in-out;
+      border: 5px solid #ff6600;
+    }
+
+    @keyframes fireAround {
+  0% {
+    box-shadow: 0 0 5px 2px rgba(255, 69, 0, 0.4), 
+                0 0 10px 5px rgba(255, 140, 0, 0.3), 
+                0 0 15px 7px rgba(255, 69, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 15px 7px rgba(255, 69, 0, 0.4), 
+                0 0 20px 10px rgba(255, 140, 0, 0.3), 
+                0 0 25px 12px rgba(255, 69, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 5px 2px rgba(255, 69, 0, 0), 
+                0 0 10px 5px rgba(255, 140, 0, 0), 
+                0 0 15px 7px rgba(255, 69, 0, 0);
+  }
+}
+
+
+    .rank {
+      margin-top: 30px;
+      padding: 20px;
+      border-left: 5px solid #ff6600;
+      background: #f9f9fc;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+    .rank h2 {
+      margin-top: 0;
+      color: #ff6600;
+      font-size: 2rem;
+      text-transform: uppercase;
+      border-bottom: 2px solid #ff6600;
+      padding-bottom: 5px;
+    }
+    .rank-v {
+      background: #fff7e6;
+      border-left: 5px solid #ff4d4d;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    .section {
+      margin-top: 15px;
+    }
+    .section h3 {
+      color: #333;
+      font-size: 1.2rem;
+      border-bottom: 2px solid #eaeaea;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+    }
+    .talents, .abilities {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .talents li, .abilities li {
+      margin-bottom: 15px;
+      padding: 15px;
+      background: #f1f8ff;
+      border: 1px solid #d0e7ff;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      color: #333;
+    }
+    .rank-v .talents li, .rank-v .abilities li {
+      background: #ffe0e0;
+      border-color: #ff4d4d;
+    }
+    .rank-v .section h3 {
+      color: #ff4d4d;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Academia Solar</h1>
+    
+    <div class="rank">
+      <h2>RANK I</h2>
+      <div class="section">
+        <h3>Talentos</h3>
+        <ul class="talents">
+          <li><strong>🔥Queimando:</strong> Usar habilidades de fogo contra um inimigo aplica um efeito queimando por 3 rodadas. Queimando tem 3 estágios. Consome 2/4/8% da vida máxima do alvo por rodada. Os estágios aumentam quando o alvo queimando recebe dano de fogo. Habilidades de água removem queimando.</li>
+          <li><strong>🔥Melting:</strong> Se uma arma com Solar Enchant atacar um alvo com armadura de metal ou defender um golpe de uma arma de metal, a arma ou armadura do oponente tem chance de 10% de ser derretida.</li>
+          <li><strong>🔥Fire Resistance:</strong> Aumenta a resistência ao dano de fogo. Resiste 50% do dano recebido. Pode acumular com outras resistências.</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>Habilidades</h3>
+        <ul class="abilities">
+          <li><strong>🔥Solar Spark:</strong> Invoca o poder do sol para conjurar uma labareda solar contra o alvo causando (mod.INT)d12+arcanismo como dano de fogo. Consome 6+(Nível/2) de MP. Conjuração de 3 turnos.</li>
+          <li><strong>🔥Erupção:</strong> Invoca o poder do sol para criar uma mini erupção abaixo do alvo, causando (mod.INT)d12+arcanismo como dano de fogo por rodada enquanto ele estiver na área de efeito. A erupção causa aumento de temperatura e dura 1d6 rodadas. Consome 4+(Nível/2) de MP. Conjuração de 5 turnos.</li>
+          <li><strong>🔥Solar Enchant:</strong> Invoca o poder do sol para encantar a arma com poder solar. A arma terá um adicional de (mod.INT)d6+arcanismo do conjurador como dano adicional toda vez que desferir um ataque. O efeito dura 14+arcanismo ataques. Conjuração instantânea. Consome 3+(Nível/2) de MP.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rank">
+      <h2>RANK II</h2>
+      <div class="section">
+        <h3>Talentos</h3>
+        <ul class="talents">
+          <li><strong>🔥Solar Heat:</strong> Aumenta a temperatura em 3°C cada vez que conjurar uma habilidade solar. Ao atingir 50°C, reduz a eficácia de habilidades de água e natureza em 50%. Ao atingir 100°C, os inimigos perderão 4% da vida máxima por rodada. Aliados perdem metade, a menos que tenham proteção. Críticos triplicam o ganho de temperatura.</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>Habilidades</h3>
+        <ul class="abilities">
+          <li><strong>🔥Solar Flare:</strong> Invoca o poder do sol para conjurar uma labareda solar que atinge o alvo e inimigos ao redor, causando (mod.INT)d12+arcanismo como dano de fogo em uma área de 12m². Consome 12+(Nível/2) de MP. Conjuração de 1 rodada.</li>
+          <li><strong>🔥Solar Ray:</strong> Invoca o poder do sol para conjurar um raio solar horizontal contra o alvo, podendo atingir até 2 alvos, um após o outro. Causa (mod.INT)d16+arcanismo como dano de fogo. Consome 8+(Nível/2) de MP. Conjuração de 6 turnos.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rank">
+      <h2>RANK III</h2>
+      <div class="section">
+        <h3>Talentos</h3>
+        <ul class="talents">
+          <li><strong>🔥Fire Heal:</strong> Receber dano de fogo enquanto estiver na forma de Fire Avatar cura sua vida no valor do dano causado.</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>Habilidades</h3>
+        <ul class="abilities">
+          <li><strong>🔥Fire Avatar:</strong> Imbue-se com o poder do fogo. Seu corpo se torna coberto por chamas. Habilidades de fogo podem ser conjuradas sem custo e com conjuração reduzida em 80%. Dano de fogo é aumentado em 50%. A forma de avatar consome sua vida máxima por rodada e é desativada quando você chega a 5% de vida ou menos. Consome 10% da vida máxima por rodada. Seu elemento passa a ser fogo. Suas armas recebem o Fire Enchant enquanto durar a forma. Inimigos recebem 5(+1 por mod.INT)% de suas vida máxima como dano de fogo sempre que atacarem você.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rank">
+      <h2>RANK IV</h2>
+      <div class="section">
+        <h3>Talentos</h3>
+        <ul class="talents">
+          <li><strong>🔥Fastly Fire:</strong> Quando estiver em um Field Effect de fogo/solar, suas conjurações solares são reduzidas em 2 rodadas. O dano solar/fogo é aumentado em 20% enquanto estiver no Field Effect respectivo.</li>
+          <li><strong>🔥Flying Avatar:</strong> Sua forma de Fire Avatar ganha a possibilidade de voar a uma altura igual a (Mod.INT)xMovimento+8.</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>Habilidades</h3>
+        <ul class="abilities">
+          <li><strong>🔥Meteoro:</strong> Invoca o poder solar para lançar um meteoro no campo de batalha. Os inimigos atingidos recebem (3xmod.INT)d20 como dano solar e a área de impacto será destruída (remove Combo Field). Aplica Combo Field. Conjuração de 8 rodadas. Consome 60 MP.</li>
+          <li><strong>🔥Combo Field - Burning Lands:</strong> A área do combate aplica queimando e reseta o contador quando ele chega ao final. Dura 1d6+mod.INT rodadas. Os ticks de queimando causam dano crítico.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -145,17 +145,25 @@
 
 /* Estilo do Iframe */
 #b1 {
-        display: flex;
-        justify-content: center;
-        margin-top: 50px;
-      }
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
 
-      .patch {
-        width: 90%;
-        height: 900px;
-        border-radius: 15px;
-        box-shadow: 0 0 20px rgba(0, 255, 179, 0.2);
-      }
+.patch {
+  width: 90%;
+  height: 900px;
+  border-radius: 15px;
+  border: 2px solid #007bff; /* Borda com cor principal */
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3); /* Sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse no iframe */
+.patch:hover {
+  transform: scale(1.01); /* Leve aumento para destacar */
+  box-shadow: 0 6px 30px rgba(0, 123, 255, 0.5); /* Sombra mais intensa */
+}
 
       footer {
         text-align: center;

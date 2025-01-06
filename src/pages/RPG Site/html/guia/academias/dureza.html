@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
+    <title>Academia da Dureza - Elemento Terra</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif; /* Fonte serifada mais sofisticada */
+            background-color: #d7c7a0; /* Cor de pedra com tom sofisticado */
+            color: #4f3b2f; /* Cor de texto marrom escuro elegante */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #f3efe1; /* Fundo arenoso claro */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            border: 2px solid #8f7b5e; /* Borda de tom mais escuro */
+        }
+        .rank {
+            background-color: #8f7b5e; /* Cor de pedra mais escura */
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        section h3 {
+            background-color: #d6b68b; /* Cor suave de pedra dourada */
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        section ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+        section li {
+            background-color: #f1e0c6; /* Tom suave de areia */
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease-in-out;
+        }
+        section li:hover {
+            transform: translateX(10px);
+        }
+        .ability-name, .talent-name {
+            font-weight: bold;
+            color: #7a5a3b; /* Cor escura com leve toque dourado */
+        }
+        .ability-name {
+            font-size: 1.1em;
+        }
+        .talent-name {
+            font-size: 1.1em;
+        }
+        .container section {
+            margin-bottom: 40px;
+        }
+        footer {
+            background-color: #7b5e3c;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1rem;
+            box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <a href="/src/pages/RPG Site/html/index.html">
+            <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo" />
+          </a>
+        </div>
+        <nav class="menu">
+          <ul>
+            <li>
+              <a href="/src/pages/RPG Site/html/cadastro.html">Cadastre-se</a>
+            </li>
+            <li>
+              <a href="/src/pages/RPG Site/html/combat.html">Combate</a>
+            </li>
+            <li>
+              <a href="/src/pages/RPG Site/html/ficha.html">Ficha de Personagem</a>
+            </li>
+            <li>
+              <a href="/src/pages/RPG Site/html/gerador_item.html">Gerador de Itens</a>
+            </li>
+            <li>
+              <a href="/src/pages/RPG Site/html/login.html">Login</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    <div class="container">
+        <section class="rank">
+            <h2>RANK I</h2>
+        </section>
+        <section class="section talents">
+            <h3>Talentos</h3>
+            <ul>
+                <li><span class="talent-name">Camada de Rocha</span>: O corpo daqueles que manipulam magia de terra/pedra é coberto por uma camada de pequenos grãos de rocha. A vida da camada é igual a 15 + (mod.CON)% da vida máxima. A camada é restituída a cada nova batalha.</li>
+                <li><span class="talent-name">Sismologia</span>: Você pode sentir todos que estão próximos em um raio de 20m. Inimigos furtivos não podem se esconder de você enquanto estiverem em movimento com os pés no chão.</li>
+                <li><span class="talent-name">Constituição Terraformada</span>: Aumenta sua vida máxima em 5 + 15% da vida total a cada 3 níveis começando no nível 3.</li>
+            </ul>
+        </section>
+        <section class="section abilities">
+            <h3>Habilidades</h3>
+            <ul>
+                <li><span class="ability-name">Armadura de Rocha</span>: Invoca o poder da terra para criar uma armadura feita de rocha. Adiciona 1 + mod.CON em CA e dobra o efeito de Camada de Rocha. Consome 3 + (Nível/2) de MP. Conjuração de 3 turnos.</li>
+                <li><span class="ability-name">Estalagmite</span>: Invoca estalagmites que causam (mod.CON)d4 + arcanismo de dano de terra. Consome 4 + (Nível/2) de MP. Conjuração de 2 turnos.</li>
+                <li><span class="ability-name">Pedregulho</span>: Conjura um pedregulho contra o alvo causando (mod.CON)d4 + arcanismo. Pode atordoar por 1d3 rodadas. Consome 2 + (Nível/2) de MP. Conjuração instantânea.</li>
+            </ul>
+        </section>
+
+        <section class="rank">
+            <h2>RANK II</h2>
+        </section>
+        <section class="section talents">
+            <h3>Talentos</h3>
+            <ul>
+                <li><span class="talent-name">Golem Provocante</span>: O golem provoca os atacantes, forçando-os a rolar um dado de resistência de sabedoria com dificuldade de 10 + mod.CON do conjurador.</li>
+                <li><span class="talent-name">Espinhos Rochosos</span>: Enquanto a Armadura Rochosa estiver ativa, parte do dano corpo-a-corpo é retornado ao atacante.</li>
+                <li><span class="talent-name">Critical Spikes</span>: Ao causar dano crítico com ataques não mágicos, estacas de pedra surgem ao redor de você. Causa (mod.CON/4)% da vida máxima do conjurador como dano.</li>
+            </ul>
+        </section>
+        <section class="section abilities">
+            <h3>Habilidades</h3>
+            <ul>
+                <li><span class="ability-name">Stone Golem</span>: Invoca um golem de pedra com (130 + 2 * mod.CON)% da vida máxima do conjurador. Consome 15 + (Nível) de MP. Conjuração de 3 turnos.</li>
+                <li><span class="ability-name">Edificação Rochosa</span>: Cria um pilar de pedra levantando o alvo a uma altura de 12 + (3 * mod.CON) metros. Consome 8 + (Nível/2) de MP. Conjuração de 5 turnos.</li>
+            </ul>
+        </section>
+
+        <section class="rank">
+            <h2>RANK III</h2>
+        </section>
+        <section class="section talents">
+            <h3>Talentos</h3>
+            <ul>
+                <li><span class="talent-name">Coração da Terra</span>: As criaturas criadas por você recebem um coração e podem sentir emoções. Podem ser direcionadas para sentimentos específicos.</li>
+                <li><span class="talent-name">Coração da Terra - Aprendizado</span>: Você pode ensinar um treinamento que você já tenha conhecimento para suas criações.</li>
+            </ul>
+        </section>
+        <section class="section abilities">
+            <h3>Habilidades</h3>
+            <ul>
+                <li><span class="ability-name">Terra Viva</span>: Cria uma criatura de terra e argila com vida equivalente a 80% da sua vida máxima. Incubação de 10 dias. Consome 50% da mana máxima.</li>
+            </ul>
+        </section>
+
+        <section class="rank">
+            <h2>RANK IV</h2>
+        </section>
+        <section class="section talents">
+            <h3>Talentos</h3>
+            <ul>
+                <li><span class="talent-name">Epicentro</span>: Inimigos próximos ao epicentro do terremoto terão chance de serem derrubados e recebem o dobro de dano de abalos sísmicos.</li>
+            </ul>
+        </section>
+        <section class="section abilities">
+            <h3>Habilidades</h3>
+            <ul>
+                <li><span class="ability-name">Terremoto</span>: Invoca abalos sísmicos por 10 rodadas, aumentando o dano a cada rodada. Consome 10% da mana máxima por rodada.</li>
+            </ul>
+        </section>
+    </div>
+    <footer>
+        Academia da Dureza &copy; 2025
+    </footer>
+</body>
+</html>

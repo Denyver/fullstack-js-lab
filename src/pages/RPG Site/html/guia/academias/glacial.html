@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academia Glacial</title>
+  <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0f7fa;
+      margin: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #01579b;
+    }
+
+    .rank {
+      margin-top: 20px;
+      padding: 15px;
+      border-left: 5px solid #00bcd4;
+      background: #e0f7fa;
+      border-radius: 5px;
+    }
+
+    .rank h2 {
+      margin-top: 0;
+      color: #01579b;
+    }
+
+    .section {
+      margin-top: 10px;
+    }
+
+    .section h3 {
+      color: #333;
+      border-bottom: 2px solid #eaeaea;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+    }
+
+    .talents, .abilities {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .talents li, .abilities li {
+      margin-bottom: 10px;
+      padding: 10px;
+      background: #b3e5fc;
+      border: 1px solid #80deea;
+      border-radius: 5px;
+    }
+
+    .talents li i, .abilities li i {
+      color: #0288d1;
+      margin-right: 10px;
+    }
+
+    .rank-v {
+      background: #e3f2fd;
+      border-left: 5px solid #0288d1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Academia Glacial</h1>
+    
+    <div class="rank">
+      <h2>RANK I</h2>
+      <div class="section">
+        <h3>Talentos</h3>
+        <ul class="talents">
+          <li><i class="fas fa-snowflake"></i><strong>Armadura Gelada:</strong> Aumenta a CA em 1+(mod.INT/2). Recebe metade do dano de ataques com armas de metal. Reduz 50% o dano de gelo. Se você receber ataques de fogo, sua CA proveniente desse talento é ignorada.</li>
+          <li><i class="fas fa-snowflake"></i><strong>Fragile Armor:</strong> Inimigos congelados têm sua Armadura reduzida em 1+(mod.INT/2). O efeito dura enquanto o inimigo estiver congelado.</li>
+          <li><i class="fas fa-snowflake"></i><strong>Criogenia:</strong> Aumenta o efeito e dano das habilidades de gelo em 30%.</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>Habilidades</h3>
+        <ul class="abilities">
+          <li><i class="fas fa-snowflake"></i><strong>Ice Enchant:</strong> O usuário encanta a arma com gelo. O alvo recebe o dano da arma mais um adicional de (mod.INT)d6+arcanismo como dano de gelo durante 2+(Mod.Int) golpes. Pode aplicar congelamento por 1d4 rodadas, com 25% de chance. Consome 3+(Nível/2) de MP.</li>
+          <li><i class="fas fa-snowflake"></i><strong>Lanças de Gelo:</strong> Invoca o poder do gelo para conjurar 1+mod.INT lanças de gelo no alvo. Causa (mod.INT)d6+arcanismo por cada lança. Consome 6+(Nível/2) de MP.</li>
+          <li><i class="fas fa-snowflake"></i><strong>Criação de Gelo:</strong> Invoca o poder do gelo para conjurar gelo que pode absorver dano de projéteis, entre outras funções criativas. A vida da criação é (1+mod.INT) x vida do conjurador. Consome 5+(Nível/2) de MP.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rank">
+      <h2>RANK II</h2>
+      <div class="section">
+        <h3>Talentos</h3>
+        <ul class="talents">
+          <li><i class="fas fa-snowflake"></i><strong>Batizado:</strong> Permite adicionar efeitos a bebidas com um teste de prestidigitação. Possíveis efeitos: 
+            <ul>
+              <li><em>Sonolência:</em> Estado de sono profundo.</li>
+              <li><em>Agitado:</em> +5 nas iniciativas.</li>
+              <li><em>Envenenado:</em> Perde (Mod.CAR)d4 + Mod.CAR por rodada.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>Habilidades</h3>
+        <ul class="abilities">
+          <li><i class="fas fa-snowflake"></i><strong>Ritmo de Confusão:</strong> Instiga inimigos a atacarem aliados. Teste de sabedoria para resistir. Dura enquanto o ritmo é mantido.</li>
+          <li><i class="fas fa-snowflake"></i><strong>PUB DAY:</strong> Monta um bar temporário por 1 dia, criando bebidas e comidas mágicas. Requer 1 ponto de esforço e itens iniciais.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rank">
+      <h2>RANK III</h2>
+      <div class="section">
+        <h3>Talentos</h3>
+        <ul class="talents">
+          <li><i class="fas fa-snowflake"></i><strong>Alma de Festa:</strong> Recupera (Mod.CAR)d12 pontos de vida em eventos festivos.</li>
+          <li><i class="fas fa-snowflake"></i><strong>Mestre de Cerimônia:</strong> +10% de resistência a dano para aliados em celebrações lideradas por você (duração: 24 horas).</li>
+          <li><i class="fas fa-snowflake"></i><strong>Fogos de Artifício:</strong> Utiliza efeitos visuais com chance de cegueira [(Mod.CARx3) + Nível].</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>Habilidades</h3>
+        <ul class="abilities">
+          <li><i class="fas fa-snowflake"></i><strong>Dança da Calmaria:</strong> Regenera (Mod.CAR)d16 + Medicina e cura aliados por 3 rodadas.</li>
+          <li><i class="fas fa-snowflake"></i><strong>Festa da Euforia:</strong> Remove efeitos negativos de aliados, com 30% de chance de devolvê-los aos inimigos.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rank rank-v">
+      <h2>RANK IV - Festa Sem Fim</h2>
+      <div class="section">
+        <h3>Descrição</h3>
+        <p>Cria uma festa mágica por 24 horas com bônus únicos. Requer 1 ponto de esforço e 1 hora de preparação.</p>
+      </div>
+      <div class="section">
+        <h3>Benefícios</h3>
+        <ul class="abilities">
+          <li><i class="fas fa-snowflake"></i> Recuperação total de vida e condições negativas a cada hora.</li>
+          <li><i class="fas fa-snowflake"></i> Imunidade a dano por 1 rodada, seguida de cura (Mod.CAR)d20.</li>
+          <li><i class="fas fa-snowflake"></i> Vantagem em ataques, testes de resistência e habilidades.</li>
+          <li><i class="fas fa-snowflake"></i> +10 em todos os testes de Carisma.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

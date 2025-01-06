@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
+  <title>Academia do Trovão</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #007bff;
+    }
+    .rank {
+      margin-top: 20px;
+      padding: 15px;
+      border-left: 5px solid #007bff;
+      background: #f9f9fc;
+      border-radius: 5px;
+    }
+    .rank h2 {
+      margin-top: 0;
+      color: #0056b3;
+    }
+    .section {
+      margin-top: 10px;
+    }
+    .section h3 {
+      color: #333;
+      border-bottom: 2px solid #eaeaea;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+    }
+    .talents, .abilities {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .talents li, .abilities li {
+      margin-bottom: 10px;
+      padding: 10px;
+      background: #f0f8ff;
+      border: 1px solid #dceefb;
+      border-radius: 5px;
+    }
+    .rank-v {
+      background: #ffe8e8;
+      border-left: 5px solid #ff4d4d;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Academia do Trovão</h1>
+    
+    <div class="rank">
+      <h2>RANK I</h2>
+      <div class="section">
+        <h3>Talentos</h3>
+        <ul class="talents">
+          <li><strong>Condutor:</strong> Utilizar habilidades de trovão marca alvos com um símbolo condutor. Dano de trovão desencadeia reações elétricas causando dano em cadeia.</li>
+          <li><strong>Zapping:</strong> Alvos danificados têm 25% de chance de serem interrompidos na rodada atual.</li>
+          <li><strong>Thunder Skin:</strong> Aumenta a resistência a trovão em 40% e reduz a resistência a fogo em 40%.</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>Habilidades</h3>
+        <ul class="abilities">
+          <li><strong>Thunderbolt:</strong> Concentra energia e causa dano de trovão (mod.INT)d12+arcanismo. Aplica Condutor. Alcance 25m.</li>
+          <li><strong>Relâmpago:</strong> Conjura um raio causando dano de trovão e metade do dano em alvos próximos. Alcance 30m.</li>
+          <li><strong>Thunder Enchant:</strong> Encanta arma/armadura com dano elétrico adicional. Dura 1d4+mod.INT ataques.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rank">
+      <h2>RANK II</h2>
+      <div class="section">
+        <h3>Talentos</h3>
+        <ul class="talents">
+          <li><strong>Explosão de Eletricidade:</strong> Dano de Condutor é dobrado em críticos.</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>Habilidades</h3>
+        <ul class="abilities">
+          <li><strong>Thunder Strike:</strong> Concentra energia de trovão na arma, causando dano adicional no próximo ataque.</li>
+          <li><strong>Corrente Elétrica:</strong> Causa dano a alvos próximos com efeito Condutor.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rank">
+      <h2>RANK III</h2>
+      <div class="section">
+        <h3>Talentos</h3>
+        <ul class="talents">
+          <li><strong>Jump Bolt:</strong> Movimenta-se até alvos com Condutor, causando dano e ataques surpresos.</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>Habilidades</h3>
+        <ul class="abilities">
+          <li><strong>Para Thunder:</strong> Invoca trovões por 1d4 rodadas, causando dano massivo em área.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rank">
+      <h2>RANK IV</h2>
+      <div class="section">
+        <h3>Talentos</h3>
+        <ul class="talents">
+          <li><strong>Free Thunder:</strong> Raios aleatórios atingem alvos, com chance de Hyper Volt.</li>
+          <li><strong>Hyper Volt:</strong> Causa 600% do dano como dano de trovão.</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>Habilidades</h3>
+        <ul class="abilities">
+          <li><strong>Thunder Storm:</strong> Conjura tempestade causando dano massivo por rodadas.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rank rank-v">
+      <h2>RANK V - Arconte do Trovão</h2>
+      <div class="section">
+        <h3>Descrição</h3>
+        <p>O usuário torna-se a máxima autoridade em poderes de trovão, utilizando Energia Elemental (EM) para habilidades únicas.</p>
+      </div>
+      <div class="section">
+        <h3>Habilidades</h3>
+        <ul class="abilities">
+          <li><strong>Passo do Trovão:</strong> Movimenta-se livremente causando dano de trovão ao se aproximar de inimigos.</li>
+          <li><strong>Esfera Eletro Destrutiva:</strong> Cria esfera que explode após 10 rodadas, causando dano massivo.</li>
+          <li><strong>God's Speed:</strong> Aumenta drasticamente a velocidade, permitindo 3 ações completas por rodada.</li>
+          <li><strong>Entidade Trovejante:</strong> Invoca entidade poderosa que causa dano massivo em área antes de desaparecer.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

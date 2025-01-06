@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
+    <title>Academia da Natureza</title>
+    <style>
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eaf0e2; /* Tom claro de verde, inspirado na natureza */
+    color: #3d3d3d; /* Cor neutra para leitura */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #fff; /* Branco suave */
+    border-radius: 15px; /* Bordas arredondadas mais naturais */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-image: url('https://www.transparenttextures.com/patterns/leaf-pattern.png'); /* Sutil textura de folha */
+}
+
+h1, h2, h3 {
+    color: #4b9c4f; /* Verde com um toque de frescor */
+    font-family: 'Georgia', serif; /* Fonte serifada para um toque mais natural */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Suave sombra para dar destaque */
+}
+
+.rank {
+    margin-bottom: 25px;
+}
+
+.rank h2 {
+    border-bottom: 3px solid #4b9c4f; /* Verde mais suave para criar conexão com a natureza */
+    padding-bottom: 10px;
+    font-size: 1.8em; /* Tamanho maior para destaque */
+}
+
+.talents, .abilities {
+    margin-top: 20px;
+    padding-left: 20px;
+    background-color: #f3f7f3; /* Fundo suave para separar as seções */
+    border-radius: 8px;
+}
+
+.talents ul, .abilities ul {
+    list-style-type: none; /* Remover os pontos padrões */
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.talents ul li, .abilities ul li {
+    margin-bottom: 15px;
+    font-size: 1.1em; /* Aumentar um pouco o tamanho da fonte */
+    line-height: 1.6; /* Aumentar o espaçamento entre linhas */
+    color: #4b9c4f;
+}
+
+.talents ul li::before, .abilities ul li::before {
+    content: "🌿 "; /* Emoji de folha para criar um toque de natureza */
+    font-size: 1.2em;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #8bcb6e; /* Verde claro mais vibrante */
+    background-color: #f0f4e3; /* Fundo suave para destacar */
+    border-radius: 5px; /* Bordas arredondadas para um visual mais orgânico */
+}
+
+.rank-v {
+    background-color: #d0e8d8; /* Verde claro suave para um destaque sutil */
+    color: #2a7a2a; /* Cor verde escuro para o texto */
+    border: 2px solid #4b9c4f; /* Borda fina em verde mais escuro */
+    border-radius: 8px; /* Bordas arredondadas para suavizar */
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.rank-v h2 {
+    font-size: 1.6em; /* Tamanho maior do que os outros ranks, mas sem exagero */
+    font-weight: bold; /* Enfatiza o título */
+    color: #4b9c4f; /* Verde mais escuro para o título */
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Academia da Natureza</h1>
+        <p><span class="highlight">Modificador de Natureza</span> &rarr; mod.SAB.</p>
+
+        <div class="rank">
+            <h2>RANK I</h2>
+
+            <div class="talents">
+                <h3>Talentos</h3>
+                <ul>
+                    <li><strong>Crescimento Acelerado:</strong> magias da natureza permitem criação da vida. Para isso, ela acelera a germinação de plantas e criaturas provenientes de sementes. Reduz à metade o tempo de germinação das sementes.</li>
+                    <li><strong>Favor da Natureza:</strong> se o ambiente em que você se encontra for favorável para a conjuração de suas magias você reduzirá o tempo de conjuração dela a metade. Apenas ocorre em ambientes naturais.</li>
+                    <li><strong>Fonte Natural:</strong> você gerará um ponto de mana a cada rodada que você não utilizar mana, caso a sua mana já esteja cheia esses pontos de mana irão se transformar em pontos de mana temporária. Aumenta em 1 ponto adicional a cada 2 níveis.</li>
+                </ul>
+            </div>
+
+            <div class="abilities">
+                <h3>Habilidades</h3>
+                <ul>
+                    <li><strong>Germinar:</strong> invoca magia da natureza para fazer germinar as sementes plantadas no campo de batalha e fora dele. A condição do solo deve estar úmida, a menos que a semente plantada determine o contrário. Consome 4+(Nível/2) de MP.</li>
+                    <li><strong>Chuva:</strong> invoca o poder da natureza para fazer chover no local. Duração 1d12 rodadas. Consome 5+(Nível/2) de MP. Conjuração: 1 rodada.</li>
+                    <li><strong>Relâmpago:</strong> invoca o poder da natureza para fazer cair um relâmpago no alvo desejado. Se estiver chovendo, o relâmpago se espalha causando metade do dano. Causa (mod.SAB)d8+natureza como dano de trovão.</li>
+                    <li><strong>Tempestade:</strong> A cada rodada 1d4+Mod.SAB/2 alvos recebem a reação de Eletrocutar. Tempestade dura metade da chuva.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="rank">
+            <h2>RANK II</h2>
+
+            <div class="talents">
+                <h3>Talentos</h3>
+                <ul>
+                    <li><strong>Chuvas Regeneradoras:</strong> a chuva invocada por você agora cura seus aliados em (mod.SAB)d6+medicina a cada 2 rodadas.</li>
+                    <li><strong>Cipós de Batalha:</strong> sementes germinadas podem ser substituídas por cipós de batalha. Cada cipó tem 1+mod.SAB de HIT VIDA e causa (mod.SAB)d6+natureza como dano de natureza.</li>
+                </ul>
+            </div>
+
+            <div class="abilities">
+                <h3>Habilidades</h3>
+                <ul>
+                    <li><strong>Ventania:</strong> invoca uma ventania que empurra o alvo e causa (mod.SAB)d6+natureza como dano de vento. Consome 5+(Nível/2) de MP.</li>
+                    <li><strong>Tornado:</strong> puxa inimigos para o centro causando 2x(Mod.SAB)d8+natureza como dano de vento.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="rank">
+            <h2>RANK III</h2>
+
+            <div class="talents">
+                <h3>Talentos</h3>
+                <ul>
+                    <li><strong>Chuvas Regeneradoras:</strong> a chuva invocada por você agora cura seus aliados em (mod.SAB)d6+medicina a cada 2 rodadas.</li>
+                    <li><strong>Cipós de Batalha:</strong> sementes germinadas podem ser substituídas por cipós de batalha. Cada cipó tem 1+mod.SAB de HIT VIDA e causa (mod.SAB)d6+natureza como dano de natureza.</li>
+                </ul>
+            </div>
+
+            <div class="abilities">
+                <h3>Habilidades</h3>
+                <ul>
+                    <li><strong>Ventania:</strong> invoca uma ventania que empurra o alvo e causa (mod.SAB)d6+natureza como dano de vento. Consome 5+(Nível/2) de MP.</li>
+                    <li><strong>Tornado:</strong> puxa inimigos para o centro causando 2x(Mod.SAB)d8+natureza como dano de vento.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="rank">
+            <h2>RANK VI</h2>
+
+            <div class="talents">
+                <h3>Talentos</h3>
+                <ul>
+                    <li><strong>Chuvas Regeneradoras:</strong> a chuva invocada por você agora cura seus aliados em (mod.SAB)d6+medicina a cada 2 rodadas.</li>
+                    <li><strong>Cipós de Batalha:</strong> sementes germinadas podem ser substituídas por cipós de batalha. Cada cipó tem 1+mod.SAB de HIT VIDA e causa (mod.SAB)d6+natureza como dano de natureza.</li>
+                </ul>
+            </div>
+
+            <div class="abilities">
+                <h3>Habilidades</h3>
+                <ul>
+                    <li><strong>Ventania:</strong> invoca uma ventania que empurra o alvo e causa (mod.SAB)d6+natureza como dano de vento. Consome 5+(Nível/2) de MP.</li>
+                    <li><strong>Tornado:</strong> puxa inimigos para o centro causando 2x(Mod.SAB)d8+natureza como dano de vento.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="rank-v">
+            <h2>RANK V</h2>
+
+            <div class="talents">
+                <h3>Talentos</h3>
+                <ul>
+                    <li><strong>Chuvas Regeneradoras:</strong> a chuva invocada por você agora cura seus aliados em (mod.SAB)d6+medicina a cada 2 rodadas.</li>
+                    <li><strong>Cipós de Batalha:</strong> sementes germinadas podem ser substituídas por cipós de batalha. Cada cipó tem 1+mod.SAB de HIT VIDA e causa (mod.SAB)d6+natureza como dano de natureza.</li>
+                </ul>
+            </div>
+
+            <div class="abilities">
+                <h3>Habilidades</h3>
+                <ul>
+                    <li><strong>Ventania:</strong> invoca uma ventania que empurra o alvo e causa (mod.SAB)d6+natureza como dano de vento. Consome 5+(Nível/2) de MP.</li>
+                    <li><strong>Tornado:</strong> puxa inimigos para o centro causando 2x(Mod.SAB)d8+natureza como dano de vento.</li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <!-- Continue adicionando os RANKS seguintes da mesma maneira -->
+    </div>
+</body>
+</html>
