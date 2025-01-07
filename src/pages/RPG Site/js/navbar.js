@@ -14,3 +14,4 @@
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Evita valores negativos
   });
+  
