@@ -1,91 +1,217 @@
-  /* Cabeçalho Moderno */
-  header {
-    position: fixed; /* Fixa o cabeçalho no topo */
-    top: 0; /* Posiciona o cabeçalho no topo da página */
-    left: 50%; /* Centraliza o cabeçalho horizontalmente */
-    transform: translateX(-50%); /* Ajusta o deslocamento para centralizar corretamente */
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 30px;
-    background-color: #1a1a1a; /* Fundo escuro para um visual mais elegante */
-    border-radius: 10px; /* Bordas arredondadas para um toque moderno */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para destacar o cabeçalho */
-    width: 90%; /* Garante que o cabeçalho ocupe toda a largura da página */
-    z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
-    margin-top: 10px;
-  }
+header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  z-index: 1000;
+  margin-top: 10px;
+  transition: opacity 0.5s ease-in-out, visibility 0s 0.5s; /* Transição para opacidade e visibilidade */
+}
 
-  header .logo img {
-    max-width: 150px; /* Aumentando um pouco o tamanho da logo */
-    transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
-  }
+/* Estilo para ocultar o cabeçalho completamente */
+header.hidden {
+  opacity: 0; /* Torna o cabeçalho transparente */
+  visibility: hidden; /* Torna o cabeçalho invisível e fora da renderização */
+  transition: opacity 0.5s ease-in-out, visibility 0s 0.5s; /* Define o tempo de transição de visibilidade */
+}
 
-  header .logo img:hover {
-    transform: scale(1.1); /* Efeito de zoom quando passar o mouse sobre a logo */
-  }
+header .logo img {
+  max-width: 150px;
+  transition: transform 0.3s ease; 
+}
 
-  header .menu ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
+header .logo img:hover {
+  transform: scale(1.1); 
+}
 
-  header .menu ul li {
-    margin: 0 20px; /* Maior espaçamento entre os itens */
-  }
+header .menu ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
 
-  header .menu ul li a {
-    text-decoration: none;
-    color: #fff; /* Texto branco para contraste */
-    font-weight: 600; /* Font-weight mais leve para um estilo moderno */
-    font-size: 16px; /* Aumentando um pouco o tamanho da fonte */
-    letter-spacing: 1px; /* Espaçamento entre as letras para dar uma sensação de sofisticação */
-    position: relative;
-    transition: color 0.3s ease, transform 0.3s ease; /* Transições suaves para hover */
-  }
+header .menu ul li {
+  margin: 0 20px;
+}
 
-  header .menu ul li a::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
+header .menu ul li a {
+  text-decoration: none;
+  color: #fff; 
+  font-weight: 600; 
+  font-size: 16px; 
+  letter-spacing: 1px; 
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+header .menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+header .menu ul li a:hover {
+  color: #007bff; 
+}
+
+header .menu ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.menu-toggle {
+  display: none; /* Ocultar o botão por padrão em telas grandes */
+  font-size: 30px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute; /* Posicionamento à direita */
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%); /* Centraliza verticalmente */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo do botão Voltar */
+.voltar-btn-container {
+  margin-left: 30px;
+}
+
+.voltar-btn {
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transição melhorada */
+}
+
+.voltar-btn:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05); /* Efeito de aumentar um pouco o tamanho no hover */
+}
+
+@keyframes dropDown {
+  0% {
+    transform: translateY(-50%) scale(0); /* Inicialmente invisível e pequeno */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1); /* Desce para sua posição normal */
+    opacity: 1; /* Fica totalmente visível */
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Itens começam deslocados para baixo */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Itens se movem para a posição final */
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Começa acima */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Desce para a posição normal */
+  }
+}
+
+@keyframes slideDownButton {
+  0% {
+    transform: translateY(-50%); /* Inicia acima */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* Desce para sua posição final */
+    opacity: 1;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none; /* Oculta o menu por padrão em telas pequenas */
+    flex-direction: column;
     width: 100%;
-    height: 2px;
-    background-color: #007bff; /* Linha de destaque abaixo do link */
-    transform: scaleX(0);
-    transform-origin: bottom right;
+    padding: 10px;
+  }
+
+  .menu.active {
+    display: flex;
+    animation: slideDown 0.5s ease-out forwards;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
     transition: transform 0.3s ease;
   }
 
-  header .menu ul li a:hover {
-    color: #007bff; /* Cor de destaque ao passar o mouse */
+  .menu-toggle.rotate {
+    transform: rotate(180deg); /* Rotaciona o triângulo para baixo */
   }
 
-  header .menu ul li a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+  .menu-toggle.active {
+    animation: slideDownButton 1s ease-out forwards; /* Animação de descida */
   }
 
-  /* Estilo do botão Voltar */
+  header {
+    text-align: center;
+    flex-direction: column; /* Coloca os itens em coluna em telas menores */
+    padding: 15px 20px; /* Reduz o padding para telas pequenas */
+    width: 90%; /* Ocupa toda a largura da tela */
+    top: 10px; /* Ajuste de distância do topo */
+    margin-top: 0;
+    border-radius: 20px;
+  }
+
+  header .logo img {
+    max-width: 120px; /* Reduz o tamanho da logo em telas menores */
+  }
+
+  header .menu ul {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  header .menu ul li {
+    margin: 10px 0;
+  }
+
+
   .voltar-btn-container {
-    margin-left: 30px;
+    margin-left: 0; /* Remove margem esquerda para botão */
+    margin-top: 10px;
   }
+}
 
-  .voltar-btn {
-    padding: 10px 20px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-
-  .voltar-btn:hover {
-    background-color: #d32f2f;
-  }

@@ -1,154 +1,14 @@
-      /* Estilo geral */
       body {
-        margin-top: 5px; /* Remove margens */
+        margin-top: 5px;
         font-family: "Roboto", sans-serif;
         background: linear-gradient(135deg, #eaeaea, #444444);
         color: #333;
         padding: 0;
-        height: 100%; /* Garante que o background ocupe toda a altura da tela */
+        height: 100%; 
         display: flex;
         flex-direction: column;
       }
 
-      /* Cabeçalho Moderno */
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 30px;
-        background-color: #1a1a1a; /* Fundo escuro para um visual mais elegante */
-        border-radius: 10px; /* Bordas arredondadas para um toque moderno */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para destacar o cabeçalho */
-      }
-
-      header .logo img {
-        max-width: 150px; /* Aumentando um pouco o tamanho da logo */
-        transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
-      }
-
-      header .logo img:hover {
-        transform: scale(
-          1.1
-        ); /* Efeito de zoom quando passar o mouse sobre a logo */
-      }
-
-      header .menu ul {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        padding: 0;
-      }
-
-      header .menu ul li {
-        margin: 0 20px; /* Maior espaçamento entre os itens */
-      }
-
-      header .menu ul li a {
-        text-decoration: none;
-        color: #fff; /* Texto branco para contraste */
-        font-weight: 600; /* Font-weight mais leve para um estilo moderno */
-        font-size: 16px; /* Aumentando um pouco o tamanho da fonte */
-        letter-spacing: 1px; /* Espaçamento entre as letras para dar uma sensação de sofisticação */
-        position: relative;
-        transition: color 0.3s ease, transform 0.3s ease; /* Transições suaves para hover */
-      }
-
-      header .menu ul li a::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #007bff; /* Linha de destaque abaixo do link */
-        transform: scaleX(0);
-        transform-origin: bottom right;
-        transition: transform 0.3s ease;
-      }
-
-      header .menu ul li a:hover {
-        color: #007bff; /* Cor de destaque ao passar o mouse */
-      }
-
-      header .menu ul li a:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
-
-      /* Menu Hamburguer para dispositivos móveis */
-      .menu-toggle {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        z-index: 999; /* Garantir que o menu hambúrguer fique acima dos outros elementos */
-      }
-
-      .menu-toggle span {
-        background-color: #fff;
-        height: 3px;
-        width: 25px;
-        margin: 4px 0;
-        border-radius: 2px;
-      }
-
-      /* Responsividade para telas pequenas */
-      @media (max-width: 768px) {
-        header {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .menu {
-          width: 100%;
-          display: none; /* Inicialmente escondido */
-          flex-direction: column;
-          align-items: flex-start;
-          padding-top: 15px;
-        }
-
-        .menu.active {
-          display: flex; /* Mostrar o menu ao clicar no ícone do hambúrguer */
-        }
-
-        header .menu ul {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          width: 100%;
-        }
-
-        header .menu ul li {
-          margin: 10px 0; /* Ajustar o espaçamento entre os itens no mobile */
-        }
-
-        header .menu ul li a {
-          font-size: 18px;
-          padding: 10px;
-          width: 100%;
-          text-align: left; /* Alinhar os links à esquerda */
-        }
-
-        .menu-toggle {
-          display: flex; /* Mostrar o ícone de menu hambúrguer */
-        }
-      }
-
-      /* Responsividade para telas muito pequenas (como smartphones em modo retrato) */
-      @media (max-width: 480px) {
-        header {
-          padding: 15px 20px;
-        }
-
-        header .logo img {
-          max-width: 120px; /* Ajustar o tamanho da logo para telas muito pequenas */
-        }
-
-        header .menu ul li a {
-          font-size: 16px; /* Ajustar o tamanho da fonte para telas menores */
-        }
-      }
-
-      /* Layout principal */
       .container {
         margin-top: 6%;
         display: flex;
@@ -159,79 +19,84 @@
       }
 
       .section {
-        background-color: #f4f4f4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; 
+        background-color: #1e1e1e; 
         border-radius: 15px;
         padding: 20px;
         width: 30%;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         transition: transform 0.3s ease-in-out;
+        color: #ffffff; 
+        margin: 20px auto; 
       }
 
-      .section:hover {
-        transform: scale(1.05);
+      @media (max-width: 768px) {
+        .section {
+          width: 90%; 
+          margin: 10px auto; 
+        }
       }
-
-      /* Cabeçalhos */
-      .section h2 {
+      .container:not(header) .section h2 {
         font-size: 24px;
-        color: #2196f3;
+        color: #4fc3f7;
         text-align: center;
         text-transform: uppercase;
         margin-bottom: 15px;
       }
-
-      /* Estilos de input e botões */
-      input,
-      button {
+      
+      .container:not(header) input,
+      .container:not(header) button {
         width: 100%;
         padding: 12px;
         margin: 10px 0;
         border-radius: 10px;
         font-size: 16px;
-        border: 2px solid #ccc;
-        background-color: #ffffff;
-        color: #333;
+        border: 1px solid #555;
+        background-color: #333;
+        color: #fff;
         transition: all 0.3s ease;
       }
-
-      input:focus,
-      button:focus {
+      
+      .container:not(header) input:focus,
+      .container:not(header) button:focus {
         outline: none;
-        box-shadow: 0 0 10px rgba(33, 150, 243, 0.7);
+        box-shadow: 0 0 10px rgba(79, 195, 247, 0.7);
       }
-
-      button {
-        background-color: #2196f3;
+      
+      .container:not(header) button {
+        background-color: #4fc3f7;
         color: white;
         border: none;
         cursor: pointer;
       }
-
-      button:hover {
+      
+      .container:not(header) button:hover {
         background-color: #1976d2;
         transform: scale(1.05);
       }
 
-      /* Barra de vida */
       #lifebar,
       #max-life,
       #reduce-life {
         width: 100%;
         margin-bottom: 10px;
-        border: 2px solid #ddd;
+        border: 2px solid #555; 
         border-radius: 10px;
         padding: 10px;
-        color: #333;
-        background-color: #f4f4f4;
+        color: #fff; 
+        background-color: #2c2c2c; 
       }
 
       .bar {
         width: 100%;
         height: 20px;
-        background-color: #ccc;
+        background-color: #444; 
         border-radius: 10px;
         margin-top: 5px;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra interna */
       }
 
       .bar .filled {
@@ -242,9 +107,9 @@
       .health-bar {
         width: 100%;
         margin-top: 10px;
+        padding: 5px;
       }
 
-      /* Resultado do dado */
       #dice-result {
         font-size: 18px;
         margin-top: 10px;
@@ -253,7 +118,6 @@
         font-weight: bold;
       }
 
-      /* Timer */
       #timer {
         font-size: 22px;
         font-weight: bold;
@@ -266,7 +130,6 @@
         color: #2196f3;
       }
 
-          /* Rodapé */
     footer {
       margin-top: 80px;
       text-align: center;

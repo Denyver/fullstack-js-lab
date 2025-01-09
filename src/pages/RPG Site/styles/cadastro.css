@@ -1,282 +1,135 @@
 /* Estilo global */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Garantir que a altura da página seja 100% */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #eaeaea, #444444);
+  color: #333;
+  margin: 0;
+}
+
+/* Container principal */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ajuste a altura para ocupar 100% da tela */
+  margin-bottom: 10%;
+}
+
+/* Caixa de cadastro */
+.register-box {
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  width: 100%;
+  max-width: 500px;
+  animation: fadeIn 0.5s ease-in-out;
+  text-align: center;
+  box-sizing: border-box; /* Garantir que o padding não afete o tamanho total */
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #eaeaea, #444444);
-    color: #333;
-    margin-top: 100px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px; /* Ajuste para manter o header responsivo */
-    background-color: #1a1a1a;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    top: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%; /* Usa uma largura relativa para responsividade */
-    max-width: 1000px; /* Limita a largura máxima para telas maiores */
-    z-index: 1000;
-  }
-  
-  
-  body {
-    padding-top: 80px; /* Adicione um espaçamento para evitar que o conteúdo fique oculto atrás do header */
-  }
-  
+}
 
-      header .logo img {
-        max-width: 150px; /* Aumentando um pouco o tamanho da logo */
-        transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
-      }
+/* Cabeçalho */
+.register-box h1 {
+  font-size: 28px;
+  color: #333333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
 
-      header .logo img:hover {
-        transform: scale(
-          1.1
-        ); /* Efeito de zoom quando passar o mouse sobre a logo */
-      }
+/* Grupos de input */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
 
-      header .menu ul {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        padding: 0;
-      }
+.input-group label {
+  display: block;
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 8px;
+}
 
-      header .menu ul li {
-        margin: 0 20px; /* Maior espaçamento entre os itens */
-      }
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
 
-      header .menu ul li a {
-        text-decoration: none;
-        color: #fff; /* Texto branco para contraste */
-        font-weight: 600; /* Font-weight mais leve para um estilo moderno */
-        font-size: 16px; /* Aumentando um pouco o tamanho da fonte */
-        letter-spacing: 1px; /* Espaçamento entre as letras para dar uma sensação de sofisticação */
-        position: relative;
-        transition: color 0.3s ease, transform 0.3s ease; /* Transições suaves para hover */
-      }
+.input-group input:focus {
+  border-color: #1e90ff;
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.5);
+  outline: none;
+}
 
-      header .menu ul li a::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #007bff; /* Linha de destaque abaixo do link */
-        transform: scaleX(0);
-        transform-origin: bottom right;
-        transition: transform 0.3s ease;
-      }
+/* Botão de cadastro */
+.register-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #4caf50, #1e90ff);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-      header .menu ul li a:hover {
-        color: #007bff; /* Cor de destaque ao passar o mouse */
-      }
+.register-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(30, 144, 255, 0.4);
+}
 
-      header .menu ul li a:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
+/* Links e texto */
+.actions p {
+  font-size: 14px;
+  color: #666666;
+  margin-top: 10px;
+}
 
-      /* Menu Hamburguer para dispositivos móveis */
-      .menu-toggle {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        z-index: 999; /* Garantir que o menu hambúrguer fique acima dos outros elementos */
-      }
+.actions a {
+  color: #1e90ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
 
-      .menu-toggle span {
-        background-color: #fff;
-        height: 3px;
-        width: 25px;
-        margin: 4px 0;
-        border-radius: 2px;
-      }
+.actions a:hover {
+  color: #4caf50;
+  text-decoration: underline;
+}
 
-      /* Responsividade para telas pequenas */
-      @media (max-width: 768px) {
-        header {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .menu {
-          width: 100%;
-          display: none; /* Inicialmente escondido */
-          flex-direction: column;
-          align-items: flex-start;
-          padding-top: 15px;
-        }
-
-        .menu.active {
-          display: flex; /* Mostrar o menu ao clicar no ícone do hambúrguer */
-        }
-
-        header .menu ul {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          width: 100%;
-        }
-
-        header .menu ul li {
-          margin: 10px 0; /* Ajustar o espaçamento entre os itens no mobile */
-        }
-
-        header .menu ul li a {
-          font-size: 18px;
-          padding: 10px;
-          width: 100%;
-          text-align: left; /* Alinhar os links à esquerda */
-        }
-
-        .menu-toggle {
-          display: flex; /* Mostrar o ícone de menu hambúrguer */
-        }
-      }
-
-      /* Responsividade para telas muito pequenas (como smartphones em modo retrato) */
-      @media (max-width: 480px) {
-        header {
-          padding: 15px 20px;
-        }
-
-        header .logo img {
-          max-width: 120px; /* Ajustar o tamanho da logo para telas muito pequenas */
-        }
-
-        header .menu ul li a {
-          font-size: 16px; /* Ajustar o tamanho da fonte para telas menores */
-        }
-      }
-  
-  /* Container principal */
-  .register-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 10%;
-  }
-  
-  /* Caixa de cadastro */
+/* Mobile Responsivo */
+@media (max-width: 480px) {
   .register-box {
-    background: #ffffff;
-    border-radius: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    padding: 40px;
-    width: 100%;
-    max-width: 500px;
-    animation: fadeIn 0.5s ease-in-out;
-    text-align: center;
+    padding: 20px;
   }
-  
-  /* Animação de entrada */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Cabeçalho */
-  .register-box h1 {
-    font-size: 28px;
-    color: #333333;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  
-  /* Grupos de input */
-  .input-group {
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  .input-group label {
-    display: block;
-    font-size: 14px;
-    color: #555555;
-    margin-bottom: 8px;
-  }
-  
-  .input-group input {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s, box-shadow 0.3s;
-  }
-  
-  .input-group input:focus {
-    border-color: #1e90ff;
-    box-shadow: 0 0 8px rgba(30, 144, 255, 0.5);
-    outline: none;
-  }
-  
-  /* Botão de cadastro */
+
   .register-btn {
-    width: 100%;
-    background: linear-gradient(90deg, #4caf50, #1e90ff);
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    font-size: 16px;
   }
-  
-  .register-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(30, 144, 255, 0.4);
-  }
-  
-  /* Links e texto */
-  .actions p {
-    font-size: 14px;
-    color: #666666;
-    margin-top: 10px;
-  }
-  
-  .actions a {
-    color: #1e90ff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-  
-  .actions a:hover {
-    color: #4caf50;
-    text-decoration: underline;
-  }
-  
-  /* Mobile Responsivo */
-  @media (max-width: 480px) {
-    .register-box {
-      padding: 20px;
-    }
-  
-    .register-btn {
-      font-size: 16px;
-    }
-  }
-  
+}

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ficha de Personagem</title>
   <link rel="stylesheet" href="/src/pages/RPG Site/styles/ficha.css">
+  <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
   <style>
     
   </style>
@@ -35,12 +36,13 @@
         </li>
       </ul>
     </nav>
+    <button class="menu-toggle" onclick="toggleMenu()">&#9660;</button>
       <!-- Botão Voltar -->
-  <div class="voltar-btn-container">
-    <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
-  </div>
+    <div class="voltar-btn-container">
+      <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+    </div>
   </header>
-  </nav>
+
   <div class="sheet">
 
       <div class="basic-info">
@@ -147,7 +149,7 @@
       </table>
     </section>
   </div>
-</body>
+  <script src="/src/pages/RPG Site/js/navbar.js"></script>
 <script>
   const body = document.body;
   const themeButton = document.getElementById("theme-btn");
@@ -156,4 +158,5 @@
       body.classList.toggle("dark-theme");
   });
   </script>
+</body>
 </html>

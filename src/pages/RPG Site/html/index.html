@@ -136,7 +136,6 @@
         </div>
     </footer>
 
-    <!-- Carregar o script do Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -187,18 +186,6 @@
           disableOnInteraction: false,
         },
       });
-
-      // Mostrar o botão de rolar para o topo
-      window.onscroll = function () {
-        if (
-          document.body.scrollTop > 200 ||
-          document.documentElement.scrollTop > 200
-        ) {
-          document.getElementById("scrollToTopBtn").style.display = "block";
-        } else {
-          document.getElementById("scrollToTopBtn").style.display = "none";
-        }
-      };
     </script>
   </body>
 </html>

@@ -85,8 +85,8 @@ input[type="number"]:focus {
 }
 
 /* Botão */
-button {
-  background: linear-gradient(90deg, #4caf50, #1e90ff);
+#main button {
+  background: linear-gradient(90deg, #4cafaa, #1effb4);
   color: white;
   font-size: 18px;
   font-weight: bold;

@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WOE: Notas de Atualização</title>
-    <link rel="stylesheet" href="/css/patchnotes.css"/>
     <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
     <style>
       /* Estilos Gerais */
@@ -16,148 +15,10 @@
       }
 
       body {
-        font-family: 'Times New Roman', serif;
         background: linear-gradient(135deg, #707070, #1a1a1a);
         color: #f5f5f5;
         margin: 0;
         padding: 20px;
-      }
-
-      /* Header e Footer */
-      header {
-        margin-bottom: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 30px;
-        background-color: #1a1a1a;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
-
-      header .logo img {
-        max-width: 150px;
-        transition: transform 0.3s ease;
-      }
-
-      header .logo img:hover {
-        transform: scale(1.1);
-      }
-
-      header .menu ul {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        padding: 0;
-      }
-
-      header .menu ul li {
-        margin: 0 20px;
-      }
-
-      header .menu ul li a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: 600;
-        font-size: 16px;
-        letter-spacing: 1px;
-        position: relative;
-        transition: color 0.3s ease, transform 0.3s ease;
-      }
-
-      header .menu ul li a::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #007bff;
-        transform: scaleX(0);
-        transform-origin: bottom right;
-        transition: transform 0.3s ease;
-      }
-
-      header .menu ul li a:hover {
-        color: #007bff;
-      }
-
-      header .menu ul li a:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
-
-      /* Menu Hamburguer para dispositivos móveis */
-      .menu-toggle {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        z-index: 999;
-      }
-
-      .menu-toggle span {
-        background-color: #fff;
-        height: 3px;
-        width: 25px;
-        margin: 4px 0;
-        border-radius: 2px;
-      }
-
-      /* Responsividade para telas pequenas */
-      @media (max-width: 768px) {
-        header {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .menu {
-          width: 100%;
-          display: none;
-          flex-direction: column;
-          align-items: flex-start;
-          padding-top: 15px;
-        }
-
-        .menu.active {
-          display: flex;
-        }
-
-        header .menu ul {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          width: 100%;
-        }
-
-        header .menu ul li {
-          margin: 10px 0;
-        }
-
-        header .menu ul li a {
-          font-size: 18px;
-          padding: 10px;
-          width: 100%;
-          text-align: left;
-        }
-
-        .menu-toggle {
-          display: flex;
-        }
-      }
-
-      /* Responsividade para telas muito pequenas */
-      @media (max-width: 480px) {
-        header {
-          padding: 15px 20px;
-        }
-
-        header .logo img {
-          max-width: 120px;
-        }
-
-        header .menu ul li a {
-          font-size: 16px;
-        }
       }
 
       /* Estilo do Iframe */
@@ -217,29 +78,30 @@
           <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo" />
         </a>
       </div>
-        <nav class="menu">
-          <ul>
-            <li>
-              <a href="/src/pages/RPG Site/html/cadastro.html">Cadastre-se</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/combat.html">Combate</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/ficha.html">Ficha de Personagem</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/gerador_item.html">Gerador de Itens</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/login.html">Login</a>
-            </li>
-          </ul>
-        </nav>
-          <!-- Botão Voltar -->
-  <div class="voltar-btn-container">
-    <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
-  </div>
+      <nav class="menu">
+        <ul>
+          <li>
+            <a href="/src/pages/RPG Site/html/cadastro.html">Cadastre-se</a>
+          </li>
+          <li>
+            <a href="/src/pages/RPG Site/html/combat.html">Combate</a>
+          </li>
+          <li>
+            <a href="/src/pages/RPG Site/html/ficha.html">Ficha de Personagem</a>
+          </li>
+          <li>
+            <a href="/src/pages/RPG Site/html/gerador_item.html">Gerador de Itens</a>
+          </li>
+          <li>
+            <a href="/src/pages/RPG Site/html/login.html">Login</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" onclick="toggleMenu()">&#9660;</button>
+        <!-- Botão Voltar -->
+      <div class="voltar-btn-container">
+        <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+      </div>
     </header>
     <main>
       <h1>Eventos</h1>
@@ -250,5 +112,6 @@
     <footer>
       <p>&copy; 2024 Todos os direitos reservados.</p>
     </footer>
+    <script src="/src/pages/RPG Site/js/navbar.js"></script>
   </body>
 </html>
