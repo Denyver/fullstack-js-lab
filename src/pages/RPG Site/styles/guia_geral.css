@@ -63,7 +63,7 @@
     justify-content: space-evenly;
     gap: 40px;
     padding: 20px;
-    flex-wrap: wrap; /* Permite que os itens se ajustem na tela */
+    flex-wrap: wrap; 
   }
   
   main .menu ul {
@@ -115,40 +115,33 @@
     }
   }
   
-  @media (max-width: 768px) {
-    header {
-      padding: 15px;
-    }
-  
-    .category h2 {
-      font-size: 1.5em;
-    }
-  
-    main {
-      flex-direction: column;
-      align-items: center;
-      gap: 30px; /* Ajuste o espaçamento entre as seções */
-      padding: 15px; /* Ajuste o padding para melhor espaçamento */
-    }
-  
-    main .menu ul {
-      display: flex;
-      flex-direction: column;
-      gap: 15px; /* Diminui o espaço entre os itens */
-      width: 100%;
-    }
-  
-    main li {
-      padding: 10px 20px;
-      font-size: 16px; /* Ajusta o tamanho da fonte para dispositivos menores */
-    }
-  
-    footer {
-      padding: 15px;
-    }
-  
-    footer .footer-icons {
-      margin-top: 15px;
-    }
+  main {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px; 
+    padding: 10px; 
+    flex-wrap: wrap; 
+    min-height: 100vh; 
   }
   
+  main .menu ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    width: 100%;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  main li {
+    list-style: none;
+    position: relative;
+    padding: 12px 20px;
+    background: #222;
+    border-radius: 8px;
+    margin: 10px 0;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    width: 100%;
+  }

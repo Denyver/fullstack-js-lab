@@ -21,128 +21,6 @@
         color: #f5f5f5;
         padding: 20px;
       }
-
-      /* Header */
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 30px;
-        background-color: #1a1a1a;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        margin-bottom: 20px;
-      }
-
-      header .logo img {
-        max-width: 150px;
-        transition: transform 0.3s ease;
-      }
-
-      header .logo img:hover {
-        transform: scale(1.1);
-      }
-
-      header .menu ul {
-        list-style: none;
-        display: flex;
-      }
-
-      header .menu ul li {
-        margin: 0 15px;
-      }
-
-      header .menu ul li a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: 600;
-        font-size: 16px;
-        position: relative;
-        transition: color 0.3s ease;
-      }
-
-      header .menu ul li a::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #007bff;
-        transform: scaleX(0);
-        transform-origin: bottom right;
-        transition: transform 0.3s ease;
-      }
-
-      header .menu ul li a:hover {
-        color: #007bff;
-      }
-
-      header .menu ul li a:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
-
-      /* Menu Hamburguer para Dispositivos Móveis */
-      .menu-toggle {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        z-index: 999;
-      }
-
-      .menu-toggle span {
-        background-color: #fff;
-        height: 3px;
-        width: 25px;
-        margin: 4px 0;
-        border-radius: 2px;
-      }
-
-      @media (max-width: 768px) {
-        header {
-          flex-wrap: wrap;
-        }
-
-        .menu {
-          display: none;
-          flex-direction: column;
-          align-items: center;
-          width: 100%;
-        }
-
-        .menu.active {
-          display: flex;
-        }
-
-        header .menu ul {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        header .menu ul li {
-          margin: 10px 0;
-        }
-
-        .menu-toggle {
-          display: flex;
-        }
-      }
-
-      @media (max-width: 480px) {
-        header {
-          padding: 10px 15px;
-        }
-
-        header .logo img {
-          max-width: 120px;
-        }
-
-        header .menu ul li a {
-          font-size: 14px;
-        }
-      }
-
 /* Estilo do Iframe */
 #b1 {
   display: flex;
@@ -161,7 +39,6 @@
 
 /* Efeito ao passar o mouse no iframe */
 .patch:hover {
-  transform: scale(1.01); /* Leve aumento para destacar */
   box-shadow: 0 6px 30px rgba(0, 123, 255, 0.5); /* Sombra mais intensa */
 }
 
@@ -196,7 +73,6 @@
     </div>
     </header>
     <main>
-      <h1>Academias</h1>
       <div id="b1">
         <iframe
           class="patch"

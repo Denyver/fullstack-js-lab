@@ -43,7 +43,7 @@
       <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
     </div>
   </header>
-
+  
   <div id="container">
     <div id="bloco1">
       <h1>Gerador Simples de NPCs</h1>
@@ -52,10 +52,22 @@
         <tr>
           <td id="firstStatusb1">
             <label for="nome">Nome:</label><br />
-            <input type="text" id="nome" name="nome" value="No Name" /><br /><br />
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              value="No Name"
+            /><br /><br />
 
             <label for="vida_base">Vida Base:</label><br />
-            <input type="number" class="numberRight" id="vida_base" name="vida_base" min="10" value="10" />
+            <input
+              type="number"
+              class="numberRight"
+              id="vida_base"
+              name="vida_base"
+              min="10"
+              value="10"
+            />
             <br /><br />
 
             <label for="tier">Tier:</label><br />
@@ -68,10 +80,25 @@
 
           <td id="firstStatusb2">
             <label for="nivel">Nível:</label><br />
-            <input type="number" id="nivel" name="nivel" min="1" max="20" value="1" class="numberLeft"
-              onchange="checkNivel()" /><br /><br />
+            <input
+              type="number"
+              id="nivel"
+              name="nivel"
+              min="1"
+              max="20"
+              value="1"
+              class="numberLeft"
+              onchange="checkNivel()"
+            /><br /><br />
             <label for="armadura">Armadura:</label><br />
-            <input type="number" id="armadura" name="armadura" class="numberLeft" min="0" value="0" /><br /><br />
+            <input
+              type="number"
+              id="armadura"
+              name="armadura"
+              class="numberLeft"
+              min="0"
+              value="0"
+            /><br /><br />
 
             <label for="arma">Arma:</label><br />
             <select id="arma">
@@ -99,12 +126,12 @@
               <option value="Chainblade">Chainblade [FOR]</option>
               <option value="Maça">Maça [FOR]</option>
               <option value="Sem Arma" selected>Sem Arma [DES]+[FOR]</option>
-              <option value="FORÇA">Dano de FORÇA</option>
-              <option value="DESTREZA">Dano de DESTREZA</option>
-              <option value="CONSTITUIÇÃO">Dano de CONSTITUIÇÃO</option>
-              <option value="INTELIGÊNCIA">Dano de INTELIGÊNCIA</option>
-              <option value="SABEDORIA">Dano de SABEDORIA</option>
-              <option value="CARISMA">Dano de CARISMA</option>
+              <option value="FORÇA" >Dano de FORÇA</option>
+              <option value="DESTREZA" >Dano de DESTREZA</option>
+              <option value="CONSTITUIÇÃO" >Dano de CONSTITUIÇÃO</option>
+              <option value="INTELIGÊNCIA" >Dano de INTELIGÊNCIA</option>
+              <option value="SABEDORIA" >Dano de SABEDORIA</option>
+              <option value="CARISMA" >Dano de CARISMA</option>
 
             </select>
           </td>
@@ -210,13 +237,21 @@
                 <option value="Baobá Celestial">Baobá Celestial</option>
                 <option value="Jambeiro Celestial">Jambeiro Celestial</option>
                 <option value="Açaizeiro Celestial">Açaizeiro Celestial</option>
-                <option value="Jabuticabeira Celestial">Jabuticabeira Celestial</option>
+                <option value="Jabuticabeira Celestial">Jabuticabeira Celestial</option>                  
               </optgroup>
             </select>
           </td>
           <td>
-            <input type="number" name="" class="numberRight" max="5" min="1" id="rank" value="1"
-              style="display: None" />
+            <input
+              type="number"
+              name=""
+              class="numberRight"
+              max="5"
+              min="1"
+              id="rank"
+              value="1"
+              style="display: None"
+            />
           </td>
         </table>
         <p>Pontos de Conhecimento: <span id="ponto_conhecimento"></span></p>
@@ -231,36 +266,101 @@
         <tr>
           <td id="atributesLeft">
             <label for="for">FOR:</label><br />
-            <input type="number" id="for" name="for" min="1" max="30" value="10" class="numberRight" /><br /><br />
+            <input
+              type="number"
+              id="for"
+              name="for"
+              min="1"
+              max="30"
+              value="10"
+              class="numberRight"
+            /><br /><br />
 
             <label for="des">DES:</label><br />
-            <input type="number" id="des" name="des" min="1" max="30" value="10" class="numberRight" /><br /><br />
+            <input
+              type="number"
+              id="des"
+              name="des"
+              min="1"
+              max="30"
+              value="10"
+              class="numberRight"
+            /><br /><br />
 
             <label for="con">CON:</label><br />
-            <input type="number" id="con" name="con" min="1" max="30" value="10" class="numberRight" /><br /><br />
+            <input
+              type="number"
+              id="con"
+              name="con"
+              min="1"
+              max="30"
+              value="10"
+              class="numberRight"
+            /><br /><br />
           </td>
           <td id="atributesRight">
             <label for="int">INT:</label><br />
-            <input type="number" id="int" name="int" min="1" max="30" value="10" class="numberLeft" /><br /><br />
+            <input
+              type="number"
+              id="int"
+              name="int"
+              min="1"
+              max="30"
+              value="10"
+              class="numberLeft"
+            /><br /><br />
 
             <label for="sab">SAB:</label><br />
-            <input type="number" id="sab" name="sab" min="1" max="30" value="10" class="numberLeft" /><br /><br />
+            <input
+              type="number"
+              id="sab"
+              name="sab"
+              min="1"
+              max="30"
+              value="10"
+              class="numberLeft"
+            /><br /><br />
 
             <label for="car">CAR:</label><br />
-            <input type="number" id="car" name="car" min="1" max="30" value="10" class="numberLeft" /><br /><br />
+            <input
+              type="number"
+              id="car"
+              name="car"
+              min="1"
+              max="30"
+              value="10"
+              class="numberLeft"
+            /><br /><br />
           </td>
         </tr>
       </table>
       <label>
-        <input class="checkbox" id="aleatorio" type="checkbox" name="random" value="random" />
-        Gerar Atributos Aleatórios </label><br />
+        <input
+          class="checkbox"
+          id="aleatorio"
+          type="checkbox"
+          name="random"
+          value="random"
+        />
+        Gerar Atributos Aleatórios </label
+      ><br />
       <div id="hidden_box_tank">
         <label id="tank_type_label">
-          <input class="checkbox" id="tank_type" type="checkbox" name="tank-type" value="tank" disabled="true" />
+          <input
+            class="checkbox"
+            id="tank_type"
+            type="checkbox"
+            name="tank-type"
+            value="tank"
+            disabled="true"
+          />
           TANK Talent
-          <span class="information_t1">(REF: Na progressão ao atingir nivel 17 o jogador pode escolher
+          <span class="information_t1"
+            >(REF: Na progressão ao atingir nivel 17 o jogador pode escolher
             entre 3 talentos passivos. Esse aumenta a vida máxima em
-            35%.)</span></label>
+            35%.)</span
+          ></label
+        >
       </div>
       <button class="noselect" onclick="gerar_inimigo()">
         Gerar NPC<span aria-hidden></span>
@@ -276,127 +376,114 @@
       <div id="card_char">
         <br /><br />
         <pname id="char_name"></pname>
+        
+      <table id="char_stats">
+        <tr>
+          <td id="td_b1">
+            <nivel></nivel><ns1 id="char_lvl"></ns1></span>
+          </td>
+          <td id="td_b1">
+            <tier></tier><span id="char_tier"></span>
+          </td>
+        </tr>
+        <tr>
+          <td id="td_b1">
+            <mana></mana><ns1 id="char_mana"></ns1>
+          </td>
+          <td id="td_b1">
+            <vida></vida><ns1 id="char_vida"></ns1>
+          </td>
+        </tr>
+        <tr>
+          <td id="td_b1"><ca></ca><ns1 id="char_ca"></ns1></td>
+          <td id="td_b1">
+            <armadura></armadura><ns1 id="char_armadura"></ns1>
+          </td>
+        </tr>
+        <tr>
+          <td id="td_b1" colspan="2">
+            <arma></arma><ns1 id="char_arma"></ns1>
+          </td>
+        </tr>
+        <tr>
+          <td id="td_b1" colspan="2">
+            <ataque></ataque><ns1 id="char_ataque"></ns1>
+          </td>
+        </tr>
+        <tr>
+          <td id="td_b1" colspan="2">
+           <dmg></dmg><ns1 id="char_dano"></ns1>
+          </td>
+        </tr>
+      </table>
+      <br /><br />
 
-        <table id="char_stats">
-          <tr>
-            <td id="td_b1">
-              <span>Nível:</span><br />
-              <ns1 id="char_lvl"></ns1>
-            </td>
-            <td id="td_b1">
-              <span>Tier:</span><br />
-              <span id="char_tier"></span>
-            </td>
-          </tr>
-          <tr>
-            <td id="td_b1">
-              <span>Mana:</span><br />
-              <ns1 id="char_mana"></ns1>
-            </td>
-            <td id="td_b1">
-              <span>Vida:</span><br />
-              <ns1 id="char_vida"></ns1>
-            </td>
-          </tr>
-          <tr>
-            <td id="td_b1">
-              <span>CA (Classe de Armadura):</span><br />
-              <ns1 id="char_ca"></ns1>
-            </td>
-            <td id="td_b1">
-              <span>Armadura:</span><br />
-              <ns1 id="char_armadura"></ns1>
-            </td>
-          </tr>
-          <tr>
-            <td id="td_b1" colspan="2">
-              <span>Arma:</span><br />
-              <ns1 id="char_arma"></ns1>
-            </td>
-          </tr>
-          <tr>
-            <td id="td_b1" colspan="2">
-              <span>Ataque:</span><br />
-              <ns1 id="char_ataque"></ns1>
-            </td>
-          </tr>
-          <tr>
-            <td id="td_b1" colspan="2">
-              <span>Dano:</span><br />
-              <ns1 id="char_dano"></ns1>
-            </td>
-          </tr>
-        </table>
-        <br /><br />
+      <table id="char_atributes">
+        <tr>
+          <td id="td_b2">
+            <for><p>Força</p></for>
+            <ns2 id="e_forca" class="atrb"></ns2>&nbsp;<br><br>
+            <ns2 id="mod_for" class="mod"></ns2>
+          </td>
+          <td id="td_b2">
+            <int><p>Inteligência</p></int>
+            <ns2 id="e_inteligencia" class="atrb"></ns2>&nbsp;<br><br>
+            <ns2 id="mod_int" class="mod"></ns2>
+          </td>
+        </tr>
+        <tr>
+          <td id="td_b2">
+            <dex><p>Destreza</p> </dex>
+            <ns2 id="e_destreza" class="atrb"></ns2>&nbsp;<br><br>
+            <ns2
+              id="mod_des"
+              class="mod"
+            ></ns2>
+          </td>
+          <td id="td_b2">
+            <sab><p>Sabedoria</p></sab>
+            <ns2 id="e_sabedoria" class="atrb"></ns2>&nbsp;<br><br>
+            <ns2 id="mod_sab" class="mod"></ns2>
+          </td>
+        </tr>
+        <tr>
+          <td id="td_b2">
+            <con><p>Constituição</p></con>
+            <ns2 id="e_constituicao" class="atrb"></ns2>&nbsp;<br><br>
+            <ns2 id="mod_con" class="mod"></ns2>
+          </td>
+          <td id="td_b2">
+            <car><p>Carisma</p></car>
+            <ns2 id="e_carisma" class="atrb"></ns2>&nbsp;<br><br>
+            <ns2 id="mod_car" class="mod"></ns2>
+          </td>
+        </tr>
+      </table>
 
-        <table id="char_atributes">
-          <tr>
-            <td id="td_b2">
-              <span>Força:</span><br />
-              <ns2 id="e_forca" class="atrb"></ns2>&nbsp;<ns2 id="mod_for" class="mod"></ns2>
-            </td>
-            <td id="td_b2">
-              <span>Inteligência:</span><br />
-              <ns2 id="e_inteligencia" class="atrb"></ns2>&nbsp;<ns2 id="mod_int" class="mod"></ns2>
-            </td>
-          </tr>
-          <tr>
-            <td id="td_b2">
-              <span>Destreza:</span><br />
-              <ns2 id="e_destreza" class="atrb"></ns2>&nbsp;<ns2 id="mod_des" class="mod"></ns2>
-            </td>
-            <td id="td_b2">
-              <span>Sabedoria:</span><br />
-              <ns2 id="e_sabedoria" class="atrb"></ns2>&nbsp;<ns2 id="mod_sab" class="mod"></ns2>
-            </td>
-          </tr>
-          <tr>
-            <td id="td_b2">
-              <span>Constituição:</span><br />
-              <ns2 id="e_constituicao" class="atrb"></ns2>&nbsp;<ns2 id="mod_con" class="mod"></ns2>
-            </td>
-            <td id="td_b2">
-              <span>Carisma:</span><br />
-              <ns2 id="e_carisma" class="atrb"></ns2>&nbsp;<ns2 id="mod_car" class="mod"></ns2>
-            </td>
-          </tr>
-        </table>
-        <br /><br />
-        <h2>Escolas</h2>
-        <div id="myschools"></div>
 
-        <br /><br /><br />
+      <br /><br />
+      <h2>Escolas</h2>
+      <div id="myschools"></div>
+
+      <br /><br /><br />
       </div>
       <button id="reload" onclick="reloadPage()">Novo NPC</button><br />
     </div>
+  </div>
 
 
     <script src="/src/pages/RPG Site/js/criador_npc.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script src="/src/pages/RPG Site/js/navbar.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
     <script>
-      function highlightCells() {
-        // Seleciona todas as células com a classe td_b1
-        const cells = document.querySelectorAll('#td_b1');
-
-        cells.forEach(cell => {
-          const value = parseInt(cell.textContent); // Obtém o valor numérico da célula
-
-          // Aplica estilos com base no valor do número
-          if (value >= 15) {
-            cell.classList.add('highlight'); // Para valores altos (>=15), aplica gradiente forte
-            cell.classList.remove('low-level');
-          } else if (value >= 5) {
-            cell.classList.add('low-level'); // Para valores intermediários (>=5), aplica gradiente suave
-            cell.classList.remove('highlight');
-          } else {
-            cell.classList.remove('highlight', 'low-level'); // Para valores baixos (<5), remove qualquer estilo de destaque
-          }
-        });
-      }
-
-      // Chama a função para aplicar os destaques nas células quando necessário
-      highlightCells();
+      document.getElementById("save-image-btn").addEventListener("click", function() {
+  html2canvas(document.getElementById("card_char")).then(function(canvas) {
+    var link = document.createElement('a');
+    link.href = canvas.toDataURL("image/png");
+    link.download = "personagem.png"; 
+    link.click(); 
+  });
+});
 
     </script>
 </body>
