@@ -14,23 +14,22 @@ header {
   width: 90%;
   z-index: 1000;
   margin-top: 10px;
-  transition: opacity 0.5s ease-in-out, visibility 0s 0.5s; /* Transição para opacidade e visibilidade */
+  transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
 }
 
-/* Estilo para ocultar o cabeçalho completamente */
 header.hidden {
-  opacity: 0; /* Torna o cabeçalho transparente */
-  visibility: hidden; /* Torna o cabeçalho invisível e fora da renderização */
-  transition: opacity 0.5s ease-in-out, visibility 0s 0.5s; /* Define o tempo de transição de visibilidade */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
 }
 
 header .logo img {
   max-width: 150px;
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
 }
 
 header .logo img:hover {
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 header .menu ul {
@@ -46,12 +45,12 @@ header .menu ul li {
 
 header .menu ul li a {
   text-decoration: none;
-  color: #fff; 
-  font-weight: 600; 
-  font-size: 16px; 
-  letter-spacing: 1px; 
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
   position: relative;
-  transition: color 0.3s ease, transform 0.3s ease; 
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 header .menu ul li a::after {
@@ -68,7 +67,7 @@ header .menu ul li a::after {
 }
 
 header .menu ul li a:hover {
-  color: #007bff; 
+  color: #007bff;
 }
 
 header .menu ul li a:hover::after {
@@ -77,20 +76,19 @@ header .menu ul li a:hover::after {
 }
 
 .menu-toggle {
-  display: none; /* Ocultar o botão por padrão em telas grandes */
+  display: none;
   font-size: 30px;
   background-color: transparent;
   border: none;
   color: white;
   cursor: pointer;
-  position: absolute; /* Posicionamento à direita */
+  position: absolute;
   right: 20px;
   top: 50%;
-  transform: translateY(-50%); /* Centraliza verticalmente */
+  transform: translateY(-50%);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Estilo do botão Voltar */
 .voltar-btn-container {
   margin-left: 30px;
 }
@@ -104,62 +102,61 @@ header .menu ul li a:hover::after {
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transição melhorada */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .voltar-btn:hover {
   background-color: #d32f2f;
-  transform: scale(1.05); /* Efeito de aumentar um pouco o tamanho no hover */
+  transform: scale(1.05);
 }
 
 @keyframes dropDown {
   0% {
-    transform: translateY(-50%) scale(0); /* Inicialmente invisível e pequeno */
+    transform: translateY(-50%) scale(0);
     opacity: 0;
   }
   100% {
-    transform: translateY(0) scale(1); /* Desce para sua posição normal */
-    opacity: 1; /* Fica totalmente visível */
+    transform: translateY(0) scale(1);
+    opacity: 1;
   }
 }
 
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(20px); /* Itens começam deslocados para baixo */
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0); /* Itens se movem para a posição final */
+    transform: translateY(0);
   }
 }
 
 @keyframes slideDown {
   0% {
     opacity: 0;
-    transform: translateY(-20px); /* Começa acima */
+    transform: translateY(-20px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0); /* Desce para a posição normal */
+    transform: translateY(0);
   }
 }
 
 @keyframes slideDownButton {
   0% {
-    transform: translateY(-50%); /* Inicia acima */
+    transform: translateY(-50%);
     opacity: 0;
   }
   100% {
-    transform: translateY(0); /* Desce para sua posição final */
+    transform: translateY(0);
     opacity: 1;
   }
 }
 
-
 @media screen and (max-width: 768px) {
   .menu {
-    display: none; /* Oculta o menu por padrão em telas pequenas */
+    display: none;
     flex-direction: column;
     width: 100%;
     padding: 10px;
@@ -178,25 +175,25 @@ header .menu ul li a:hover::after {
   }
 
   .menu-toggle.rotate {
-    transform: rotate(180deg); /* Rotaciona o triângulo para baixo */
+    transform: rotate(180deg);
   }
 
   .menu-toggle.active {
-    animation: slideDownButton 1s ease-out forwards; /* Animação de descida */
+    animation: slideDownButton 1s ease-out forwards;
   }
 
   header {
     text-align: center;
-    flex-direction: column; /* Coloca os itens em coluna em telas menores */
-    padding: 15px 20px; /* Reduz o padding para telas pequenas */
-    width: 90%; /* Ocupa toda a largura da tela */
-    top: 10px; /* Ajuste de distância do topo */
+    flex-direction: column;
+    padding: 15px 20px;
+    width: 90%;
+    top: 10px;
     margin-top: 0;
     border-radius: 20px;
   }
 
   header .logo img {
-    max-width: 120px; /* Reduz o tamanho da logo em telas menores */
+    max-width: 120px;
   }
 
   header .menu ul {
@@ -208,10 +205,8 @@ header .menu ul li a:hover::after {
     margin: 10px 0;
   }
 
-
   .voltar-btn-container {
-    margin-left: 0; /* Remove margem esquerda para botão */
+    margin-left: 0;
     margin-top: 10px;
   }
 }
-
