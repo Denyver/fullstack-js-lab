@@ -1,98 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WOE: Notas de Atualização</title>
-    <link rel="stylesheet" href="/css/patchnotes.css" />
-    <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css" />
-    <style>
-      /* Estilos Gerais */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
 
-      body {
-        font-family: 'Times New Roman', serif;
-        background: linear-gradient(135deg, #707070, #1a1a1a);
-        color: #f5f5f5;
-        padding: 20px;
-      }
-/* Estilo do Iframe */
-#b1 {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WOE: Notas de Atualização</title>
+  <link rel="stylesheet" href="/css/patchnotes.css" />
+  <link rel="stylesheet" href="styles/navbar.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.patch {
-  width: 90%;
-  height: 900px;
-  border-radius: 15px;
-  border: 2px solid #007bff; /* Borda com cor principal */
-  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3); /* Sombra suave */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    body {
+      font-family: 'Times New Roman', serif;
+      background: linear-gradient(135deg, #707070, #1a1a1a);
+      color: #f5f5f5;
+      padding: 20px;
+    }
 
-/* Efeito ao passar o mouse no iframe */
-.patch:hover {
-  box-shadow: 0 6px 30px rgba(0, 123, 255, 0.5); /* Sombra mais intensa */
-}
+    #b1 {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
 
-      footer {
-        text-align: center;
-        padding: 20px;
-        margin-top: 50px;
-        background-color: #1a1a1a;
-        color: #f0f0f0;
-        border-radius: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-        <div class="logo">
-            <a href="/src/pages/RPG Site/html/index.html">
-              <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo" />
-            </a>
-          </div>
-      <nav class="menu">
-        <ul>
-          <li><a href="/src/pages/RPG Site/html/cadastro.html">Cadastre-se</a></li>
-          <li><a href="/src/pages/RPG Site/html/combat.html">Combate</a></li>
-          <li><a href="/src/pages/RPG Site/html/ficha.html">Ficha de Personagem</a></li>
-          <li><a href="/src/pages/RPG Site/html/gerador_item.html">Gerador de Itens</a></li>
-          <li><a href="/src/pages/RPG Site/html/login.html">Login</a></li>
-        </ul>
-      </nav>
+    .patch {
+      width: 90%;
+      height: 900px;
+      border-radius: 15px;
+      border: 2px solid #007bff;
+      box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .patch:hover {
+      box-shadow: 0 6px 30px rgba(0, 123, 255, 0.5);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="/index.html">
+        <img src="imgs/woe_titulo.png" alt="Logo" />
+      </a>
+    </div>
+    <nav class="menu">
+      <ul>
+        <li>
+          <a href="pages/cadastro.html">Cadastre-se</a>
+        </li>
+        <li>
+          <a href="pages/combat.html">Combate</a>
+        </li>
+        <li>
+          <a href="pages/ficha.html">Ficha de Personagem</a>
+        </li>
+        <li>
+          <a href="pages/gerador_item.html">Gerador de Itens</a>
+        </li>
+        <li>
+          <a href="pages/login.html">Login</a>
+        </li>
+      </ul>
+    </nav>
     <div class="voltar-btn-container">
       <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
     </div>
-    </header>
-    <main>
-      <div id="b1">
-        <iframe
-          class="patch"
-          src="https://docs.google.com/document/d/1KeiSNHl_8Poe3Vn-1s5PnlSZJA3BM8AFkWVhOTUJxzw/edit?tab=t.0#heading=h.6lx6xabqg6bz"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </main>
-    <footer>
-      <p>&copy; 2024 Todos os direitos reservados.</p>
-    </footer>
-    <script>
-      // Script para alternar o menu em dispositivos móveis
-      const toggle = document.querySelector('.menu-toggle');
-      const menu = document.querySelector('.menu');
+  </header>
 
-      toggle.addEventListener('click', () => {
-        menu.classList.toggle('active');
-      });
-    </script>
-  </body>
+  <main>
+    <div id="b1">
+      <iframe class="patch"
+        src="https://docs.google.com/document/d/1KeiSNHl_8Poe3Vn-1s5PnlSZJA3BM8AFkWVhOTUJxzw/edit?tab=t.0#heading=h.6lx6xabqg6bz"
+        frameborder="0" allowfullscreen></iframe>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2024 Todos os direitos reservados.</p>
+  </footer>
+  <script>
+    // Script para alternar o menu em dispositivos móveis
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+</body>
+
 </html>

@@ -7,7 +7,6 @@
     <title>WOE: Notas de Atualização</title>
     <link rel="stylesheet" href="/src/sty">
     <style>
-      /* Estilos Gerais */
       * {
         margin: 0;
         padding: 0;
@@ -21,7 +20,6 @@
         padding: 20px;
       }
 
-      /* Estilo do Iframe */
       #b1 {
         display: flex;
         justify-content: center;
@@ -41,7 +39,6 @@
         transform: scale(1.05);
       }
 
-      /* Animações */
       @keyframes pulse-light {
         0% {
           box-shadow: 0 0 10px rgba(128, 203, 196, 0.2);
@@ -74,34 +71,32 @@
   <body>
     <header>
       <div class="logo">
-        <a href="/src/pages/RPG Site/html/index.html">
-          <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo" />
+        <a href="/index.html">
+          <img src="imgs/woe_titulo.png" alt="Logo" />
         </a>
       </div>
       <nav class="menu">
         <ul>
           <li>
-            <a href="/src/pages/RPG Site/html/cadastro.html">Cadastre-se</a>
+            <a href="pages/cadastro.html">Cadastre-se</a>
           </li>
           <li>
-            <a href="/src/pages/RPG Site/html/combat.html">Combate</a>
+            <a href="pages/combat.html">Combate</a>
           </li>
           <li>
-            <a href="/src/pages/RPG Site/html/ficha.html">Ficha de Personagem</a>
+            <a href="pages/ficha.html">Ficha de Personagem</a>
           </li>
           <li>
-            <a href="/src/pages/RPG Site/html/gerador_item.html">Gerador de Itens</a>
+            <a href="pages/gerador_item.html">Gerador de Itens</a>
           </li>
           <li>
-            <a href="/src/pages/RPG Site/html/login.html">Login</a>
+            <a href="pages/login.html">Login</a>
           </li>
         </ul>
       </nav>
-      <button class="menu-toggle" onclick="toggleMenu()">&#9660;</button>
-        <!-- Botão Voltar -->
-      <div class="voltar-btn-container">
-        <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
-      </div>
+  <div class="voltar-btn-container">
+    <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+  </div>
     </header>
     <main>
       <h1>Eventos</h1>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
+    <link rel="stylesheet" href="styles/navbar.css">
     <title>Mapa do Eder</title>
     <style>
       body {
@@ -34,10 +34,10 @@
         position: absolute;
         transition: transform 0.2s ease-in-out;
         user-select: none;
-        visibility: hidden; /* Esconde a imagem até carregar */
+        visibility: hidden; 
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Faz a imagem cobrir toda a área da tela */
+        object-fit: cover; 
       }
 
       #loading {
@@ -109,34 +109,33 @@
   </head>
   <body>
     <header>
-        <div class="logo">
-          <a href="/src/pages/RPG Site/html/index.html">
-            <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo" />
-          </a>
-        </div>
-        <nav class="menu">
-          <ul>
-            <li>
-              <a href="/src/pages/RPG Site/html/cadastro.html">Cadastre-se</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/combat.html">Combate</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/ficha.html">Ficha de Personagem</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/gerador_item.html">Gerador de Itens</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/login.html">Login</a>
-            </li>
-          </ul>
-        </nav>
-        <button class="menu-toggle" onclick="toggleMenu()">&#9660;</button>
-        <div class="voltar-btn-container">
-          <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
-        </div>
+      <div class="logo">
+        <a href="/index.html">
+          <img src="imgs/woe_titulo.png" alt="Logo" />
+        </a>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li>
+            <a href="pages/cadastro.html">Cadastre-se</a>
+          </li>
+          <li>
+            <a href="pages/combat.html">Combate</a>
+          </li>
+          <li>
+            <a href="pages/ficha.html">Ficha de Personagem</a>
+          </li>
+          <li>
+            <a href="pages/gerador_item.html">Gerador de Itens</a>
+          </li>
+          <li>
+            <a href="pages/login.html">Login</a>
+          </li>
+        </ul>
+      </nav>
+  <div class="voltar-btn-container">
+    <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+  </div>
     </header>
 
     <div id="loading">
@@ -154,18 +153,16 @@
       const image = document.getElementById('image');
       let scale = 1;
 
-      // Função de zoom usando a roda do mouse
       container.addEventListener('wheel', (e) => {
         if (e.deltaY > 0) {
           scale += 0.1;
         } else {
           scale -= 0.1;
         }
-        scale = Math.min(Math.max(scale, 1), 3); // Limitar o zoom entre 1x e 3x
+        scale = Math.min(Math.max(scale, 1), 3);
         image.style.transform = `scale(${scale})`;
       });
 
-      // Função de arrastar a imagem
       let isDragging = false;
       let startX, startY;
 
