@@ -20,6 +20,7 @@
   }
 
   .container {
+    text-align: center;
     margin-top: 6%;
     display: flex;
     flex-wrap: wrap;
@@ -43,9 +44,22 @@
     margin: 20px auto;
   }
 
+  input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    font-size: 16px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
   @media (max-width: 768px) {
     .section {
-      width: 90%;
+      width: 80%;
       margin: 10px auto;
     }
   }
@@ -60,7 +74,7 @@
 
   .container:not(header) input,
   .container:not(header) button {
-    width: 100%;
+    width: 90%;
     padding: 12px;
     margin: 10px 0;
     border-radius: 10px;
@@ -69,7 +83,7 @@
     background-color: #333;
     color: #fff;
     transition: all 0.3s ease;
-  }
+}
 
   .container:not(header) input:focus,
   .container:not(header) button:focus {
@@ -153,25 +167,25 @@
   <header>
     <div class="logo">
       <a href="/index.html">
-        <img src="imgs/woe_titulo.png" alt="Logo" />
+        <img src="/imgs/woe_titulo.png" alt="Logo" />
       </a>
     </div>
     <nav class="menu">
       <ul>
         <li>
-          <a href="pages/cadastro.html">Cadastre-se</a>
+          <a href="/pages/cadastro.html">Cadastre-se</a>
         </li>
         <li>
-          <a href="pages/combat.html">Combate</a>
+          <a href="/pages/combat.html">Combate</a>
         </li>
         <li>
-          <a href="pages/ficha.html">Ficha de Personagem</a>
+          <a href="/pages/ficha.html">Ficha de Personagem</a>
         </li>
         <li>
-          <a href="pages/gerador_item.html">Gerador de Itens</a>
+          <a href="/pages/gerador_item.html">Gerador de Itens</a>
         </li>
         <li>
-          <a href="pages/login.html">Login</a>
+          <a href="/pages/login.html">Login</a>
         </li>
       </ul>
     </nav>
@@ -201,28 +215,29 @@
       <div id="damage-result">O dano será exibido aqui.</div>
     </div>
 
-    <!-- Seção de Vida -->
     <div class="section">
       <h2>Controle de Vida</h2>
 
       <label for="max-life">Vida Máxima</label>
       <input type="number" id="max-life" required />
-      <button id="set-max-life">Definir Vida Máxima</button>
+      <button id="set-max-life">Atualizar</button>
 
       <label for="reduce-life">Reduzir Vida Máxima</label>
       <input type="text" id="reduce-life" placeholder="Ex: 10 ou 10%" />
+      <button id="reduce-life-btn">Atualizar Vida Máxima</button>
 
-      <button id="reduce-life-btn">Reduzir Vida Máxima</button>
+      <label for="cure-life">Aumentar Vida Máxima</label>
+      <input type="text" id="add-life" placeholder="Ex: 10 ou 10%">
+      <button id="add-life-btn">Atualizar Vida Máxima</button>
 
       <label for="life">Vida Atual</label>
-      <input type="number" id="lifebar" />
-      <button id="fix-life">Atualizar Vida</button>
+      <input type="number" id="lifebar" value="0" disabled>
 
       <div class="health-bar">
         <div class="bar">
           <div id="life-bar" class="filled" style="width: 100%; background-color: #008d47"></div>
           <p style="text-align: center;">Vida</p>
-        </div>
+        </div><br>
       </div>
     </div>
 
@@ -259,9 +274,8 @@
     <p>&copy; 2024 Todos os direitos reservados.</p>
   </footer>
   </div>
-  <script src="/src/pages/RPG Site/js/navbar.js"></script>
+  <script src="/scripts/navbar.js"></script>
   <script>
-    // Função para rolar dados com modificadores
     function rollDice() {
       let diceInput = document.getElementById("dice").value;
       let parts = diceInput.split("d");
@@ -271,6 +285,7 @@
         let diceParts = parts[0].trim();
         let sidesParts = parts[1].split("+");
         let sides = parseInt(sidesParts[0].trim());
+
         if (sidesParts[1]) {
           modifier = parseInt(sidesParts[1].trim());
         }
@@ -278,6 +293,7 @@
         let rolls = parseInt(diceParts);
         let result = [];
         let total = 0;
+
         for (let i = 0; i < rolls; i++) {
           let rollResult = Math.floor(Math.random() * sides) + 1;
           result.push(rollResult);
@@ -285,23 +301,19 @@
         }
 
         let finalResult = total + modifier;
-        document.getElementById("dice-result").innerText =
-          "Resultado do Dado: " +
-          result.join(", ") +
-          " (Total: " +
-          total +
-          " + Modificador: " +
-          modifier +
-          " = Final: " +
-          finalResult +
-          ")";
+
+        let detailedResult = "Resultado: " + result.join(", ") + "\n";
+        detailedResult += "Soma dos dados: " + total + "\n";
+        detailedResult += "Modificador: " + modifier + "\n";
+        detailedResult += "Resultado final: " + finalResult;
+
+        document.getElementById("dice-result").innerText = detailedResult;
       } else {
         document.getElementById("dice-result").innerText =
           "Formato inválido. Use como 1d20, 2d6 ou 2d20+15.";
       }
     }
 
-    // Função para calcular o dano com múltiplas porcentagens e crítico como multiplicador
     document
       .getElementById("calculate-damage")
       .addEventListener("click", function () {
@@ -329,36 +341,36 @@
           .filter((p) => !isNaN(p));
         let totalPercentage = percentages.reduce((acc, val) => acc + val, 0);
 
-        // Calculando o dano final com o multiplicador de crítico
         let totalDamage =
           damage * (1 + totalPercentage / 100) * criticalInput;
         document.getElementById("damage-result").innerText =
           "Dano Final: " + totalDamage.toFixed(2);
       });
 
-    // Definir a Vida Máxima
+
+
+
     document
       .getElementById("set-max-life")
       .addEventListener("click", function () {
         maxLife = parseInt(document.getElementById("max-life").value);
-        currentLife = maxLife; // Inicializa a vida atual com a vida máxima
+        currentLife = maxLife;
         document.getElementById("lifebar").value = currentLife;
         updateLifeBar();
       });
 
-    function updateHealthBar(percentage) {
+    function updateLifeBar() {
       const lifeBar = document.getElementById("life-bar");
+      const percentage = (currentLife / maxLife) * 100;
 
-      // Atualiza o tamanho da barra de vida
       lifeBar.style.width = `${percentage}%`;
 
-      // Define a cor baseada no percentual restante
-      if (percentage <= 30) {
-        lifeBar.style.backgroundColor = "#ff0000"; // Vermelho
+      if (percentage <= 20) {
+        lifeBar.style.backgroundColor = "#ff0000";
       } else if (percentage <= 50) {
-        lifeBar.style.backgroundColor = "#ffc107"; // Amarelo
+        lifeBar.style.backgroundColor = "#ffc107";
       } else {
-        lifeBar.style.backgroundColor = "#008d47"; // Verde
+        lifeBar.style.backgroundColor = "#008d47";
       }
     }
 
@@ -370,11 +382,9 @@
         let valueToReduce = 0;
 
         if (reduceValue.includes("%")) {
-          // Redução por porcentagem
           let percentage = parseFloat(reduceValue.replace("%", ""));
           valueToReduce = (percentage / 100) * currentLife;
         } else {
-          // Redução por valor absoluto
           valueToReduce = parseInt(reduceValue);
         }
 
@@ -383,13 +393,30 @@
         updateLifeBar();
       });
 
-    // Atualizar Barra de Vida
-    function updateLifeBar() {
-      let lifePercentage = (currentLife / maxLife) * 100;
-      document.getElementById("life-bar").style.width = lifePercentage + "%";
-    }
 
-    // Variáveis do Timer
+    // Aumentar Vida Atual
+
+    document
+      .getElementById("add-life-btn")
+      .addEventListener("click", function () {
+        let addValue = document.getElementById("add-life").value.trim();
+        let valueToAdd = 0;
+
+        if (addValue.includes("%")) {
+          let percentage = parseFloat(addValue.replace("%", ""));
+          valueToAdd = (percentage / 100) * maxLife;
+        } else {
+          valueToAdd = parseInt(addValue);
+        }
+
+        if (!isNaN(valueToAdd) && valueToAdd > 0) {
+          currentLife = Math.min(maxLife, currentLife + valueToAdd);
+          document.getElementById("lifebar").value = currentLife;
+          updateLifeBar();
+        }
+      });
+
+
     let timerInterval;
     let seconds = 0;
     let isTimerRunning = false;
