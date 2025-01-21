@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="styles/index.css"/> 
     <title>Página Principal - RPG</title>
   </head>
@@ -36,28 +36,33 @@
               <a href="gerador_item.html" class="slide-link"></a>
             </div>
             <div class="swiper-slide">
-              <a href="#"></a>
-              <img src="/imgs/damage.jpg" alt="Slide 2"/>
+              <a href="pages/combat.html">
+                <img src="/imgs/combat.jpg" alt="Slide 2"/>
+              </a>
             </div>
             <div class="swiper-slide">
-              <img src="/imgs/combat.jpg" alt="Slide 3"/>
-              <a href="pages/combat.html"></a>
+            <div class="swiper-slide">
+              <a href="#">
+                <img src="/imgs/damage.jpg" alt="Slide 3"/>
+              </a>
+            </div>
+              <a href="pages/academias.html">
+                <img src="/imgs/academia.jpg" alt="Slide 4"/>
+              </a>
             </div>
             <div class="swiper-slide">
-              <img src="/imgs/academia.jpg" alt="Slide 4"/>
-              <a href="pages/academias.html"></a>
-            </div>
-            <div class="swiper-slide">
-              <a href="#"></a>
-              <img src="/imgs/escola_mundo.jpg" alt="Slide 5"/>
+              <a href="#">
+                <img src="/imgs/escola_mundo.jpg" alt="Slide 5"/>
+              </a>
             </div>
             <div class="swiper-slide">
               <a href="#"></a>
               <img src="/imgs/proibida.png" alt="Slide 6"/>
             </div>
             <div class="swiper-slide">
-              <a href="#"></a>
-              <img src="/imgs/comunidade.png" alt="Slide 7"/>
+              <a href="#">
+                <img src="/imgs/comunidade.png" alt="Slide 7"/>
+              </a>
             </div>
           </div>
           <div class="swiper-button-next"></div>
@@ -127,7 +132,7 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const sidebar = document.querySelector(".sidebar");
