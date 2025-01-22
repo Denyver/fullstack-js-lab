@@ -18,6 +18,8 @@ window.addEventListener('scroll', () => {
 function toggleMenu() {
   menu.classList.toggle('active');
   toggleButton.classList.toggle('rotate');
+
+  header.classList.remove('hidden');
 }
 
 document.addEventListener('click', (event) => {
@@ -31,3 +33,5 @@ document.addEventListener('click', (event) => {
     toggleButton.classList.remove('rotate');
   }
 });
+
+toggleButton.addEventListener('click', toggleMenu);
