@@ -1,11 +1,9 @@
 function salvarDivComoPNG() {
-    //card = document.getElementById('weapon_card');
     card.addEventListener('click', function () {
       alertify.confirm('Salvar Card', 'Deseja salvar o item como PNG.', function () {
         var div = document.getElementById("weapon_card");
-        var scale = 1.25; // Aumentar a escala por 2 (pode ajustar conforme necessário)
+        var scale = 1.25; 
       
-        // Definir a largura e a altura da div com base na escala
         div.style.width = div.offsetWidth * scale + "px";
         div.style.height = div.offsetHeight * scale + "px";
       
@@ -16,7 +14,6 @@ function salvarDivComoPNG() {
           link.download = 'div_imagem.png';
           link.click();
       
-          // Redefinir a largura e a altura da div para o valor original
           div.style.width = "";
           div.style.height = "";
         });
@@ -30,9 +27,7 @@ function salvarDivComoPNG() {
     fetch(url)
     .then(response => response.json())
     .then(data => {
-      // Aqui você tem acesso aos dados do arquivo JSON
-      // e pode armazená-los em um vetor ou realizar qualquer outra operação desejada.
-      const vetor = data; // supondo que o arquivo JSON seja um vetor
+      const vetor = data;
       console.log(vetor);
       return vetor;
     })
@@ -56,7 +51,6 @@ function salvarDivComoPNG() {
   function numeros_drops() {
     const vetor = [];
   
-  // Definindo as proporções dos números
   const proportions = [
     { number: 1, percentage: 40 },
     { number: 2, percentage: 30 },
@@ -66,20 +60,17 @@ function salvarDivComoPNG() {
     { number: 6, percentage: 0.5 }
   ];
   
-  // Calculando a quantidade de ocorrências de cada número
   const totalPositions = 500;
   proportions.forEach(item => {
     item.count = Math.floor((item.percentage / 100) * totalPositions);
   });
   
-  // Preenchendo o vetor com os números nas proporções especificadas
   proportions.forEach(item => {
     for (let i = 0; i < item.count; i++) {
       vetor.push(item.number);
     }
   });
   
-  // Embaralhando o vetor para distribuir aleatoriamente os números
   for (let i = vetor.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [vetor[i], vetor[j]] = [vetor[j], vetor[i]];
@@ -130,9 +121,8 @@ function salvarDivComoPNG() {
     weapon_card_item.addEventListener('click', function () {
       alertify.confirm('Salvar Card', 'Deseja salvar o item como PNG.', function () {
         var div = document.getElementById("weapon_card");
-        var scale = 1.25; // Aumentar a escala por 2 (pode ajustar conforme necessário)
+        var scale = 1.25; 
       
-        // Definir a largura e a altura da div com base na escala
         div.style.width = div.offsetWidth * scale + "px";
         div.style.height = div.offsetHeight * scale + "px";
       
@@ -142,8 +132,7 @@ function salvarDivComoPNG() {
           link.href = img;
           link.download = 'div_imagem.png';
           link.click();
-      
-          // Redefinir a largura e a altura da div para o valor original
+
           div.style.width = "";
           div.style.height = "";
         });

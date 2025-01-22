@@ -1,4 +1,3 @@
-//Global Vars
 var escolas_aprendidas = [];
 var limite_escolas = 1;
 
@@ -526,9 +525,6 @@ function checkNivel() {
     let nivel = document.getElementById('nivel').value;
     let tank_label = document.getElementById('tank_type_label');
 
-    //pontos de conhecimento
-    //pop_school(nivel);
-
     fator_escolas = sum_of_ranks();
 
     if (nivel >= 5) {
@@ -705,11 +701,11 @@ function normalize_limit(valor) {
 function make_char_card(elemento) {
     elemento.addEventListener('click', function () {
         alertify.confirm('Salvar Card', 'Deseja salvar o item como PNG.', function () {
-            var scale = 1.15; // Ajustar a escala para o canvas
+            var scale = 1.15;
 
             html2canvas(elemento, { 
                 scale: scale,
-                useCORS: true // Garantir que imagens externas sejam processadas corretamente
+                useCORS: true 
             }).then(function(canvas) {
                 var img = canvas.toDataURL("image/png");
                 var link = document.createElement('a');
@@ -724,8 +720,3 @@ function make_char_card(elemento) {
         });
     });
 }
-
-
-
-//let monstro = new Enemy("Kuma", 1000, 20, "Boss", 0, 0, 0, 0, 0, 0, "Arco", 4, true);
-//console.log(monstro);

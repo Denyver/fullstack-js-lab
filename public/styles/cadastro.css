@@ -1,11 +1,9 @@
-/* Estilo global */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Garantir que a altura da página seja 100% */
 html, body {
   height: 100%;
   width: 100%;
@@ -15,16 +13,14 @@ html, body {
   margin: 0;
 }
 
-/* Container principal */
 .register-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* Ajuste a altura para ocupar 100% da tela */
+  height: 100%; 
   margin-bottom: 10%;
 }
 
-/* Caixa de cadastro */
 .register-box {
   background: #ffffff;
   border-radius: 30px;
@@ -34,10 +30,9 @@ html, body {
   max-width: 500px;
   animation: fadeIn 0.5s ease-in-out;
   text-align: center;
-  box-sizing: border-box; /* Garantir que o padding não afete o tamanho total */
+  box-sizing: border-box; 
 }
 
-/* Animação de entrada */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -49,7 +44,6 @@ html, body {
   }
 }
 
-/* Cabeçalho */
 .register-box h1 {
   font-size: 28px;
   color: #333333;
@@ -57,7 +51,6 @@ html, body {
   font-weight: bold;
 }
 
-/* Grupos de input */
 .input-group {
   margin-bottom: 20px;
   text-align: left;
@@ -85,7 +78,6 @@ html, body {
   outline: none;
 }
 
-/* Botão de cadastro */
 .register-btn {
   width: 100%;
   background: linear-gradient(90deg, #4caf50, #1e90ff);
@@ -104,7 +96,6 @@ html, body {
   box-shadow: 0 5px 15px rgba(30, 144, 255, 0.4);
 }
 
-/* Links e texto */
 .actions p {
   font-size: 14px;
   color: #666666;
@@ -123,7 +114,6 @@ html, body {
   text-decoration: underline;
 }
 
-/* Mobile Responsivo */
 @media (max-width: 480px) {
   .register-box {
     padding: 20px;
