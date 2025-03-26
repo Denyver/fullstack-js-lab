@@ -13,11 +13,48 @@ body {
     padding: 10px;
 }
 
-#main {
-    display: grid;
-    place-items: center;
-    text-align: center;
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 127, 0.5);
 }
+
+h2 {
+    border-left: 5px solid #34a853;
+    padding-left: 10px;
+    color: #34a853;
+}
+
+p, li {
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+li strong {
+    color: #90ee90;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 4px solid #34a853;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+}
+
+section:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 10px rgba(0, 255, 127, 0.8);
+}
+
 
 .tree {
     display: flex;
@@ -134,7 +171,48 @@ h1, h2 {
 <body>
     <h3 id="voltar" onclick="location.href='/45187ee3-d56f-3afc-89b3-5d7905a131cf.html'">Voltar</h3>
     <div id="main">
-        
+        <main>
+            <section>
+                <h2>O Poder dos Guardiões</h2>
+                <p>O Guardião Supremo possui as habilidades e talentos de todas as árvores celestiais, inclusive algumas habilidades próprias mescladas. Seu trabalho é garantir a segurança de todas as árvores celestiais, purificar o mundo e os multiversos. Só existe 1 guardião supremo para todos os multiversos.</p>
+            </section>
+            <section>
+                <h2>O Guardião Celestial</h2>
+                <p>Você como guardião celestial dos universos pode montar seu kit de habilidades como desejar, podendo usar habilidades de diferentes árvores de guardiões celestiais do multiverso. Você também ganha 1 ponto de Agradecimento Heroico sempre que fizer uma ação heroica, seja ela no combate ou fora dele. Além disso, você ganha acesso a pequenas passivas listadas abaixo:</p>
+                <ul>
+                    <li>Para cada habilidade de árvore celestial diferente que você usar, ganhe (Nível*3) de Poder pelo resto do combate.</li>
+                    <li>Você ganha acesso aos estados Celestiais do Guardião. Você ativa um efeito por rodada e mantém eles acumulados:</li>
+                    <ul>
+                        <li><strong>Justiça do Guardião:</strong> Você ganha dano/cura aumentados sempre que abater ou vencer um inimigo que infligir dano a seus aliados. Para cada vez que um aliado sofrer dano, você ganha o bônus de 5 de Poder. O máximo de 3 acúmulos por aliado. Você pode escalar até o máximo de 20 acúmulos.</li>
+                        <li><strong>Coragem do Guardião:</strong> Quando você estiver lutando sozinho contra 2 inimigos ou mais, seus ataques ganham vantagem contra eles. Sempre que for flanqueado, ganhe 1 vantagem adicional.</li>
+                        <li><strong>Sacrifício do Guardião:</strong> Em troca da perda de 60% de sua vida máxima, você reduz 50% de todo dano sofrido por seus aliados. Esse valor retido não pode ser curado. O uso é opcional.</li>
+                        <li><strong>Proteção do Guardião:</strong> Você garante a seus aliados metade de todo seu Poder acumulado como defesa bônus.</li>
+                        <li><strong>Inspiração do Guardião:</strong> Você garante a cada aliado em combate metade dos efeitos de Justiça do Guardião e do Poder Acumulado.</li>
+                    </ul>
+                </ul>
+                <p>Quando você for abatido em combate, renasce como uma árvore celestial de sua escolha, compartilhando os efeitos e habilidades de guardião dela com seus aliados. Após 4 rodadas, você retorna. Recarga de 1 decana.</p>
+            </section>
+            <section>
+                <h2>Talentos</h2>
+                <ul>
+                    <li><strong>Inspiração Heroica:</strong> Cada talento ou habilidade usada de diferentes árvores em combate diminui seu crítico em 1 e aumenta seu ataque em +5.</li>
+                    <li><strong>Aura das Folhas Eternas:</strong> O guardião emana uma aura de energia natural intensa que aumenta a regeneração de vida e mana dos aliados dentro de uma área ao redor dele. A regeneração aumenta significativamente 5% a cada aliado próximo ou áreas naturais.</li>
+                    <li><strong>Enraizado:</strong> Sempre que permanecer parado por cada rodada, sua armadura aumenta ainda mais, como se estivesse "enraizado" no solo. A conexão com o solo aumenta sua CA em 5 por rodada enquanto se mantém fixo no mesmo local. No final do combate, o bônus é resetado.</li>
+                    <li><strong>Vento da Folha Ascendente:</strong> Sempre que o guardião esquiva de um ataque, ele ganha temporariamente +5 de modificador de DES. A chance de evasão aumenta gradualmente quanto mais ele permanece ileso.</li>
+                    <li><strong>Eco dos Espíritos Silvestres:</strong> Toda vez que o guardião derrota um inimigo, ele recupera 20% da quantidade de mana ou energia e cura.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Habilidades</h2>
+                <ul>
+                    <li><strong>Julgamento Celestial:</strong> Ao utilizar 5 diferentes árvores celestiais, invoca todas as árvores celestiais em campo, ativando suas passivas e habilidades.</li>
+                    <li><strong>Jump Between Leaves:</strong> O guardião usa folhas para se teletransportar, podendo ser usado para esquivar de ataques.</li>
+                    <li><strong>Sementes da Renovação:</strong> Semeia a terra com sementes místicas que criam árvores e curam aliados próximos.</li>
+                    <li><strong>Leaf Spear:</strong> O guardião dispara folhas celestiais e pode se movimentar entre inimigos com essa habilidade.</li>
+                </ul>
+            </section>
+        </main>
+
         <h1>Bordo Celestial</h1>
         <div class="points-input">
             <label for="heroPoints">Estado Celestial:</label>
@@ -155,8 +233,78 @@ h1, h2 {
             <h2>Poderes Conquistados</h2>
             <ul id="learnedSkills"></ul>
         </div>
-
     </div>
+
+    <div id="main">
+        <h1>Cerejeira Celestial</h1>
+        <div class="points-input">
+            <label for="heroPoints">Estado Celestial:</label>
+            <input type="number" id="heroPoints" value="0">
+            <button onclick="updatePoints()">Atualizar Pontos</button>
+            <p>Pontos Gastos: <span id="spentPoints">0</span></p>
+        </div>
+        <div class="url-input">
+            <label for="configUrl">URL de Salvamento:</label>
+            <input type="text" id="configUrl" placeholder="Cole a URL de save aqui">
+            <button onclick="loadConfigFromUrl()">Carregar Save</button>
+            <button onclick="generateConfigUrl()">Gerar URL de Save</button>
+        </div>
+        <div class="tree">
+            <!-- Colunas serão geradas dinamicamente pelo JavaScript -->
+        </div>
+        <div class="learned-list">
+            <h2>Poderes Conquistados</h2>
+            <ul id="learnedSkills"></ul>
+        </div>
+    </div>
+
+    <div id="main">
+        <h1>Mangueira Celestial</h1>
+        <div class="points-input">
+            <label for="heroPoints">Estado Celestial:</label>
+            <input type="number" id="heroPoints" value="0">
+            <button onclick="updatePoints()">Atualizar Pontos</button>
+            <p>Pontos Gastos: <span id="spentPoints">0</span></p>
+        </div>
+        <div class="url-input">
+            <label for="configUrl">URL de Salvamento:</label>
+            <input type="text" id="configUrl" placeholder="Cole a URL de save aqui">
+            <button onclick="loadConfigFromUrl()">Carregar Save</button>
+            <button onclick="generateConfigUrl()">Gerar URL de Save</button>
+        </div>
+        <div class="tree">
+            <!-- Colunas serão geradas dinamicamente pelo JavaScript -->
+        </div>
+        <div class="learned-list">
+            <h2>Poderes Conquistados</h2>
+            <ul id="learnedSkills"></ul>
+        </div>
+    </div>
+
+    <div id="main">
+        <h1>Pinheiro Celestial</h1>
+        <div class="points-input">
+            <label for="heroPoints">Estado Celestial:</label>
+            <input type="number" id="heroPoints" value="0">
+            <button onclick="updatePoints()">Atualizar Pontos</button>
+            <p>Pontos Gastos: <span id="spentPoints">0</span></p>
+        </div>
+        <div class="url-input">
+            <label for="configUrl">URL de Salvamento:</label>
+            <input type="text" id="configUrl" placeholder="Cole a URL de save aqui">
+            <button onclick="loadConfigFromUrl()">Carregar Save</button>
+            <button onclick="generateConfigUrl()">Gerar URL de Save</button>
+        </div>
+        <div class="tree">
+            <!-- Colunas serão geradas dinamicamente pelo JavaScript -->
+        </div>
+        <div class="learned-list">
+            <h2>Poderes Conquistados</h2>
+            <ul id="learnedSkills"></ul>
+        </div>
+    </div>
+
+
     <script>
 
 const skills = [

@@ -11,20 +11,40 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #4b4b4b;
+    color: #ffffff;
 }
 
 main {
+    margin-top: 100px;
     padding: 20px;
 }
 
 .arvore {
-    background-color: white;
-    padding: 15px;
+    background-color: rgb(44, 44, 44);
+    padding: 20px;
     margin: 15px 0;
-    border-left: 5px solid #4CAF50;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #000000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+.arvore:hover {
+    border-left-color: #2e7d33;
+    transform: translateX(5px);
+}
+
+.arvore a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-size: 22px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.arvore a:hover {
+    color: #2E7D32;
 }
 
 footer {
@@ -34,6 +54,7 @@ footer {
     color: white;
     margin-top: 20px;
 }
+
 
 </style>
 <body>
@@ -64,30 +85,40 @@ footer {
         </div>
       </header>
     
-    <main>
-        <section id="guerreiro" class="arvore">
+      <main>
+        <section id="" class="arvore">
+          <a href="/pages/guia/jogadores_planares/revynn.html">
             <h2>Revynn Franciss</h2>
+          </a>
         </section>
         
-        <section id="mago" class="arvore">
+        <section id="" class="arvore">
+          <a href="#">
             <h2>Eivar</h2>
+          </a>
         </section>
 
-        <section id="clerigo" class="arvore">
+        <section id="" class="arvore">
+          <a href="#">
             <h2>Eduardo</h2>
+          </a>
         </section>
 
-        <section id="paladino" class="arvore">
-            <h2>Maisa</h2>
+        <section id="" class="arvore">
+          <h2>Maisa</h2>
+        </section>
+
+        <section id="" class="arvore">
+          <h2>Sofi</h2>
         </section>
         
-        <section id="arqueiro" class="arvore">
-            <h2>Pedro</h2>
+        <section id="" class="arvore">
+          <h2>Pedro</h2>
         </section>
-    </main>
+      </main>
     
     <footer>
-        <p>&copy; 2025 Guia de Árvores de Habilidade</p>
+      <p>&copy; 2025 Guia de Árvores de Habilidade</p>
     </footer>
     <script src="/scripts/navbar.js"></script>
 </body>
