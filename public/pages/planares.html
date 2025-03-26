@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planares</title>
+    <link rel="stylesheet" href="/styles/navbar.css">
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+main {
+    padding: 20px;
+}
+
+.arvore {
+    background-color: white;
+    padding: 15px;
+    margin: 15px 0;
+    border-left: 5px solid #4CAF50;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+</style>
+<body>
+    <header>
+        <div class="logo">
+          <a href="/index.html">
+            <img src="/imgs/woe_titulo.png" alt="Logo" />
+          </a>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+          &#9776; 
+        </button>
+        <nav class="menu">
+          <ul>
+            <li><a href="/pages/guia_geral.html">Guia</a></li>
+            <li><a href="/pages/eventos.html">Eventos</a></li>
+            <li><a href="/pages/combat.html">Combate</a></li>
+            <li><a href="/pages/ficha.html">Ficha de Personagem</a></li>
+            <li><a href="/pages/gerador_item.html">Gerador de Itens</a></li>
+            <li><a href="/pages/criador_npc.html">Criador de NPC</a></li>
+            <li><a href="/pages/mapa_eder.html">Mapa</a></li>
+            <li><a href="/pages/mesas.html">Mesas</a></li>
+            <li><a href="/pages/planares.html">Planares</a></li>
+          </ul>
+        </nav>
+        <div class="voltar-btn-container">
+          <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+        </div>
+      </header>
+    
+    <main>
+        <section id="guerreiro" class="arvore">
+            <h2>Revynn Franciss</h2>
+        </section>
+        
+        <section id="mago" class="arvore">
+            <h2>Eivar</h2>
+        </section>
+
+        <section id="clerigo" class="arvore">
+            <h2>Eduardo</h2>
+        </section>
+
+        <section id="paladino" class="arvore">
+            <h2>Maisa</h2>
+        </section>
+        
+        <section id="arqueiro" class="arvore">
+            <h2>Pedro</h2>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Guia de Árvores de Habilidade</p>
+    </footer>
+    <script src="/scripts/navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árvore de Habilidades RPG</title>
+    <script type="text/javascript" src="/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=2NWba2UnjSYK9AFmKt_xVMU6rgDiR8LUV7dxPbKJkrPW_s-oPy6VIuftNEkVpwVCeGEbW2x3HXc0w0pGLwUlFa4bbqEz4zUFoy2C2-xxxDg" charset="UTF-8"></script><style>
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #121212; /* Preto mais profundo */
+    color: #e0e0e0; /* Texto em cinza claro para contraste */
+    margin: 0;
+    padding: 10px;
+}
+
+#main {
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.tree {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill {
+    margin: 20px;
+    padding: 2px;
+    border: 1px solid #333; /* Borda escura sutil */
+    border-radius: 5px;
+    background-color: #1e1e1e; /* Fundo mais escuro */
+    cursor: pointer;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.skill img {
+    border: 1px solid #e0e0e0; /* Borda mais visível */
+    border-radius: 5px;
+    width: 90%;
+    height: 90%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.skill:hover {
+    background-color: #292929; /* Leve mudança no hover */
+}
+
+.skill:hover .tooltip {
+    display: block;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #222; /* Fundo da tooltip mais escuro */
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.learned {
+    background-color: rgb(255, 165, 0); /* Um tom laranja quente para destaque */
+    box-shadow: 0 0 10px 2px rgba(255, 165, 0, 0.8);
+    border: 2px solid rgb(255, 140, 0);
+    transition: all 0.3s ease;
+}
+
+.learned:hover {
+    box-shadow: 0 0 15px 4px rgba(255, 165, 0, 1);
+}
+
+.points-input, .url-input {
+    margin-bottom: 10px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#voltar {
+    text-align: left;
+    cursor: pointer;
+    color: #ff4444;
+}
+
+#voltar:hover {
+    color: #ff6666;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #ffae00; /* Laranja vibrante para títulos */
+}
+
+.learned-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.learned-list li {
+    padding-left: 35px;
+    background-image: url('bordo/Poder_icon.png');
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: 0px center;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    color: #e0e0e0;
+}
+
+    </style>
+</head>
+<body>
+    <h3 id="voltar" onclick="location.href='/45187ee3-d56f-3afc-89b3-5d7905a131cf.html'">Voltar</h3>
+    <div id="main">
+        
+        <h1>Bordo Celestial</h1>
+        <div class="points-input">
+            <label for="heroPoints">Estado Celestial:</label>
+            <input type="number" id="heroPoints" value="0">
+            <button onclick="updatePoints()">Atualizar Pontos</button>
+            <p>Pontos Gastos: <span id="spentPoints">0</span></p>
+        </div>
+        <div class="url-input">
+            <label for="configUrl">URL de Salvamento:</label>
+            <input type="text" id="configUrl" placeholder="Cole a URL de save aqui">
+            <button onclick="loadConfigFromUrl()">Carregar Save</button>
+            <button onclick="generateConfigUrl()">Gerar URL de Save</button>
+        </div>
+        <div class="tree">
+            <!-- Colunas serão geradas dinamicamente pelo JavaScript -->
+        </div>
+        <div class="learned-list">
+            <h2>Poderes Conquistados</h2>
+            <ul id="learnedSkills"></ul>
+        </div>
+
+    </div>
+    <script>
+
+const skills = [
+    { id: 1, name: "Flaminha I", effect: "Seus ataques básicos causam 15 como dano de fogo e aplicam o estado de fogo.", requirements: [], image: "/imgs/skills/39.png" },
+    { id: 2, name: "Flaminha II", effect: "Seus ataques básicos causam 20 como dano de fogo e aplicam o estado de fogo.", requirements: [1], image: "/imgs/skills/40.png" },
+    { id: 3, name: "Labaredum I", effect: "Quando recebe dano, você retorna 35 como dano de fogo e aplica estado de fogo.", requirements: [], image: "/imgs/skills/41.png" },
+    { id: 4, name: "Labaredum II", effect: "Quando recebe dano, você retorna 50 como dano de fogo e aplica estado de fogo.", requirements: [2], image: "/imgs/skills/42.png" },
+    { id: 5, name: "Warming Good I", effect: "Sua cura aplica o estado de fogo. Se receber dano de fogo, cura-se em 30. Recebe o estado de fogo.", requirements: [], image: "/imgs/skills/43.png" },
+    { id: 6, name: "Warming Good II", effect: "Sua cura aplica o estado de fogo. Se receber dano de fogo, cura-se em 50. Recebe o estado de fogo.", requirements: [3], image: "/imgs/skills/44.png" },
+    { id: 7, name: "Fire Critical I", effect: "Seu crítico contra alvos com estado de fogo é reduzido em 1.", requirements: [], image: "/imgs/skills/45.png" },
+    { id: 8, name: "Fire Shield I", effect: "Sua resistência a dano de fogo é aumentada em 60%. Flat e %.", requirements: [], image: "/imgs/skills/46.png" },
+    { id: 9, name: "Fire Power I", effect: "Seu dano de fogo é aumentado em 35.", requirements: [], image: "/imgs/skills/47.png" },
+    { id: 10, name: "Chamas do Bordo - Folhas Flamejantes", effect: "Você pode acumular o máximo de 6 folhas. Quando obtiver um acerto crítico, dispara todas as folhas contra o alvo. Cada folha causa 45 como dano de fogo. Aplica estado de fogo.", requirements: [4], image: "/imgs/skills/48.png" },
+    { id: 11, name: "Chamas do Bordo - Manto Flamejante", effect: "Você não dispara mais folhas. Cada folha acumulada causa 35 como dano ao redor de si mesmo. Aplica estado de fogo.", requirements: [10], image: "/imgs/skills/49.png" },
+    { id: 12, name: "Chamas do Bordo - Aconchego Flamejante", effect: "Cada folha cura um alvo ou você mesmo no valor 40. Aplica estado de fogo.", requirements: [10], image: "/imgs/skills/50.png" }
+];
+
+
+        let heroPoints = 0;
+        let learnedSkills = [];
+        let spentPoints = 0;
+
+        function updatePoints() {
+            heroPoints = parseInt(document.getElementById('heroPoints').value);
+            renderTree();
+        }
+
+        function colorTitle(skill){
+            if (skill<8){
+                return "#fc9d03";
+            }
+            else if(skill<15){
+                return "#ff304f"
+            }
+            else if(skill<22){
+                return "#b742ff"
+            }
+            else if(skill<29){
+                return "#2780f5"
+            }
+            else{
+                return "#27f591"
+            }
+        }
+
+        function pledge_icon(skill){
+            if (skill<8){
+                return "bordo/Poder_icon.png";
+            }
+            else if(skill<15){
+                return "bordo/Tank_icon.png"
+            }
+            else if(skill<22){
+                return "bordo/ultimate_icon.png"
+            }
+            else if(skill<29){
+                return "bordo/Magia_icon.png"
+            }
+            else{
+                return "bordo/Cura_icon.png"
+            }
+        }
+
+        function toggleSkill(skillId) {
+            const skill = skills.find(s => s.id === skillId);
+            if (learnedSkills.includes(skillId)) {
+                // Desaprender habilidade
+                learnedSkills = learnedSkills.filter(id => id !== skillId);
+                heroPoints += 1;
+                spentPoints -= 1;
+            } else if (heroPoints >= 1 && skill.requirements.every(req => learnedSkills.includes(req))) {
+                // Aprender habilidade
+                learnedSkills.push(skillId);
+                heroPoints -= 1;
+                spentPoints += 1;
+            }
+            document.getElementById('heroPoints').value = heroPoints;
+            document.getElementById('spentPoints').textContent = spentPoints;
+            renderTree();
+            updateLearnedList();
+        }
+
+        function updateLearnedList() {
+            const learnedList = document.getElementById('learnedSkills');
+            learnedList.innerHTML = learnedSkills.map(id => {
+                const skill = skills.find(s => s.id === id);
+                return `<li style="list-style: none; padding-left: 35px; background-image: url(${skill.image}); background-size: 30px 30px;background-repeat: no-repeat;
+  background-position: 0px center; padding-top: 7px; padding-bottom: 7px;"><strong>${skill.name}</strong>: ${skill.effect}</li>`;
+            }).join('');
+        }
+
+        function renderTree() {
+    const treeContainer = document.querySelector('.tree');
+    treeContainer.innerHTML = '';
+
+    const columns = 3; // 3 colunas
+    const rows = 3; // 3 linhas por seção
+    const skillsPerSection = columns * rows; // Total de habilidades por seção
+
+    // Criar colunas
+    for (let i = 0; i < columns; i++) {
+        const column = document.createElement('div');
+        column.className = 'column';
+        treeContainer.appendChild(column);
+    }
+
+    skills.forEach((skill, index) => {
+        const sectionIndex = Math.floor(index / skillsPerSection); // Índice da seção
+        const columnIndex = index % columns; // Índice da coluna dentro da seção
+        const column = treeContainer.children[columnIndex]; // Pegando a coluna correta
+
+        const skillElement = document.createElement('div');
+        skillElement.className = `skill ${learnedSkills.includes(skill.id) ? 'learned' : ''}`;
+        skillElement.innerHTML = `
+            <img src="${skill.image}" alt="${skill.name}">
+            <div class="tooltip">
+                <strong><span style="color: ${colorTitle(skill.id)};">${skill.name}</span></strong><br>
+                <strong>Efeito</strong>: <span style="color: #fcba03; font-style: italic;">${skill.effect}</span><br>
+                <strong>Requisitos</strong>: <span style="color: #fa3737; font-style: italic;">${skill.requirements.map(req => skills.find(s => s.id === req).name).join(', ') || 'Nenhum'}</span>
+            </div>
+        `;
+
+        skillElement.onclick = () => toggleSkill(skill.id);
+        column.appendChild(skillElement);
+    });
+}
+
+        function generateConfigUrl() {
+            const baseUrl = window.location.href.split('?')[0];
+            const params = new URLSearchParams();
+            params.set('heroPoints', heroPoints);
+            params.set('learnedSkills', learnedSkills.join(','));
+            const url = `${baseUrl}?${params.toString()}`;
+            document.getElementById('configUrl').value = url;
+            alert("URL de configuração gerada! Cole-a para compartilhar.");
+        }
+
+        function loadConfigFromUrl() {
+            const url = document.getElementById('configUrl').value;
+            const params = new URLSearchParams(new URL(url).search);
+            heroPoints = parseInt(params.get('heroPoints')) || 0;
+            learnedSkills = params.get('learnedSkills') ? params.get('learnedSkills').split(',').map(Number) : [];
+            spentPoints = learnedSkills.length;
+            document.getElementById('heroPoints').value = heroPoints;
+            document.getElementById('spentPoints').textContent = spentPoints;
+            renderTree();
+            updateLearnedList();
+        }
+
+        // Carregar configuração da URL ao iniciar (se houver)
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('heroPoints') || params.has('learnedSkills')) {
+            loadConfigFromUrl();
+        } else {
+            renderTree();
+        }
+    </script>
+</body>
+</html>
