@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  let lastScrollTop = 0;
   const header = document.querySelector('header'); 
   const menu = document.querySelector('.menu');
   const toggleButton = document.querySelector('.menu-toggle');
@@ -9,23 +8,24 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
+  // Esconde o header inicialmente se a página não estiver no topo
+  if (window.scrollY > 0) {
+    header.classList.add('hidden');
+  }
+
   window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop) {
-      header.classList.add('hidden'); // Esconde o header ao descer
+    if (window.scrollY === 0) {
+      header.classList.remove('hidden'); // Mostra o header apenas no topo da página
     } else {
-      header.classList.remove('hidden'); // Mostra ao subir
+      header.classList.add('hidden'); // Esconde ao rolar para baixo
     }
-
-    lastScrollTop = Math.max(scrollTop, 0);
   });
 
   function toggleMenu(event) {
     event.stopPropagation(); // Impede que o clique feche o menu imediatamente
     menu.classList.toggle('active');
     toggleButton.classList.toggle('rotate');
-    header.classList.remove('hidden');
+    header.classList.remove('hidden'); // Mantém o header visível ao abrir o menu
   }
 
   toggleButton.addEventListener('click', toggleMenu);
