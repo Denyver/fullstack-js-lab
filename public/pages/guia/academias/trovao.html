@@ -3,67 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
+  <link rel="stylesheet" href="/styles/navbar.css">
   <title>Academia do Trovão</title>
   <style>
+    /* Fonte global */
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      margin: 20px;
-      line-height: 1.6;
-      color: #333;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
+      font-family: 'Poppins', Arial, sans-serif;
+      background-image: linear-gradient(#000000, #001eff);
+      margin: 0;
       padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      line-height: 1.8;
+      color: #e0e0e0;
     }
+
+    /* Container principal */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 25px;
+      background: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Título principal */
     h1 {
       text-align: center;
-      color: #007bff;
+      color: #00aaff;
+      font-weight: 700;
     }
+
+    /* Estilização dos RANKs */
     .rank {
-      margin-top: 20px;
-      padding: 15px;
-      border-left: 5px solid #007bff;
-      background: #f9f9fc;
-      border-radius: 5px;
+      margin-top: 25px;
+      padding: 20px;
+      border-left: 6px solid #00aaff;
+      background: #232323;
+      border-radius: 8px;
+      transition: all 0.3s ease-in-out;
     }
+
+    .rank:hover {
+      transform: scale(1.02);
+    }
+
     .rank h2 {
       margin-top: 0;
-      color: #0056b3;
+      color: #0088dd;
+      font-size: 1.5rem;
     }
+
+    /* Seções */
     .section {
-      margin-top: 10px;
+      margin-top: 15px;
     }
+
     .section h3 {
-      color: #333;
-      border-bottom: 2px solid #eaeaea;
-      padding-bottom: 5px;
-      margin-bottom: 10px;
+      color: #e0e0e0;
+      font-size: 1.3rem;
+      border-bottom: 3px solid #333;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
     }
+
+    /* Lista de Talentos e Habilidades */
     .talents, .abilities {
       list-style: none;
       padding: 0;
       margin: 0;
     }
+
     .talents li, .abilities li {
-      margin-bottom: 10px;
-      padding: 10px;
-      background: #f0f8ff;
-      border: 1px solid #dceefb;
-      border-radius: 5px;
+      margin-bottom: 12px;
+      padding: 12px;
+      background: #252525;
+      border: 1px solid #00aaff;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: background 0.3s ease-in-out;
     }
+
+    .talents li:hover, .abilities li:hover {
+      background: #0099ff4b;
+    }
+
+    /* Rank V - Destaque Vermelho */
     .rank-v {
-      background: #ffe8e8;
-      border-left: 5px solid #ff4d4d;
+      background: #3a1c1c;
+      border-left: 6px solid #ff4d4d;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+      
+      .rank {
+        padding: 15px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      .rank h2 {
+        font-size: 1.3rem;
+      }
+      
+      .section h3 {
+        font-size: 1.2rem;
+      }
+      
+      .talents li, .abilities li {
+        font-size: 0.95rem;
+        padding: 10px;
+      }
     }
   </style>
 </head>
 <body>
+  <header>
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/imgs/woe_titulo.png" alt="Logo" />
+      </a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      &#9776; 
+    </button>
+    <nav class="menu">
+      <ul>
+        <li><a href="/pages/guia_geral.html">Guia</a></li>
+        <li><a href="/pages/eventos.html">Eventos</a></li>
+        <li><a href="/pages/combat.html">Combate</a></li>
+        <li><a href="/pages/ficha.html">Ficha de Personagem</a></li>
+        <li><a href="/pages/gerador_item.html">Gerador de Itens</a></li>
+        <li><a href="/pages/criador_npc.html">Criador de NPC</a></li>
+        <li><a href="/pages/mapa_eder.html">Mapa</a></li>
+        <li><a href="/pages/mesas.html">Mesas</a></li>
+        <li><a href="/pages/planares.html">Planares</a></li>
+      </ul>
+    </nav>
+    <div class="voltar-btn-container">
+      <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+    </div>
+  </header><br><br><br>
+
   <div class="container">
     <h1>Academia do Trovão</h1>
     

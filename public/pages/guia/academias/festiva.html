@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
+  <link rel="stylesheet" href="/styles/navbar.css">
   <title>Academia Festiva</title>
   <style>
     body {
@@ -13,6 +13,7 @@
       line-height: 1.6;
       color: #333;
     }
+
     .container {
       max-width: 800px;
       margin: 0 auto;
@@ -21,10 +22,12 @@
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
     h1 {
       text-align: center;
       color: #e67e22;
     }
+
     .rank {
       margin-top: 20px;
       padding: 15px;
@@ -32,92 +35,108 @@
       background: #fffbea;
       border-radius: 5px;
     }
+
     .rank h2 {
       margin-top: 0;
       color: #d35400;
     }
+
     .section {
       margin-top: 10px;
     }
+
     .section h3 {
       color: #333;
       border-bottom: 2px solid #eaeaea;
       padding-bottom: 5px;
       margin-bottom: 10px;
     }
-    .talents, .abilities {
+
+    .talents,
+    .abilities {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-    .talents li, .abilities li {
+
+    .talents li,
+    .abilities li {
       margin-bottom: 10px;
       padding: 10px;
       background: #fffae6;
       border: 1px solid #f5d7a6;
       border-radius: 5px;
     }
+
     .rank-v {
       background: #ffe8e8;
       border-left: 5px solid #ff4d4d;
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo">
-      <a href="/src/pages/RPG Site/html/index.html">
-        <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo" />
+      <a href="/index.html">
+        <img src="/imgs/woe_titulo.png" alt="Logo" />
       </a>
     </div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      &#9776;
+    </button>
     <nav class="menu">
       <ul>
-        <li>
-          <a href="/src/pages/RPG Site/html/cadastro.html">Cadastre-se</a>
-        </li>
-        <li>
-          <a href="/src/pages/RPG Site/html/combat.html">Combate</a>
-        </li>
-        <li>
-          <a href="/src/pages/RPG Site/html/ficha.html">Ficha de Personagem</a>
-        </li>
-        <li>
-          <a href="/src/pages/RPG Site/html/gerador_item.html">Gerador de Itens</a>
-        </li>
-        <li>
-          <a href="/src/pages/RPG Site/html/login.html">Login</a>
-        </li>
+        <li><a href="/pages/guia_geral.html">Guia</a></li>
+        <li><a href="/pages/eventos.html">Eventos</a></li>
+        <li><a href="/pages/combat.html">Combate</a></li>
+        <li><a href="/pages/ficha.html">Ficha de Personagem</a></li>
+        <li><a href="/pages/gerador_item.html">Gerador de Itens</a></li>
+        <li><a href="/pages/criador_npc.html">Criador de NPC</a></li>
+        <li><a href="/pages/mapa_eder.html">Mapa</a></li>
+        <li><a href="/pages/mesas.html">Mesas</a></li>
+        <li><a href="/pages/planares.html">Planares</a></li>
       </ul>
     </nav>
-  </header>
+    <div class="voltar-btn-container">
+      <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+    </div>
+  </header><br><br><br>
+
   <div class="container">
     <h1>Academia Festiva</h1>
-    
+
     <div class="rank">
       <h2>RANK I</h2>
       <div class="section">
         <h3>Talentos</h3>
         <ul class="talents">
-          <li><strong>Carisma Festivo:</strong> Sempre que você promover um descanso com comida ou bebida oferecidos por você, todos os aliados do grupo terão vantagem nos testes feitos por 1 dia.</li>
+          <li><strong>Carisma Festivo:</strong> Sempre que você promover um descanso com comida ou bebida oferecidos por
+            você, todos os aliados do grupo terão vantagem nos testes feitos por 1 dia.</li>
           <li><strong>Eu Sou de Todo Mundo:</strong> Em testes de carisma, você terá vantagem e um bônus de +5.</li>
-          <li><strong>Eu Sou da Festa:</strong> Você se torna resistente à embriaguez. O efeito de embriaguez é reduzido em 70% em você. Em estado de embriaguez, você não sofre penalidade.</li>
+          <li><strong>Eu Sou da Festa:</strong> Você se torna resistente à embriaguez. O efeito de embriaguez é reduzido
+            em 70% em você. Em estado de embriaguez, você não sofre penalidade.</li>
         </ul>
       </div>
       <div class="section">
         <h3>Habilidades</h3>
         <ul class="abilities">
-          <li><strong>É Ritmo de Festa:</strong> Inicia um movimento festivo, podendo ser música ou dança. Os aliados próximos ganham vantagem no ataque ou um bônus de +5 se já tiverem vantagem. Requer instrumento ou vocalizador. Dura enquanto o ritmo é produzido.</li>
+          <li><strong>É Ritmo de Festa:</strong> Inicia um movimento festivo, podendo ser música ou dança. Os aliados
+            próximos ganham vantagem no ataque ou um bônus de +5 se já tiverem vantagem. Requer instrumento ou
+            vocalizador. Dura enquanto o ritmo é produzido.</li>
           <li><strong>Banquete:</strong> Prepara um banquete que fornece comida e bebida em abundância. Efeitos:
             <ul>
               <li><em>Satisfeito:</em> Recupera toda a vida e ganha regeneração (4% + Mod.CAR por rodada).</li>
               <li><em>Animado:</em> +5 no ataque e dano adicional (Mod.CAR/2).</li>
               <li><em>Embalado:</em> Ganha dado de esquiva, mesmo com armadura pesada.</li>
-              <li><em>Acolhido:</em> +20% na CA total. Cura de 18% da vida máxima ao sofrer dano letal (uma vez por banquete).</li>
+              <li><em>Acolhido:</em> +20% na CA total. Cura de 18% da vida máxima ao sofrer dano letal (uma vez por
+                banquete).</li>
               <li><em>Penetra:</em> Não convidados têm desvantagem em todas as jogadas.</li>
             </ul>
             Preparação: 2 horas. Não pode ser usado em combate.
           </li>
-          <li><strong>Encenação:</strong> Encena uma cena convincente. Vantagem se tiver perícia em atuação e +5 nos testes. Não pode ser usado em combate.</li>
+          <li><strong>Encenação:</strong> Encena uma cena convincente. Vantagem se tiver perícia em atuação e +5 nos
+            testes. Não pode ser usado em combate.</li>
         </ul>
       </div>
     </div>
@@ -127,7 +146,8 @@
       <div class="section">
         <h3>Talentos</h3>
         <ul class="talents">
-          <li><strong>Batizado:</strong> Permite adicionar efeitos a bebidas com um teste de prestidigitação. Possíveis efeitos: 
+          <li><strong>Batizado:</strong> Permite adicionar efeitos a bebidas com um teste de prestidigitação. Possíveis
+            efeitos:
             <ul>
               <li><em>Sonolência:</em> Estado de sono profundo.</li>
               <li><em>Agitado:</em> +5 nas iniciativas.</li>
@@ -139,8 +159,10 @@
       <div class="section">
         <h3>Habilidades</h3>
         <ul class="abilities">
-          <li><strong>Ritmo de Confusão:</strong> Instiga inimigos a atacarem aliados. Teste de sabedoria para resistir. Dura enquanto o ritmo é mantido.</li>
-          <li><strong>PUB DAY:</strong> Monta um bar temporário por 1 dia, criando bebidas e comidas mágicas. Requer 1 ponto de esforço e itens iniciais.</li>
+          <li><strong>Ritmo de Confusão:</strong> Instiga inimigos a atacarem aliados. Teste de sabedoria para resistir.
+            Dura enquanto o ritmo é mantido.</li>
+          <li><strong>PUB DAY:</strong> Monta um bar temporário por 1 dia, criando bebidas e comidas mágicas. Requer 1
+            ponto de esforço e itens iniciais.</li>
         </ul>
       </div>
     </div>
@@ -151,15 +173,18 @@
         <h3>Talentos</h3>
         <ul class="talents">
           <li><strong>Alma de Festa:</strong> Recupera (Mod.CAR)d12 pontos de vida em eventos festivos.</li>
-          <li><strong>Mestre de Cerimônia:</strong> +10% de resistência a dano para aliados em celebrações lideradas por você (duração: 24 horas).</li>
-          <li><strong>Fogos de Artifício:</strong> Utiliza efeitos visuais com chance de cegueira [(Mod.CARx3) + Nível].</li>
+          <li><strong>Mestre de Cerimônia:</strong> +10% de resistência a dano para aliados em celebrações lideradas por
+            você (duração: 24 horas).</li>
+          <li><strong>Fogos de Artifício:</strong> Utiliza efeitos visuais com chance de cegueira [(Mod.CARx3) + Nível].
+          </li>
         </ul>
       </div>
       <div class="section">
         <h3>Habilidades</h3>
         <ul class="abilities">
           <li><strong>Dança da Calmaria:</strong> Regenera (Mod.CAR)d16 + Medicina e cura aliados por 3 rodadas.</li>
-          <li><strong>Festa da Euforia:</strong> Remove efeitos negativos de aliados, com 30% de chance de devolvê-los aos inimigos.</li>
+          <li><strong>Festa da Euforia:</strong> Remove efeitos negativos de aliados, com 30% de chance de devolvê-los
+            aos inimigos.</li>
         </ul>
       </div>
     </div>
@@ -182,4 +207,5 @@
     </div>
   </div>
 </body>
+
 </html>

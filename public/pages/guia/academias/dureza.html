@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
     <title>Academia da Dureza - Elemento Terra</title>
     <style>
         body {
@@ -83,30 +83,31 @@
 <body>
     <header>
         <div class="logo">
-          <a href="/src/pages/RPG Site/html/index.html">
-            <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo" />
+          <a href="/index.html">
+            <img src="/imgs/woe_titulo.png" alt="Logo" />
           </a>
         </div>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+          &#9776; 
+        </button>
         <nav class="menu">
           <ul>
-            <li>
-              <a href="/src/pages/RPG Site/html/cadastro.html">Cadastre-se</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/combat.html">Combate</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/ficha.html">Ficha de Personagem</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/gerador_item.html">Gerador de Itens</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/login.html">Login</a>
-            </li>
+            <li><a href="/pages/guia_geral.html">Guia</a></li>
+            <li><a href="/pages/eventos.html">Eventos</a></li>
+            <li><a href="/pages/combat.html">Combate</a></li>
+            <li><a href="/pages/ficha.html">Ficha de Personagem</a></li>
+            <li><a href="/pages/gerador_item.html">Gerador de Itens</a></li>
+            <li><a href="/pages/criador_npc.html">Criador de NPC</a></li>
+            <li><a href="/pages/mapa_eder.html">Mapa</a></li>
+            <li><a href="/pages/mesas.html">Mesas</a></li>
+            <li><a href="/pages/planares.html">Planares</a></li>
           </ul>
         </nav>
-      </header>
+        <div class="voltar-btn-container">
+          <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+        </div>
+      </header><br><br><br>
+      
     <div class="container">
         <section class="rank">
             <h2>RANK I</h2>

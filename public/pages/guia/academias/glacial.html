@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Academia Glacial</title>
-  <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="/styles/navbar.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -79,6 +78,33 @@
   </style>
 </head>
 <body>
+  <header>
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/imgs/woe_titulo.png" alt="Logo" />
+      </a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      &#9776; 
+    </button>
+    <nav class="menu">
+      <ul>
+        <li><a href="/pages/guia_geral.html">Guia</a></li>
+        <li><a href="/pages/eventos.html">Eventos</a></li>
+        <li><a href="/pages/combat.html">Combate</a></li>
+        <li><a href="/pages/ficha.html">Ficha de Personagem</a></li>
+        <li><a href="/pages/gerador_item.html">Gerador de Itens</a></li>
+        <li><a href="/pages/criador_npc.html">Criador de NPC</a></li>
+        <li><a href="/pages/mapa_eder.html">Mapa</a></li>
+        <li><a href="/pages/mesas.html">Mesas</a></li>
+        <li><a href="/pages/planares.html">Planares</a></li>
+      </ul>
+    </nav>
+    <div class="voltar-btn-container">
+      <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+    </div>
+  </header><br><br><br>
+  
   <div class="container">
     <h1>Academia Glacial</h1>
     

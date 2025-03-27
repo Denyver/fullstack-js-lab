@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="/src/pages/RPG Site/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
     <title>Guia de Links</title>
     <style>
       /* Estilos Básicos */
@@ -139,46 +138,42 @@
   </head>
   <body>
     <header>
-        <div class="logo">
-          <a href="/src/pages/RPG Site/html/index.html">
-            <img src="/src/pages/RPG Site/imgs/woe_titulo.png" alt="Logo" />
-          </a>
-        </div>
-        <nav class="menu">
-          <ul>
-            <li>
-              <a href="/src/pages/RPG Site/html/cadastro.html">Cadastre-se</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/combat.html">Combate</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/ficha.html">Ficha de Personagem</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/gerador_item.html">Gerador de Itens</a>
-            </li>
-            <li>
-              <a href="/src/pages/RPG Site/html/login.html">Login</a>
-            </li>
-          </ul>
-        </nav>
-  <div class="voltar-btn-container">
-    <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
-  </div>
-      </header>
+      <div class="logo">
+        <a href="/index.html">
+          <img src="/imgs/woe_titulo.png" alt="Logo" />
+        </a>
+      </div>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+        &#9776; 
+      </button>
+      <nav class="menu">
+        <ul>
+          <li><a href="/pages/guia_geral.html">Guia</a></li>
+          <li><a href="/pages/eventos.html">Eventos</a></li>
+          <li><a href="/pages/combat.html">Combate</a></li>
+          <li><a href="/pages/ficha.html">Ficha de Personagem</a></li>
+          <li><a href="/pages/gerador_item.html">Gerador de Itens</a></li>
+          <li><a href="/pages/criador_npc.html">Criador de NPC</a></li>
+          <li><a href="/pages/mapa_eder.html">Mapa</a></li>
+          <li><a href="/pages/mesas.html">Mesas</a></li>
+          <li><a href="/pages/planares.html">Planares</a></li>
+        </ul>
+      </nav>
+      <div class="voltar-btn-container">
+        <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+      </div>
+    </header><br><br><br>
 
     <main>
       <section class="category">
         <h2>Escolas</h2>
         <ul class="menu">
-          <li><a href="/src/pages/RPG Site/html/guia/academias/dureza.html">Dureza</a></li>
-          <li><a href="/src/pages/RPG Site/html/guia/academias/festiva.html">Festiva</a></li>
-          <li><a href="/src/pages/RPG Site/html/guia/academias/glacial.html">Glacial</a></li>
-          <li><a href="/src/pages/RPG Site/html/guia/academias/natureza.html">Natureza</a></li>
-          <li><a href="/src/pages/RPG Site/html/guia/academias/solar.html">Solar</a></li>
-          <li><a href="/src/pages/RPG Site/html/guia/academias/trovao.html">Trovão</a></li>
-          <li><a href="/src/pages/RPG Site/html/guia/academias/"></a></li>
+          <li><a href="/pages/guia/academias/dureza.html">Dureza</a></li>
+          <li><a href="/pages/guia/academias/festiva.html">Festiva</a></li>
+          <li><a href="/pages/guia/academias/glacial.html">Glacial</a></li>
+          <li><a href="/pages/guia/academias/natureza.html">Natureza</a></li>
+          <li><a href="/pages/guia/academias/solar.html">Solar</a></li>
+          <li><a href="/pages/guia/academias/trovao.html">Trovão</a></li>
         </ul>
       </section>
 
