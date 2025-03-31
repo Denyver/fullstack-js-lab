@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <title>First Ways</title>
+    <style>
+      /* Estilos Básicos */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(135deg, #4b4b4b, #222222);
+        color: #eaeaea;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        background-color: #181818;
+        transition: background-color 0.3s ease;
+      }
+
+      /* Estilos para as categorias e os links */
+      .category {
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 80px;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .category h2 {
+        font-size: 2em;
+        color: #ffffff;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: 0 0 10px rgba(0, 255, 179, 0.7);
+      }
+
+      /* Estilos para os links */
+      main {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 40px;
+        padding: 20px;
+        flex-wrap: wrap;
+      }
+
+      main .menu ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      main li {
+        list-style: none;
+        position: relative;
+        padding: 12px 20px;
+        background: #222;
+        border-radius: 8px;
+        margin: 0;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+      }
+
+      main li:hover {
+        transform: scale(1.05);
+        background-color: #333;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+      }
+
+      main li a {
+        text-decoration: none;
+        color: #eaeaea;
+        font-weight: bold;
+        font-size: 18px;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+      }
+
+      footer {
+        margin-top: auto;
+        background-color: #222222;
+        color: #ccc;
+        padding: 20px;
+        text-align: center;
+        font-size: 1em;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      footer a {
+        color: #ccc;
+        margin: 0 10px;
+        font-size: 1.5em;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: #00ffb3;
+      }
+
+      .footer-icons {
+        margin-top: 10px;
+      }
+
+      /* Responsividade */
+      @media (max-width: 768px) {
+        header {
+          padding: 15px;
+        }
+
+        .category h2 {
+          font-size: 1.5em;
+        }
+
+        main {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        main li {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="/index.html">
+          <img src="/imgs/woe_titulo.png" alt="Logo" />
+        </a>
+      </div>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+        &#9776; 
+      </button>
+      <nav class="menu">
+        <a href="/pages/guia_geral.html">Guia</a>
+        <a href="/pages/eventos.html">Eventos</a>
+        <a href="/pages/combat.html">Combate</a>
+        <a href="/pages/ficha.html">Ficha de Personagem</a>
+        <a href="/pages/gerador_item.html">Gerador de Itens</a>
+        <a href="/pages/criador_npc.html">Criador de NPC</a>
+        <a href="/pages/mapa_eder.html">Mapa</a>
+        <a href="/pages/mesas.html">Mesas</a>
+        <a href="/pages/planares.html">Planares</a>
+      </nav>
+      <div class="voltar-btn-container">
+        <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="category">
+        <h2>Treinamentos</h2>
+        <ul class="menu">
+          <li><a href="/pages/guia/ways/first_way/espadão.html">Espadão</a></li>
+          <li><a href="/pages/guia/ways/first_way/ambidestria.html">Ambidestria</a></li>
+          <li><a href="/pages/guia/ways/first_way/cajados.html">Cajados</a></li>
+          <li><a href="/pages/guia/ways/first_way/adagas.html">Adagas</a></li>
+          <li><a href="/pages/guia/ways/first_way/combate_desarmado.html">Combate Desarmado</a></li>
+          <li><a href="/pages/guia/ways/first_way/machados.html">Machados</a></li>
+          <li><a href="/pages/guia/ways/first_way/martelos.html">Martelos</a></li>
+          <li><a href="/pages/guia/ways/first_way/arcos.html">Arcos</a></li>
+          <li><a href="/pages/guia/ways/first_way/escudos.html">Escudos</a></li>
+          <li><a href="/pages/guia/ways/first_way/arremesso.html">Arremesso</a></li>
+          <li><a href="/pages/guia/ways/first_way/katanas.html">Katanas</a></li>
+          <li><a href="/pages/guia/ways/first_way/lanças.html">Lanças</a></li>
+          <li><a href="/pages/guia/ways/first_way/estilingue.html">Estilingue</a></li>
+          <li><a href="/pages/guia/ways/first_way/firegun_shotguns.html">Firegun - Shotguns</a></li>
+          <li><a href="/pages/guia/ways/first_way/firegun_pistola.html">Firegun - Pistola</a></li>
+          <li><a href="/pages/guia/ways/first_way/firegun_revolver.html">Firegun - Revolver</a></li>
+          <li><a href="/pages/guia/ways/first_way/firegun_rifle.html">Firegun - Rifle</a></li>
+          <li><a href="/pages/guia/ways/first_way/soqueira.html">Soqueira</a></li>
+          <li><a href="/pages/guia/ways/first_way/foice.html">Foice</a></li>
+          <li><a href="/pages/guia/ways/first_way/orbe_elemental.html">Orbe Elemental</a></li>
+          <li><a href="/pages/guia/ways/first_way/bordao.html">Bordão</a></li>
+          <li><a href="/pages/guia/ways/first_way/besta.html">Besta</a></li>
+          <li><a href="/pages/guia/ways/first_way/swallow.html">Swallow</a></li>
+          <li><a href="/pages/guia/ways/first_way/haloblade.html">Haloblade</a></li>
+          <li><a href="/pages/guia/ways/first_way/chicote.html">Chicote</a></li>
+          <li><a href="/pages/guia/ways/first_way/rapieira.html">Rapieira</a></li>
+          <li><a href="/pages/guia/ways/first_way/massa.html">Massa</a></li>
+        </ul>
+      </section>
+      
+
+    <footer>
+      <p>&copy; 2025 Guia de Links. Todos os direitos reservados.</p>
+      <div class="footer-icons">
+        <a href="https://github.com/Denyver" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.spotify.com" target="_blank"><i class="fab fa-spotify"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </footer>
+  </body>
+</html>
