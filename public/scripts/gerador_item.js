@@ -1,15 +1,15 @@
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
 
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
 
-  document.addEventListener('click', (e) => {
-    if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
-      navLinks.classList.remove('active');
-    }
-  });
+document.addEventListener('click', (e) => {
+  if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+    navLinks.classList.remove('active');
+  }
+});
 
 const armas = [
   "Adaga",
@@ -80,25 +80,27 @@ function atualizarOpcoes() {
 
 function gerarItem() {
   const tipo = document.getElementById("itemType").value;
-  const nivel = parseInt(document.getElementById("nivel").value);
+  const nivelInput = document.getElementById("nivel");
+  let nivel = parseInt(nivelInput.value);
+
+  if (isNaN(nivel) || nivel < 1 || nivel > 20) {
+    alert("O nível deve estar entre 1 e 20 seu arrombado");
+    nivelInput.value = 1;
+    nivel = 1;
+  }
+
   let item;
   const numAtributos = getRandomInt(1, 3);
   let atributos = [];
 
   if (tipo === "aleatorio") {
     item = getRandomElement([...armas, ...armaduras, ...acessorios]);
-  } else if (
-    tipo === "arma" ||
-    tipo === "armadura" ||
-    tipo === "acessorio"
-  ) {
-    const tipoEspecifico =
-      document.getElementById("tipoEspecifico").value;
+  } else if (tipo === "arma" || tipo === "armadura" || tipo === "acessorio") {
+    const tipoEspecifico = document.getElementById("tipoEspecifico").value;
     item = tipoEspecifico;
+
     if (tipo === "armadura") {
-      atributos.push(
-        escalarAtributo({ Defesa: getRandomInt(5, 20) }, nivel)
-      );
+      atributos.push(escalarAtributo({ Defesa: getRandomInt(5, 20) }, nivel));
     }
   }
 
@@ -107,25 +109,25 @@ function gerarItem() {
   }
 
   const itemHTML = `
-  <p><span class="atributo">Tipo:</span> <span class="item-type">${capitalizeFirstLetter(
-    tipo
-  )}</span></p>
-  <p><span class="atributo">Nome:</span> <span class="item-title">${item}</span></p>
-  <p><span class="atributo">Atributos:</span></p>
-  <ul>
-    ${atributos
-      .map(
-        (attr) =>
-          `<li id="iconstar">${Object.keys(attr)[0]} +${
-            Object.values(attr)[0]
-          }</li>`
-      )
-      .join("")}
-  </ul>
-`;
+    <p><span class="atributo">Tipo:</span> <span class="item-type">${capitalizeFirstLetter(
+      tipo
+    )}</span></p>
+    <p><span class="atributo">Nome:</span> <span class="item-title">${item}</span></p>
+    <p><span class="atributo">Atributos:</span></p>
+    <ul>
+      ${atributos
+        .map(
+          (attr) =>
+            `<li id="iconstar">${Object.keys(attr)[0]} +${Object.values(attr)[0]}</li>`
+        )
+        .join("")}
+    </ul>
+  `;
 
+  // Exibindo o item na página
   document.getElementById("output").innerHTML = itemHTML;
 }
+
 
 function escalarTipoDano(valor, nivel) {
   let aumento = Math.floor(nivel) * 0.2;
@@ -137,7 +139,6 @@ function escalarTipoDano(valor, nivel) {
   } else {
     valor = Math.floor(valor * (1 + aumento));
   }
-
   return valor;
 }
 
