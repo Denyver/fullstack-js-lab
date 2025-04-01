@@ -17,7 +17,6 @@
     transition: background-color 0.3s ease;
   }
 
-  /* Estilos para as categorias e os links */
   .category {
     gap: 10px;
     flex-wrap: wrap;
@@ -39,7 +38,6 @@
     text-shadow: 0 0 10px rgba(0, 255, 179, 0.7);
   }
 
-  /* Estilos para os links */
   main {
     display: flex;
     justify-content: space-evenly;
@@ -55,32 +53,6 @@
     gap: 20px;
     max-width: 600px;
     margin: 0 auto;
-  }
-
-  main li {
-    list-style: none;
-    position: relative;
-    padding: 12px 20px;
-    background: #222;
-    border-radius: 8px;
-    margin: 0;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-  }
-
-  main li:hover {
-    transform: scale(1.05);
-    background-color: #333;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
-  }
-
-  main li a {
-    text-decoration: none;
-    color: #eaeaea;
-    font-weight: bold;
-    font-size: 18px;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
   }
 
   footer {
