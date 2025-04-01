@@ -20,7 +20,7 @@ class Enemy {
             this.randomAtributes();
         }
         if (isNaN(nivel) || nivel < 1 || nivel > 20) {
-            alert("O nível deve estar entre 1 e 20, JUMENTO");
+            alert("Ou você bota o número, ou você escolhe UM NÚMERO ENTRE 1 E 20 PORRA");
             nivelInput.value = 1;
             nivel = 1;
           }
