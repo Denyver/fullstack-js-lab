@@ -25,12 +25,6 @@ class Enemy {
             nivel = 1;
           }
 
-        else if (nivel == null) {
-            alert("BOTA A PORRA DO NÚMERO");
-            nivelInput.value = 1;
-            nivel = 1;
-        }
-
         this.tank = tank_type;
         this.difficult = this.updateAtributes(tier);
         this.arma = this.myWeapon(arma);
