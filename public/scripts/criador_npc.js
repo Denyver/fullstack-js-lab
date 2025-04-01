@@ -19,6 +19,11 @@ class Enemy {
         if (aleatorio == true) {
             this.randomAtributes();
         }
+        if (isNaN(nivel) || nivel < 1 || nivel > 20) {
+            alert("O nível deve estar entre 1 e 20, JUMENTO");
+            nivelInput.value = 1;
+            nivel = 1;
+          }
         this.tank = tank_type;
         this.difficult = this.updateAtributes(tier);
         this.arma = this.myWeapon(arma);
