@@ -1,7 +1,3 @@
-header, .navbar {
-    all: unset; /* Impede herança de estilos indesejados */
-}
-
 * {
     margin: 0;
     padding: 0;
