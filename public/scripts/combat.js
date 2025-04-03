@@ -76,6 +76,11 @@ document
     currentLife = maxLife;
     document.getElementById("lifebar").value = currentLife;
     updateLifeBar();
+    if (currentLife <10 || currentLife ==0) {
+      alert(
+        "Por favor, insira um valor de vida superior a 10 e diferente de 0!"
+      )
+    }
   });
 
 function updateLifeBar() {
