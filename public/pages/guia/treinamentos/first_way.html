@@ -8,130 +8,131 @@
     <title>First Ways</title>
   </head>
   <style>
-    /* Reset global */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    ul, li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-  font-family: "Arial", sans-serif;
-  background: linear-gradient(135deg, #707070, #1a1a1a);
-  color: #eaeaea;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: #181818;
-  transition: background-color 0.3s ease;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* Centralizando a category */
-.category {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  flex-grow: 1;
-}
+    body {
+      font-family: "Arial", sans-serif;
+      background: linear-gradient(135deg, #707070, #1a1a1a);
+      color: #eaeaea;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #181818;
+      transition: background-color 0.3s ease;
+    }
 
-.category h2 {
-  font-size: 2em;
-  color: #ffffff;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: bold;
-}
+    .category {
+      margin-top: 300px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-grow: 1;
+    }
 
-main {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 20px;
-  padding: 20px;
-  flex-wrap: wrap;
-  min-height: 100vh;
-}
+    .category h2 {
+      font-size: 4em;
+      color: #ffffff;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
 
-main .menu ul {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 100%;
-  align-items: center;
-}
+    main {
+      display: flex;
+      justify-content: space-evenly;
+      gap: 20px;
+      padding: 20px;
+      flex-wrap: wrap;
+      min-height: 100vh;
+    }
 
-main li {
-  position: relative;
-  padding: 12px 20px;
-  background: #222;
-  border-radius: 8px;
-  margin: 10px 0;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  text-align: center;
-  width: 100%;
-  list-style: none;
-}
+    main .menu ul {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      align-items: center;
+    }
 
-main li:hover {
-  transform: scale(1.05);
-  background-color: #333;
-}
+    main li {
+      position: relative;
+      padding: 12px 20px;
+      background: #222;
+      border-radius: 8px;
+      margin: 10px 0;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      text-align: center;
+      width: 100%;
+      list-style: none;
+    }
 
-main li a {
-  text-decoration: none;
-  color: #eaeaea;
-  font-weight: bold;
-  font-size: 18px;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
+    main li:hover {
+      transform: scale(1.05);
+      background-color: #333;
+    }
 
-main li a:hover {
-  color: #00ffb3;
-  text-shadow: 0 0 10px #00ffb3, 0 0 20px #00ffb3;
-}
+    main li a {
+      text-decoration: none;
+      color: #eaeaea;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
 
-/* Animação */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    main li a:hover {
+      color: #00ffb3;
+      text-shadow: 0 0 10px #00ffb3, 0 0 20px #00ffb3;
+    }
 
-/* Rodapé fixo no final da página */
-footer {
-  width: 100%;
-  background-color: #222222;
-  color: #ccc;
-  padding: 20px;
-  text-align: center;
-  margin-top: auto;
-  border-radius: 10px;
-}
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-footer a {
-  color: #ccc;
-  margin: 0 10px;
-  font-size: 1.5em;
-  transition: color 0.3s ease;
-}
+    footer {
+      width: 100%;
+      background-color: #222222;
+      color: #ccc;
+      padding: 20px;
+      text-align: center;
+      margin-top: auto;
+      border-radius: 10px;
+    }
 
-footer a:hover {
-  color: #00ffb3;
-}
+    footer a {
+      color: #ccc;
+      margin: 0 10px;
+      font-size: 1.5em;
+      transition: color 0.3s ease;
+    }
 
-footer .footer-icons {
-  margin-top: 10px;
-}
+    footer a:hover {
+      color: #00ffb3;
+    }
+
+    footer .footer-icons {
+      margin-top: 10px;
+    }
   </style>
-  
   <body>
     <header>
       <div class="logo">
