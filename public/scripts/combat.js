@@ -80,6 +80,7 @@ document
       alert(
         "Por favor, insira um valor diferente de 0 e acima de 9!"
       )
+      maxLife.value = 10
     }
   });
 
