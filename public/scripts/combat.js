@@ -80,6 +80,7 @@ document
       alert(
         "Por favor, insira um valor de vida superior a 10 e diferente de 0!"
       )
+      return currentLife == 10
     }
   });
 
