@@ -76,11 +76,11 @@ document
     currentLife = maxLife;
     document.getElementById("lifebar").value = currentLife;
     updateLifeBar();
-    if (currentLife <10 || currentLife ==0) {
+    if (isNaN(currentLife) || currentLife <=9) {
       alert(
         "Por favor, insira um valor de vida superior a 10 e diferente de 0!"
       )
-      return currentLife == 10
+      return
     }
   });
 
