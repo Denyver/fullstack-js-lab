@@ -7,132 +7,6 @@
     <link rel="stylesheet" href="/styles/treinamentos.css">
     <title>First Ways</title>
   </head>
-  <style>
-    ul, li {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Arial", sans-serif;
-      background: linear-gradient(135deg, #707070, #1a1a1a);
-      color: #eaeaea;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      background-color: #181818;
-      transition: background-color 0.3s ease;
-    }
-
-    .category {
-      margin-top: 250px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      flex-grow: 1;
-    }
-
-    .category h2 {
-      font-size: 3em;
-      color: #ffffff;
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-      font-weight: bold;
-    }
-
-    main {
-      display: flex;
-      justify-content: space-evenly;
-      gap: 20px;
-      padding: 20px;
-      flex-wrap: wrap;
-      min-height: 100vh;
-    }
-
-    main .menu ul {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      width: 100%;
-      align-items: center;
-    }
-
-    main li {
-      position: relative;
-      padding: 12px 20px;
-      background: #222;
-      border-radius: 8px;
-      margin: 10px 0;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      text-align: center;
-      width: 100%;
-      list-style: none;
-    }
-
-    main li:hover {
-      transform: scale(1.05);
-      background-color: #333;
-    }
-
-    main li a {
-      text-decoration: none;
-      color: #eaeaea;
-      font-weight: bold;
-      font-size: 18px;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
-
-    main li a:hover {
-      color: #00ffb3;
-      text-shadow: 0 0 10px #00ffb3, 0 0 20px #00ffb3;
-    }
-
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    footer {
-      width: 100%;
-      background-color: #222222;
-      color: #ccc;
-      padding: 20px;
-      text-align: center;
-      margin-top: auto;
-      border-radius: 10px;
-    }
-
-    footer a {
-      color: #ccc;
-      margin: 0 10px;
-      font-size: 1.5em;
-      transition: color 0.3s ease;
-    }
-
-    footer a:hover {
-      color: #00ffb3;
-    }
-
-    footer .footer-icons {
-      margin-top: 10px;
-    }
-  </style>
   <body>
     <header>
       <div class="logo">
@@ -144,15 +18,13 @@
         &#9776; 
       </button>
       <nav class="menu">
-        <a href="/pages/guia_geral.html">Guia</a>
-        <a href="/pages/eventos.html">Eventos</a>
+        <a href="/pages/guia/treinamentos/forgotten_powers.html">Forgotten Power</a>
+        <a href="/pages/guia/treinamentos/second_way.html">Second Way</a>
+        <a href="/pages/guia/treinamentos/outer_ways.html">Outer Ways</a>
         <a href="/pages/combat.html">Combate</a>
         <a href="/pages/ficha.html">Ficha de Personagem</a>
         <a href="/pages/gerador_item.html">Gerador de Itens</a>
         <a href="/pages/criador_npc.html">Criador de NPC</a>
-        <a href="/pages/mapa_eder.html">Mapa</a>
-        <a href="/pages/mesas.html">Mesas</a>
-        <a href="/pages/planares.html">Planares</a>
       </nav>
       <div class="voltar-btn-container">
         <button class="voltar-btn" onclick="window.history.back()">Voltar</button>

@@ -1,12 +1,12 @@
 :root {
-  --cor-fonte-p: #ffffff;
-  --cor-fundo-primaria: #1e1e2f;
+  --cor-fonte-p: #ECEFF4;
+  --cor-fundo-primaria: #1E1E2E;
   --cor-destaque: #00ff73;
   --cor-borda: #333333;
   --cor-texto: #e4e4e4;
   --cor-hover: #47ffa9;
-  --cor-input-bg: #3a3a47;
-  --cor-input-focus: #575768;
+  --cor-input-bg: #1f1f1f;
+  --cor-input-focus: #232323;
   font-family: "Cyber", sans-serif;
 }
 
@@ -15,7 +15,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
-  background: linear-gradient(135deg, #eaeaea, #444444);
+  background: linear-gradient(25deg, #2d2d2d, #000000);
   color: var(--cor-texto);
   font-family: 'Raleway', sans-serif;
   margin: 0;
@@ -27,7 +27,7 @@ body {
   width: 100%;
   max-width: 700px;
   height: auto;
-  background-color: #1a1a1a;
+  background-color: #2f2f2f;
   color: var(--cor-texto);
   border-radius: 10px;
   box-shadow: 10px 14px 116px rgba(0, 0, 0, 0.3);
@@ -35,7 +35,6 @@ body {
   overflow: auto;
 }
 
-/* Estilizando a barra de rolagem */
 #container::-webkit-scrollbar {
   width: 0.6rem;
   height: 0.6rem;
@@ -78,7 +77,8 @@ h1 {
   display: none;
 }
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
   color: #fff;
 }
@@ -178,7 +178,6 @@ select:focus {
   box-shadow: 0 0 0.4rem var(--cor-hover);
 }
 
-/* Estilizando os botões, mas excluindo aqueles dentro do header */
 button:not(header button) {
   padding: 0.8rem 1.5rem;
   background-color: var(--cor-fundo-primaria);
@@ -254,19 +253,4 @@ button:not(header button):active {
 .singleSchool:hover {
   background-color: var(--cor-hover);
   color: var(--cor-texto);
-}
-
-@media (max-width: 768px) {
-  #container {
-    width: 95%;
-    padding: 1rem;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  button {
-    padding: 0.5rem 1rem;
-  }
 }

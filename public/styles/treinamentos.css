@@ -1,4 +1,9 @@
-/* Reset global */
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +12,7 @@
 
 body {
   font-family: "Arial", sans-serif;
-  background: linear-gradient(135deg, #707070, #1a1a1a);
+  background: linear-gradient(135deg, #434343, #000000);
   color: #eaeaea;
   display: flex;
   flex-direction: column;
@@ -16,41 +21,57 @@ body {
   transition: background-color 0.3s ease;
 }
 
-/* Centralizando a category */
+.categories-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+}
+
 .category {
+  background-color: #181818;
+  box-shadow: 0 4px 52px #101010;
+  border-radius: 20px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  flex-grow: 1;
 }
 
 .category h2 {
-  font-size: 2em;
+  font-size: 3em;
   color: #ffffff;
   margin-bottom: 20px;
-  text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
 }
 
-/* Estilização do menu */
 main {
   display: flex;
-  justify-content: space-evenly;
-  gap: 20px;
-  padding: 20px;
   flex-wrap: wrap;
-  min-height: 100vh;
+  justify-content: space-evenly;
+  gap: 40px;
+  padding: 40px;
 }
 
-main .menu ul {
+.menu {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
   gap: 15px;
-  width: 100%;
-  align-items: center;
+}
+
+.menu li {
+  background: #222;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  flex: 1 1 140px;
+  text-align: center;
+  width: 70px;
 }
 
 main li {
@@ -83,11 +104,10 @@ main li a:hover {
   text-shadow: 0 0 10px #00ffb3, 0 0 20px #00ffb3;
 }
 
-/* Animação */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(40px);
   }
   100% {
     opacity: 1;
@@ -95,13 +115,14 @@ main li a:hover {
   }
 }
 
-/* Rodapé fixo no final da página */
 footer {
+  width: 100%;
   background-color: #222222;
   color: #ccc;
   padding: 20px;
   text-align: center;
   margin-top: auto;
+  border-radius: 20px;
 }
 
 footer a {
