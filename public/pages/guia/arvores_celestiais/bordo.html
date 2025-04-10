@@ -10,181 +10,170 @@
         charset="UTF-8"></script>
     <link rel="stylesheet" href="/styles/navbar.css">
     <style>
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: #121212;
-            /* Preto mais profundo */
-            color: #e0e0e0;
-            /* Texto em cinza claro para contraste */
-            margin: 0;
-            padding: 10px;
-        }
+/* ===== Base ===== */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #270000;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 10px;
+}
 
-        main {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(0, 255, 127, 0.5);
-        }
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.5); /* laranja suave */
+}
 
-        h2 {
-            border-left: 5px solid #34a853;
-            padding-left: 10px;
-            color: #34a853;
-        }
+/* ===== Títulos ===== */
+h1, h2, h3 {
+    color: #ffae00;
+    margin-bottom: 20px;
+}
 
-        p,
-        li {
-            line-height: 1.6;
-        }
+/* ===== Texto ===== */
+p, li {
+    line-height: 1.6;
+}
 
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
-        }
+ul {
+    margin-top: 0;
+}
 
-        li strong {
-            color: #90ee90;
-        }
+li strong {
+    color: #90ee90;
+}
 
-        section {
-            margin-bottom: 20px;
-            padding: 15px;
-            border-left: 4px solid #34a853;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            transition: transform 0.2s ease-in-out;
-        }
+/* ===== Destaques ===== */
+.highlight {
+    background-color: #fff6e6;
+    border-left: 5px solid #b45309;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
 
-        section:hover {
-            transform: scale(1.02);
-            box-shadow: 0px 0px 10px rgba(0, 255, 127, 0.8);
-        }
+/* ===== Seções ===== */
+section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 4px solid #34a853;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+}
 
+section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
+}
 
-        .tree {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
+/* ===== Árvores ===== */
+.tree {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 
-        .column {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .skill {
-            margin: 20px;
-            padding: 2px;
-            border: 1px solid #333;
-            /* Borda escura sutil */
-            border-radius: 5px;
-            background-color: #1e1e1e;
-            /* Fundo mais escuro */
-            cursor: pointer;
-            position: relative;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
+/* ===== Skills ===== */
+.skill {
+    margin: 20px;
+    padding: 2px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
 
-        .skill img {
-            border: 1px solid #e0e0e0;
-            /* Borda mais visível */
-            border-radius: 5px;
-            width: 90%;
-            height: 90%;
-            max-width: 100%;
-            max-height: 100%;
-        }
+.skill img {
+    width: 90%;
+    height: 90%;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+}
 
-        .skill:hover {
-            background-color: #292929;
-            /* Leve mudança no hover */
-        }
+.skill:hover {
+    background-color: #292929;
+}
 
-        .skill:hover .tooltip {
-            display: block;
-        }
+.skill:hover .tooltip {
+    display: block;
+}
 
-        .tooltip {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #222;
-            /* Fundo da tooltip mais escuro */
-            color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            z-index: 10;
-            width: 200px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-        }
+/* ===== Tooltip ===== */
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
 
-        .learned {
-            background-color: rgb(255, 165, 0);
-            /* Um tom laranja quente para destaque */
-            box-shadow: 0 0 10px 2px rgba(255, 165, 0, 0.8);
-            border: 2px solid rgb(255, 140, 0);
-            transition: all 0.3s ease;
-        }
+/* ===== Estágio das Folhas ===== */
+.leaf-stage {
+    font-weight: bold;
+    color: #ff5722; /* um tom forte para as folhas */
+}
 
-        .learned:hover {
-            box-shadow: 0 0 15px 4px rgba(255, 165, 0, 1);
-        }
+/* ===== Habilidades Aprendidas ===== */
+.learned {
+    background-color: rgb(255, 165, 0);
+    border: 2px solid rgb(255, 140, 0);
+    box-shadow: 0 0 10px 2px rgba(255, 165, 0, 0.8);
+    transition: all 0.3s ease;
+}
 
-        .points-input,
-        .url-input {
-            margin-bottom: 10px;
-            background-color: #1e1e1e;
-            color: #e0e0e0;
-            border: 1px solid #333;
-            padding: 5px;
-            border-radius: 5px;
-        }
+.learned:hover {
+    box-shadow: 0 0 15px 4px rgba(255, 165, 0, 1);
+}
 
-        #voltar {
-            text-align: left;
-            cursor: pointer;
-            color: #ff4444;
-        }
+/* ===== Inputs ===== */
+.points-input,
+.url-input {
+    margin-bottom: 10px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    padding: 5px;
+    border-radius: 5px;
+}
 
-        #voltar:hover {
-            color: #ff6666;
-        }
+/* ===== Voltar ===== */
+#voltar {
+    text-align: left;
+    cursor: pointer;
+    color: #ff4444;
+    transition: color 0.2s ease-in-out;
+}
 
-        h1,
-        h2 {
-            margin-bottom: 20px;
-            color: #ffae00;
-            /* Laranja vibrante para títulos */
-        }
+#voltar:hover {
+    color: #ff6666;
+}
 
-        .learned-list ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .learned-list li {
-            padding-left: 35px;
-            background-image: url('bordo/Poder_icon.png');
-            background-size: 30px 30px;
-            background-repeat: no-repeat;
-            background-position: 0px center;
-            padding-top: 7px;
-            padding-bottom: 7px;
-            color: #e0e0e0;
-        }
     </style>
 </head>
-
 <body>
     <header>
         <div class="logo">
@@ -211,6 +200,47 @@
             <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
         </div>
     </header>
+
+    <h1>Guardião do Bordo Celestial</h1>
+
+    <div class="highlight">
+      <p>O guardião do bordo celestial cuida das almas das boas pessoas onde o Bordo Celestial estende suas raízes. Diferente das Cerejeiras Celestiais, o bordo encarna as almas em animais que ali vivem.</p>
+      <p>O Bordo Celestial produz uma seiva comestível que é um tipo de elixir de poder e purificação.</p>
+      <p>Características visuais: folhas de bordo se formam aos pés do guardião, desaparecendo após alguns segundos, como se ele estivesse sempre caminhando sobre folhas.</p>
+    </div>
+  
+    <h2>Bordo 1 - Cidade de Oukusto, Yggdrasil</h2>
+  
+    <h3>Talentos</h3>
+    <h4>Seiva Celestial</h4>
+    <ul>
+      <li><strong>(Nv.1) Semiah:</strong> cura 30% do dano recebido.</li>
+      <li><strong>(Nv.3) Gamadjien:</strong> +25% dano. +5% por rodada (acumulativo).</li>
+      <li><strong>(Nv.6) Adagium:</strong> -10% dano recebido. -5% por rodada (máx 50%).</li>
+      <li><strong>(Nv.9) Isilidue:</strong> reduz o crítico em 1 por rodada (acumula).</li>
+      <li><strong>(Nv.12) Earthophya:</strong> +40% dano elemental. +5% por rodada (acumula).</li>
+      <li><strong>(Nv.15) Healmantus:</strong> +40% cura. +12% por rodada (acumula).</li>
+      <li><strong>(Nv.18) Gracymatuys:</strong> +70% dano crítico. +20% por rodada (acumula).</li>
+      <li><strong>(Nv.20) Emanuë:</strong> compartilha o elixir com aliados.</li>
+    </ul>
+  
+    <h4>Folhas do Bordo</h4>
+    <p>A cada rodada, caem <code>1D6</code> folhas, +1 por nível acima do primeiro. Cada rodada a folha evolui de estágio:</p>
+    <ul>
+      <li><span class="leaf-stage">Folha Verde:</span> (Mod.SAB)d4 por folha.</li>
+      <li><span class="leaf-stage">Folha Amarela:</span> (Mod.SAB)d6. 10% chance de atordoar.</li>
+      <li><span class="leaf-stage">Folha Laranja:</span> (Mod.SAB)d8. Burning 6% da vida máx.</li>
+      <li><span class="leaf-stage">Folha Vermelha:</span> (Mod.SAB)d10. Incineração 10% + 1%/Mod.SAB.</li>
+    </ul>
+  
+    <h3>Habilidades</h3>
+    <h4>Produção de Elixir Celestial</h4>
+    <p>Produz (nível + proficiência em ml + 5) ml de Elixir. Cura 12% + 5% por rodada (6 rodadas). Aplica os efeitos da Seiva Celestial. Usável 3x a cada 10 dias.</p>
+  
+    <h4>Maple Disappear</h4>
+    <p>Desaparece em folhas e retorna após 1 rodada. Próximo ataque causa +100% de dano. Pode esquivar de ataques. Recarga: 2 rodadas. Se matar o alvo, recarga é zerada.</p>
+  </body>
+  </html>  
 
     <h1>Bordo Celestial</h1>
     <div class="points-input">
