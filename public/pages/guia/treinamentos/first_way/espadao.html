@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Espadão - Estilo Epiragon</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f9;
+      color: #222;
+      margin-top: 150px;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #2e3a59;
+      margin-bottom: 5px;
+    }
+
+    .info {
+      margin-bottom: 30px;
+    }
+
+    .info p {
+      margin: 4px 0;
+      font-weight: 500;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2e3a59;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .highlight {
+      background-color: #eef;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin: 5px 0;
+    }
+
+    .trait {
+      background-color: #ffe0b3;
+      padding: 10px;
+      border-left: 5px solid #ff9900;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Espadão - Estilo Epiragon</h1>
+    <div class="info">
+      <p><strong>Localização:</strong> Epiragon, Novyatt</p>
+      <p><strong>Atributo:</strong> FOR</p>
+    </div>
+
+    <section>
+      <h2>Passiva</h2>
+      <p class="highlight">Manusear Espadão:</p>
+      <p>Pode manusear espadas sem desvantagem.</p>
+    </section>
+
+    <section>
+      <h2>Habilidades</h2>
+      <p class="highlight">(Nível 1) Cleaver Strike:</p>
+      <p>Gira o espadão causando o Ataque Básico com adicional de 75% a todos os inimigos num raio de 2m. Se FOR ≥ 16, os alvos devem rolar resistência contra o efeito <strong>derrubar</strong>, podendo usar Resistência (DES) ou Acrobacia.</p>
+      <p><strong>Derrubar:</strong> impossibilitado de agir até o fim da rodada.</p><br>
+
+      <p class="highlight">(Nível 3) Força Na Montante:</p>
+      <p>Adiciona 1d6 de dano bônus por ponto de mod.FOR ao atacar com espadão. O bônus é somado conforme a quantidade de membros do usuário. No nível 20, o D6 se torna D12. (Espadão requer duas mãos, a não ser que possua <em>One Fucking Arm</em>.)</p>
+
+      <p class="highlight">(Nível 6) One Fucking Arm:</p>
+      <p>Se FOR ≥ 16, pode segurar espadão com uma mão. Se FOR ≥ 20, pode usar ambidestria com espadão (sem dualidade perfeita).</p>
+
+      <p class="highlight">(Nível 12) Berserker:</p>
+      <p>Desperta o modo berserker, reduzindo sua CA a zero. Dura até o fim da luta ou até sua vida cair para 1 ou menos. Custa 15% da vida máxima por rodada e não pode ser curado por magias/poções. Roubo de vida funciona com 50% da efetividade. Não desfere dano crítico nesse estado. Usável uma vez por dia.</p>
+      <p><strong>Berserker Mode:</strong> aumenta o dano de ataques básicos e habilidades físicas em 50% por rodada, acumulando. Abater um inimigo dá bônus extra de 25% de dano, também acumulativo.</p>
+
+      <p class="highlight">Ultimate Passive - Blood Thirster:</p>
+      <p>Ganha 50% de roubo de vida que não é reduzido pelo efeito Berserker. Permite causar dano crítico. Dura 8 rodadas.</p>
+
+      <p class="highlight">(Nível 18) Devastador:</p>
+      <p>Cleaver Strike causa +300% de dano ao acertar um crítico e tem o raio aumentado para 15m.</p>
+    </section>
+
+    <section>
+      <h2>Master Trait</h2>
+      <div class="trait">
+        <strong>Destruidor:</strong>
+        <p>Você se torna um mestre do espadão. Aumenta o dano com espadões em 6% por mod.FOR.</p>
+        <ul>
+          <li><strong>Enfurecido:</strong> com vida abaixo de (30 + 2 × mod.FOR)% do total, você entra em fúria e:</li>
+          <ul>
+            <li>Aumenta o dano crítico em 75%.</li>
+            <li>Reduz o acerto crítico com espadão em 3.</li>
+            <li>Ao realizar um acerto crítico, ativa <strong>Devastador</strong> com o dobro da área.</li>
+          </ul>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

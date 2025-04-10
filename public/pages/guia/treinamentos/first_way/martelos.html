@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Martelos - Estilo Epiragon</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f9;
+      color: #222;
+      margin-top: 150px;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #2e3a59;
+      margin-bottom: 5px;
+    }
+
+    .info {
+      margin-bottom: 30px;
+    }
+
+    .info p {
+      margin: 4px 0;
+      font-weight: 500;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2e3a59;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .highlight {
+      background-color: #fef4e6;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin: 5px 0;
+    }
+
+    .trait {
+      background-color: #e4f0ff;
+      padding: 10px;
+      border-left: 5px solid #005fa3;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Martelos - Estilo Epiragon</h1>
+    <div class="info">
+      <p><strong>Localização:</strong> Epiragon</p>
+      <p><strong>Atributo:</strong> Força (STR)</p>
+    </div>
+
+    <section>
+      <h2>Fundamentos</h2>
+      <p class="highlight">Manusear Martelo:</p>
+      <p>Permite utilizar martelos sem desvantagens em qualquer tipo de combate.</p>
+
+      <p class="highlight">Impacto:</p>
+      <p>Golpe poderoso que aplica o Ataque Básico + 65% de dano. O alvo deve passar em um teste de resistência de Força para não ser derrubado. Se cair, perde a próxima ação.</p>
+
+      <p class="highlight">Ultimate Passive - Profundo:</p>
+      <p>O Impacto se torna seu Ataque Básico. Em caso de acerto crítico, você ativa Avalanche automaticamente.</p>
+    </section>
+
+    <section>
+      <h2>Habilidades</h2>
+
+      <p class="highlight">(Nível 3) Golpe de Arremesso:</p>
+      <p>Golpe de baixo para cima que pode lançar o inimigo ao ar.</p>
+      <ul>
+        <li>Dano = Ataque Básico + (1d125 + 100)%.</li>
+        <li>Crítico: o inimigo é lançado até (Mod.FOR)d20 + Mod.FOR metros.</li>
+      </ul>
+
+      <p class="highlight">(Nível 6) Avalanche:</p>
+      <p>Você concentra seu poder por até 3 rodadas para atingir o chão e causar destruição em linha reta (até 10m).</p>
+      <ul>
+        <li>Dano = Ataque Básico + 150% por rodada concentrada.</li>
+        <li>Interrupção: qualquer dano recebido cancela a concentração.</li>
+      </ul>
+
+      <p class="highlight">(Nível 8) Pesadão, Pesadão:</p>
+      <p>Se você tiver 20 ou mais de FOR, seus ataques com martelo podem aplicar Nocaute.</p>
+      <ul>
+        <li>Chance = 5% + 1% por Mod.FOR.</li>
+      </ul>
+
+      <p class="highlight">(Nível 10) Ressonância Destrutiva:</p>
+      <p>Seus ataques reverberam ao redor do alvo.</p>
+      <ul>
+        <li>Causam 50% do dano ao redor do alvo principal.</li>
+        <li>Chance de 25% de derrubar alvos ao redor (10% contra chefes).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Master Trait</h2>
+      <div class="trait">
+        <strong>Demolidor:</strong>
+        <p>Você atinge o auge da destruição com martelos. Ganha técnicas únicas e poder devastador.</p>
+        <ul>
+          <li>Dano com martelos +6% por Mod.FOR.</li>
+        </ul>
+
+        <p><strong>Abalar:</strong></p>
+        <ul>
+          <li>Ao causar nocaute ou derrubar um inimigo, todos ao redor dele sofrem queda temporária e perdem a ação.</li>
+          <li>Alvos podem resistir com um teste contra sua Força.</li>
+        </ul>
+
+        <p><strong>Destruidor de Crânios:</strong></p>
+        <ul>
+          <li>Dano contra alvos derrubados +30 de letalidade.</li>
+          <li>Se sobreviverem à letalidade, causam 33% da vida máxima como dano de contusão (repetível a cada 4 rodadas).</li>
+          <li>Críticos contra alvos derrubados causam +200% de dano.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

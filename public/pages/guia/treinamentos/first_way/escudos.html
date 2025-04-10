@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Escudos - Estilo Epiragon / Thundaera</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f9;
+      color: #222;
+      margin-top: 150px;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #2e3a59;
+      margin-bottom: 5px;
+    }
+
+    .info {
+      margin-bottom: 30px;
+    }
+
+    .info p {
+      margin: 4px 0;
+      font-weight: 500;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2e3a59;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .highlight {
+      background-color: #f0fbe7;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin: 5px 0;
+    }
+
+    .trait {
+      background-color: #e7f1ff;
+      padding: 10px;
+      border-left: 5px solid #3e85c4;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Escudos - Estilo Epiragon / Thundaera</h1>
+    <div class="info">
+      <p><strong>Localização:</strong> Epiragon, Thundaera</p>
+      <p><strong>Atributo:</strong> Constituição (CON) ou Força (FOR)</p>
+    </div>
+
+    <section>
+      <h2>Fundamentos</h2>
+      <p class="highlight">Escudeiro:</p>
+      <p>Aumenta a CA em Mod.CON quando estiver em guarda e dobra o valor de bloqueio do escudo (não afeta CA vinda de outros talentos).</p>
+
+      <p class="highlight">Bloqueio:</p>
+      <p>Ao receber dano, jogue 1d100. Se o resultado for igual ou menor que o valor de bloqueio do escudo, o dano é completamente anulado. Defende apenas ataques corpo a corpo e projéteis físicos. Só é possível um bloqueio passivo por rodada.</p>
+
+      <p class="highlight">Escudada:</p>
+      <ul>
+        <li>Ataca com o escudo causando (Mod.FOR)d8 + 30% da Defesa Total como dano físico.</li>
+        <li>Atordoa o alvo por 1 rodada (cada alvo pode resistir após ser atordoado uma vez).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Habilidades</h2>
+
+      <p class="highlight">(Nível 3) Resistência Mágica:</p>
+      <p>Reduz o dano mágico e elemental recebido em 120% da Defesa Total enquanto estiver usando escudo.</p>
+
+      <p class="highlight">(Nível 5) Provocação:</p>
+      <p>Bate no escudo, provocando inimigos ao redor. Eles devem fazer um teste de Vontade com dificuldade 10 + (Mod.CON + Proficiência). Se falharem, são forçados a atacá-lo nessa rodada.</p>
+
+      <p class="highlight">(Nível 6) Resistência Física:</p>
+      <p>Reduz o dano físico recebido em 140% da Defesa Total enquanto estiver usando escudo.</p>
+
+      <p class="highlight">(Nível 12) Bloqueio Melhorado:</p>
+      <ul>
+        <li>Adiciona Mod.CON ao bloqueio do escudo.</li>
+        <li>O valor total do bloqueio é aumentado em 40% após o acréscimo de Mod.CON.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Master Trait</h2>
+      <div class="trait">
+        <strong>Escudeiro:</strong>
+        <p>Você se torna um mestre Escudeiro, desbloqueando novas técnicas de proteção e ataque com escudo.</p>
+        <ul>
+          <li>Adiciona +8% da Defesa Base à Defesa Total por ponto de Mod.CON.</li>
+
+          <li><strong>Escudo Bumerangue:</strong> Ao ver um aliado em apuros, lança seu escudo para interromper a ação do inimigo. Em caso de acerto crítico, acerta 1d3 inimigos próximos. Causa (Defesa Total + 15% por Mod.CON) como dano de contusão. Ação Bônus. Máximo de 1 uso por rodada. Chance de 25% de interromper a ação do alvo.</li>
+
+          <li><strong>Escudo Refletor:</strong> Para cada inimigo que te acerta, você ganha 1 acúmulo de Energia Refletora. Se atacar, perde os acúmulos. Durante postura defensiva, ganha 25% da CA como CA temporária.</li>
+
+          <li><strong>Canhão Refletor:</strong> Consome todos os acúmulos de Energia Refletora para disparar energia destrutiva na direção escolhida. Causa 125% da Defesa Total como dano neutro, perfurando tudo em linha reta. Adiciona +25% da Defesa Total por acúmulo gasto.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Machados - Estilo Epiragon, Siaahra, Novyatt</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f9;
+      color: #222;
+      margin-top: 150px;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #2e3a59;
+      margin-bottom: 5px;
+    }
+
+    .info {
+      margin-bottom: 30px;
+    }
+
+    .info p {
+      margin: 4px 0;
+      font-weight: 500;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2e3a59;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .highlight {
+      background-color: #fef4e6;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin: 5px 0;
+    }
+
+    .trait {
+      background-color: #ffe4e4;
+      padding: 10px;
+      border-left: 5px solid #8b0000;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Machados - Estilo Epiragon, Siaahra, Novyatt</h1>
+    <div class="info">
+      <p><strong>Localização:</strong> Epiragon, Siaahra, Novyatt</p>
+      <p><strong>Atributo:</strong> Força (FOR) ou Destreza (DES)</p>
+    </div>
+
+    <section>
+      <h2>Fundamentos</h2>
+      <p class="highlight">Manusear Machados:</p>
+      <p>Permite utilizar machados sem desvantagem, independente do tamanho ou tipo.</p>
+
+      <p class="highlight">Gancho:</p>
+      <p>Você avança com seu machado, usando-o como gancho para puxar-se contra o inimigo e colidir com força.</p>
+      <ul>
+        <li>Dano = Ataque Básico + 50% adicional.</li>
+        <li>O alvo é derrubado e precisa gastar a ação de movimento para se levantar.</li>
+      </ul>
+
+      <p class="highlight">Ultimate Passive - Tarzan Way:</p>
+      <p>O Gancho torna-se seu novo ataque básico padrão. Há uma chance de 10% (1% contra chefes) de decapitar o alvo ao atingir com o gancho.</p>
+    </section>
+
+    <section>
+      <h2>Habilidades</h2>
+
+      <p class="highlight">(Nível 3) Tornado:</p>
+      <p>Você gira o machado com ambas as mãos, criando um tornado de lâminas.</p>
+      <ul>
+        <li>Cada giro causa Ataque Básico + 30% acumulativo.</li>
+        <li>Giros são definidos com 1d8.</li>
+        <li>Após o giro, role resistência de constituição: CD = 10 + (2 × número de giros).</li>
+        <li>Falha: você fica atordoado por giros/2 rodadas (mínimo 1).</li>
+      </ul>
+
+      <p class="highlight">(Nível 6) Fúria Destrutiva:</p>
+      <p>Ao causar dano com machados, role 1d6 por arma usada. Cada número obtido representa um golpe visual e acumula dano:</p>
+      <ul>
+        <li>Dano = 20% + (4% × Mod.FOR) por acerto visualizado.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Master Trait</h2>
+      <div class="trait">
+        <strong>Mercenário:</strong>
+        <p>Você se torna um mestre mercenário do machado. Seus ataques adquirem efeitos de fama e brutalidade em combate.</p>
+        <ul>
+          <li>Aumenta o dano com machado em 5% × Mod.FOR (machado de 2 mãos) ou Mod.DES (machado de 1 mão).</li>
+          <li>Cada ataque bem-sucedido concede +5 Fama do Mercenário (FM).</li>
+          <li>Acertos críticos garantem o dobro de FM.</li>
+        </ul>
+
+        <p><strong>Acúmulos de Fama:</strong></p>
+        <ul>
+          <li><strong>50 FM:</strong> Ataques causam sangramento igual a 250% do Ataque Básico.</li>
+          <li><strong>100 FM:</strong> Atacar inimigos com sangramento tem 25% de chance de causar hemorragia.</li>
+          <li><strong>300 FM:</strong> Enquanto atingir alvos com Fúria Destrutiva ativa, ela não termina. Toda FM acumulada é convertida em % adicional de sangramento.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

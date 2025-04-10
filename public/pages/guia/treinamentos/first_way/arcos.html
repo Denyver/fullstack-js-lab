@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Arcos - Estilo Epiragon</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f9;
+      color: #222;
+      margin-top: 150px;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #2e3a59;
+      margin-bottom: 5px;
+    }
+
+    .info {
+      margin-bottom: 30px;
+    }
+
+    .info p {
+      margin: 4px 0;
+      font-weight: 500;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2e3a59;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .highlight {
+      background-color: #fef4e6;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin: 5px 0;
+    }
+
+    .trait {
+      background-color: #e4f0ff;
+      padding: 10px;
+      border-left: 5px solid #005fa3;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Arcos - Estilo Epiragon</h1>
+    <div class="info">
+      <p><strong>Localização:</strong> Epiragon, Novyatt, Yggbrasil</p>
+      <p><strong>Atributo:</strong> Destreza (DES)</p>
+    </div>
+
+    <section>
+      <h2>Fundamentos</h2>
+      <p class="highlight">Manusear Arcos:</p>
+      <p>Permite usar arcos sem desvantagem. O alcance máximo do arco é de 25 metros.</p>
+
+      <p class="highlight">Mira Perfeita:</p>
+      <p>Aumenta sua precisão em 5.</p>
+    </section>
+
+    <section>
+      <h2>Habilidades</h2>
+
+      <p class="highlight">(Nível 3) Chuva de Flechas:</p>
+      <p>Concentra por 1 rodada e dispara múltiplas flechas em área.</p>
+      <ul>
+        <li>Cada inimigo recebe (1 + Mod.DES) ataques.</li>
+        <li>Cada ataque causa Ataque Básico + 40% como dano perfurante.</li>
+      </ul>
+
+      <p class="highlight">(Nível 6) Alcance Letal:</p>
+      <p>Acertos no limite do alcance do arco ganham +15 de letalidade.</p>
+
+      <p class="highlight">(Nível 10) Alcance Poderoso:</p>
+      <p>Após os 10 metros, cada metro adicional aumenta o dano da flecha em 10%.</p>
+
+      <p class="highlight">(Nível 10) Tiro Rompente:</p>
+      <p>Concentra-se para disparar um ataque altamente letal.</p>
+      <ul>
+        <li>Dano = Ataque Básico × (Mod.DES ÷ 2) por rodada de concentração.</li>
+        <li>A partir de 4 rodadas acumuladas, o ataque é crítico.</li>
+        <li>Receber dano cancela a concentração.</li>
+      </ul>
+
+      <p class="highlight">Ultimate Passive - Kamehamearrow:</p>
+      <ul>
+        <li>Tiro Rompente atinge até 6 inimigos em linha reta (10x o alcance do arco).</li>
+        <li>Modificador de dano passa a ser Mod.DES completo.</li>
+      </ul>
+
+      <p class="highlight">(Nível 14) Criação - Arrowcraft:</p>
+      <p>Permite criar flechas especiais com efeitos únicos.</p>
+      <ul>
+        <li>Flechas são consumíveis e criadas fora de combate.</li>
+        <li>Tempo de criação: 30 minutos por flecha.</li>
+      </ul>
+
+      <p class="highlight">(Nível 18) Flechas Aprimoradas:</p>
+      <ul>
+        <li>Dano das flechas é multiplicado por metade do Mod.DES.</li>
+        <li>Dano adicional de 30% nas flechas.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Master Trait</h2>
+      <div class="trait">
+        <strong>Atirador:</strong>
+        <p>Você se torna um mestre Atirador. Ganha técnicas avançadas com arco.</p>
+        <ul>
+          <li>Dano com arcos +6% por Mod.DES.</li>
+          <li>Pode disparar 3 flechas em uma jogada (cada uma rola acerto separadamente).</li>
+          <li>Dano em único alvo: 1ª Flecha = 100%, 2ª = 150%, 3ª = 250%.</li>
+          <li>Crítico com arco reduzido em 2.</li>
+          <li>Dano crítico aumentado em 75%.</li>
+          <li>Permite disparar em movimento ou durante esquivas, caso tenha ação disponível.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

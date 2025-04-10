@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Combate Desarmado - Estilo Nacionais</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f9;
+      color: #222;
+      margin-top: 150px;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #2e3a59;
+      margin-bottom: 5px;
+    }
+
+    .info {
+      margin-bottom: 30px;
+    }
+
+    .info p {
+      margin: 4px 0;
+      font-weight: 500;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2e3a59;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .highlight {
+      background-color: #eef;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin: 5px 0;
+    }
+
+    .trait {
+      background-color: #e1ffe4;
+      padding: 10px;
+      border-left: 5px solid #2e8b57;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Combate Desarmado - Estilo Nacionais</h1>
+    <div class="info">
+      <p><strong>Localização:</strong> Nacionais</p>
+      <p><strong>Atributo:</strong> Destreza (DES) + Força (FOR)</p>
+    </div>
+
+    <section>
+      <h2>Fundamentos</h2>
+      <p class="highlight">Força e Destreza:</p>
+      <p>Combate desarmado usa mod.DES e mod.FOR para calcular ataque e dano. O dano base é <strong>(mod.FOR + mod.DES)1d3 + mod.DES + FOR</strong> por membro utilizado no ataque.</p>
+    </section>
+
+    <section>
+      <h2>Habilidades</h2>
+
+      <p class="highlight">(Nível 3) Double Strike:</p>
+      <p>Você pode realizar dois ataques com cada membro durante o ataque. Isso se aplica a cada membro utilizado no turno.</p>
+
+      <p class="highlight">(Nível 5) Voadora:</p>
+      <p>Você pode atacar à distância (até 18m) com um chute voador. Dano: <strong>(mod.DES + FOR)d8 + acrobacia</strong>.</p>
+      <p>O alvo deve fazer um teste de equilíbrio contra <strong>CD = 10 + mod.DES + mod.FOR</strong>. Pode usar resistência de força. O golpe exige teste de acrobacia para ser executado.</p>
+
+      <p class="highlight">(Nível 10) Punhos Fortes:</p>
+      <p>Seu dado de dano de combate desarmado aumenta a cada 2 níveis após o 10º:</p>
+      <ul>
+        <li>Nível 12 → D5</li>
+        <li>Nível 14 → D7</li>
+        <li>Nível 16 → D9</li>
+        <li>Nível 18 → D11</li>
+        <li>Nível 20 → D14</li>
+      </ul>
+
+      <p class="highlight">(Nível 12) Combate Crítico:</p>
+      <p>Com menos de 50% de vida, seu valor de crítico é reduzido em 2.</p>
+
+      <p class="highlight">Ultimate Passive - Infinity Strikes:</p>
+      <p>Com 18% ou menos de vida, seu valor de crítico é reduzido em 8. Cada acerto crítico garante um novo ataque básico imediato.</p>
+
+      <p class="highlight">(Nível 12) Hyper Punch:</p>
+      <p>Você pode passar sua vez para aliados e inimigos. A cada turno passado:</p>
+      <ul>
+        <li>+25% de dano acumulado</li>
+        <li>+15% de dano crítico acumulado</li>
+      </ul>
+      <p>Quando decidir atacar, você realiza um único golpe com todo bônus acumulado. Com 5+ turnos acumulados, o golpe afeta inimigos atrás do alvo principal com 50% do dano.</p>
+    </section>
+
+    <section>
+      <h2>Master Trait</h2>
+      <div class="trait">
+        <strong>Lutador:</strong>
+        <p>Você se torna um mestre das artes marciais. Seus golpes são devastadores e precisos.</p>
+        <ul>
+          <li>Aumenta o dano em 3% por Mod.FOR e 3% por Mod.DES.</li>
+          <li>Cada golpe acerta +2% da vida máxima do inimigo como dano físico de contusão.</li>
+        </ul>
+
+        <p><strong>Guarda Pacificadora:</strong> Após 5 acertos em sequência, você pode liberar uma energia pacificadora. Inimigos sofrem desvantagem contra você, e você recebe um escudo equivalente a 80% da sua vida máxima até que ataque novamente.</p>
+
+        <p><strong>Palma Aberta:</strong> Após 5 acertos consecutivos, você pode liberar um poderoso golpe com um punho concentrado. O alvo sofre 33% da vida máxima como dano físico de contusão. Se abatido, o golpe se propaga até 5 inimigos consecutivos atrás do alvo inicial.</p>
+
+        <p><em>Você só pode escolher um desses efeitos especiais por sequência.</em></p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
