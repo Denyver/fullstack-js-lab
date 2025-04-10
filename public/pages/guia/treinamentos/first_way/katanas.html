@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Katanas - Estilo Epiragon, Novyatt</title>
+  <link rel="stylesheet" href="/styles/navbar.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f9;
+      color: #222;
+      margin-top: 150px;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #2e3a59;
+      margin-bottom: 5px;
+    }
+
+    .info {
+      margin-bottom: 30px;
+    }
+
+    .info p {
+      margin: 4px 0;
+      font-weight: 500;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2e3a59;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .highlight {
+      background-color: #f0fbe7;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin: 5px 0;
+    }
+
+    .trait {
+      background-color: #e7f1ff;
+      padding: 10px;
+      border-left: 5px solid #3e85c4;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <a href="/index.html">
+            <img src="/imgs/woe_titulo.png" alt="Logo" />
+          </a>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+          &#9776; 
+        </button>
+        <nav class="menu">
+          <ul>
+            <li><a href="pages/guia_geral.html">Guia</a></li>
+            <li><a href="pages/eventos.html">Eventos</a></li>
+            <li><a href="pages/combat.html">Combate</a></li>
+            <li><a href="pages/gerador_item.html">Gerador de Itens</a></li>
+            <li><a href="pages/criador_npc.html">Criador de NPC</a></li>
+            <li><a href="pages/mapa_eder.html">Mapa</a></li>
+            <li><a href="pages/mesas.html">Mesas</a></li>
+          </ul>
+        </nav>
+        <div class="voltar-btn-container">
+          <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+        </div>
+    </header>
+  <div class="container">
+    <h1>Katanas - Estilo Epiragon, Novyatt</h1>
+    <div class="info">
+      <p><strong>Localização:</strong> Epiragon, Novyatt, Siaahra</p>
+      <p><strong>Atributo principal:</strong> Força (FOR)</p>
+    </div>
+
+    <section>
+      <h2>Habilidade Inicial</h2>
+      <p class="highlight">Manusear Katana:</p>
+      <p>Permite manusear katanas sem desvantagens.</p>
+    </section>
+
+    <section>
+      <h2>Progressão de Nível</h2>
+
+      <p class="highlight">(Nível 3) Kishi Ko:</p>
+      <ul>
+        <li>Use sua ação de movimento para avançar até um inimigo (mín. 6m de distância) e atacá-lo com um ataque padrão.</li>
+        <li>Você se posiciona à frente do inimigo.</li>
+        <li>Não acumula com ataques extras de ambidestria ou asheets.</li>
+      </ul>
+
+      <p><strong>Ultimate Passive - Kishi Kahou:</strong></p>
+      <ul>
+        <li>Se acertar um inimigo com Kishi Ko, pode usá-lo novamente em outro alvo.</li>
+        <li>Se abater o alvo, ganha +33% de dano acumulativo para o próximo ataque.</li>
+        <li>O ciclo continua enquanto continuar acertando.</li>
+      </ul>
+
+      <p class="highlight">(Nível 6) Urumaken Kendoo:</p>
+      <p>Use sua ação de ataque para tentar defender um golpe. Faça uma rolagem de ataque contra a do atacante. O maior valor vence. Funciona também contra projéteis físicos.</p>
+
+      <p class="highlight">(Nível 9) Ashurai Kendoo:</p>
+      <p>Se tiver sucesso em Urumaken Kendoo, pode contra-atacar quem tentou atingi-lo.</p>
+
+      <p class="highlight">(Nível 15) Bankai:</p>
+      <ul>
+        <li>Libera seu poder acumulado em um golpe devastador de energia elemental.</li>
+        <li>Todos no caminho até o alvo recebem o dano.</li>
+        <li>Cada ataque defendido por Urumaken Kendoo aumenta o dano em +40%, até o máximo de 10 acúmulos.</li>
+      </ul>
+
+      <p class="highlight">(Nível 18) Kishi Ko Flash:</p>
+      <p>Se não tiver usado Kishi Ko, poderá usá-lo junto de Urumaken e Ashurai Kendoo. Dobra seu movimento neste turno.</p>
+    </section>
+
+    <section>
+      <h2>Master Trait</h2>
+      <div class="trait">
+        <strong>Samurai:</strong>
+        <p>Você se torna um mestre do estilo Katana. Seus ataques com katanas causam +5% de dano por Mod.FOR ou Mod.DES. Ganha acesso às seguintes técnicas:</p>
+
+        <ul>
+          <li><strong>Bushido no Shinzui:</strong> Ao empunhar a katana com ambas as mãos, seus ataques são desferidos em dois golpes:</li>
+          <ul>
+            <li><strong>Keigo no Yabure:</strong> Avança no inimigo, causando 135% do seu ataque básico em dano cortante e reduzindo a CA do alvo em 20%.</li>
+            <li><strong>Seigi no Hanketsu:</strong> Se acertar o golpe anterior, acerta automaticamente este corte finalizador. Causa 180% do ataque básico como dano cortante. Se o inimigo estiver com (2 + 1 por Mod.FOR)% da vida máxima ou menos, é abatido (efeito reduzido para 1% em bosses).</li>
+          </ul>
+
+          <li><strong>Nōbushi no Katana:</strong> Você quebra o código dos samurais por uma boa causa:</li>
+          <ul>
+            <li><strong>Hayaku to Tsuyoku:</strong> Kishi Ko pode ser usado com ambidestria, permitindo atacar com sua segunda katana. Kishi Ko recebe o efeito Ímpeto.</li>
+            <li><strong>Ten no Ikari no Yō Ni:</strong> Ao obter um acerto crítico, o bônus de dano crítico aumenta em +50% até o fim do combate. Pode acumular até 3x.</li>
+          </ul>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

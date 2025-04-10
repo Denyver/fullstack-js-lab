@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/navbar.css">
   <title>Adagas - Estilo Epiragon/Siaahra</title>
   <style>
     body {
@@ -72,6 +74,31 @@
   </style>
 </head>
 <body>
+  <header>
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/imgs/woe_titulo.png" alt="Logo" />
+      </a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      &#9776; 
+    </button>
+    <nav class="menu">
+      <ul>
+        <li><a href="pages/guia_geral.html">Guia</a></li>
+        <li><a href="pages/eventos.html">Eventos</a></li>
+        <li><a href="pages/combat.html">Combate</a></li>
+        <li><a href="pages/gerador_item.html">Gerador de Itens</a></li>
+        <li><a href="pages/criador_npc.html">Criador de NPC</a></li>
+        <li><a href="pages/mapa_eder.html">Mapa</a></li>
+        <li><a href="pages/mesas.html">Mesas</a></li>
+      </ul>
+    </nav>
+    <div class="voltar-btn-container">
+      <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+    </div>
+  </header>
+
   <div class="container">
     <h1>Adagas - Estilo Epiragon/Siaahra</h1>
     <div class="info">
