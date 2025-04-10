@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Haloblade - Estilo Maera, Yggbrasil</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f9;
+      color: #222;
+      margin-top: 150px;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #2e3a59;
+      margin-bottom: 5px;
+    }
+
+    .info {
+      margin-bottom: 30px;
+    }
+
+    .info p {
+      margin: 4px 0;
+      font-weight: 500;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2e3a59;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .highlight {
+      background-color: #ffe9f5;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin: 5px 0;
+    }
+
+    .trait {
+      background-color: #fff3e6;
+      padding: 10px;
+      border-left: 5px solid #e67300;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Haloblade - Estilo Maera, Yggbrasil</h1>
+    <div class="info">
+      <p><strong>Localização:</strong> Maera, Yggbrasil</p>
+      <p><strong>Atributo principal:</strong> DES</p>
+    </div>
+
+    <section>
+      <h2>Habilidade Inicial</h2>
+      <p class="highlight">Manipulação de Haloblade:</p>
+      <p>Permite utilizar Haloblade sem desvantagens.</p>
+      <ul>
+        <li>Causa dano ao redor do usuário.</li>
+        <li>Requer teste de <strong>Acrobacia</strong> para efetivar os ataques.</li>
+        <li>Usuários de Haloblade <strong>não têm CA</strong>, mas podem se esquivar de ataques.</li>
+        <li>Para esquiva: <code>D20 + Acrobacia</code> deve superar o valor do ataque inimigo.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Habilidade Passiva</h2>
+      <p class="highlight">Oportunidade da Esquiva:</p>
+      <p>Se esquivar de um <strong>ataque corpo-a-corpo</strong> que causaria dano, realiza um <strong>ataque básico de oportunidade</strong> contra o atacante sem precisar rolar Acrobacia.</p>
+    </section>
+
+    <section>
+      <h2>Progressão de Nível</h2>
+
+      <p class="highlight">(Nível 3) Twerk Strike:</p>
+      <p>Gira com estilo causando dano igual ao <strong>Ataque Básico +5% por ponto de Acrobacia</strong> a inimigos ao redor.</p>
+      <ul>
+        <li>Inimigos podem fazer um teste de resistência de Destreza para tomar metade do dano.</li>
+        <li>Se todos falharem, pode usar esta habilidade <strong>mais uma vez imediatamente</strong>. Isso só pode ocorrer uma única vez.</li>
+      </ul>
+
+      <p class="highlight">(Nível 10) Halo Of Elements:</p>
+      <p>Ao se esquivar de uma <strong>habilidade elemental</strong>, ganha um encantamento elemental até o final da rodada ou até ser usado.</p>
+
+      <ul>
+        <li><strong>Fire Enchant:</strong> próximo ataque básico ou habilidade causa <strong>30% do dano como fogo</strong> em área e aplica <em>burning</em>.</li>
+        <li><strong>Earth Enchant:</strong> ganha escudo que bloqueia <strong>5% da vida máxima +1% por ponto de Acrobacia</strong>.</li>
+        <li><strong>Water Enchant:</strong> ganha ação extra para curar aliados próximos em <strong>5% +2% por ponto de Acrobacia</strong> da vida deles. Cura-se em <strong>25%</strong> da cura total aplicada.</li>
+        <li><strong>Thunder Enchant:</strong> próximo ataque básico cria um arco elétrico que se expande até <strong>30m</strong> causando <strong>25%</strong> do dano. Ao final da rodada, o arco se retrai causando <strong>o triplo</strong> do valor nos mesmos alvos.</li>
+        <li><strong>Ice Enchant:</strong> ação extra que libera ar congelante com <strong>50% de chance</strong> de congelar inimigos atingidos durante toda a rodada.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Master Trait</h2>
+      <div class="trait">
+        <strong>Halostriker:</strong>
+        <p>Quando cercado, ao atacar com Haloblade, um inimigo atingido aleatoriamente recebe <strong>dano crítico</strong>.</p>
+        <ul>
+          <li>Aumenta o dano de Haloblade em <strong>5% por ponto de mod.FOR</strong>.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

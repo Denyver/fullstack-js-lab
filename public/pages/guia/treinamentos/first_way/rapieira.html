@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Rapieira - Estilo Pyr</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f9;
+      color: #222;
+      margin-top: 150px;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #2e3a59;
+      margin-bottom: 5px;
+    }
+
+    .info {
+      margin-bottom: 30px;
+    }
+
+    .info p {
+      margin: 4px 0;
+      font-weight: 500;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2e3a59;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .highlight {
+      background-color: #ffe9f5;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin: 5px 0;
+    }
+
+    .trait {
+      background-color: #fff3e6;
+      padding: 10px;
+      border-left: 5px solid #e67300;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Rapieira - Estilo Pyr</h1>
+    <div class="info">
+      <p><strong>Localização:</strong> Pyr, Yggbrasil</p>
+      <p><strong>Atributo principal:</strong> DES</p>
+    </div>
+
+    <section>
+      <h2>Habilidade Inicial</h2>
+      <p class="highlight">Manipulação de Rapieira:</p>
+      <p>Permite usar rapieira como arma sem desvantagem. A Rapieira só pode ser utilizada com uma mão.</p>
+    </section>
+
+    <section>
+      <h2>Ultimate Passive</h2>
+      <p class="highlight">Ambidestria Proibida:</p>
+      <ul>
+        <li>Permite usar ambidestria com rapieiras, <strong>multiplicando os efeitos de contato pelo número de rapieiras equipadas</strong>.</li>
+        <li>Pode usar <strong>Avanço</strong> o número de vezes igual ao número de rapieiras equipadas.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Talento Especial</h2>
+      <p class="highlight">Pontos Vitais:</p>
+      <p>Ao acertar um ataque ou habilidade com rapieira, role um D13. Se cair um dos seguintes valores [3, 7, 9, 11, 13], acerta um ponto vital:</p>
+      <ul>
+        <li>Causa <strong>8% da vida máxima</strong> do alvo como dano adicional.</li>
+        <li>Acertar os <strong>5 pontos vitais</strong> no mesmo alvo faz ele sofrer novamente <strong>todo o dano adicional causado por esse talento</strong>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Progressão de Nível</h2>
+
+      <p class="highlight">(Nível 3) Avanço Impetuoso:</p>
+      <ul>
+        <li>Avança até +6m contra o inimigo e causa <strong>Ataque Básico + 40%</strong>.</li>
+        <li>Adiciona o número “1” ao vetor de Pontos Vitais.</li>
+        <li>Ocorrerá primeiro no seu turno, independente de reações ou ações bônus de terceiros.</li>
+      </ul>
+
+      <p class="highlight">(Nível 6) Counter-Parry:</p>
+      <p>A cada 3 rodadas (começando na primeira), você ativa a defesa contra ataques e projéteis.</p>
+      <ul>
+        <li>Role <code>D20 + (mod.DES + proficiência)</code> para bloquear.</li>
+        <li>Se o valor superar o ataque inimigo, você o anula e contra-ataca.</li>
+      </ul>
+
+      <p class="highlight">(Nível 9) Flash Strike:</p>
+      <p>Ao atacar, há <strong>20% de chance</strong> de ativar <strong>double strike</strong>, atacando duas vezes. O primeiro ataque pode ser crítico.</p>
+
+      <p class="highlight">(Nível 12) Second Strike:</p>
+      <p>Quando ativar o <strong>double strike</strong>, o <strong>último golpe é sempre crítico</strong>.</p>
+
+      <p class="highlight">(Nível 16) Bleeding Strike:</p>
+      <p>Ao acertar um ponto vital, o alvo sofre <strong>sangramento</strong> causando <code>(mod.DES)d10</code> de dano contínuo.</p>
+    </section>
+
+    <section>
+      <h2>Master Trait</h2>
+      <div class="trait">
+        <strong>Musketeer:</strong>
+        <ul>
+          <li>Ao acertar um inimigo com <strong>Avanço Impetuoso</strong>, você ganha um novo ataque.</li>
+          <li>Enquanto acertar, o efeito se mantém. Pode trocar de alvo se estiver ao alcance.</li>
+          <li>Adiciona o número “5” ao vetor de Pontos Vitais.</li>
+          <li>O dano por Pontos Vitais passa de <strong>8% para 12%</strong> da vida máxima do alvo.</li>
+          <li>Aumenta o dano de rapieira em <strong>5% por ponto de mod.DES</strong>.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

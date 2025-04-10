@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Estilo: Chicote</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #6e3bb0;
+    }
+
+    .highlight {
+      background-color: #e3dbf5;
+      padding: 8px 14px;
+      border-radius: 12px;
+      display: inline-block;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .trait {
+      background-color: #f9f9f9;
+      border-left: 6px solid #6e3bb0;
+      padding: 12px 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+
+    .subsection {
+      margin: 20px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Chicote</h1>
+
+    <p><span class="highlight">Estilo →</span> Yggbrasil, Faera</p>
+    <p><span class="highlight">Localização →</span> Yggbrasil, Faera</p>
+    <p><span class="highlight">Atributo →</span> Destreza (DES)</p>
+
+    <div class="subsection">
+      <p><strong>Manipulação de Chicote:</strong> permite utilizar chicotes como arma sem desvantagem. Chicotes são de uma mão, possuem alcance de 16m, atacam com Precisão e não podem causar letalidade diretamente.</p>
+    </div>
+
+    <div class="trait">
+      <strong>(Nível 3) Entrelaçar:</strong>
+      <p>Utiliza o chicote para imobilizar um alvo com um teste de Precisão. O alvo perde a CA baseada em Destreza enquanto estiver entrelaçado. Para se libertar, o alvo deve passar num teste de Força contra a Acrobacia do usuário.</p>
+      <ul>
+        <li><strong>Manobra - Arremessar:</strong> Arremessa o alvo entrelaçado, causando dano conforme o objeto ou arma de impacto.</li>
+        <li><strong>Manobra - Rédea:</strong> Impede o ataque do alvo com teste de Força, usando metade da Acrobacia como bônus.</li>
+        <li><strong>Manobra - Arremetida:</strong> Salta sobre o alvo entrelaçado, atacando com a arma da mão secundária ou ataque desarmado. Se for outro chicote, pode se afastar sem sofrer reação.</li>
+      </ul>
+    </div>
+
+    <div class="trait">
+      <strong>Ultimate Passive - Amarras do Destino:</strong>
+      <p>Entrelaçar ganha alcance global. Permite entrelaçar até +2 alvos por chicote. Os efeitos e danos são compartilhados entre todos os alvos. Dano de aliados também é compartilhado (50% do dano total e 150% do seu dano).</p>
+    </div>
+
+    <div class="trait">
+      <strong>(Nível 5) Mão Secundária:</strong>
+      <p>Permite equipar armas na mão secundária sem desvantagem. Cada arma concede um efeito específico:</p>
+      <ul>
+        <li><strong>Adaga:</strong> Garante letalidade com Arremetida. Letalidade +12.</li>
+        <li><strong>Espada:</strong> Arremetida gira durante o trajeto, atingindo alvos no caminho com dano baseado no Ataque Básico +5% por ponto de Acrobacia.</li>
+        <li><strong>Revólver/Pistola:</strong> Precisão dobra contra alvo entrelaçado. Pode aplicar letalidade.</li>
+        <li><strong>Chicote:</strong> Ganha a manobra "Colisão Dupla", que causa dano e atordoa os alvos por 1 rodada. Permite entrelaçar dois alvos distintos ou imobilizar um alvo completamente.</li>
+      </ul>
+    </div>
+
+    <div class="trait">
+      <strong>(Nível 7) Kamoni:</strong>
+      <p>Permite tentar bloquear ataques de curta e longa distância com o chicote usando Acrobacia.</p>
+    </div>
+
+    <div class="trait">
+      <strong>(Master Trait) Kanroji:</strong>
+      <p>Especialista lendário com chicotes. Aumenta o dano de chicotes em 5% por ponto de modificador de Destreza (mod.DES).</p>
+      <p><strong>Técnica Kanroji:</strong> Realiza até 5 ataques consecutivos. Cada ataque bem-sucedido aumenta o dano (1x, 2x, 3x, 4x, 5x). Se completar os 5 estágios, pode executar <strong>Mar de Chibatadas</strong>, causando 600% do 5º acerto como dano em área. Pode ser usado 1 vez por combate.</p>
+    </div>
+  </div>
+</body>
+</html>

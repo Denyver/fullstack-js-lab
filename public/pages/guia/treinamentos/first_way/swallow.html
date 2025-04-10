@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Swallow - Estilo Maera, Yggbrasil</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f9;
+      color: #222;
+      margin-top: 150px;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #2e3a59;
+      margin-bottom: 5px;
+    }
+
+    .info {
+      margin-bottom: 30px;
+    }
+
+    .info p {
+      margin: 4px 0;
+      font-weight: 500;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2e3a59;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .highlight {
+      background-color: #e6f7ff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin: 5px 0;
+    }
+
+    .trait {
+      background-color: #f1ffe6;
+      padding: 10px;
+      border-left: 5px solid #59b259;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Swallow - Estilo Maera, Yggbrasil</h1>
+    <div class="info">
+      <p><strong>Localização:</strong> Maera, Yggbrasil</p>
+      <p><strong>Atributo principal:</strong> FOR</p>
+    </div>
+
+    <section>
+      <h2>Habilidade Inicial</h2>
+      <p class="highlight">Manipulação de Swallow:</p>
+      <p>Permite utilizar Swallow sem desvantagens.</p>
+      <ul>
+        <li>Se não focar um alvo: causa <strong>50%</strong> do total de dano ao redor do usuário.</li>
+        <li>Se focar um único inimigo: causa <strong>20%</strong> de dano aumentado.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Progressão de Nível</h2>
+
+      <p class="highlight">(Nível 3) Slashing Strike:</p>
+      <p>Avança em linha reta atingindo todos os inimigos no caminho. Teste de <strong>Atletismo ND 12 + 1 por 2 níveis</strong>.</p>
+      <ul>
+        <li>Dano: <strong>Ataque Básico +10% por ponto de Atletismo</strong>.</li>
+        <li>Alcance: o dobro do seu movimento.</li>
+        <li>Se atingir todos os inimigos no caminho: alvo principal recebe <strong>+30%</strong> de dano.</li>
+      </ul>
+
+      <p class="highlight">(Nível 6) Bleeding Path:</p>
+      <p>Se <strong>Slashing Strike</strong> atingir todos os inimigos no caminho, aplica <strong>Sangramento</strong> baseado no dano causado.</p>
+      <ul>
+        <li>Dano por 3 rodadas, reduzido à metade a cada rodada.</li>
+      </ul>
+
+      <p class="highlight">(Nível 8) Se Flanquear Eu Vou Atacar:</p>
+      <p>Se sofrer flanqueamento, ganha <strong>1 ataque básico bônus</strong> contra o inimigo que o ameaça mais.</p>
+      <ul>
+        <li>Se for crítico: atinge outro atacante do flanco.</li>
+      </ul>
+
+      <p class="highlight">(Nível 14) Keep Going To The Hell:</p>
+      <p>Quando sua vida estiver em <strong>10% ou menos</strong>:</p>
+      <ul>
+        <li><strong>90%</strong> de redução de dano por 3 rodadas.</li>
+        <li>Todos ataques acertam automaticamente.</li>
+        <li><strong>Slashing Strike</strong> pode ser usado sem espera/testes.</li>
+        <li>Atletismo dobrado (triplicado se for nível 20).</li>
+        <li>Após o efeito, cura <code>5 + (mod.CON × 5)%</code> da vida máxima, mas não pode atacar por 1 rodada.</li>
+        <li><strong>1 uso por dia</strong>.</li>
+      </ul>
+
+      <p class="highlight">(Nível 18) Troca Devastadora:</p>
+      <ul>
+        <li>Críticos contra <strong>1 alvo</strong>: dano reduzido   à metade (incluindo bônus).</li>
+        <li>Críticos em <strong>dano em área</strong>: dano dobrado com base nos bônus.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Master Trait</h2>
+      <div class="trait">
+        <strong>Slasher:</strong>
+        <p>Quando ataca em área, chance de causar <strong>dois ataques extras</strong> apenas rolando o dano (sem chance de crítico).</p>
+        <ul>
+          <li>Chance: <code>10% + (Atletismo)</code>.</li>
+          <li>Aplica efeitos de contato normalmente.</li>
+          <li><strong>Dano de Swallow</strong> é aumentado em <code>6% por ponto de mod.FOR</code>.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

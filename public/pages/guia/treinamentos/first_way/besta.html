@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Besta - Estilo Novyatt, Pyr</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f9;
+      color: #222;
+      margin-top: 150px;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #2e3a59;
+      margin-bottom: 5px;
+    }
+
+    .info {
+      margin-bottom: 30px;
+    }
+
+    .info p {
+      margin: 4px 0;
+      font-weight: 500;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2e3a59;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .highlight {
+      background-color: #fff1e6;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin: 5px 0;
+    }
+
+    .trait {
+      background-color: #ffeaea;
+      padding: 10px;
+      border-left: 5px solid #e35d5d;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Besta - Estilo Novyatt, Pyr</h1>
+    <div class="info">
+      <p><strong>Localização:</strong> Novyatt, Pyr</p>
+      <p><strong>Atributo principal:</strong> FOR (2M) ou DES (1M)</p>
+    </div>
+
+    <section>
+      <h2>Habilidade Inicial</h2>
+      <p class="highlight">Manipulação de Besta:</p>
+      <p>Permite utilizar bestas sem qualquer desvantagem. Bestas de duas mãos usam <strong>FORÇA</strong> e bestas de uma mão usam <strong>DESTREZA</strong>.</p>
+    </section>
+
+    <section>
+      <h2>Progressão de Nível</h2>
+
+      <p class="highlight">(Nível 3) Pesadão:</p>
+      <p>Quando estiver segurando uma besta de duas mãos, você ganha o efeito <strong>Afinco</strong>.</p>
+
+      <p class="highlight">(Nível 3) Precisão do Besteiro:</p>
+      <ul>
+        <li><strong>Besta de 1 Mão:</strong> +3 de precisão com uma besta. +2 se estiver usando duas bestas.</li>
+        <li><strong>Besta de 2 Mãos:</strong> +5 de precisão.</li>
+      </ul>
+
+      <p class="highlight">(Nível 6) Disparos Acrobáticos:</p>
+      <p>Usar acrobacia em combate ou fora dele concede 1 ataque bônus (1 vez por rodada).</p>
+      <ul>
+        <li>Se a manobra for um mortal para se posicionar atrás do inimigo, ganha o efeito <strong>Vital Spot</strong>.</li>
+        <li><strong>Vital Spot:</strong> +20 de letalidade bônus e 1 ataque instantâneo de letalidade.</li>
+        <li>Válido apenas para bestas de 1 mão.</li>
+      </ul>
+
+      <p class="highlight">(Nível 10) Double Strike:</p>
+      <p>25% de chance de causar um segundo disparo com o mesmo acerto. Consome virote extra.</p>
+
+      <p class="highlight">(Nível 12) Investida Alucinada:</p>
+      <p>Avança até o alvo disparando com sua besta. Percurso pode ser estendido com teste de <strong>atletismo</strong>.</p>
+      <ul>
+        <li><strong>Besta de 1 Mão:</strong> Causa <code>(movimento)x(Ataque Básico)</code> como dano perfurante. Pode usar acrobacia no meio para ativar <strong>Disparos Acrobáticos</strong>.</li>
+        <li><strong>Besta de 2 Mãos:</strong> Mesmo dano, mas cada disparo empurra o alvo 1m do local atual.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Master Trait</h2>
+      <div class="trait">
+        <strong>Bayomaster:</strong>
+        <p>Disparos críticos causam uma explosão ao redor do alvo:</p>
+        <ul>
+          <li>Dano <strong>neutro</strong> se o virote for comum.</li>
+          <li>Dano <strong>elemental</strong> se o virote tiver elemento.</li>
+          <li>Atinge até <strong>6 alvos</strong> ao redor, incluindo o principal.</li>
+          <li>Dano da explosão: <strong>150%</strong> do dano original.</li>
+          <li>Para cada ponto de <strong>Mod.FOR</strong>, +8% de dano com bestas 2M.</li>
+          <li>Para cada ponto de <strong>Mod.DES</strong>, +5% de dano com bestas 1M.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
