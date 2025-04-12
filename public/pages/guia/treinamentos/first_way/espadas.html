@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Espadas - Estilo Epiragon</title>
-  <link rel="stylesheet" href="/styles/navbar.css">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f9;
+      background-image: linear-gradient(150deg, #430000, #000000);
       color: #222;
       margin-top: 150px;
       padding: 0;
@@ -19,7 +18,12 @@
       padding: 20px;
       background-color: white;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgb(0, 0, 0);
+      transition: transform 1s, box-shadow 0.5s;
+    }
+
+    .container:hover {
+      box-shadow: 0 12px 32px rgb(255, 255, 255);
     }
 
     h1 {
@@ -56,87 +60,81 @@
     }
 
     .highlight {
-      background-color: #eef;
+      background-color: #fff1e6;
       padding: 5px 10px;
       border-radius: 5px;
       display: inline-block;
       margin: 5px 0;
+      transition: transform 0.2s, box-shadow 0.5s;
+    }
+
+    .highlight:hover {
+      transform: translateX(7px);
     }
 
     .trait {
-      background-color: #ffe0b3;
+      background-color: #ffeaea;
       padding: 10px;
-      border-left: 5px solid #ff9900;
+      border-left: 5px solid #e35d5d;
       margin-top: 10px;
       border-radius: 6px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <a href="/index.html">
-        <img src="/imgs/woe_titulo.png" alt="Logo" />
-      </a>
-    </div>
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
-      &#9776; 
-    </button>
-    <nav class="menu">
-      <ul>
-        <li><a href="pages/guia_geral.html">Guia</a></li>
-        <li><a href="pages/eventos.html">Eventos</a></li>
-        <li><a href="pages/combat.html">Combate</a></li>
-        <li><a href="pages/gerador_item.html">Gerador de Itens</a></li>
-        <li><a href="pages/criador_npc.html">Criador de NPC</a></li>
-        <li><a href="pages/mapa_eder.html">Mapa</a></li>
-        <li><a href="pages/mesas.html">Mesas</a></li>
-      </ul>
-    </nav>
-    <div class="voltar-btn-container">
-      <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
-    </div>
-  </header>
   <div class="container">
     <h1>Espadas - Estilo Epiragon</h1>
     <div class="info">
       <p><strong>Localização:</strong> Epiragon, Novyatt</p>
-      <p><strong>Atributo:</strong> DES ou FOR</p>
+      <p><strong>Atributo principal:</strong> DES ou FOR</p>
     </div>
 
     <section>
-      <h2>Passivas</h2>
-      <p class="highlight">Manusear Espada:</p>
-      <p>Pode manusear espadas sem desvantagem.</p><br>
-
-      <p class="highlight">Ataque Concentrado:</p>
-      <p>Consome a rodada atual para concentrar o ataque na próxima. Causa 75% de dano bônus com base no dado de dano rolado.</p>
-
-      <p class="highlight">Ultimate Passive - Only One Hit:</p>
-      <p>No primeiro uso de Ataque Concentrado, se tirar 20 natural no 1d20, você desfere um ataque com 10 + mod.DES ou FOR acumulando os ataques concentrados anteriores.</p>
+      <h2>Habilidade Inicial</h2>
+      <p><strong>Manusear Espada:</strong> pode manusear espadas sem desvantagem.</p>
     </section>
 
     <section>
       <h2>Habilidades</h2>
-      <p class="highlight">(Nível 3) Salto com Espada:</p>
-      <p>Salta até 12m (ou 24m com Atletismo). Causa 1.6x Ataque Básico como dano adicional. A cada 2m a mais, o dano aumenta em 12%.</p>
+      <ul>
+        <li class="highlight">
+          <strong>Ataque Concentrado:</strong>
+          <p>Pode consumir a rodada atual para concentrar o ataque para próxima rodada. Um ataque concentrado causa dano aumentado de acordo com a quantidade de rodadas acumuladas. Causa <strong>75% de dano bônus</strong> com base no dado de dano rolado.</p>
+        </li>
 
-      <p class="highlight">(Nível 6) Investida Perfurante:</p>
-      <p>Ataca quebrando a defesa do inimigo. Causa Ataque Básico + (mod.DES ou FOR)d6. Ignora mod.DES da CA do inimigo.</p>
+        <li class="highlight">
+          <strong>Ultimate Passive - Only One Hit:</strong>
+          <p>No 1º uso de Ataque Concentrado você pode rolar <strong>1d20</strong>. Se o resultado for um <strong>20 natural</strong>, você irá desferir o equivalente a <strong>10 + mod.DES ou FOR</strong> em ataques acumulados no seu alvo. Acumula-se a quantidade de ataques concentrados já acumulados.</p>
+        </li>
 
-      <p class="highlight">(Nível 8) Sword Focus:</p>
-      <p>Foca em um alvo, ganhando 12% de dano adicional (acumula até 4x). Trocar o foco zera os acúmulos.</p>
+        <li class="highlight">
+          <strong>(Nível 3) Salto com Espada:</strong>
+          <p>Salta em direção ao alvo causando <strong>1.6x Ataque Básico</strong> como dano adicional. O salto tem alcance de até <strong>12m</strong> e pode ser dobrado com carga utilizando <strong>atletismo</strong>.</p>
+          <p>A dificuldade para dobrar o alcance é <strong>15 +1 a cada 4 níveis</strong>. A cada 2 metros aumenta o dano desta habilidade em <strong>12%</strong>.</p>
+        </li>
+
+        <li class="highlight">
+          <strong>(Nível 6) Investida Perfurante:</strong>
+          <p>Investe de maneira agressiva contra o alvo, quebrando a defesa dele e causando o <strong>Ataque Básico + (mod.DES ou FOR)d6</strong> como dano adicional.</p>
+          <p><strong>Ignora mod.DES da CA do alvo.</strong></p>
+        </li>
+
+        <li class="highlight">
+          <strong>(Nível 8) Sword Focus:</strong>
+          <p>Quando focar em um alvo, você causa <strong>12% de dano adicional</strong> que se acumula em até <strong>4x</strong>. Mudar o foco remove os acúmulos.</p>
+        </li>
+      </ul>
     </section>
 
     <section>
       <h2>Master Trait</h2>
       <div class="trait">
         <strong>Espadachim:</strong>
-        <p>Torna-se um mestre espadachim. Seus ataques ganham efeitos de combo e +5% de dano por mod.DES ou mod.FOR.</p>
+        <p>Você se torna um mestre espadachim. Seus ataques de espada ganham efeitos de combo. Você ainda aumenta seu dano com espadas em <strong>5% por Mod.DES ou Mod.FOR</strong>.</p>
         <ul>
-          <li><strong>Investida Cortante:</strong> Alcança o alvo em até 12m. Causa 140% do Ataque Básico como dano cortante.</li>
-          <li><strong>Corte Horizontal:</strong> Após sucesso na Investida Cortante, causa 175% do Ataque Básico como dano cortante.</li>
-          <li><strong>Golpe Final:</strong> Após Corte Horizontal, finaliza com golpe de cima para baixo. Dano: 200% do Ataque Básico + 8% da vida máxima do alvo.</li>
+          <li><strong>Investida Cortante:</strong> seu primeiro ataque permite alcançar o alvo em até <strong>12m</strong>. Independente da distância, causa <strong>140% (Ataque Básico)</strong> como dano cortante.</li>
+          <li><strong>Corte Horizontal:</strong> após sucesso em Investida Cortante, corta o alvo horizontalmente causando <strong>175% (Ataque Básico)</strong> como dano cortante.</li>
+          <li><strong>Golpe Final:</strong> após sucesso em Corte Horizontal, finaliza o combo com golpe de cima para baixo causando <strong>200% (Ataque Básico)</strong> como dano cortante + <strong>8% da vida máxima</strong> do alvo como dano cortante adicional.</li>
         </ul>
       </div>
     </section>

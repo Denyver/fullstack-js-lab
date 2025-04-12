@@ -6,7 +6,7 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f9;
+      background-image: linear-gradient(150deg, #430000, #000000);
       color: #222;
       margin-top: 150px;
       padding: 0;
@@ -18,7 +18,12 @@
       padding: 20px;
       background-color: white;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgb(0, 0, 0);
+      transition: transform 1s, box-shadow 0.5s;
+    }
+
+    .container:hover {
+      box-shadow: 0 12px 32px rgb(255, 255, 255);
     }
 
     h1 {
@@ -60,6 +65,11 @@
       border-radius: 5px;
       display: inline-block;
       margin: 5px 0;
+      transition: transform 0.2s, box-shadow 0.5s;
+    }
+
+    .highlight:hover {
+      transform: translateX(7px);
     }
 
     .trait {
@@ -72,6 +82,31 @@
   </style>
 </head>
 <body>
+  <header>
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/imgs/woe_titulo.png" alt="Logo" />
+      </a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      &#9776;
+    </button>
+    <nav class="menu">
+      <ul>
+        <li><a href="pages/guia_geral.html">Guia</a></li>
+        <li><a href="pages/eventos.html">Eventos</a></li>
+        <li><a href="pages/combat.html">Combate</a></li>
+        <li><a href="pages/gerador_item.html">Gerador de Itens</a></li>
+        <li><a href="pages/criador_npc.html">Criador de NPC</a></li>
+        <li><a href="pages/mapa_eder.html">Mapa</a></li>
+        <li><a href="pages/mesas.html">Mesas</a></li>
+      </ul>
+    </nav>
+    <div class="voltar-btn-container">
+      <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+    </div>
+  </header>
+
   <div class="container">
     <h1>Besta - Estilo Novyatt, Pyr</h1>
     <div class="info">
@@ -81,46 +116,47 @@
 
     <section>
       <h2>Habilidade Inicial</h2>
-      <p class="highlight">Manipulação de Besta:</p>
-      <p>Permite utilizar bestas sem qualquer desvantagem. Bestas de duas mãos usam <strong>FORÇA</strong> e bestas de uma mão usam <strong>DESTREZA</strong>.</p>
+      <p><strong>Manipulação de Besta:</strong> permite utilizar bestas sem qualquer desvantagem. Bestas usam FORÇA para besta de duas mãos e DESTREZA para bestas de uma mão.</p>
     </section>
 
     <section>
       <h2>Progressão de Nível</h2>
+      <ul> 
+        <li class="highlight"><strong>Nível 3 - Pesadão:</strong> quando estiver segurando uma besta de duas mãos você ganha Afinco.</li>
+        <li class="highlight">
+          <strong>(Nível 3) Precisão do Besteiro:</strong>
+          <p>Aumenta a precisão de acordo com a besta que estiver usando:</p>
+          <ul>
+            <li><strong>Besta de 1 Mão:</strong> Aumenta a precisão em <strong>3</strong> se estiver usando uma besta. E em <strong>2</strong> se estiver usando duas bestas.</li>
+            <li><strong>Besta de 2 Mãos:</strong> Aumenta a precisão em <strong>5</strong>.</li>
+          </ul>
+        </li>
 
-      <p class="highlight">(Nível 3) Pesadão:</p>
-      <p>Quando estiver segurando uma besta de duas mãos, você ganha o efeito <strong>Afinco</strong>.</p>
-
-      <p class="highlight">(Nível 3) Precisão do Besteiro:</p>
-      <ul>
-        <li><strong>Besta de 1 Mão:</strong> +3 de precisão com uma besta. +2 se estiver usando duas bestas.</li>
-        <li><strong>Besta de 2 Mãos:</strong> +5 de precisão.</li>
-      </ul>
-
-      <p class="highlight">(Nível 6) Disparos Acrobáticos:</p>
-      <p>Usar acrobacia em combate ou fora dele concede 1 ataque bônus (1 vez por rodada).</p>
-      <ul>
-        <li>Se a manobra for um mortal para se posicionar atrás do inimigo, ganha o efeito <strong>Vital Spot</strong>.</li>
-        <li><strong>Vital Spot:</strong> +20 de letalidade bônus e 1 ataque instantâneo de letalidade.</li>
-        <li>Válido apenas para bestas de 1 mão.</li>
-      </ul>
-
-      <p class="highlight">(Nível 10) Double Strike:</p>
-      <p>25% de chance de causar um segundo disparo com o mesmo acerto. Consome virote extra.</p>
-
-      <p class="highlight">(Nível 12) Investida Alucinada:</p>
-      <p>Avança até o alvo disparando com sua besta. Percurso pode ser estendido com teste de <strong>atletismo</strong>.</p>
-      <ul>
-        <li><strong>Besta de 1 Mão:</strong> Causa <code>(movimento)x(Ataque Básico)</code> como dano perfurante. Pode usar acrobacia no meio para ativar <strong>Disparos Acrobáticos</strong>.</li>
-        <li><strong>Besta de 2 Mãos:</strong> Mesmo dano, mas cada disparo empurra o alvo 1m do local atual.</li>
-      </ul>
+        <li class="highlight"><strong>(Nível 6) Disparos Acrobáticos:</strong> 
+        <p>Quando você usar <strong>acrobacia</strong> em combate ou fora dele, ganhe um <strong>ataque bônus</strong>.</p>
+        <p>Se a manobra visar um mortal para se posicionar atrás do inimigo, você ganha o efeito <strong>Vital Spot</strong>.</p>
+        <p><em>Somente para bestas de 1 mão.</em> Limite de 1 ataque bônus por rodada.</p>
+        <p><strong>Vital Spot:</strong> Ganha <strong>+20 de letalidade bônus</strong> e garante um <strong>ataque instantâneo de letalidade</strong>.</p>        
+        
+        <li class="highlight"><strong>Nível 10 - Double Strike:</strong> chance de 25% de causar segundo disparo com mesmo acerto.</li></li>
+        <li class="highlight">
+          <strong>(Nível 12) Investida Alucinada</strong>
+          <p>Avança em direção ao alvo disparando com sua besta. O efeito varia conforme o tipo de besta utilizada.</p>
+          <p>Percorre seu movimento até encostar no alvo. Pode usar <strong>atletismo</strong> para aumentar o percurso se tiver sucesso no teste.</p>
+          <ul>
+            <li><strong>Besta de 1 Mão:</strong> Causa <strong><em>(movimento) x (Ataque Básico)</em></strong> como dano perfurante contra o alvo. Durante o percurso, pode rolar <strong>acrobacia</strong> para interromper o ataque e ativar o efeito de <strong>Disparos Acrobáticos</strong>.</li>
+            <li><strong>Besta de 2 Mãos:</strong> Causa <strong><em>(movimento) x (Ataque Básico)</em></strong> como dano perfurante contra o alvo. Cada disparo empurra o alvo em <strong>1m</strong> do local onde ele está.</li>
+          </ul>
+        </li>
+              </ul>
     </section>
 
     <section>
       <h2>Master Trait</h2>
       <div class="trait">
         <strong>Bayomaster:</strong>
-        <p>Disparos críticos causam uma explosão ao redor do alvo:</p>
+        <p>isparos críticos contra o alvo explodem causando dano neutro quando o virote não possuir elemento e dano elemental quando tiver elemento. O dano ocorre ao redor do alvo atingindo até 6 alvos. Os alvos incluindo o alvo principal receberão 150% do dano causado. Para cada ponto modificador de FOR aumenta o dano causado por bestas de duas mãos em 8%. Para cada ponto modificador de DES aumenta o dano causado por bestas de uma mão em 5%.
+        </p>
         <ul>
           <li>Dano <strong>neutro</strong> se o virote for comum.</li>
           <li>Dano <strong>elemental</strong> se o virote tiver elemento.</li>

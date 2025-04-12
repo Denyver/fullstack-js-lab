@@ -1,0 +1,123 @@
+:root {
+    --bg-gradient: linear-gradient(150deg, #210043, #000000);
+    --text-color: #222;
+    --card-bg: white;
+    --card-shadow: rgb(0, 0, 0);
+    --card-hover-shadow: rgb(255, 255, 255);
+    --highlight-bg: #eef;
+    --trait-bg: #e1ffe4;
+    --trait-border: #2e8b57;
+    --title-color: #2e3a59;
+  }
+
+/* Tema dark */
+.theme-dark {
+  --bg-gradient: linear-gradient(150deg, #111, #000);
+  --text-color: #f0f0f0;
+  --card-bg: #1e1e1e;
+  --card-shadow: #000;
+  --card-hover-shadow: #555;
+  --highlight-bg: #333;
+  --trait-bg: #222;
+  --trait-border: #6f42c1;
+  --title-color: #f5f5f5;
+}
+
+/* Tema oceano */
+.theme-ocean {
+  --bg-gradient: linear-gradient(150deg, #007991, #78ffd6);
+  --text-color: #013440;
+  --card-bg: #e0f7fa;
+  --card-shadow: #004d40;
+  --card-hover-shadow: #00acc1;
+  --highlight-bg: #b2ebf2;
+  --trait-bg: #e0f2f1;
+  --trait-border: #00796b;
+  --title-color: #004d40;
+}
+
+/* Tema pôr-do-sol */
+.theme-sunset {
+  --bg-gradient: linear-gradient(150deg, #ff6e7f, #bfe9ff);
+  --text-color: #3e1f47;
+  --card-bg: #fff5f0;
+  --card-shadow: #ff8a65;
+  --card-hover-shadow: #ff7043;
+  --highlight-bg: #ffe0b2;
+  --trait-bg: #fff3e0;
+  --trait-border: #ef6c00;
+  --title-color: #bf360c;
+}
+
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-image: linear-gradient(150deg, #210043, #000000);
+    color: #222;
+    margin-top: 150px;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    transition: transform 1s, box-shadow 0.5s;
+  }
+
+  .container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgb(255, 255, 255);
+  }
+
+  h1 {
+    font-size: 2.2em;
+    color: #2e3a59;
+    margin-bottom: 5px;
+  }
+
+  .info {
+    margin-bottom: 30px;
+  }
+
+  .info p {
+    margin: 4px 0;
+    font-weight: 500;
+  }
+
+  section {
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    color: #2e3a59;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+  }
+
+  p, li {
+    line-height: 1.6;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  .highlight {
+    background-color: #eef;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px 0;
+  }
+
+  .trait {
+    background-color: #e1ffe4;
+    padding: 10px;
+    border-left: 5px solid #2e8b57;
+    margin-top: 10px;
+    border-radius: 6px;
+  }

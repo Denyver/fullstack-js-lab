@@ -1,32 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/navbar.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Habilidades e estilo de combate com Adagas no estilo Epiragon/Siaahra.">
   <title>Adagas - Estilo Epiragon/Siaahra</title>
+  <link rel="stylesheet" href="/styles/navbar.css">
   <style>
+    :root {
+      --bg-dark: #0d0019;
+      --container-bg: #1a0033;
+      --accent: #8a2be2;
+      --highlight-bg: #000049;
+      --trait-bg: #230300;
+      --trait-border: #cc2e2e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f9;
-      color: #222;
+      background-color: var(--bg-dark);
+      color: #f0f0f0;
       margin-top: 150px;
-      padding: 0;
+      padding: 0 15px;
     }
 
     .container {
       max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 0 auto 60px;
+      padding: 30px;
+      background-color: var(--container-bg);
+      border: 2px solid var(--accent);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(138, 43, 226, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(138, 43, 226, 0.5);
     }
 
     h1 {
-      font-size: 2.2em;
-      color: #2e3a59;
-      margin-bottom: 5px;
+      font-size: 2.4em;
+      color: #ffffff;
+      margin-bottom: 10px;
+      text-shadow: 0 0 4px #8a2be2;
     }
 
     .info {
@@ -43,9 +67,11 @@
     }
 
     h2 {
-      color: #2e3a59;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
+      font-size: 1.5em;
+      color: #ffffff;
+      border-bottom: 2px solid #8a2be2;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
     }
 
     p, li {
@@ -57,19 +83,35 @@
     }
 
     .highlight {
-      background-color: #eef;
-      padding: 5px 10px;
-      border-radius: 5px;
+      background-color: var(--highlight-bg);
+      padding: 6px 12px;
+      border-radius: 6px;
       display: inline-block;
-      margin: 5px 0;
+      margin: 10px 0 5px;
+      font-weight: bold;
     }
 
     .trait {
-      background-color: #ffe4e1;
-      padding: 10px;
-      border-left: 5px solid #cc2e2e;
+      background-color: var(--trait-bg);
+      padding: 15px;
+      border-left: 6px solid var(--trait-border);
       margin-top: 10px;
-      border-radius: 6px;
+      border-radius: 8px;
+    }
+
+    .trait strong {
+      font-size: 1.1em;
+      display: block;
+      margin-bottom: 8px;
+      color: #ffb3b3;
+    }
+
+    .logo img {
+      max-height: 50px;
+    }
+
+    .menu-toggle {
+      display: none;
     }
   </style>
 </head>
@@ -77,12 +119,10 @@
   <header>
     <div class="logo">
       <a href="/index.html">
-        <img src="/imgs/woe_titulo.png" alt="Logo" />
+        <img src="/imgs/woe_titulo.png" alt="Logo do Mundo WOE">
       </a>
     </div>
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
-      &#9776; 
-    </button>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">&#9776;</button>
     <nav class="menu">
       <ul>
         <li><a href="pages/guia_geral.html">Guia</a></li>
@@ -99,7 +139,7 @@
     </div>
   </header>
 
-  <div class="container">
+  <main class="container">
     <h1>Adagas - Estilo Epiragon/Siaahra</h1>
     <div class="info">
       <p><strong>Localização:</strong> Epiragon, Siaahra, Novyatt</p>
@@ -114,6 +154,7 @@
 
     <section>
       <h2>Habilidades</h2>
+
       <p class="highlight">(Nível 3) Aprendiz de Algoz:</p>
       <p>A letalidade base de adagas passa a ser <strong>10 + Mod.DES x3</strong>.</p>
 
@@ -153,6 +194,6 @@
         <p><strong>Observação:</strong> A furtividade só é reiniciada com o abate via Backstab.</p>
       </div>
     </section>
-  </div>
+  </main>
 </body>
 </html>

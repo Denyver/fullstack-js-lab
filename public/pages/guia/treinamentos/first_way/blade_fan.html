@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/styles/navbar.css">
+  <link rel="stylesheet" href="/public/styles/first_way.css">
+  <title>Blade Fan - Estilo Pyr.</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/imgs/woe_titulo.png" alt="Logo" />
+      </a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      &#9776;
+    </button>
+    <nav class="menu">
+      <ul>
+        <li><a href="pages/guia_geral.html">Guia</a></li>
+        <li><a href="pages/eventos.html">Eventos</a></li>
+        <li><a href="pages/combat.html">Combate</a></li>
+        <li><a href="pages/gerador_item.html">Gerador de Itens</a></li>
+        <li><a href="pages/criador_npc.html">Criador de NPC</a></li>
+        <li><a href="pages/mapa_eder.html">Mapa</a></li>
+        <li><a href="pages/mesas.html">Mesas</a></li>
+      </ul>
+    </nav>
+    <div class="voltar-btn-container">
+      <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Blade Fan</h1>
+    <div class="info">
+      <p><strong>Estilo:</strong> Pyr.</p>
+      <p><strong>Localização:</strong> Pyr.</p>
+      <p><strong>Atributo:</strong> Destreza</p>
+    </div>
+
+    <section>
+      <div >
+        <h2>Manipulação de Blade Fan</h2>
+        <p>Permite ao usuário manusear blade fans sem desvantagem. Blade Fans usam acrobacia como um adicional a suas
+        características de combate. O usuário pode manusear blade fans de duas maneiras:</p>
+      </div>
+      
+      <div class="highlight">
+      <p ><strong>Dual Fans:</strong></p>
+      <p>Causa dano com dois fans que estiverem equipados. Necessário apenas um acerto, o segundo fan também acerta.
+        Dano: (Acrobacia)danoDaArma + Nível. Ataque usa Acrobacia no lugar de Proficiência e Destreza.</p>
+      </div>
+
+
+      <div>
+        <p class="highlight"><strong>Support Fan:</strong></p>
+        <p>Seu único fan vira arma de mão secundária. Você ganha vantagem para a arma primária. Dano do fan:
+          (Mod.DES)danoDaArma + Acrobacia.</p>
+      </div>
+
+    </section>
+
+    <section>
+      <h2>Stare Dance</h2>
+      <p>Luta como uma dança, mantendo os olhos no inimigo. Ao acertar um alvo, o próximo ataque causa efeito único.
+        Recarga: 1 rodada.</p>
+      <p class="highlight">Dual - Thrust Blow:</p>
+      <p>Dano bônus: (Mod.DES/2 x Acrobacia)%.</p>
+      <p class="highlight">Support - Trust Defence:</p>
+      <p>Contra-ataca com Acrobacia + D20. Se for bem-sucedido, desarma o inimigo até a próxima rodada. Ele perde a CA
+        de Destreza.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 5) Dança da Oportunidade</h2>
+      <p>Usada quando flanqueado por 2 ou mais inimigos.</p>
+      <p class="highlight">Dual - Círculo do Desafio:</p>
+      <p>Ataque em área ao redor. Dano: Ataque Básico + 25% por inimigo (máximo 100%).</p>
+      <p class="highlight">Support - Movimento Estratégico:</p>
+      <p>Brande o fan, salta e ataca inimigos. Dano bônus cresce 5% por metro saltado (máx 150%). Teste de Acrobacia é
+        necessário. No salto máximo, inimigos perdem o foco em você.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 10) Dança da Reflexão</h2>
+      <p>Previne ataques com movimentos de dança. Dura 1 rodada. Requer Ímpeto.</p>
+      <p class="highlight">Dual - All Way:</p>
+      <p>Previne até 2 ataques. Role seu ataque básico contra o do inimigo.</p>
+      <p class="highlight">Support - One Time Strike:</p>
+      <p>Impede um ataque. Se tiver sucesso, ganha ataque de oportunidade com arma principal. Role Acrobacia + 1D20
+        contra ataque inimigo.</p>
+    </section>
+
+    <section>
+      <h2>Master Trait - Dança Imponente</h2>
+      <div class="trait">
+        <p>Você se torna perfeito com os fans.</p>
+        <ul>
+          <li>+7% de dano com fans por Mod.DES.</li>
+          <li>Stare Dance sem recarga.</li>
+          <li>Círculo do Desafio agora tem máximo de 250% de bônus.</li>
+          <li>Movimento Estratégico causa 33% da vida máxima do alvo em dano adicional no salto máximo (1 vez por alvo).
+          </li>
+          <li>All Way aplica Thrust Blow se for bem-sucedido.</li>
+          <li>One Time Strike pode chamar Movimento Estratégico.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

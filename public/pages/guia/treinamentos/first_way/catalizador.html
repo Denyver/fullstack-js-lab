@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalisador</title>
+  <link rel="stylesheet" href="/public/styles/navbar.css">
+  <link rel="stylesheet" href="/public/styles/first_way.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/imgs/woe_titulo.png" alt="Logo" />
+      </a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      &#9776; 
+    </button>
+    <nav class="menu">
+      <ul>
+        <li><a href="/pages/guia_geral.html">Guia</a></li>
+        <li><a href="/pages/combat.html">Combate</a></li>
+        <li><a href="/pages/ficha.html">Ficha de Personagem</a></li>
+        <li><a href="/pages/gerador_item.html">Gerador de Itens</a></li>
+      </ul>
+    </nav>
+    <div class="voltar-btn-container">
+      <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+    </div>
+  </header>
+  <div class="container">
+    <h1 class="title">Catalisador</h1>
+    
+    <div>
+      <p><strong>Estilo</strong>: Yggbrasil</p>
+      <p><strong>Localização</strong>: Yggbrasil</p>
+      <p><strong>Atributos</strong>: INT, SAB, CAR</p>
+    </div>
+
+    <section>
+      <p><strong>Manipulação de Catalisador: </strong>O catalisador é um item que recebe um vínculo mágico. Catalisadores são divididos em três tipos: <strong>Burst</strong>, <strong>Cura</strong> e <strong>Reação Elemental</strong>. Pode ser usado sem desvantagem.</p>
+
+      <ul class="highlight">
+        <li><strong>Burst</strong>: ataques básicos são baseados em magias. Escolha uma magia de conjuração com limite de <em>1 + (mod.INT / 5)</em> como ataque básico. A escolha pode ser feita antes de cada combate.</li>
+        <li><strong>Cura</strong>: permite alocar uma magia de cura em seu ataque básico, focando aliados. A magia pode ter até <em>1 + (mod.SAB / 5)</em> de conjuração. Escolhido antes do combate.</li>
+        <li><strong>Reação Elemental</strong>: aumenta o contador de Elemento em <em>1 + (mod.CAR / 5)</em> ao causar uma reação elemental.</li>
+      </ul>
+    </section>
+
+    <section class="highlight">
+      <p><strong>(Nível 5) Magic Potency: </strong> Após usar uma magia de conjuração, o catalisador ganha potência extra por dois usos (incluindo o ataque básico):</p>
+      <ul>
+        <li><strong>Burst</strong>: dano e efeito das magias aumentam em <strong>25%</strong>.</li>
+        <li><strong>Cura</strong>: cura aprimorada em <strong>30%</strong>.</li>
+        <li><strong>Reação Elemental</strong>: reações aumentadas em <strong>35%</strong>.</li>
+      </ul>
+    </section>
+
+    <section class="highlight">
+      <strong>(Nível 7) Magic Recharge</strong>
+      <p>Reduz a recarga de habilidades com base no tipo de catalisador utilizado:</p>
+      <ul>
+        <li><strong>Burst</strong>: após usar magia ou ataque básico mágico, reduz em <strong>25%</strong> a recarga da próxima magia. Recarga: 1 rodada.</li>
+        <li><strong>Cura</strong>: após usar magia ou ataque básico de cura, reduz em <strong>30%</strong> a recarga da próxima cura.</li>
+        <li><strong>Reação Elemental</strong>: após causar reação elemental, reduz em <strong>20%</strong> a recarga de todas as habilidades.</li>
+      </ul>
+    </section>
+
+    <section class="highlight">
+      <strong>(Nível 10) Magic Knowledgement</strong>
+      <p>Estudos mágicos concedem vantagens adicionais:</p>
+      <ul>
+        <li><strong>Burst</strong>: vantagem em dificuldades e ataques mágicos. Se errar, ganha +10 na próxima tentativa. Recarga: 2 rodadas.</li>
+        <li><strong>Cura</strong>: vantagem em testes de cura. Cura recebe bônus de <em>(3 × Medicina)%</em>.</li>
+        <li><strong>Reação Elemental</strong>: aliados envolvidos na reação recebem vantagem. Se você for o único a causar, reduz o crítico do inimigo em 1. Recarga: 2 rodadas.</li>
+      </ul>
+    </section>
+
+    <section class="trait">
+      <h2>(Master Trait) Catalyst</h2>
+      <p>O uso do catalisador atinge seu auge:</p>
+      <ul>
+        <li><strong>Hyper Burst</strong>: dano crítico aumenta em <strong>60%</strong>. Dano com catalisadores: <strong>+5% por mod.INT</strong>.</li>
+        <li><strong>Supreme Cure</strong>: cura adicional de <strong>15%</strong> da vida máxima do alvo. Cura com catalisadores: <strong>+5% por mod.SAB</strong>.</li>
+        <li><strong>Elemental Cataclysm</strong>: reações permanecem no local por 1 rodada e afetam novos inimigos. Dano das reações com catalisador: <strong>+5% por mod.INT</strong>.</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

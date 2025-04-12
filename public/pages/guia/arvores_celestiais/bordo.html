@@ -10,170 +10,173 @@
         charset="UTF-8"></script>
     <link rel="stylesheet" href="/styles/navbar.css">
     <style>
-/* ===== Base ===== */
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #270000;
-    color: #e0e0e0;
-    margin: 0;
-    padding: 10px;
-}
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #270000;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 10px;
+        }
 
-main {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 140, 0, 0.5); /* laranja suave */
-}
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 30px;
+            background: linear-gradient(145deg, rgba(20, 20, 20, 0.9), rgba(40, 10, 0, 0.8));
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(255, 140, 0, 0.4);
+            border: 1px solid rgba(255, 140, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-/* ===== Títulos ===== */
-h1, h2, h3 {
-    color: #ffae00;
-    margin-bottom: 20px;
-}
 
-/* ===== Texto ===== */
-p, li {
-    line-height: 1.6;
-}
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
+        }
 
-ul {
-    margin-top: 0;
-}
+        h1,
+        h2,
+        h3 {
+            color: #ffae00;
+            margin-bottom: 20px;
+        }
 
-li strong {
-    color: #90ee90;
-}
+        p,
+        li {
+            line-height: 1.6;
+        }
 
-/* ===== Destaques ===== */
-.highlight {
-    background-color: #fff6e6;
-    border-left: 5px solid #b45309;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 0.5rem;
-}
+        ul {
+            margin-top: 0;
+        }
 
-/* ===== Seções ===== */
-section {
-    margin-bottom: 20px;
-    padding: 15px;
-    border-left: 4px solid #34a853;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    transition: transform 0.2s ease-in-out;
-}
+        li strong {
+            color: #90ee90;
+        }
 
-section:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
-}
+        .highlight {
+            background-color: #2f1e00;
+            border-left: 5px solid #b45309;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+        }
 
-/* ===== Árvores ===== */
-.tree {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-left: 4px solid #34a853;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: transform 0.2s ease-in-out;
+        }
 
-.column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
+        }
 
-/* ===== Skills ===== */
-.skill {
-    margin: 20px;
-    padding: 2px;
-    border: 1px solid #333;
-    border-radius: 5px;
-    background-color: #1e1e1e;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    position: relative;
-    cursor: pointer;
-}
+        .tree {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
 
-.skill img {
-    width: 90%;
-    height: 90%;
-    border-radius: 5px;
-    border: 1px solid #e0e0e0;
-}
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-.skill:hover {
-    background-color: #292929;
-}
+        .skill {
+            margin: 20px;
+            padding: 2px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #1e1e1e;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
 
-.skill:hover .tooltip {
-    display: block;
-}
+        .skill img {
+            width: 90%;
+            height: 90%;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
 
-/* ===== Tooltip ===== */
-.tooltip {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #222;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    width: 200px;
-    z-index: 10;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
+        .skill:hover {
+            background-color: #292929;
+        }
 
-/* ===== Estágio das Folhas ===== */
-.leaf-stage {
-    font-weight: bold;
-    color: #ff5722; /* um tom forte para as folhas */
-}
+        .skill:hover .tooltip {
+            display: block;
+        }
 
-/* ===== Habilidades Aprendidas ===== */
-.learned {
-    background-color: rgb(255, 165, 0);
-    border: 2px solid rgb(255, 140, 0);
-    box-shadow: 0 0 10px 2px rgba(255, 165, 0, 0.8);
-    transition: all 0.3s ease;
-}
+        .tooltip {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #222;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            width: 200px;
+            z-index: 10;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
 
-.learned:hover {
-    box-shadow: 0 0 15px 4px rgba(255, 165, 0, 1);
-}
+        .leaf-stage {
+            font-weight: bold;
+            color: #ff5722;
+        }
 
-/* ===== Inputs ===== */
-.points-input,
-.url-input {
-    margin-bottom: 10px;
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-    border: 1px solid #333;
-    padding: 5px;
-    border-radius: 5px;
-}
+        .learned {
+            background-color: rgb(255, 165, 0);
+            border: 2px solid rgb(255, 140, 0);
+            box-shadow: 0 0 10px 2px rgba(255, 165, 0, 0.8);
+            transition: all 0.3s ease;
+        }
 
-/* ===== Voltar ===== */
-#voltar {
-    text-align: left;
-    cursor: pointer;
-    color: #ff4444;
-    transition: color 0.2s ease-in-out;
-}
+        .learned:hover {
+            box-shadow: 0 0 15px 4px rgba(255, 165, 0, 1);
+        }
 
-#voltar:hover {
-    color: #ff6666;
-}
+        .points-input,
+        .url-input {
+            margin-bottom: 10px;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            border: 1px solid #333;
+            padding: 5px;
+            border-radius: 5px;
+        }
 
+        #voltar {
+            text-align: left;
+            cursor: pointer;
+            color: #ff4444;
+            transition: color 0.2s ease-in-out;
+        }
+
+        #voltar:hover {
+            color: #ff6666;
+        }
     </style>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -200,70 +203,78 @@ section:hover {
             <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
         </div>
     </header>
+    <div class="container">
 
-    <h1>Guardião do Bordo Celestial</h1>
 
-    <div class="highlight">
-      <p>O guardião do bordo celestial cuida das almas das boas pessoas onde o Bordo Celestial estende suas raízes. Diferente das Cerejeiras Celestiais, o bordo encarna as almas em animais que ali vivem.</p>
-      <p>O Bordo Celestial produz uma seiva comestível que é um tipo de elixir de poder e purificação.</p>
-      <p>Características visuais: folhas de bordo se formam aos pés do guardião, desaparecendo após alguns segundos, como se ele estivesse sempre caminhando sobre folhas.</p>
-    </div>
-  
-    <h2>Bordo 1 - Cidade de Oukusto, Yggdrasil</h2>
-  
-    <h3>Talentos</h3>
-    <h4>Seiva Celestial</h4>
-    <ul>
-      <li><strong>(Nv.1) Semiah:</strong> cura 30% do dano recebido.</li>
-      <li><strong>(Nv.3) Gamadjien:</strong> +25% dano. +5% por rodada (acumulativo).</li>
-      <li><strong>(Nv.6) Adagium:</strong> -10% dano recebido. -5% por rodada (máx 50%).</li>
-      <li><strong>(Nv.9) Isilidue:</strong> reduz o crítico em 1 por rodada (acumula).</li>
-      <li><strong>(Nv.12) Earthophya:</strong> +40% dano elemental. +5% por rodada (acumula).</li>
-      <li><strong>(Nv.15) Healmantus:</strong> +40% cura. +12% por rodada (acumula).</li>
-      <li><strong>(Nv.18) Gracymatuys:</strong> +70% dano crítico. +20% por rodada (acumula).</li>
-      <li><strong>(Nv.20) Emanuë:</strong> compartilha o elixir com aliados.</li>
-    </ul>
-  
-    <h4>Folhas do Bordo</h4>
-    <p>A cada rodada, caem <code>1D6</code> folhas, +1 por nível acima do primeiro. Cada rodada a folha evolui de estágio:</p>
-    <ul>
-      <li><span class="leaf-stage">Folha Verde:</span> (Mod.SAB)d4 por folha.</li>
-      <li><span class="leaf-stage">Folha Amarela:</span> (Mod.SAB)d6. 10% chance de atordoar.</li>
-      <li><span class="leaf-stage">Folha Laranja:</span> (Mod.SAB)d8. Burning 6% da vida máx.</li>
-      <li><span class="leaf-stage">Folha Vermelha:</span> (Mod.SAB)d10. Incineração 10% + 1%/Mod.SAB.</li>
-    </ul>
-  
-    <h3>Habilidades</h3>
-    <h4>Produção de Elixir Celestial</h4>
-    <p>Produz (nível + proficiência em ml + 5) ml de Elixir. Cura 12% + 5% por rodada (6 rodadas). Aplica os efeitos da Seiva Celestial. Usável 3x a cada 10 dias.</p>
-  
-    <h4>Maple Disappear</h4>
-    <p>Desaparece em folhas e retorna após 1 rodada. Próximo ataque causa +100% de dano. Pode esquivar de ataques. Recarga: 2 rodadas. Se matar o alvo, recarga é zerada.</p>
-  </body>
-  </html>  
 
-    <h1>Bordo Celestial</h1>
-    <div class="points-input">
-        <label for="heroPoints">Estado Celestial:</label>
-        <input type="number" id="heroPoints" value="0">
-        <button onclick="updatePoints()">Atualizar Pontos</button>
-        <p>Pontos Gastos: <span id="spentPoints">0</span></p>
-    </div>
-    <div class="url-input">
-        <label for="configUrl">URL de Salvamento:</label>
-        <input type="text" id="configUrl" placeholder="Cole a URL de save aqui">
-        <button onclick="loadConfigFromUrl()">Carregar Save</button>
-        <button onclick="generateConfigUrl()">Gerar URL de Save</button>
-    </div>
-    <div class="tree">
-        <!-- Colunas serão geradas dinamicamente pelo JavaScript -->
-    </div>
-    <div class="learned-list">
-        <h2>Poderes Conquistados</h2>
-        <ul id="learnedSkills"></ul>
-    </div>
-    </div>
+        <h1>Guardião do Bordo Celestial</h1>
 
+        <div class="highlight">
+            <p>O guardião do bordo celestial cuida das almas das boas pessoas onde o Bordo Celestial estende suas
+                raízes. Diferente das Cerejeiras Celestiais, o bordo encarna as almas em animais que ali vivem.</p>
+            <p>O Bordo Celestial produz uma seiva comestível que é um tipo de elixir de poder e purificação.</p>
+            <p>Características visuais: folhas de bordo se formam aos pés do guardião, desaparecendo após alguns
+                segundos, como se ele estivesse sempre caminhando sobre folhas.</p>
+        </div>
+
+        <h2>Bordo 1 - Cidade de Oukusto, Yggdrasil</h2>
+
+        <h3>Talentos</h3>
+        <h4>Seiva Celestial</h4>
+        <ul>
+            <li><strong>(Nv.1) Semiah:</strong> cura 30% do dano recebido.</li>
+            <li><strong>(Nv.3) Gamadjien:</strong> +25% dano. +5% por rodada (acumulativo).</li>
+            <li><strong>(Nv.6) Adagium:</strong> -10% dano recebido. -5% por rodada (máx 50%).</li>
+            <li><strong>(Nv.9) Isilidue:</strong> reduz o crítico em 1 por rodada (acumula).</li>
+            <li><strong>(Nv.12) Earthophya:</strong> +40% dano elemental. +5% por rodada (acumula).</li>
+            <li><strong>(Nv.15) Healmantus:</strong> +40% cura. +12% por rodada (acumula).</li>
+            <li><strong>(Nv.18) Gracymatuys:</strong> +70% dano crítico. +20% por rodada (acumula).</li>
+            <li><strong>(Nv.20) Emanuë:</strong> compartilha o elixir com aliados.</li>
+        </ul>
+
+        <h4>Folhas do Bordo</h4>
+        <p>A cada rodada, caem <code>1D6</code> folhas, +1 por nível acima do primeiro. Cada rodada a folha evolui de
+            estágio:</p>
+        <ul>
+            <li><span class="leaf-stage">Folha Verde:</span> (Mod.SAB)d4 por folha.</li>
+            <li><span class="leaf-stage">Folha Amarela:</span> (Mod.SAB)d6. 10% chance de atordoar.</li>
+            <li><span class="leaf-stage">Folha Laranja:</span> (Mod.SAB)d8. Burning 6% da vida máx.</li>
+            <li><span class="leaf-stage">Folha Vermelha:</span> (Mod.SAB)d10. Incineração 10% + 1%/Mod.SAB.</li>
+        </ul>
+
+        <h3>Habilidades</h3>
+        <h4>Produção de Elixir Celestial</h4>
+        <p>Produz (nível + proficiência em ml + 5) ml de Elixir. Cura 12% + 5% por rodada (6 rodadas). Aplica os efeitos
+            da Seiva Celestial. Usável 3x a cada 10 dias.</p>
+
+        <h4>Maple Disappear</h4>
+        <p>Desaparece em folhas e retorna após 1 rodada. Próximo ataque causa +100% de dano. Pode esquivar de ataques.
+            Recarga: 2 rodadas. Se matar o alvo, recarga é zerada.</p>
+
+
+
+        <h1>Bordo Celestial</h1>
+        <div class="points-input">
+            <label for="heroPoints">Estado Celestial:</label>
+            <input type="number" id="heroPoints" value="0">
+            <button onclick="updatePoints()">Atualizar Pontos</button>
+            <p>Pontos Gastos: <span id="spentPoints">0</span></p>
+        </div>
+        <div class="url-input">
+            <label for="configUrl">URL de Salvamento:</label>
+            <input type="text" id="configUrl" placeholder="Cole a URL de save aqui">
+            <button onclick="loadConfigFromUrl()">Carregar Save</button>
+            <button onclick="generateConfigUrl()">Gerar URL de Save</button>
+        </div>
+        <div class="tree">
+            <!-- Colunas serão geradas dinamicamente pelo JavaScript -->
+        </div>
+        <div class="learned-list">
+            <h2>Poderes Conquistados</h2>
+            <ul id="learnedSkills"></ul>
+        </div>
+    </div>
+    </div>
     <script src="/scripts/navbar.js"></script>
     <script>
         const skills = [

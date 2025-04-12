@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tipos Elementais & Reações</title>
+  <link rel="stylesheet" href="/public/styles/navbar.css">
+</head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.titulo-principal {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  border-left: 6px solid #888;
+  padding-left: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.grid-elementos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.card {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+  border: 1px solid #2c2c2c;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  border-color: #777;
+}
+
+.card h2 {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nivel {
+  font-size: 1rem;
+  opacity: 0.8;
+  font-weight: normal;
+}
+
+.card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.card ul li {
+  margin-bottom: 8px;
+  color: white;
+}
+
+.reacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reacao {
+  background-color: #1a1a1a;
+  padding: 18px 20px;
+  border-left: 5px solid #666;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.reacao:hover {
+    transform: translateX(10px);
+}
+
+.reacao h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.reacao p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.agua              { border-left: 4px solid #00bcd4;}
+.fogo              { border-left: 4px solid #ff5722;}
+.terra             { border-left: 4px solid #795548;}
+.trovao            { border-left: 4px solid #ffeb3b;}
+.ar                { border-left: 4px solid #81d4fa;}
+.gelo              { border-left: 4px solid #00acc1;}
+.card.fisico       { border-left: 5px solid #000; }
+.card.ilusao       { border-left: 5px solid #e43de3;}
+.card.luz          { border-left: 5px solid #ffd700;}
+.card.natureza     { border-left: 5px solid #00c500;}
+.card.trevas       { border-left: 5px solid #5c00a3;}
+.card.espiritual   { border-left: 5px solid #ff3399;}
+.card.imaterial    { border-left: 5px solid #00df9a;}
+.card.vazio        { border-left: 5px solid #e68cbf;}
+.card.ethereal     { border-left: 5px solid #00ffee;}
+.card.cristal      { border-left: 5px solid #f4bbff;}
+.card.espectral    { border-left: 5px solid #44c7ff;}
+.card.corrompido   { border-left: 5px solid #444;}
+
+</style>
+<body>
+    <header>
+        <div class="logo">
+          <a href="/index.html">
+            <img src="/imgs/woe_titulo.png" alt="Logo" />
+          </a>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+          &#9776; 
+        </button>
+        <nav class="menu">
+          <ul>
+            <li><a href="/pages/guia_geral.html">Guia</a></li>
+            <li><a href="/pages/combat.html">Combate</a></li>
+            <li><a href="/pages/ficha.html">Ficha de Personagem</a></li>
+            <li><a href="/pages/gerador_item.html">Gerador de Itens</a></li>
+            <li><a href="/pages/criador_npc.html">Criador de NPC</a></li>
+            <li><a href="/pages/planares.html">Planares</a></li>
+          </ul>
+        </nav>
+        <div class="voltar-btn-container">
+          <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+        </div>
+      </header><br><br><br><br><br>
+  <div class="container">
+    <h1 class="titulo-principal">Tipos Elementais</h1>
+
+    <div class="grid-elementos">
+      <section class="card agua">
+        <h2>Água <span class="nivel"></span></h2>
+        <ul>
+          <li>2x contra Fogo</li>
+          <li>0.5x contra Natureza</li>
+          <li>1.5x contra Terra</li>
+          <li>Remove efeitos de Fogo</li>
+          <li>Aplica <strong>Molhado</strong> (resiste a 2 reações)</li>
+        </ul>
+      </section>
+
+      <section class="card fogo">
+        <h2>Fogo <span class="nivel"></span></h2>
+        <ul>
+          <li>2x contra Natureza e Trovão</li>
+          <li>1.5x contra Gelo</li>
+          <li>Remove efeitos de Natureza</li>
+          <li>0.5x contra Água e Terra</li>
+          <li>Aplica <strong>Queimando</strong> (resiste a 1 reação)</li>
+        </ul>
+      </section>
+
+      <section class="card terra">
+        <h2>Terra <span class="nivel"></span></h2>
+        <ul>
+          <li>2x contra Fogo e Gelo</li>
+          <li>0.5x contra Natureza e Água</li>
+          <li>Aplica <strong>Empoeirado</strong> (resiste a 2 reações)</li>
+        </ul>
+      </section>
+
+      <section class="card trovao">
+        <h2>Trovão <span class="nivel"></span></h2>
+        <ul>
+          <li>2x contra Água</li>
+          <li>0.5x contra Terra e Natureza</li>
+          <li>Aplica <strong>Carregado</strong> (resiste a 1 reação)</li>
+        </ul>
+      </section>
+
+      <section class="card ar">
+        <h2>Ar <span class="nivel"></span></h2>
+        <ul>
+          <li>2x contra Fogo</li>
+          <li>Aumenta efeitos de Fogo em 100%</li>
+          <li>Remove efeitos de Água</li>
+          <li>Amplifica todas as reações</li>
+        </ul>
+      </section>
+
+      <section class="card gelo">
+        <h2>Gelo <span class="nivel"></span></h2>
+        <ul>
+          <li>2x contra Água</li>
+          <li>+50% contra Metal</li>
+          <li>Aplica <strong>Frio</strong> (resiste a 2 reações)</li>
+        </ul>
+      </section>
+
+      <section class="card fisico">
+        <h2>Físico</h2>
+        <ul>
+          <li><strong>Contusão</strong> (Maça, Martelo) → 1.5x contra Armadura Pesada</li>
+          <li><strong>Perfurante</strong> (Flecha, Lança, Firegun, Adaga) → Ignora metade da CA de Armadura</li>
+          <li><strong>Cortante</strong> (Espada, Machado, Espadão, Alabarda) → 25% de chance de causar sangramento cortante</li>
+        </ul>
+      </section>
+    
+      <section class="card ilusao">
+        <h2>Ilusão <span class="nivel"></span></h2>
+        <ul>
+          <li>ILUSÃO aplica efeito <strong>psico</strong></li>
+          <li>O efeito resiste a 1 reação elemental</li>
+        </ul>
+      </section>
+    
+      <section class="card luz">
+        <h2>Luz <span class="nivel"></span></h2>
+        <ul>
+          <li>2x contra Trevas</li>
+          <li>LUZ aplica efeito <strong>iluminação</strong> (resiste a 1 reação)</li>
+        </ul>
+      </section>
+    
+      <section class="card natureza">
+        <h2>Natureza <span class="nivel"></span></h2>
+        <ul>
+          <li>2x contra Água e Terra</li>
+          <li>0.5x contra Fogo e Gelo*</li>
+          <li>NATUREZA aplica efeito <strong>afloramento</strong> (resiste a 2 reações)</li>
+        </ul>
+      </section>
+    
+      <section class="card trevas">
+        <h2>Trevas <span class="nivel"></span></h2>
+        <ul>
+          <li>2x contra Luz</li>
+          <li>TREVAS aplica efeito <strong>breu</strong> (resiste a 1 reação)</li>
+        </ul>
+      </section>
+    
+      <section class="card espiritual">
+        <h2>Espírito <span class="nivel"></span></h2>
+        <ul>
+          <li>2x contra Trevas, Onis e Vazio</li>
+          <li>Curas de Luz são 2x mais fortes</li>
+          <li>ESPÍRITO aplica efeito <strong>benção</strong> (resiste a 1 reação)</li>
+        </ul>
+      </section>
+    
+      <section class="card imaterial">
+        <h2>Imaterial <span class="nivel"></span></h2>
+        <ul>
+          <li>Não possui fraquezas ou resistências</li>
+          <li>IMATERIAL aplica efeito <strong>matéria</strong> (resiste a 2 reações)</li>
+        </ul>
+      </section>
+    
+      <section class="card vazio">
+        <h2>Vazio <span class="nivel"></span></h2>
+        <ul>
+          <li>VAZIO aplica efeito <strong>devorar</strong> (resiste a 1 reação)</li>
+        </ul>
+      </section>
+    
+      <section class="card ethereal">
+        <h2>Ethereal <span class="nivel"></span></h2>
+        <ul>
+          <li>Não pode ser defendido</li>
+          <li>Aplica efeito <strong>etéreo</strong> (resiste a 1 reação)</li>
+        </ul>
+      </section>
+    
+      <section class="card cristal">
+        <h2>Cristal <span class="nivel"></span></h2>
+        <ul>
+          <li>Sem interações elementais conhecidas</li>
+        </ul>
+      </section>
+    
+      <section class="card espectral">
+        <h2>Espectral <span class="nivel"></span></h2>
+        <ul>
+          <li>Recebe 2x dano de magias</li>
+          <li>Ignora armadura do alvo</li>
+        </ul>
+      </section>
+    
+      <section class="card corrompido">
+        <h2>Corrupção / Corrompido</h2>
+        <ul>
+          <li>Consome qualquer estado</li>
+          <li>Dano é aplicado em 3 rodadas → (Dano ÷ 3)</li>
+        </ul>
+      </section>
+    </div>
+    </div>
+
+    <h1 class="titulo-principal">Reações Elementais</h1>
+
+    <div class="reacoes">
+        <div class="reacao">
+          <h3>🧊 Congelar</h3>
+          <p><strong>Água + Gelo:</strong> Congela o alvo ou área dependendo da combinação. O congelamento dura <em>1d4 rodadas</em>.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>🔥 Inflamação</h3>
+          <p><strong>Fogo + Natureza:</strong> Queima o alvo ou área por 3 rodadas, causando 5% da vida máxima como dano de fogo por rodada.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>⚡ Eletrocutar</h3>
+          <p><strong>Água + Trovão:</strong> Eletrocuta o alvo ou área, interrompendo ações e causando 2x o dano da habilidade de trovão.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>💥 Explosão</h3>
+          <p><strong>Fogo + Trovão:</strong> Causa 200% do dano da habilidade em área. Alvos atingidos são derrubados até o fim da rodada.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>🔥💨 Incineração</h3>
+          <p><strong>Inflamação + Ar:</strong> Aplica de uma vez o restante dos acúmulos de queimando em dobro.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>☠️ Envenenar</h3>
+          <p><strong>Vazio + Natureza:</strong> Envenena o alvo ou área, causando 200% do dano da habilidade por 4 rodadas.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>🧠 Loucura</h3>
+          <p><strong>Vazio + Ilusão:</strong> O alvo ataca aliados, sofre metade do dano que causar. Dura até ser purificado por Luz ou Espiritual.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>🌟 Glorificado</h3>
+          <p><strong>Espiritual + Luz:</strong> Concede escudo igual a 50% da vida máxima, bônus de dano (Nível x D4), impede falha crítica. Dura 3 rodadas. Recarga: 3 rodadas.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>👁️‍🗨️ Espírito Corrompido</h3>
+          <p><strong>Espiritual + Vazio:</strong> Vira uma aberração faminta. Ganha dano bônus (Nível x D8), perde 20% da vida por rodada. Pode se alimentar e recuperar 15%. 25% de chance de ocorrer. Ganha o talento <em>Feeding</em>.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>⚫ Black Hole</h3>
+          <p><strong>Luz + Trevas:</strong> Cria buraco negro que suga tudo e causa <em>1d100%</em> da vida máxima como dano imaterial. Chance: 10%.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>🧿 Dominado</h3>
+          <p><strong>Imaterial + Trevas:</strong> Controlado por Arah, +150% de dano extra, recebe 200% de dano de Luz e Espiritual. Só remove com purificação.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>🌪️ Redemoinho</h3>
+          <p><strong>Aplicado:</strong> Absorve reações na área e as replica com 50% de bônus em um raio de 12m.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>🔷 Cristalizado</h3>
+          <p><strong>Absorvido:</strong> Absorve o elemento e cria camada de cristal. Ignora 60% da resistência e aumenta em 20% o dano do elemento absorvido.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>🧲 Magnetizado</h3>
+          <p><strong>Terra + Trovão:</strong> Congela projéteis por 3 rodadas e libera com +50% de dano ao final.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>🌼 Florescimento</h3>
+          <p><strong>Luz + Natureza:</strong> Cria campo de (Mod.Sab x 2)m por 3 rodadas. Cura/dano de magias da Natureza aumentam em 30.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>☢️ Nuclear</h3>
+          <p><strong>Explosão + Envenenar:</strong> Cria campo tóxico de 20m por uma década. Quem estiver dentro perde 20% da vida. Teste de Constituição (CD 25 no nível 20) para não desmaiar. Chance = Mod.CAR.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>👻 Ghost</h3>
+          <p><strong>Espiritual + Ethereal:</strong> O corpo é deixado. Imune a tudo exceto Espiritual, Ethereal, Imaterial e Espectral. Se o corpo for atingido, morre. Pode retornar após 3 rodadas (20% de chance).</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>⚡❄️ Carga Glacial</h3>
+          <p><strong>Trovão + Congelar:</strong> Onda de choque causa 150% de dano extra. Alvos próximos (9m) levam 50% do dano total.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>🌫️ Miragem</h3>
+          <p><strong>Aplicado:</strong> Combinação de Ilusão + outra reação. Dano ilusório é amplificado. Habilidades causam +100% de dano mental, reações +60%.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>🌁 Nevoeiro</h3>
+          <p><strong>Fogo + Água:</strong> Cria névoa de (Mod.Int x 2)m. Reduz precisão e bônus de rolagem em 60%. Dura 4 rodadas. Não afeta rolagens de dano.</p>
+        </div>
+    
+        <div class="reacao">
+          <h3>💨🔥 Vaporizar</h3>
+          <p><strong>Fogo + Água:</strong> Ao atingir o alvo, causa +200% de dano instantâneo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
