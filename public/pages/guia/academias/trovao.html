@@ -1,127 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/navbar.css">
-  <title>Academia do Trovão</title>
+  <title>Academia do Trovão - Elemento Trovão</title>
   <style>
-    /* Fonte global */
     body {
-      font-family: 'Poppins', Arial, sans-serif;
-      background-image: linear-gradient(#000000, #001eff);
+      font-family: 'Georgia', serif;
+      background-color: #3a2a48;
+      color: rgb(209, 169, 255);
       margin: 0;
-      padding: 20px;
-      line-height: 1.8;
-      color: #e0e0e0;
-    }
-
-    /* Container principal */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 25px;
-      background: #1e1e1e;
-      border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Título principal */
-    h1 {
-      text-align: center;
-      color: #00aaff;
-      font-weight: 700;
-    }
-
-    /* Estilização dos RANKs */
-    .rank {
-      margin-top: 25px;
-      padding: 20px;
-      border-left: 6px solid #00aaff;
-      background: #232323;
-      border-radius: 8px;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .rank:hover {
-      transform: scale(1.02);
-    }
-
-    .rank h2 {
-      margin-top: 0;
-      color: #0088dd;
-      font-size: 1.5rem;
-    }
-
-    /* Seções */
-    .section {
-      margin-top: 15px;
-    }
-
-    .section h3 {
-      color: #e0e0e0;
-      font-size: 1.3rem;
-      border-bottom: 3px solid #333;
-      padding-bottom: 6px;
-      margin-bottom: 12px;
-    }
-
-    /* Lista de Talentos e Habilidades */
-    .talents, .abilities {
-      list-style: none;
       padding: 0;
-      margin: 0;
+      line-height: 1.6;
     }
 
-    .talents li, .abilities li {
-      margin-bottom: 12px;
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #3b2d4a;
+      box-shadow: 0 10px 20px rgba(128, 90, 213, 0.2);
+      border-radius: 12px;
+      border: 2px solid #8e5dd1;
+    }
+
+    .rank {
+      background-color: #6f42c1;
+      color: rgb(255, 255, 255);
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    section h3 {
+      background-color: #5a2c7f;
       padding: 12px;
-      background: #252525;
-      border: 1px solid #00aaff;
-      border-radius: 6px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+
+    section ul {
+      padding-left: 20px;
+      list-style: none;
+    }
+
+    section li {
+      background-color: #3f2b57;
+      margin-bottom: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      box-shadow: 0 5px 10px rgba(162, 112, 255, 0.15);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    section li:hover {
+      transform: translateX(10px);
+    }
+
+    .ability-name,
+    .talent-name {
+      font-weight: bold;
+      color: #c084fc;
+    }
+
+    .ability-name {
+      font-size: 1.1em;
+    }
+
+    .talent-name {
+      font-size: 1.1em;
+    }
+
+    .container section {
+      margin-bottom: 40px;
+    }
+
+    footer {
+      background-color: #4b2c72;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
       font-size: 1rem;
-      transition: background 0.3s ease-in-out;
+      box-shadow: 0 -10px 20px rgba(128, 90, 213, 0.15);
     }
 
-    .talents li:hover, .abilities li:hover {
-      background: #0099ff4b;
+    .highlight {
+      font-weight: bold;
+      color: #d8b4fe;
+      background-color: #2e1b47;
+      border-radius: 5px;
     }
 
-    /* Rank V - Destaque Vermelho */
     .rank-v {
-      background: #3a1c1c;
-      border-left: 6px solid #ff4d4d;
+      background-color: #8c5cf6;
+      color: #ffffff;
+      border: 2px solid #b692f6;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
     }
 
-    /* Responsividade */
-    @media (max-width: 768px) {
-      .container {
-        padding: 15px;
-      }
-      
-      .rank {
-        padding: 15px;
-      }
-      
-      h1 {
-        font-size: 1.8rem;
-      }
-      
-      .rank h2 {
-        font-size: 1.3rem;
-      }
-      
-      .section h3 {
-        font-size: 1.2rem;
-      }
-      
-      .talents li, .abilities li {
-        font-size: 0.95rem;
-        padding: 10px;
-      }
+    .rank-v h2 {
+      font-size: 1.6em;
+      font-weight: bold;
+      color: #ffffff;
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo">
@@ -130,7 +123,7 @@
       </a>
     </div>
     <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
-      &#9776; 
+      &#9776;
     </button>
     <nav class="menu">
       <ul>
@@ -151,94 +144,161 @@
   </header><br><br><br>
 
   <div class="container">
-    <h1>Academia do Trovão</h1>
-    
-    <div class="rank">
+    <h1>Academia das Águas</h1>
+    <p><span class="highlight">Modificador do Trovão</span> &rarr; mod.INT.</p>
+    <section class="rank">
       <h2>RANK I</h2>
-      <div class="section">
-        <h3>Talentos</h3>
-        <ul class="talents">
-          <li><strong>Condutor:</strong> Utilizar habilidades de trovão marca alvos com um símbolo condutor. Dano de trovão desencadeia reações elétricas causando dano em cadeia.</li>
-          <li><strong>Zapping:</strong> Alvos danificados têm 25% de chance de serem interrompidos na rodada atual.</li>
-          <li><strong>Thunder Skin:</strong> Aumenta a resistência a trovão em 40% e reduz a resistência a fogo em 40%.</li>
-        </ul>
-      </div>
-      <div class="section">
-        <h3>Habilidades</h3>
-        <ul class="abilities">
-          <li><strong>Thunderbolt:</strong> Concentra energia e causa dano de trovão (mod.INT)d12+arcanismo. Aplica Condutor. Alcance 25m.</li>
-          <li><strong>Relâmpago:</strong> Conjura um raio causando dano de trovão e metade do dano em alvos próximos. Alcance 30m.</li>
-          <li><strong>Thunder Enchant:</strong> Encanta arma/armadura com dano elétrico adicional. Dura 1d4+mod.INT ataques.</li>
-        </ul>
-      </div>
-    </div>
+    </section>
+    <section class="certificado">
+      <h3>Certificado da Água:
+        <br>
+        -Rank I:Reduz a Resistência de Trovão dos alvos em 50%.
+        <br>
+        -Rank II: Receber dano de Trovão recupera 1d20 de mana
+        <br>
+        -Rank III: Acerto Crítico para habilidades de trovão -1.
+        <br>
+        -Rank IV: Dano Crítico de habilidades e danos de trovão +0.5x
+        <br>
+        -Rank V: (A descobrir)
+      </h3>
+    </section>
+    <section class="section talents">
+      <h3>Talentos</h3>
+      <ul>
+        <li><span class="talent-name">Condutor</span>: utilizar habilidades de trovão em alvos os marca com um símbolo
+          condutor representado pela letra <i>kaijot</i>, alvos marcados que receberem dano de trovão irão iniciar uma
+          reação elétrica que causa 1d4+arcanismo como dano de trovão. Se tiverem alvos num raio de 9m entre eles, irão
+          conduzir eletricidade recebendo o dano em cadeia. Os danos para os alvos seguintes devem ser rolados. Remove o
+          símbolo ao ocorrer. Nos níveis 5, 10 e 15 adiciona 1d4 de dano de trovão.
+        </li>
+        <li><span class="talent-name">Zapping</span>: alvos que sofrerem dano elétrico tem 25% de chance de serem
+          interrompidos na rodada. Isso implica que se a ação deles ainda não foi realizada, ela será anulada para
+          rodada vigente. Imcapacitado na rodada vigente.</li>
+        <li><span class="talent-name">Thunder Skin</span>: quando você recebe dano corpo a corpo ou algum alvo com
+          efeito molhado chega perto de você ele recebe 1d4+arcanismo/2 como dano de trovão por acerto no caso de lhe
+          atacar e por rodada caso esteja perto. Pode ocorrer reação elemental. Nos níveis 6, 12 e 18 adiciona 1d4 de
+          dano de trovão.</li>
+      </ul>
+    </section>
+    <section class="section abilities">
+      <h3>Habilidades</h3>
+      <ul>
+        <li><span class="ability-name">Thunderbolt</span>: concentra energia na mão e a direciona para um alvo causando
+          3d6+arcanismo como dano de trovão. Aplica o efeito <i>condutor.</i> Sem preparação. Consome 2+(Nível/2) de MP.
+          Usar esta habilidade em alvos com condutor aumenta o dano em 1d12 e zera o custo de mana. Alcance 25m. Nos
+          níveis 6, 12 e 18 aumenta o dano causado caso esteja com condutor em 1d12.</li>
+        <li><span class="ability-name">Relâmpago</span>: concentra-se para conjurar um raio no alvo escolhido causando
+          2d8+arcanismo como dano. Alvos próximos recebem metade do dano. Consome 2+(Nível/2) de MP. 3 turnos de
+          preparação. Críticos Causam 3x o dano. Alcance 30m. Nos níveis 8 e 16 adiciona 2d8 de dano de trovão.</li>
+        <li><span class="ability-name">Thunder Enchant</span>: encanta a arma ou armadura com eletricidade. Ao causar
+          dano será adicionado dano extra de 1d6+arcanismo como dano de trovão e aplicar efeito <i>condutor.</i> Consome
+          2+(Nível/2) de MP. Sem preparação. Dura 2+(mod.INT) ataques. Nos níveis 6,12, e 18 adiciona 1d6 de dano de
+          trovão.
+        </li>
+      </ul>
+    </section>
 
-    <div class="rank">
+    <section class="rank">
       <h2>RANK II</h2>
-      <div class="section">
-        <h3>Talentos</h3>
-        <ul class="talents">
-          <li><strong>Explosão de Eletricidade:</strong> Dano de Condutor é dobrado em críticos.</li>
-        </ul>
-      </div>
-      <div class="section">
-        <h3>Habilidades</h3>
-        <ul class="abilities">
-          <li><strong>Thunder Strike:</strong> Concentra energia de trovão na arma, causando dano adicional no próximo ataque.</li>
-          <li><strong>Corrente Elétrica:</strong> Causa dano a alvos próximos com efeito Condutor.</li>
-        </ul>
-      </div>
-    </div>
+    </section>
+    <section class="section talents">
+      <h3>Talentos</h3>
+      <ul>
+        <li><span class="talent-name">Explosão de Eletricidade</span>: caso tenha resultado crítico ao conjurar magias
+          de eletricidade o dano de <span class="highlight">condutor</span> será dobrado.</li>
+      </ul>
+    </section>
+    <section class="section abilities">
+      <h3>Habilidades</h3>
+      <ul>
+        <li><span class="ability-name">Thunder Strike</span>: concentra energia de trovão na sua arma para causar
+          3d12+arcanismo como dano de trovão no próximo ataque desferido no alvo. Pode acumular com outras habilidades.
+          Consome 3+(Nível/2) de MP. 2 turnos de preparação. Nos níveis 8, 14 e 18 adiciona 1d12 de dano de trovão.</li>
+        <li><span class=ability-name>Corrente Elétrica</span>: cria uma corrente de eletricidade que se espalha para os
+          alvos causando 1d4+arcanismo como dano. Se os alvos estiverem marcados com condutor o efeito de condutor será
+          aplicado causando o dobro do dano e será necessário rolar apenas uma vez o dano. Consome 5+(Nível) de MP. Sem
+          Preparação. Atinge todos os alvos com distâncias de até 2m entre eles. Condutor expande o alcance para o
+          dobro. Nos níveis 8, 12 e 16 adiciona 1d4 de dano de trovão.
+        </li>
+      </ul>
+    </section>
 
-    <div class="rank">
+    <section class="rank">
       <h2>RANK III</h2>
-      <div class="section">
-        <h3>Talentos</h3>
-        <ul class="talents">
-          <li><strong>Jump Bolt:</strong> Movimenta-se até alvos com Condutor, causando dano e ataques surpresos.</li>
-        </ul>
-      </div>
-      <div class="section">
-        <h3>Habilidades</h3>
-        <ul class="abilities">
-          <li><strong>Para Thunder:</strong> Invoca trovões por 1d4 rodadas, causando dano massivo em área.</li>
-        </ul>
-      </div>
-    </div>
+    </section>
+    <section class="section talents">
+      <h3>Talentos</h3>
+      <ul>
+        <li><span class="talent-name">Poder do Mar</span>: Você pode extrair poder do mar quando próximo a ele ou quando
+          tiver água em uma grande escala (verificar com o mestre). O mestre deve rolar 1d100 para cada 4 níveis do
+          jogador. O resultado é a quantidade de poder do mar que você terá. Você pode usar esse poder para garantir
+          efeitos únicos e estes podem ser aplicados 1 vez por rodada em qualquer momento. O poder do mar pode ser
+          extraído uma vez por dia.
+          <br>
+          Águas Perigosas: você aumenta o efeito de afogamentos em 50% ao custo de 30 de poder do mar.
+          <br>
+          Cura Oceânica: suas curas ganham efeito maior bruto consumindo o mesmo valor em poder do mar. A cura vinda
+          desse efeito não pode superar a cura máxima da habilidade usada.
+          <br>
+          Onda Poderosa: suas habilidades do Oceano que causam dano consomem o poder do mar igual a metade do dano
+          causado para causar o mesmo valor em dano bônus.
+        </li>
+      </ul>
+    </section>
+    <section class="section abilities">
+      <h3>Habilidades</h3>
+      <ul>
+        <li><span class="ability-name">Nascido das Águas</span>: Entra na forma na água recebendo redução de conjuração
+          para magias do Oceano de 80%. Suas habilidades de Água geram 2x mais poças. Ganha a possibilidade de se
+          locomover pelas poças, após se mover pelas poças a próxima magia água ganha um bônus de +25 de poder. Em
+          contrapartida seu elemento do corpo é água o que faz você sofrer reações elementares. Consome 15+(Nível/2) de
+          MP.</li>
+      </ul>
+    </section>
 
-    <div class="rank">
+    <section class="rank">
       <h2>RANK IV</h2>
-      <div class="section">
-        <h3>Talentos</h3>
-        <ul class="talents">
-          <li><strong>Free Thunder:</strong> Raios aleatórios atingem alvos, com chance de Hyper Volt.</li>
-          <li><strong>Hyper Volt:</strong> Causa 600% do dano como dano de trovão.</li>
-        </ul>
-      </div>
-      <div class="section">
-        <h3>Habilidades</h3>
-        <ul class="abilities">
-          <li><strong>Thunder Storm:</strong> Conjura tempestade causando dano massivo por rodadas.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="rank rank-v">
-      <h2>RANK V - Arconte do Trovão</h2>
-      <div class="section">
-        <h3>Descrição</h3>
-        <p>O usuário torna-se a máxima autoridade em poderes de trovão, utilizando Energia Elemental (EM) para habilidades únicas.</p>
-      </div>
-      <div class="section">
-        <h3>Habilidades</h3>
-        <ul class="abilities">
-          <li><strong>Passo do Trovão:</strong> Movimenta-se livremente causando dano de trovão ao se aproximar de inimigos.</li>
-          <li><strong>Esfera Eletro Destrutiva:</strong> Cria esfera que explode após 10 rodadas, causando dano massivo.</li>
-          <li><strong>God's Speed:</strong> Aumenta drasticamente a velocidade, permitindo 3 ações completas por rodada.</li>
-          <li><strong>Entidade Trovejante:</strong> Invoca entidade poderosa que causa dano massivo em área antes de desaparecer.</li>
-        </ul>
-      </div>
-    </div>
+    </section>
+    <section class="section talents">
+      <h3>Talentos</h3>
+      <ul>
+        <li><span class="talent-name">Aliados do Oceano</span>: todos os seus aliados se tornam imunes aos efeitos do
+          <i>Tsunami</i>, o mar respeita eles. Durante o efeito eles podem escolher até 3 inimigos para atacar com
+          oportunidade. Além disso, eles recebem efeitos positivos ao final do Tsunami.
+          <br>
+          Cura Oceânica: cura todos os aliados atingidos pela Tsunami em 25% da vida máxima deles.
+          <br>
+          Respeito Oceanico: todos os aliados ficam imunes a efeito molhado por 2 rodadas.
+          <br>
+          Poder Oceanico: todos os aliados recebem encantamento do oceano por 3 rodadas e causando 120% do dano do
+          ataque como <span class="highlight">dano de água.</span>
+        </li>
+      </ul>
+    </section>
+    <section class="section abilities">
+      <h3>Habilidades</h3>
+      <ul>
+        <li><span class="ability-name">Tsunami</span>: convoca as forças do oceano para criar uma onda gigantesca que
+          devasta tudo por onde passa. Tsunami depende do poder do mar para se fortalecer. Cada ponto de Poder do Mar
+          aumenta o dano de Tsunami em 10% em um total de 5000%. Tsunami consome toda manhã restante do conjurador no
+          mínimo de 100 de mana. Tsunami também pode receber efeitos de outros elementos. Conjuração de 8 rodadas.
+          Reduza a conjuração em 70% se você estiver dentro d’água. Área de Ação é todo combate. Dano de Tsunami é
+          (Nível)d16+arcanismo.
+          <br>
+          Pedregulhos Violentos: se combinado com algum efeito de projétil da escola da dureza ou se tiver construções
+          no caminho, causa 16d30 de dano físico adicional a cada alvo.
+          <br>
+          Mar Glacial: ao final da rodada Tsunami se torna gelo puro, causando congelamento a todos os inimigos
+          atingidos. A batalha poderá terminar ali. Todos os inimigos devem rolar teste de congelamento com ND →
+          Mod.INT+proficiência do conjurador.
+        </li>
+      </ul>
+    </section>
   </div>
+  <footer>
+    Academia das Águas &copy; 2025
+  </footer>
 </body>
+
 </html>
