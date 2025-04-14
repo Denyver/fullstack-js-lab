@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/styles/navbar.css" />
+  <link rel="stylesheet" href="/public/styles/first_way.css" />
+  <title>Claws - Estilo Yggbrasil.</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/imgs/woe_titulo.png" alt="Logo" />
+      </a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      &#9776;
+    </button>
+    <nav class="menu">
+      <ul>
+        <li><a href="pages/guia_geral.html">Guia</a></li>
+        <li><a href="pages/eventos.html">Eventos</a></li>
+        <li><a href="pages/combat.html">Combate</a></li>
+        <li><a href="pages/gerador_item.html">Gerador de Itens</a></li>
+        <li><a href="pages/criador_npc.html">Criador de NPC</a></li>
+        <li><a href="pages/mapa_eder.html">Mapa</a></li>
+        <li><a href="pages/mesas.html">Mesas</a></li>
+      </ul>
+    </nav>
+    <div class="voltar-btn-container">
+      <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Claws</h1>
+    <div class="info">
+      <p><strong>Estilo:</strong> Yggbrasil.</p>
+      <p><strong>Localização:</strong> Yggbrasil, Pyr.</p>
+      <p><strong>Atributo:</strong> Destreza.</p>
+    </div>
+
+    <section>
+      <h2>Manusear Claws</h2>
+      <p>Pode manusear <strong>claws</strong> sem desvantagem. A raça <strong>fauner</strong> não necessita de objetos para usar esse treinamento, mas todas as outras raças sim.</p>
+    </section>
+
+    <section>
+      <h2>Blood Cut</h2>
+      <p>As garras não têm um grande poder de corte para causar dano massivo, então lutam utilizando o efeito de <strong>sangramento</strong>.</p>
+      <p>Os golpes com as garras acumulam <strong>BC (Blood Cut)</strong>. No máximo 10. Para cada acúmulo, o usuário ganha <strong>0,6% da vida máxima do inimigo</strong> como dano extra para as garras.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 3) Corte Fundo</h2>
+      <p>Para cada acúmulo de BC, o inimigo tem <strong>3% de cura reduzida</strong>.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 5) Hemorragia</h2>
+      <p>O usuário faz um ataque preciso no inimigo causando <strong>Ataque Básico</strong> + <strong>todos os acúmulos de BC</strong> como dano de vida máxima no inimigo, retirando os acúmulos no processo.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 8) Retalhar</h2>
+      <p>O usuário faz dois ataques no inimigo. Cada ataque irá causar <strong>Ataque Básico + 2% da vida máxima</strong como dano no inimigo. Além disso, acumula <strong>2 de BC</strong>.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 12) Corte Hemorrágico</h2>
+      <p>Ataques cortantes feitos no inimigo ganham um <strong>bônus de 6% de dano extra</strong> para cada acúmulo de BC no inimigo.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 15) Fúria</h2>
+      <p>O usuário entra em um estado de <strong>fúria descontrolada</strong> durante 7 rodadas ganhando os seguintes efeitos:</p>
+      <ul>
+        <li><strong>+70%</strong> de dano de sangramento extra.</li>
+        <li><strong>-1</strong> no crítico.</li>
+        <li><strong>+1 ataque extra</strong> nas rodadas.</li>
+        <li>Se o inimigo morrer antes da fúria acabar, o usuário deve fazer um <strong>teste de Sabedoria</strong> com DT = <strong>16 + Mod.Sab</strong> para não atacar os aliados.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>(Master Trait) Bestial</h2>
+      <div class="trait">
+        <p><strong>Você se torna um mestre com o estilo Claws.</strong> Aprimora suas capacidades de combate com garras. Efeitos:</p>
+        <ul>
+          <li><strong>Aumenta o dano com claws em 6% por Mod.DES.</strong></li>
+          <li><strong>Sangrento:</strong> aumenta a quantidade de BC acumulado em <strong>+15</strong>.</li>
+          <li><strong>Garras de Sangue:</strong> O usuário adiciona <strong>8% da vida máxima</strong> como dano das armas. Aumenta o dano crítico em <strong>50%</strong>.</li>
+          <li><strong>Garras Precisas:</strong> o usuário tem o <strong>crítico diminuído em 2</strong>. Sempre que causar dano crítico, causa <strong>6% da vida máxima do inimigo</strong> como dano adicional.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

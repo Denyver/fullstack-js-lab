@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Firegun - Shotguns</title>
+    <link rel="stylesheet" href="/public/styles/navbar.css">
+    <link rel="stylesheet" href="/public/styles/first_way.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/index.html">
+                <img src="/imgs/woe_titulo.png" alt="Logo" />
+            </a>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+            &#9776;
+        </button>
+        <nav class="menu">
+            <ul>
+                <li><a href="/pages/guia_geral.html">Guia</a></li>
+                <li><a href="/pages/eventos.html">Eventos</a></li>
+                <li><a href="/pages/combat.html">Combate</a></li>
+                <li><a href="/pages/ficha.html">Ficha de Personagem</a></li>
+                <li><a href="/pages/gerador_item.html">Gerador de Itens</a></li>
+                <li><a href="/pages/criador_npc.html">Criador de NPC</a></li>
+                <li><a href="/pages/mapa_eder.html">Mapa</a></li>
+                <li><a href="/pages/mesas.html">Mesas</a></li>
+            </ul>
+        </nav>
+        <div class="voltar-btn-container">
+            <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Firegun - Shotguns</h1>
+        <div>
+            <strong>Manipulação de Shotgun:</strong> você pode usar shotguns sem desvantagem. Shotguns causam dano
+            explosivo. Um disparo de shotgun é de alcance curto comparado a outros fireguns. Shotguns usam precisão no
+            lugar de bônus de ataque. Têm recarga longa – mesmo o ataque básico exige uma rodada para recarregar.
+            Disparos recuam você 2m. Em críticos, o recuo dobra. Críticos causam 3x dano se o alvo estiver a 3 metros ou
+            menos.<br><br>
+            <strong>Alcance:</strong> 9 metros<br>
+            <strong>Dano Padrão:</strong> 1d18<br>
+            <strong>Disparo:</strong> Único – Carregar.<br>
+            <strong>Força:</strong> Com 15+ FOR reduz o recuo em 50%. Com 20+ FOR, ignora recuo se desejar.
+        </div>
+
+        <h2>Queima Roupa</h2>
+        <div>
+            Quando dispara contra um alvo a uma curta distância, ganha um ataque letal com letalidade global:
+            <ul>
+                <li><strong>3 metros:</strong> Letalidade Global 25 (⇒ 3 contra Boss)</li>
+                <li><strong>1.5 metros:</strong> Letalidade Global 35 (⇒ 4 contra Boss)</li>
+            </ul>
+        </div>
+
+        <h2>Coronha Atordoante</h2>
+        <div>
+            Usa a base da shotgun para atordoar o alvo. Causa <strong>1d6 + Mod.FOR</strong> de dano. Chance de 25% de
+            atordoar. Alvo atordoado recebe <strong>100%</strong> a mais de dano de disparos de shotgun. Se estiver em
+            condição de Queima Roupa, aumenta a letalidade em +5 (⇒ 1). Pode ser usada como ataque extra ou em troca do
+            movimento.
+        </div>
+
+        <h2>Nível 5</h2>
+        <div class="highlight">
+            Movimento de Recarga
+        </div>
+        <p>Pode sacrificar seu movimento para recarregar sua shotgun.</p>
+
+        <h2>Nível 10</h2>
+        <div class="highlight">Investida Explosiva</div>
+        <p>Avança contra um alvo e dispara sua shotgun ao se aproximar. Percorre <strong>Atletismo + 10</strong>
+            metros. Se tiver 15+ FOR, pode empurrar e desorientar alvos no caminho, interrompendo ações de concentração.
+            Faça teste de Atletismo com dificuldade <strong>10 + Nível/2</strong>. O disparo causa <strong>Ataque Básico
+            + ((Atletismo + metros percorridos) / 2 * 5)%</strong> de dano explosivo.</p>
+
+        <h2>Nível 15</h2>
+        <div class="highlight">
+            Penetração de Fragmentos
+        </div><br>
+            Disparos com dano explosivo causam fragmentação, reduzindo a <strong>defesa total</strong> do alvo em
+            <strong>(15 + Mod.DES)%</strong>. A redução dura 1 rodada.
+        <h2>Master Trait</h2>
+        <div class="trait">
+            <strong>Survivor:</strong> Você se torna mestre em sobreviver. Ganha <strong>+8% de dano</strong> com shotguns por ponto de Mod.DES.
+            Além disso, desbloqueia novas capacidades:<br><br>
+
+            <strong>I’m A Survivor:</strong>
+            Ativado com 18% ou menos de vida. Cada acerto concede +1 ataque extra (máximo de 3 por rodada).<br>
+            Se estiver flanqueado, ganha +1 ataque extra (máximo de 6).<br>
+            Com 20+ FOR, seus disparos empurram os alvos 2 metros.<br><br>
+            <strong>Safe Safe:</strong>
+            Quando não está em I’m A Survivor, seus ataques acumulam <strong>Confiança</strong>.<br>
+            Confiança reduz dano recebido em <strong>(Mod.FOR * Poder Acumulado)</strong>.<br>
+            Máximo de 5 acúmulos. Se não atacar por 1 rodada, perde metade dos acúmulos.
+        </div>
+    </div>
+</body>
+
+</html>

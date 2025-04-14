@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/styles/navbar.css">
+  <link rel="stylesheet" href="/public/styles/first_way.css">
+  <title>Chain Blade - Estilo Pyr.</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/imgs/woe_titulo.png" alt="Logo" />
+      </a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      &#9776;
+    </button>
+    <nav class="menu">
+      <ul>
+        <li><a href="pages/guia_geral.html">Guia</a></li>
+        <li><a href="pages/eventos.html">Eventos</a></li>
+        <li><a href="pages/combat.html">Combate</a></li>
+        <li><a href="pages/gerador_item.html">Gerador de Itens</a></li>
+        <li><a href="pages/criador_npc.html">Criador de NPC</a></li>
+        <li><a href="pages/mapa_eder.html">Mapa</a></li>
+        <li><a href="pages/mesas.html">Mesas</a></li>
+      </ul>
+    </nav>
+    <div class="voltar-btn-container">
+      <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Chain Blade</h1>
+    <div class="info">
+      <p><strong>Estilo:</strong> Pyr.</p>
+      <p><strong>Localização:</strong> Pyr, Maera.</p>
+      <p><strong>Atributo:</strong> Força</p>
+    </div>
+
+    <section>
+      <h2>Manipulação de Chain Blade</h2>
+      <p>Permite utilizar chain blades. As chain blades possuem dois modos de ataque:</p>
+      <ul>
+        <li><strong>Ataque Focado:</strong> Usa Precisão no lugar do Bônus de Ataque.</li>
+        <li><strong>Ataque Normal:</strong> Usa o Bônus de Ataque normalmente.</li>
+      </ul>
+      <p>Alcance das correntes: 6 metros. O uso é obrigatório com uma em cada mão, e não se acumula com Ambidestria.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 3) You’re Mine</h2>
+      <p>Ao usar ataque focado contra um alvo, você ganha <strong>5% de dano bônus</strong> + <strong>1% adicional para cada 3 pontos de Precisão</strong>.</p>
+      <p class="highlight">Acúmulo:</p>
+      <p>Cada ataque focado contra o mesmo alvo acumula o bônus até 4 vezes. Mudar de alvo remove todos os acúmulos.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 3) Get Over Here</h2>
+      <p>Atira suas correntes contra o inimigo, causando <strong>Ataque Básico + 50%</strong> de dano.</p>
+      <p class="highlight">Efeito Secundário:</p>
+      <p>25% de chance de aplicar <strong>Hook</strong> no alvo. Se o alvo estiver com Hook, você pode puxá-lo até você e realizar um novo ataque normal (com crítico reduzido em 1).</p>
+    </section>
+
+    <section>
+      <h2>(Nível 6) Enchainted</h2>
+      <p>Suas chain blades absorvem o último elemento com que tiveram contato e convertem todo o dano para esse elemento.</p>
+      <p class="highlight">Duração:</p>
+      <p>Até você atacar um inimigo. Você possui uma <strong>ação livre por rodada</strong> para lançar as correntes em objetos com elementos.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 10) Chained Fury</h2>
+      <p>Você sacrifica uma rodada para despertar uma fúria tremenda.</p>
+      <p class="highlight">Na próxima rodada:</p>
+      <ul>
+        <li>Ganha um novo ataque toda vez que um aliado acerta ou um inimigo erra um ataque.</li>
+        <li>Alcance das correntes é dobrado.</li>
+        <li>Get Over Here pode ser usado livremente durante a rodada.</li>
+      </ul>
+      <p><strong>Consequência:</strong> Ganha <strong>Exaustão 2</strong> por 2 rodadas após o uso.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 14) Killing Spree</h2>
+      <p>Aumenta o seu dano em <strong>10% por inimigo derrotado</strong> por você no combate.</p>
+      <p class="highlight">Nota:</p>
+      <p>Esse bônus é <strong>zerado ao fim do combate</strong>.</p>
+    </section>
+
+    <section>
+      <h2>Master Trait - Chained Warrior</h2>
+      <div class="trait">
+        <p>Você pode anexar armas às suas correntes.</p>
+        <ul>
+          <li>O dano das correntes é substituído pelo <strong>dano da arma acoplada</strong>.</li>
+          <li>É possível usar qualquer <strong>arma de uma mão (exceto fireguns)</strong>.</li>
+          <li>Dano causado:
+            <ul>
+              <li><strong>60%</strong> da arma, se não tiver treinamento.</li>
+              <li><strong>110%</strong> da arma, se tiver treinamento.</li>
+            </ul>
+          </li>
+          <li>Adicional: +5% de dano com correntes por ponto de <strong>Mod.FOR</strong>.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

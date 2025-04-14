@@ -11,12 +11,6 @@
     padding: 20px;
   }
 
-  #b1 {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-  }
-
   .patch {
     width: 90%;
     height: 900px;

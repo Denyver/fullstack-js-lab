@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Soqueira - Estilo Epiragon / Glaciterno</title>
+  <link rel="stylesheet" href="/styles/navbar.css">
+  <link rel="stylesheet" href="/public/styles/first_way.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/imgs/woe_titulo.png" alt="Logo" />
+      </a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      &#9776; 
+    </button>
+    <nav class="menu">
+      <ul>
+        <li><a href="pages/guia_geral.html">Guia</a></li>
+        <li><a href="pages/eventos.html">Eventos</a></li>
+        <li><a href="pages/combat.html">Combate</a></li>
+        <li><a href="pages/gerador_item.html">Gerador de Itens</a></li>
+        <li><a href="pages/criador_npc.html">Criador de NPC</a></li>
+        <li><a href="pages/mapa_eder.html">Mapa</a></li>
+        <li><a href="pages/mesas.html">Mesas</a></li>
+      </ul>
+    </nav>
+    <div class="voltar-btn-container">
+      <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+    </div>
+  </header>
+  <div class="container">
+    <h1>Soqueira - Estilo Epiragon / Glaciterno</h1>
+    <div class="info">
+      <p><strong>Localização:</strong> Epiragon, Glaciterno, Novyatt</p>
+      <p><strong>Atributo:</strong> Força (FOR)</p>
+      <i style="color: red;">OBS: Asheets não podem acessar esse treinamento.
+    </i><br>
+
+    </div>
+
+    <section>
+      <h2>Fundamentos</h2>
+      <p class="highlight">Todo Poderoso:</p>
+      <p>Remove o modificador de Destreza e adiciona o dobro do valor ao modificador de Força. Você poderá continuar adicionando pontos de Destreza, porém o modificador será zero para testes que usem Destreza. Você fica impossibilitado de se esquivar ou usar qualquer movimento acrobático. Usar esse talento é de escolha do jogador.</p>
+      <i style="color: red;">Persistente mesmo sem o uso da Soqueira.</i><br>
+
+      <div class="highlight">Triple Strike (Nível 3):</div>
+      <p>Quando realizar um ataque, causará três golpes consecutivos:</p>
+      <ul>
+        <li>1º soco: 50% do dano</li>
+        <li>2º soco: 150% do dano</li>
+        <li>3º soco: 300% do dano</li>
+      </ul>
+      <p>É necessário rolar todos os 3 ataques.</p>
+
+      <div class="highlight">Na Sua Cara (Nível 6):</div>
+      <p>Foca a face do inimigo para causar um dano capaz de derrubá-lo e causar Nocaute. Chance de 15% de Nocaute.</p>
+      <p class="trait"><strong>Nocaute:</strong> fora de combate.</p>
+
+      <div class="highlight">One Punch (Nível 6):</div>
+      <p>Após completar o Triple Strike, acumula 1 Força Interior. Força Interior aumenta o dano em 125% para ser liberado em um único soco.</p>
+      <p>Uma vez por dia, o usuário pode liberar toda sua força em um único soco.</p>
+      <p class="trait"><strong>Ultimate Passive - Mantenha A Postura:</strong> enquanto acumular Força Interior, o efeito total dos acúmulos será aplicado a qualquer dano de soqueira. Ao liberar, o usuário ganha 50% de dano bônus.</p>
+
+      <div class="trait"><strong>Arrebentador (Master Trait):</strong> 
+      <ul>
+        <li>Atacar com sucesso garante 2 acúmulos de Inspiração.</li>
+        <li>Errar um ataque remove 1 acúmulo.</li>
+        <li>Aumenta o dano causado por soqueiras em 7% por ponto de mod. FOR.</li>
+      </ul></div>
+    </section>
+  </div>
+</body>
+</html>

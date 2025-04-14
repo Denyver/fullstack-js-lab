@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/styles/navbar.css" />
+  <link rel="stylesheet" href="/public/styles/first_way.css" />
+  <title>Tridente - Estilo Maera, Pyr</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/imgs/woe_titulo.png" alt="Logo" />
+      </a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      &#9776;
+    </button>
+    <nav class="menu">
+      <ul>
+        <li><a href="pages/guia_geral.html">Guia</a></li>
+        <li><a href="pages/eventos.html">Eventos</a></li>
+        <li><a href="pages/combat.html">Combate</a></li>
+        <li><a href="pages/gerador_item.html">Gerador de Itens</a></li>
+        <li><a href="pages/criador_npc.html">Criador de NPC</a></li>
+        <li><a href="pages/mapa_eder.html">Mapa</a></li>
+        <li><a href="pages/mesas.html">Mesas</a></li>
+      </ul>
+    </nav>
+    <div class="voltar-btn-container">
+      <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Tridente</h1>
+    <div class="info">
+      <p><strong>Estilo:</strong> Maera, Pyr.</p>
+      <p><strong>Localização:</strong> Maera, Pyr.</p>
+      <p><strong>Atributo:</strong> Destreza ou Força.</p>
+    </div>
+
+    <section>
+      <h2>Três Pontas</h2>
+      <p>O usuário do Tridente tem <strong>30% de chance</strong> de adicionar <strong>2(Mod.DES ou FOR)d4</strong> de dano extra no ataque com o Tridente no inimigo.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 5) Arremesso das Marés</h2>
+      <p>Joga o Tridente a uma distância de <strong>6 + Mod.FOR metros</strong>, causando <strong>Ataque Básico + 60% de dano perfurante</strong>.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 7) Defesa Marítima</h2>
+      <p>O usuário pode usar um <strong>ataque</strong> para tentar se defender de um ataque. Se for bem-sucedido, pode desferir um <strong>Ataque Básico</strong> no inimigo.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 10) Arremesso Aéreo</h2>
+      <p>Se o usuário <strong>não tiver usado a ação de movimento</strong> após o Arremesso das Marés, pode avançar e jogar o inimigo para uma direção à sua escolha, causando <strong>Ataque Básico + 6% da Vida Máxima</strong> como dano.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 12) Giro das Ondas</h2>
+      <p>O usuário gira o Tridente causando <strong>2 Ataques Básicos + 30% de dano</strong> em inimigos a até <strong>5 metros</strong>, acumulando <strong>2 de Inspiração</strong>.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 15) Herança de Maera</h2>
+      <p>O Tridente absorve efeitos das tempestades, aprimorando ataques. O encantamento termina após o uso da habilidade. Requer que alguém use um dos seguintes elementos:</p>
+
+      <div class="highlight">
+        <p><strong>(Trovão) Tridente Trovejante:</strong> ao receber magia de Trovão, o Tridente é encantado com esse elemento. Permite desferir <strong>3 ataques</strong> com dano bônus de <strong>25% / 50% / 75%</strong>.</p>
+
+        <p><strong>Giro Trovejante:</strong> ao usar Giro das Ondas, o ataque libera uma onda de choque em <strong>6 metros</strong>, causando <strong>Ataque Básico + 50%</strong> de dano e acumulando <strong>4 de Inspiração</strong>.</p>
+      </div>
+
+      <div class="highlight">
+        <p><strong>(Água) Águas Oscilantes:</strong> ao receber magia de Água, o Tridente converte seu dano em água. Arremesso das Marés invoca ondas em <strong>9 metros</strong> durante <strong>3 rodadas</strong>, cada onda causando <strong>Ataque Básico + 35%</strong> de dano de água.</p>
+
+        <p><strong>Correnteza Giratória:</strong> ao usar Giro das Ondas, invoca uma correnteza em <strong>8 metros</strong> causando <strong>Ataque Básico + 30%</strong> de dano em área, derrubando inimigos e causando dano contínuo por <strong>2 turnos</strong>.</p>
+      </div>
+
+      <div class="highlight">
+        <p><strong>(Vento) Broca de Vento:</strong> ao receber magia de Vento, o Tridente ganha dano elemental de vento. Ao usar Arremesso das Marés, empurra o inimigo <strong>12 metros</strong> e reduz a CA proveniente de Destreza, causando <strong>8% da Vida Máxima</strong> como dano. Alvo atrás leva <strong>4% da Vida Máxima</strong>.</p>
+
+        <p><strong>Turbilhão de Vento:</strong> ao usar Giro das Ondas, o ataque se torna um turbilhão em <strong>8 metros</strong>, causando <strong>6% da Vida Máxima</strong> como dano.</p>
+      </div>
+    </section>
+
+    <section class="trait">
+      <h2>(Master Trait) Encarnado do Mar</h2>
+      <p>Você se torna um mestre absoluto no uso do Tridente. Suas capacidades são aprimoradas:</p>
+      <ul>
+        <li><strong>+5% de dano</strong> com Tridente por ponto de Mod.FOR ou Mod.DES.</li>
+        <li><strong>Arremesso Giratório:</strong> após usar Arremesso das Marés, pode usar Giro das Ondas como <strong>ação livre</strong>.</li>
+        <li><strong>Três Pontas:</strong> a passiva Três Pontas se torna garantida. Reduz o Crítico em <strong>3</strong>.</li>
+        <li><strong>Acerto Certeiro:</strong> aumenta o <strong>dano crítico em 70%</strong>.</li>
+      </ul>
+    </section>
+  </div>
+</body>
+
+</html>
