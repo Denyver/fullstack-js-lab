@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,12 @@
     <title>Academia das Águas - Elemento Água</title>
     <style>
         body {
-            font-family: 'Georgia', serif; /* Fonte serifada mais sofisticada */
-            background-color: #6eace7; /* Cor de pedra com tom sofisticado */
-            color: #0050C0; /* Cor de texto marrom escuro elegante */
+            font-family: 'Georgia', serif;
+            /* Fonte serifada mais sofisticada */
+            background-color: #6eace7;
+            /* Cor de pedra com tom sofisticado */
+            color: #0050C0;
+            /* Cor de texto marrom escuro elegante */
             margin: 0;
             padding: 0;
             line-height: 1.6;
@@ -20,13 +24,17 @@
             max-width: 1200px;
             margin: 50px auto;
             padding: 30px;
-            background-color: #e1ecf3; /* Fundo arenoso claro */
+            background-color: #e1ecf3;
+            /* Fundo arenoso claro */
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             border-radius: 12px;
-            border: 2px solid #5e7c8f; /* Borda de tom mais escuro */
+            border: 2px solid #5e7c8f;
+            /* Borda de tom mais escuro */
         }
+
         .rank {
-            background-color: #0e5375; /* Cor de pedra mais escura */
+            background-color: #0e5375;
+            /* Cor de pedra mais escura */
             color: rgb(255, 255, 255);
             padding: 15px;
             border-radius: 8px;
@@ -35,41 +43,54 @@
             font-weight: bold;
             margin-bottom: 30px;
         }
+
         section h3 {
-            background-color: #8bc4d6; /* Cor suave de pedra dourada */
+            background-color: #8bc4d6;
+            /* Cor suave de pedra dourada */
             padding: 12px;
             border-radius: 8px;
             margin-bottom: 20px;
             font-size: 1.2rem;
         }
+
         section ul {
             padding-left: 20px;
             list-style: none;
         }
+
         section li {
-            background-color: #c6f1f1; /* Tom suave de areia */
+            background-color: #c6f1f1;
+            /* Tom suave de areia */
             margin-bottom: 15px;
             padding: 12px;
             border-radius: 8px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease-in-out;
         }
+
         section li:hover {
             transform: translateX(10px);
         }
-        .ability-name, .talent-name {
+
+        .ability-name,
+        .talent-name {
             font-weight: bold;
-            color: #008c8e; /* Cor escura com leve toque dourado */
+            color: #008c8e;
+            /* Cor escura com leve toque dourado */
         }
+
         .ability-name {
             font-size: 1.1em;
         }
+
         .talent-name {
             font-size: 1.1em;
         }
+
         .container section {
             margin-bottom: 40px;
         }
+
         footer {
             background-color: #3c5b7b;
             color: white;
@@ -78,55 +99,69 @@
             font-size: 1rem;
             box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.15);
         }
+
         .highlight {
             font-weight: bold;
-            color: #042c99; /* marrom claro mais vibrante */
-            background-color: #f0f4e3; /* Fundo suave para destacar */
-            border-radius: 5px; /* Bordas arredondadas para um visual mais orgânico */
+            color: #042c99;
+            /* marrom claro mais vibrante */
+            background-color: #f0f4e3;
+            /* Fundo suave para destacar */
+            border-radius: 5px;
+            /* Bordas arredondadas para um visual mais orgânico */
         }
+
         .rank-v {
-            background-color: #ffffff; /* Cor suave para um destaque sutil */
-            color: #ffffff; /* Cor() escuro para o texto */
-            border: 2px solid #ffffff; /* Borda fina em cor mais escura */
-            border-radius: 8px; /* Bordas arredondadas para suavizar */
+            background-color: #ffffff;
+            /* Cor suave para um destaque sutil */
+            color: #ffffff;
+            /* Cor() escuro para o texto */
+            border: 2px solid #ffffff;
+            /* Borda fina em cor mais escura */
+            border-radius: 8px;
+            /* Bordas arredondadas para suavizar */
             padding: 15px;
             margin-bottom: 20px;
         }
+
         .rank-v h2 {
-            font-size: 1.6em; /* Tamanho maior do que os outros ranks, mas sem exagero */
-            font-weight: bold; /* Enfatiza o título */
-            color: #ffffff; /* Cor mais escura para o título */
+            font-size: 1.6em;
+            /* Tamanho maior do que os outros ranks, mas sem exagero */
+            font-weight: bold;
+            /* Enfatiza o título */
+            color: #ffffff;
+            /* Cor mais escura para o título */
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="logo">
-          <a href="/index.html">
-            <img src="/imgs/woe_titulo.png" alt="Logo" />
-          </a>
+            <a href="/index.html">
+                <img src="/imgs/woe_titulo.png" alt="Logo" />
+            </a>
         </div>
         <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
-          &#9776; 
+            &#9776;
         </button>
         <nav class="menu">
-          <ul>
-            <li><a href="/pages/guia_geral.html">Guia</a></li>
-            <li><a href="/pages/eventos.html">Eventos</a></li>
-            <li><a href="/pages/combat.html">Combate</a></li>
-            <li><a href="/pages/ficha.html">Ficha de Personagem</a></li>
-            <li><a href="/pages/gerador_item.html">Gerador de Itens</a></li>
-            <li><a href="/pages/criador_npc.html">Criador de NPC</a></li>
-            <li><a href="/pages/mapa_eder.html">Mapa</a></li>
-            <li><a href="/pages/mesas.html">Mesas</a></li>
-            <li><a href="/pages/planares.html">Planares</a></li>
-          </ul>
+            <ul>
+                <li><a href="/pages/guia_geral.html">Guia</a></li>
+                <li><a href="/pages/eventos.html">Eventos</a></li>
+                <li><a href="/pages/combat.html">Combate</a></li>
+                <li><a href="/pages/ficha.html">Ficha de Personagem</a></li>
+                <li><a href="/pages/gerador_item.html">Gerador de Itens</a></li>
+                <li><a href="/pages/criador_npc.html">Criador de NPC</a></li>
+                <li><a href="/pages/mapa_eder.html">Mapa</a></li>
+                <li><a href="/pages/mesas.html">Mesas</a></li>
+                <li><a href="/pages/planares.html">Planares</a></li>
+            </ul>
         </nav>
         <div class="voltar-btn-container">
-          <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+            <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
         </div>
-      </header><br><br><br>
-      
+    </header><br><br><br>
+
     <div class="container">
         <h1>Academia das Águas</h1>
         <p><span class="highlight">Modificador de Água</span> &rarr; mod.INT.</p>
@@ -134,7 +169,7 @@
             <h2>RANK I</h2>
         </section>
         <section class="certificado">
-            <h3>Certificado da Água: 
+            <h3>Certificado da Água:
                 <br>
                 -Rank I:Reduz a Resistência de Águas dos alvos em 50%.
                 <br>
@@ -150,23 +185,44 @@
         <section class="section talents">
             <h3>Talentos</h3>
             <ul>
-                <li><span class="talent-name">Molhado</span>:  magias de água aplicam efeito <span class="highlight">molhado</span> no alvo. O efeito molhado previne e remove o efeito de queimando do alvo. Efeito molhado faz o afetado receber o dobro do dano do tipo trovão e dobra a chance de congelamento. Magias de água tem chance de 30% de deixar <i>Poças.</i>
+                <li><span class="talent-name">Molhado</span>: magias de água aplicam efeito <span
+                        class="highlight">molhado</span> no alvo. O efeito molhado previne e remove o efeito de
+                    queimando do alvo. Efeito molhado faz o afetado receber o dobro do dano do tipo trovão e dobra a
+                    chance de congelamento. Magias de água tem chance de 30% de deixar <i>Poças.</i>
                     <br>
-                    Poça: quando uma poça é criada ela permite o jogador usar magias livremente por poça em combate sem custo e conjuração. As conjurações que podem ser feitas a partir das poças são um RANK anterior ao seu rank atual, no mínimo RANK I. O máximo de poças é igual a mod.INT+proficiência.</li>
-                <li><span class="talent-name">Sopro da Água</span>: quando em lugares submersos você pode extrair oxigênio da água e respirar naturalmente. Aqueles que não possuem esse talento ou alguma característica parecida irão sobreviver apenas 3 rodadas abaixo d'água.</li>
-                <li><span class="talent-name">Pureza da Água</span>:  Curas efetuadas por você usando poder da água o usuário adiciona 1d4 bônus de cura. Nos níveis 5,10,15,20 aumenta em 1d4 a cura</li>
+                    Poça: quando uma poça é criada ela permite o jogador usar magias livremente por poça em combate sem
+                    custo e conjuração. As conjurações que podem ser feitas a partir das poças são um RANK anterior ao
+                    seu rank atual, no mínimo RANK I. O máximo de poças é igual a mod.INT+proficiência.
+                </li>
+                <li><span class="talent-name">Sopro da Água</span>: quando em lugares submersos você pode extrair
+                    oxigênio da água e respirar naturalmente. Aqueles que não possuem esse talento ou alguma
+                    característica parecida irão sobreviver apenas 3 rodadas abaixo d'água.</li>
+                <li><span class="talent-name">Pureza da Água</span>: Curas efetuadas por você usando poder da água o
+                    usuário adiciona 1d4 bônus de cura. Nos níveis 5,10,15,20 aumenta em 1d4 a cura</li>
             </ul>
         </section>
         <section class="section abilities">
             <h3>Habilidades</h3>
             <ul>
-                <li><span class="ability-name">Águas Regeneradoras</span>: invoca o poder da água para conjurar uma correnteza de água que flutua no alvo o curando em 1d6+medicina de vida. Nos níveis 5,10,15 aumenta em 1d6 a cura. Consome 4+(Nível/2) de MP. Conjuração 2 turnos.</li>
-                <li><span class="ability-name">Afogar</span>:  Invoca o poder da água para conjurar uma bolha de água na cabeça do alvo e afogá-lo. Causa 1d6+arcanismo como dano de água por rodada. Afogar dura 1d3 rodadas. O alvo fica em desvantagem no ataque e tem seu movimento impedido enquanto estiver sob efeito. Nos níveis 5,10,15 aumenta em 1d6 o dano de água. Consome 6+(Nível/2) de MP. Conjuração 2 turnos.</li>
-                <li><span class="ability-name">Águas Livres</span>:   invoca o poder da água para manipular a água e criar um ataque ou advento na forma que desejar. Caso seja um ataque o dano é 1d6d6+arcanismo. Nos níveis 5,10,15 aumenta em 1d6 o dano de água. Consome 3+(Nível/2) de MP.
+                <li><span class="ability-name">Águas Regeneradoras</span>: invoca o poder da água para conjurar uma
+                    correnteza de água que flutua no alvo o curando em 1d6+medicina de vida. Nos níveis 5,10,15 aumenta
+                    em 1d6 a cura. Consome 4+(Nível/2) de MP. Conjuração 2 turnos.</li>
+                <li><span class="ability-name">Afogar</span>: Invoca o poder da água para conjurar uma bolha de água na
+                    cabeça do alvo e afogá-lo. Causa 1d6+arcanismo como dano de água por rodada. Afogar dura 1d3
+                    rodadas. O alvo fica em desvantagem no ataque e tem seu movimento impedido enquanto estiver sob
+                    efeito. Nos níveis 5,10,15 aumenta em 1d6 o dano de água. Consome 6+(Nível/2) de MP. Conjuração 2
+                    turnos.</li>
+                <li><span class="ability-name">Águas Livres</span>: invoca o poder da água para manipular a água e criar
+                    um ataque ou advento na forma que desejar. Caso seja um ataque o dano é 1d6d6+arcanismo. Nos níveis
+                    5,10,15 aumenta em 1d6 o dano de água. Consome 3+(Nível/2) de MP.
                     <br>
-                    Advento - Caminho das Águas: permite criar um caminho para facilitar as jogadas, os aliados no caminho ganham (Arcanismo) do usuário como bônus nas jogadas. O caminho pode ter 1d12+mod.INT metros de comprimento. Dura 2 rodadas.
+                    Advento - Caminho das Águas: permite criar um caminho para facilitar as jogadas, os aliados no
+                    caminho ganham (Arcanismo) do usuário como bônus nas jogadas. O caminho pode ter 1d12+mod.INT metros
+                    de comprimento. Dura 2 rodadas.
                     <br>
-                    Ataque - Moldar Água: você pode transformar sua conjuração em qualquer coisa que vier à sua mente para usar como ataque.</li>
+                    Ataque - Moldar Água: você pode transformar sua conjuração em qualquer coisa que vier à sua mente
+                    para usar como ataque.
+                </li>
             </ul>
         </section>
 
@@ -176,19 +232,31 @@
         <section class="section talents">
             <h3>Talentos</h3>
             <ul>
-                <li><span class="talent-name">Cura do Corpo Aquático</span>: criaturas com corpo feito de água podem ser curadas ao receberem magias de água, inclusive magias ofensivas. O valor curado equivale ao dano causado.</li>
-                <li><span class="talent-name">Cria do Afogado</span>: se um alvo morrer por afogamento conjurado por você, dele poderá ser criado uma criatura de água como a de forma da água. Máximo 1+mod.INT criaturas em seu controle.</li>
-                <li><span class="talent-name">Torrente</span>: quando utilizar habilidades de água ofensivas dentro d'água você ganha um efeito de <i>propulsão.</i> O propulsão pode ser usado para ajustar sua posição na batalha ou se afastar de inimigos. Se você estiver colidindo com algum corpo pesado (paredes, pedras, construções, jogadores) você causa o efeito <i>repulsão.</i>
+                <li><span class="talent-name">Cura do Corpo Aquático</span>: criaturas com corpo feito de água podem ser
+                    curadas ao receberem magias de água, inclusive magias ofensivas. O valor curado equivale ao dano
+                    causado.</li>
+                <li><span class="talent-name">Cria do Afogado</span>: se um alvo morrer por afogamento conjurado por
+                    você, dele poderá ser criado uma criatura de água como a de forma da água. Máximo 1+mod.INT
+                    criaturas em seu controle.</li>
+                <li><span class="talent-name">Torrente</span>: quando utilizar habilidades de água ofensivas dentro
+                    d'água você ganha um efeito de <i>propulsão.</i> O propulsão pode ser usado para ajustar sua posição
+                    na batalha ou se afastar de inimigos. Se você estiver colidindo com algum corpo pesado (paredes,
+                    pedras, construções, jogadores) você causa o efeito <i>repulsão.</i>
                     <br>
                     Propulsão: empurra seu próprio corpo em direção contrária ao alvo em até 1d10+mod.INT em metros.
                     <br>
-                    Repulsão: empurra o alvo em até 1d10+mod.SAB em metros.</li>
+                    Repulsão: empurra o alvo em até 1d10+mod.SAB em metros.
+                </li>
             </ul>
         </section>
         <section class="section abilities">
             <h3>Habilidades</h3>
             <ul>
-                <li><span class="ability-name">Forma de Água</span>: invoca o poder da água para conjurar um ser espiritual da água. A criatura tem seu corpo todo formado por água. Sua vida equivale a 1.5x a vida do conjurador e seu dano é 2d6+arcanismo de dano de água. Ele pode conjurar magias de água do RANK atual do conjurador -1. Nos níveis 6,12,18 aumenta em 1d6 o dano de água. Consome 8+(Nível/2) de MP. Conjuração de 4 turnos. CA → 8+mod.INT.</li>
+                <li><span class="ability-name">Forma de Água</span>: invoca o poder da água para conjurar um ser
+                    espiritual da água. A criatura tem seu corpo todo formado por água. Sua vida equivale a 1.5x a vida
+                    do conjurador e seu dano é 2d6+arcanismo de dano de água. Ele pode conjurar magias de água do RANK
+                    atual do conjurador -1. Nos níveis 6,12,18 aumenta em 1d6 o dano de água. Consome 8+(Nível/2) de MP.
+                    Conjuração de 4 turnos. CA → 8+mod.INT.</li>
             </ul>
         </section>
 
@@ -198,19 +266,30 @@
         <section class="section talents">
             <h3>Talentos</h3>
             <ul>
-                <li><span class="talent-name">Poder do Mar</span>: Você pode extrair poder do mar quando próximo a ele ou quando tiver água em uma grande escala (verificar com o mestre). O mestre deve rolar 1d100 para cada 4 níveis do jogador. O resultado é a quantidade de poder do mar que você terá. Você pode usar esse poder para garantir efeitos únicos e estes podem ser aplicados 1 vez por rodada em qualquer momento. O poder do mar pode ser extraído uma vez por dia.
+                <li><span class="talent-name">Poder do Mar</span>: Você pode extrair poder do mar quando próximo a ele
+                    ou quando tiver água em uma grande escala (verificar com o mestre). O mestre deve rolar 1d100 para
+                    cada 4 níveis do jogador. O resultado é a quantidade de poder do mar que você terá. Você pode usar
+                    esse poder para garantir efeitos únicos e estes podem ser aplicados 1 vez por rodada em qualquer
+                    momento. O poder do mar pode ser extraído uma vez por dia.
                     <br>
                     Águas Perigosas: você aumenta o efeito de afogamentos em 50% ao custo de 30 de poder do mar.
                     <br>
-                    Cura Oceânica: suas curas ganham efeito maior bruto consumindo o mesmo valor em poder do mar. A cura vinda desse efeito não pode superar a cura máxima da habilidade usada.
+                    Cura Oceânica: suas curas ganham efeito maior bruto consumindo o mesmo valor em poder do mar. A cura
+                    vinda desse efeito não pode superar a cura máxima da habilidade usada.
                     <br>
-                    Onda Poderosa: suas habilidades do Oceano que causam dano consomem o poder do mar igual a metade do dano causado para causar o mesmo valor em dano bônus.</li>
+                    Onda Poderosa: suas habilidades do Oceano que causam dano consomem o poder do mar igual a metade do
+                    dano causado para causar o mesmo valor em dano bônus.
+                </li>
             </ul>
         </section>
         <section class="section abilities">
             <h3>Habilidades</h3>
             <ul>
-                <li><span class="ability-name">Nascido das Águas</span>:  Entra na forma na água recebendo redução de conjuração para magias do Oceano de 80%. Suas habilidades de Água geram 2x mais poças. Ganha a possibilidade de se locomover pelas poças, após se mover pelas poças a próxima magia água ganha um bônus de +25 de poder. Em contrapartida seu elemento do corpo é água o que faz você sofrer reações elementares. Consome 15+(Nível/2) de MP.</li>
+                <li><span class="ability-name">Nascido das Águas</span>: Entra na forma na água recebendo redução de
+                    conjuração para magias do Oceano de 80%. Suas habilidades de Água geram 2x mais poças. Ganha a
+                    possibilidade de se locomover pelas poças, após se mover pelas poças a próxima magia água ganha um
+                    bônus de +25 de poder. Em contrapartida seu elemento do corpo é água o que faz você sofrer reações
+                    elementares. Consome 15+(Nível/2) de MP.</li>
             </ul>
         </section>
 
@@ -220,14 +299,36 @@
         <section class="section talents">
             <h3>Talentos</h3>
             <ul>
-                <li><span class="talent-name">Epicentro</span>:  inimigos que se aproximarem do epicentro do terremoto (10m ou menos) receberão abalo podendo eles serem derrubados com chance de 50%. Se derrubados eles receberão o dobro do dano do abalos sísmicos de <i>Terremoto.</i></li>
+                <li><span class="talent-name">Aliados do Oceano</span>: todos os seus aliados se tornam imunes aos
+                    efeitos do <i>Tsunami</i>, o mar respeita eles. Durante o efeito eles podem escolher até 3 inimigos
+                    para atacar com oportunidade. Além disso, eles recebem efeitos positivos ao final do Tsunami.
+                    <br>
+                    Cura Oceânica: cura todos os aliados atingidos pela Tsunami em 25% da vida máxima deles.
+                    <br>
+                    Respeito Oceanico: todos os aliados ficam imunes a efeito molhado por 2 rodadas.
+                    <br>
+                    Poder Oceanico: todos os aliados recebem encantamento do oceano por 3 rodadas e causando 120% do
+                    dano do ataque como <span class="highlight">dano de água.</span>
+                </li>
             </ul>
         </section>
         <section class="section abilities">
             <h3>Habilidades</h3>
             <ul>
-                <li><span class="ability-name">Terremoto</span>: invoca o poder da terra para causar abalos sísmicos nas próximas 10 rodadas. A cada rodada o poder do abalo aumenta e na última rodada ele gera um abalo com letalidade. Cada rodada causa dados de vida do conjurador como dano de <span class="highlight">terra</span> e a cada rodada o valor aumenta. Consome 10% da mana máxima por rodada. Durante a performance o conjurador não vai poder fazer qualquer ação. Os abalos sísmicos partem do conjurado. O conjurador também recebe +10 de CA. Receber dano pode anular a conjuração/performance [50%]. O abalo sempre ocorre no início da rodada. Após a conjuração dessa habilidade o conjurador fica exausto em nível 2.
-                    Dano do Abalo por Rodada → 3/4/5/6/7/8/9/10/11/12  dados de vida do conjurador+2xMod.CON como dano de terra por rodada</li>
+                <li><span class="ability-name">Tsunami</span>: convoca as forças do oceano para criar uma onda
+                    gigantesca que devasta tudo por onde passa. Tsunami depende do poder do mar para se fortalecer. Cada
+                    ponto de Poder do Mar aumenta o dano de Tsunami em 10% em um total de 5000%. Tsunami consome toda
+                    manhã restante do conjurador no mínimo de 100 de mana. Tsunami também pode receber efeitos de outros
+                    elementos. Conjuração de 8 rodadas. Reduza a conjuração em 70% se você estiver dentro d’água. Área
+                    de Ação é todo combate. Dano de Tsunami é (Nível)d16+arcanismo.
+                    <br>
+                    Pedregulhos Violentos: se combinado com algum efeito de projétil da escola da dureza ou se tiver
+                    construções no caminho, causa 16d30 de dano físico adicional a cada alvo.
+                    <br>
+                    Mar Glacial: ao final da rodada Tsunami se torna gelo puro, causando congelamento a todos os
+                    inimigos atingidos. A batalha poderá terminar ali. Todos os inimigos devem rolar teste de
+                    congelamento com ND → Mod.INT+proficiência do conjurador.
+                </li>
             </ul>
         </section>
     </div>
@@ -235,4 +336,5 @@
         Academia das Águas &copy; 2025
     </footer>
 </body>
+
 </html>
