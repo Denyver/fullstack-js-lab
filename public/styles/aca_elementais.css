@@ -66,7 +66,7 @@
     --footer-color: #ffffff;
   }
   
- /*Tema Natureza */
+  /*Tema Natureza */
   .theme-natureza {
     --bg-color: #eaf0e2;
     --text-color: #3d3d3d;
@@ -81,6 +81,22 @@
     --highlight-bg: #f0f4e3;
     --footer-bg: #c2dbc1;
     --footer-color: #ffffff;
+  }
+  /*Tema Solar */
+  .theme-solar {
+    --bg-color: #ffffffcb;
+    --text-color: #333;
+    --container-bg: #ffffffcb;
+    --container-border: #d0e7ff;
+    --rank-bg: #f9f9fc;
+    --rank-color: #ff6600;
+    --header-bg: #ffe0e0;
+    --list-bg: #f1f8ff;
+    --title-color: #ff6600;
+    --highlight-color: #ff4d4d;
+    --highlight-bg: #fff7e6;
+    --footer-bg: #ff6600;
+    --footer-color: #fff;
   }
 
   /* ESTILOS GERAIS (válidos para todos os temas) */
