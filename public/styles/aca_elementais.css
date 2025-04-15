@@ -66,6 +66,23 @@
     --footer-color: #ffffff;
   }
   
+  /*Tema Natureza */
+  .theme-natureza {
+    --bg-color:
+    --text-color:
+    --container-bg:
+    --container-border:
+    --rank-bg:
+    --rank-color:
+    --header-bg:
+    --list-bg:
+    --title-color:
+    --highlight-color:
+    --highlight-bg: 
+    --footer-bg: 
+    --footer-color: 
+  }
+
   /* ESTILOS GERAIS (válidos para todos os temas) */
   body {
     font-family: 'Georgia', serif;
