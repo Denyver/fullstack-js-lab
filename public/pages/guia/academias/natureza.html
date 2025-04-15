@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="/styles/aca_elementais.css">
     <title>Academia da Natureza</title>
 </head>
+
 <body class="theme-natureza">
     <header>
         <div class="logo">
@@ -36,21 +38,21 @@
     </header><br><br><br>
 
     <div class="container">
-        <h1>Academia das Águas</h1>
-        <p><span class="highlight">Modificador de Água</span> &rarr; mod.INT.</p>
+        <h1>Academia da Natureza</h1>
+        <p><span class="highlight">Modificador de Natureza</span> &rarr; mod.SAB.</p>
         <section class="rank">
             <h2>RANK I</h2>
         </section>
         <section class="certificado">
-            <h3>Certificado da Água:
+            <h3>Certificado da Natureza:
                 <br>
-                -Rank I:Reduz a Resistência de Águas dos alvos em 50%.
+                -Rank I:Reduz a Resistência a Natureza dos alvos em 50%.
                 <br>
-                -Rank II: Receber dano de Água recupera 1d20 de mana
+                -Rank II: Receber dano de Natureza recupera 1d20 de mana
                 <br>
-                -Rank III: Ao estar em contato com água regenera 3d10 de vida por rodada.
+                -Rank III: Ganha +15 de poder para as habilidades da natureza.
                 <br>
-                -Rank IV: Aumenta o dano/efeito crítico das habilidades de Água em +0.5x.
+                -Rank IV: Aumenta a mana máxima em 50.
                 <br>
                 -Rank V: (A descobrir)
             </h3>
@@ -58,43 +60,39 @@
         <section class="section talents">
             <h3>Talentos</h3>
             <ul>
-                <li><span class="talent-name">Molhado</span>: magias de água aplicam efeito <span
-                        class="highlight">molhado</span> no alvo. O efeito molhado previne e remove o efeito de
-                    queimando do alvo. Efeito molhado faz o afetado receber o dobro do dano do tipo trovão e dobra a
-                    chance de congelamento. Magias de água tem chance de 30% de deixar <i>Poças.</i>
-                    <br>
-                    Poça: quando uma poça é criada ela permite o jogador usar magias livremente por poça em combate sem
-                    custo e conjuração. As conjurações que podem ser feitas a partir das poças são um RANK anterior ao
-                    seu rank atual, no mínimo RANK I. O máximo de poças é igual a mod.INT+proficiência.
+                <li><span class="talent-name">Crescimento Acelerado</span>: magias da natureza permitem criação da vida.
+                    Para isso, ela acelera a germinação de plantas e criaturas provenientes de sementes. Reduz à metade
+                    o tempo de germinação das sementes.
                 </li>
-                <li><span class="talent-name">Sopro da Água</span>: quando em lugares submersos você pode extrair
-                    oxigênio da água e respirar naturalmente. Aqueles que não possuem esse talento ou alguma
-                    característica parecida irão sobreviver apenas 3 rodadas abaixo d'água.</li>
-                <li><span class="talent-name">Pureza da Água</span>: Curas efetuadas por você usando poder da água o
-                    usuário adiciona 1d4 bônus de cura. Nos níveis 5,10,15,20 aumenta em 1d4 a cura</li>
+                <li><span class="talent-name">Favor da Natureza</span>: se o ambiente em que você se encontra for
+                    favorável para a conjuração de suas magias você reduzirá o tempo de conjuração dela a metade. Apenas
+                    ocorre em ambientes naturais</li>
+                <li><span class="talent-name">Fonte Natural</span>: você gerará 1 ponto de mana a cada rodada que você
+                    não utilizar mana, caso a sua mana já esteja cheia esses pontos de mana irão se transformar em
+                    pontos de mana temporária. Aumenta em 1 ponto adicional a cada 2 níveis.</li>
             </ul>
         </section>
         <section class="section abilities">
             <h3>Habilidades</h3>
             <ul>
-                <li><span class="ability-name">Águas Regeneradoras</span>: invoca o poder da água para conjurar uma
-                    correnteza de água que flutua no alvo o curando em 1d6+medicina de vida. Nos níveis 5,10,15 aumenta
-                    em 1d6 a cura. Consome 4+(Nível/2) de MP. Conjuração 2 turnos.</li>
-                <li><span class="ability-name">Afogar</span>: Invoca o poder da água para conjurar uma bolha de água na
-                    cabeça do alvo e afogá-lo. Causa 1d6+arcanismo como dano de água por rodada. Afogar dura 1d3
-                    rodadas. O alvo fica em desvantagem no ataque e tem seu movimento impedido enquanto estiver sob
-                    efeito. Nos níveis 5,10,15 aumenta em 1d6 o dano de água. Consome 6+(Nível/2) de MP. Conjuração 2
-                    turnos.</li>
-                <li><span class="ability-name">Águas Livres</span>: invoca o poder da água para manipular a água e criar
-                    um ataque ou advento na forma que desejar. Caso seja um ataque o dano é 1d6d6+arcanismo. Nos níveis
-                    5,10,15 aumenta em 1d6 o dano de água. Consome 3+(Nível/2) de MP.
+                <li><span class="ability-name">Germinar</span>: invoca magia da natureza para fazer germinar as sementes
+                    plantadas no campo de batalha e fora dele. Há diversas sementes com os mais variados tipos de
+                    plantas. A condição do solo deve estar úmida, a menos que a semente plantada determine o contrário.
+                    Consome 4+(Nível/2) de MP.</li>
+                <li><span class="ability-name">Chuva</span>: invoca o poder da natureza para fazer chover no local.
+                    Chuva aplica efeito molhado, e após 2 rodadas o terreno fica úmido. Duração 1d12 rodadas. Consome
+                    5+(Nível/2) de MP. Conjuração: 3 turnos.</li>
+                <li><span class="ability-name">Relâmpago</span>: invoca o poder da natureza para fazer cair um relâmpago
+                    no alvo desejado. Se estiver chovendo, o relâmpago se espalha para alvos ao redor do alvo principal
+                    causando metade do dano. Causa 1d8+natureza como dano de trovão. Conjurar Trovão durante uma chuva
+                    transforma a mesma em uma <i>tempestade.</i> Nos níveis 5,10,15 adiciona 1d8 de dano de trovão.
+                    Conjuração:
+                    2 turnos. Consome 6+(Nível/2) de MP.
                     <br>
-                    Advento - Caminho das Águas: permite criar um caminho para facilitar as jogadas, os aliados no
-                    caminho ganham (Arcanismo) do usuário como bônus nas jogadas. O caminho pode ter 1d12+mod.INT metros
-                    de comprimento. Dura 2 rodadas.
-                    <br>
-                    Ataque - Moldar Água: você pode transformar sua conjuração em qualquer coisa que vier à sua mente
-                    para usar como ataque.
+                    Tempestade: A cada rodada 1d4+Mod.SAB/2 alvos recebem 1d4+natureza de dano trovão e aplica reação de
+                    <span class="highlight">Eletrocutar.</span> Tempestade dura metade da chuva. Nos níveis 5,10,15
+                    adiciona 1d4 de dano trovão.
+
                 </li>
             </ul>
         </section>
@@ -105,31 +103,27 @@
         <section class="section talents">
             <h3>Talentos</h3>
             <ul>
-                <li><span class="talent-name">Cura do Corpo Aquático</span>: criaturas com corpo feito de água podem ser
-                    curadas ao receberem magias de água, inclusive magias ofensivas. O valor curado equivale ao dano
-                    causado.</li>
-                <li><span class="talent-name">Cria do Afogado</span>: se um alvo morrer por afogamento conjurado por
-                    você, dele poderá ser criado uma criatura de água como a de forma da água. Máximo 1+mod.INT
-                    criaturas em seu controle.</li>
-                <li><span class="talent-name">Torrente</span>: quando utilizar habilidades de água ofensivas dentro
-                    d'água você ganha um efeito de <i>propulsão.</i> O propulsão pode ser usado para ajustar sua posição
-                    na batalha ou se afastar de inimigos. Se você estiver colidindo com algum corpo pesado (paredes,
-                    pedras, construções, jogadores) você causa o efeito <i>repulsão.</i>
-                    <br>
-                    Propulsão: empurra seu próprio corpo em direção contrária ao alvo em até 1d10+mod.INT em metros.
-                    <br>
-                    Repulsão: empurra o alvo em até 1d10+mod.SAB em metros.
-                </li>
+                <li><span class="talent-name">Chuvas Regeneradoras</span>: a chuva invocada por você agora cura seus
+                    aliados em 2d6+medicina a cada 2 rodadas. Nos níveis 7,11,15 adiciona 1d6 de cura.</li>
+                <li><span class="talent-name">Cipós de Batalha</span>: quando você tiver sementes prestes a germinar
+                    você pode substituí-las por cipós de batalha. Os cipós de batalha tem 1+mod.SAB de HIT VIDA (cada
+                    ataque feito ou sofrido por ele reduz em 1 a vida do cipó) cipó causa 1d6+natureza como dano de
+                    natureza. Os cipós obedecem ao seu comando de ataque. Só podem atacar no seu turno. Pode conjurar
+                    (mod.SAB/2) de cipós. Máximo de 2+mod.SAB de cipós em batalha. Alcance 12m. Nos níveis 6,12,18
+                    adiciona 1d6 de dano.</li>
             </ul>
         </section>
         <section class="section abilities">
             <h3>Habilidades</h3>
             <ul>
-                <li><span class="ability-name">Forma de Água</span>: invoca o poder da água para conjurar um ser
-                    espiritual da água. A criatura tem seu corpo todo formado por água. Sua vida equivale a 1.5x a vida
-                    do conjurador e seu dano é 2d6+arcanismo de dano de água. Ele pode conjurar magias de água do RANK
-                    atual do conjurador -1. Nos níveis 6,12,18 aumenta em 1d6 o dano de água. Consome 8+(Nível/2) de MP.
-                    Conjuração de 4 turnos. CA → 8+mod.INT.</li>
+                <li><span class="ability-name">Ventania</span>: invoca o poder da natureza para conjurar uma ventania
+                    que empurra o alvo e causa 2d8+natureza como dano de vento. O alvo é empurrado por (1d16+4)m.
+                    Interrompe conjurações e para projéteis não metálicos. Nos níveis 8,12,16 adiciona 1d8 de dano de
+                    vento. Consome 5+(Nível/2) de MP. Se obtiver acerto dano crítico conjura <i>Tornado</i> no lugar da
+                    ventania.
+                    <br>
+                    Tornado: puxa os inimigos para o centro causando 8d8+natureza como dano de vento.
+                </li>
             </ul>
         </section>
 
@@ -139,30 +133,29 @@
         <section class="section talents">
             <h3>Talentos</h3>
             <ul>
-                <li><span class="talent-name">Poder do Mar</span>: Você pode extrair poder do mar quando próximo a ele
-                    ou quando tiver água em uma grande escala (verificar com o mestre). O mestre deve rolar 1d100 para
-                    cada 4 níveis do jogador. O resultado é a quantidade de poder do mar que você terá. Você pode usar
-                    esse poder para garantir efeitos únicos e estes podem ser aplicados 1 vez por rodada em qualquer
-                    momento. O poder do mar pode ser extraído uma vez por dia.
-                    <br>
-                    Águas Perigosas: você aumenta o efeito de afogamentos em 50% ao custo de 30 de poder do mar.
-                    <br>
-                    Cura Oceânica: suas curas ganham efeito maior bruto consumindo o mesmo valor em poder do mar. A cura
-                    vinda desse efeito não pode superar a cura máxima da habilidade usada.
-                    <br>
-                    Onda Poderosa: suas habilidades do Oceano que causam dano consomem o poder do mar igual a metade do
-                    dano causado para causar o mesmo valor em dano bônus.
+                <li><span class="talent-name">Natureza Viva</span>: seu contato com a natureza é mais forte que o
+                    habitual. Você pode sentir vida em ambientes de natureza além de conseguir se comunicar com ela. As
+                    criaturas ganham +20 de poder.
+                </li>
+                <li><span class="talent-name">Alma Selvagem</span>: O usuário consegue manter conjurada 2+(Mod.Sab)
+                    criaturas no campo de batalha, não pode haver mais de uma mesma criatura no campo de batalha.
                 </li>
             </ul>
         </section>
         <section class="section abilities">
             <h3>Habilidades</h3>
             <ul>
-                <li><span class="ability-name">Nascido das Águas</span>: Entra na forma na água recebendo redução de
-                    conjuração para magias do Oceano de 80%. Suas habilidades de Água geram 2x mais poças. Ganha a
-                    possibilidade de se locomover pelas poças, após se mover pelas poças a próxima magia água ganha um
-                    bônus de +25 de poder. Em contrapartida seu elemento do corpo é água o que faz você sofrer reações
-                    elementares. Consome 15+(Nível/2) de MP.</li>
+                <li><span class="ability-name">Cria da Natureza</span>: O usuário consegue conjurar criaturas da
+                    natureza para lhe auxiliar no combate ou fora dele, o usuário consegue aumentar seu arsenal de
+                    conjuração com ao explorar o mundo o mestre dirá como essas novas criaturas de planta funcionam. As
+                    criaturas usam a natureza do usuário para acertar o ataque. Conjuração de 2 turnos. Consome
+                    7+(Nível) de MP.
+                    <br>
+                    <div id="b1">
+                        <iframe class="patch"
+                            src="https://docs.google.com/document/d/154VGjH6zGbUH2VkN-uf0eSSZC6EgRiCfUHP4-yhxzkw/edit?tab=t.0#heading=h.fkwe7j4byoqb"
+                            frameborder="0" allowfullscreen></iframe>
+                </li>
             </ul>
         </section>
 
