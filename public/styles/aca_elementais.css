@@ -66,21 +66,21 @@
     --footer-color: #ffffff;
   }
   
-  /*Tema Natureza */
+ /*Tema Natureza */
   .theme-natureza {
-    --bg-color:
-    --text-color:
-    --container-bg:
-    --container-border:
-    --rank-bg:
-    --rank-color:
-    --header-bg:
-    --list-bg:
-    --title-color:
-    --highlight-color:
-    --highlight-bg: 
-    --footer-bg: 
-    --footer-color: 
+    --bg-color: #eaf0e2;
+    --text-color: #3d3d3d;
+    --container-bg: #ffffff;
+    --container-border: #a8c39d;
+    --rank-bg: #4b9c4f;
+    --rank-color: #ffffff;
+    --header-bg: #cfe5c4;
+    --list-bg: #f3f7f3;
+    --title-color: #4b9c4f;
+    --highlight-color: #8bcb6e;
+    --highlight-bg: #f0f4e3;
+    --footer-bg: #c2dbc1;
+    --footer-color: #ffffff;
   }
 
   /* ESTILOS GERAIS (válidos para todos os temas) */
