@@ -1,0 +1,168 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --container-bg: #f9f9f9;
+    --container-border: #cccccc;
+    --rank-bg: #444;
+    --rank-color: #fff;
+    --header-bg: #ddd;
+    --list-bg: #eee;
+    --list-hover: 10px;
+    --title-color: #222;
+    --highlight-color: #000;
+    --highlight-bg: #ccc;
+    --footer-bg: #222;
+    --footer-color: #fff;
+  }
+  
+  /* Tema TROVÃO */
+  .theme-trovao {
+    --bg-color: #3a2a48;
+    --text-color: #d1a9ff;
+    --container-bg: #3b2d4a;
+    --container-border: #8e5dd1;
+    --rank-bg: #6f42c1;
+    --rank-color: #ffffff;
+    --header-bg: #5a2c7f;
+    --list-bg: #3f2b57;
+    --title-color: #c084fc;
+    --highlight-color: #d8b4fe;
+    --highlight-bg: #2e1b47;
+    --footer-bg: #4b2c72;
+    --footer-color: #ffffff;
+  }
+  
+  /* Tema ÁGUA */
+  .theme-agua {
+    --bg-color: #6eace7;
+    --text-color: #0050C0;
+    --container-bg: #e1ecf3;
+    --container-border: #5e7c8f;
+    --rank-bg: #0e5375;
+    --rank-color: #ffffff;
+    --header-bg: #8bc4d6;
+    --list-bg: #c6f1f1;
+    --title-color: #008c8e;
+    --highlight-color: #042c99;
+    --highlight-bg: #f0f4e3;
+    --footer-bg: #3c5b7b;
+    --footer-color: #ffffff;
+  }
+  
+  /* Tema DUREZA */
+  .theme-dureza {
+    --bg-color: #d7c7a0;
+    --text-color: #4f3b2f;
+    --container-bg: #f3efe1;
+    --container-border: #8f7b5e;
+    --rank-bg: #8f7b5e;
+    --rank-color: #ffffff;
+    --header-bg: #d6b68b;
+    --list-bg: #f1e0c6;
+    --title-color: #7a5a3b;
+    --highlight-color: #995304;
+    --highlight-bg: #f0f4e3;
+    --footer-bg: #7b5e3c;
+    --footer-color: #ffffff;
+  }
+  
+  /* ESTILOS GERAIS (válidos para todos os temas) */
+  body {
+    font-family: 'Georgia', serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--container-bg);
+    border: 2px solid var(--container-border);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .rank {
+    background-color: var(--rank-bg);
+    color: var(--rank-color);
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .rank-v {
+    background-color: #ffffff;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .rank-v h2 {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  section h3 {
+    background-color: var(--header-bg);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+  }
+  
+  section ul {
+    padding-left: 20px;
+    list-style: none;
+  }
+  
+  section li {
+    background-color: var(--list-bg);
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  section li:hover {
+    transform: translateX(var(--list-hover));
+  }
+  
+  .ability-name,
+  .talent-name {
+    font-weight: bold;
+    color: var(--title-color);
+    font-size: 1.1em;
+  }
+  
+  .highlight {
+    font-weight: bold;
+    color: var(--highlight-color);
+    background-color: var(--highlight-bg);
+    border-radius: 5px;
+    padding: 2px 6px;
+  }
+  
+  footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-color);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.15);
+  }
