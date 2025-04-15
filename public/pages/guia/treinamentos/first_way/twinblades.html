@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/styles/navbar.css" />
+  <link rel="stylesheet" href="/public/styles/first_way.css" />
+  <title>Twinblades - Estilo Siaahra</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/imgs/woe_titulo.png" alt="Logo" />
+      </a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      &#9776;
+    </button>
+    <nav class="menu">
+      <ul>
+        <li><a href="pages/guia_geral.html">Guia</a></li>
+        <li><a href="pages/eventos.html">Eventos</a></li>
+        <li><a href="pages/combat.html">Combate</a></li>
+        <li><a href="pages/gerador_item.html">Gerador de Itens</a></li>
+        <li><a href="pages/criador_npc.html">Criador de NPC</a></li>
+        <li><a href="pages/mapa_eder.html">Mapa</a></li>
+        <li><a href="pages/mesas.html">Mesas</a></li>
+      </ul>
+    </nav>
+    <div class="voltar-btn-container">
+      <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Twinblades</h1>
+    <div class="info">
+      <p><strong>Estilo:</strong> Siaahra.</p>
+      <p><strong>Localização:</strong> Siaahra, Thundaera.</p>
+      <p><strong>Atributo:</strong> Destreza.</p>
+    </div>
+
+    <section>
+      <h2>Manusear Twinblades</h2>
+      <p>Pode manusear <strong>Twinblades</strong> sem desvantagem. As Twinblades são espadas gêmeas, seguradas com uma mão enquanto giram rapidamente.</p>
+    </section>
+
+    <section>
+      <h2>Retalho Giratório</h2>
+      <p>As Twinblades são lâminas gêmeas usadas girando pelo usuário para acumular <strong>RG (Retalho Giratório)</strong>.</p>
+      <p>Para cada RG acumulado, o usuário tem <strong>+2 de dano</strong>. O RG é resetado se o usuário parar de atacar ou errar. É possível usar a <strong>ação de movimento</strong> para ativar novamente o Retalho Giratório. RG é utilizado nas habilidades para amplificar o dano.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 3) Redemoinho Gêmeos</h2>
+      <p>O usuário avança com as lâminas girando até o inimigo, usando a <strong>ação de movimento</strong> para atacar o inimigo à sua frente, causando <strong>Ataque Básico + 6 de dano</strong>. No final da ação, acumula <strong>+4 de RG</strong>.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 7) Dança das Lâminas</h2>
+      <p>O usuário realiza uma sequência de ataques enquanto as lâminas giram em suas mãos, causando <strong>(Mod.Des / 2) Ataque Básico</strong> no inimigo. Para cada ataque realizado, acumula <strong>+2 de RG</strong>.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 7) Defesa Circular</h2>
+      <p>Enquanto as Twinblades estiverem girando, o usuário pode usar a <strong>ação de movimento</strong> para defender ataques de curta a longa distância. Usa-se <strong>(Mod.DES + Proficiência)</strong> para defender, e essa ação acumula <strong>+2 de RG</strong>.</p>
+    </section>
+
+    <section>
+      <h2>(Nível 10) Giro Impetuoso</h2>
+      <p>O usuário realiza um grande giro com as lâminas ao redor, cobrindo uma área de <strong>6 metros</strong>. Todo o RG acumulado é <strong>multiplicado por 3</strong> e o usuário causa <strong>Ataque Básico</strong> em todos os inimigos na área. Todos os acúmulos de RG são resetados após essa ação.</p>
+    </section>
+  </div>
+</body>
+
+</html>

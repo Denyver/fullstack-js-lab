@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Alabarda - Estilo Haghii</title>
+  <link rel="stylesheet" href="/styles/navbar.css">
+  <link rel="stylesheet" href="/public/styles/first_way.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/imgs/woe_titulo.png" alt="Logo" />
+      </a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      &#9776; 
+    </button>
+    <nav class="menu">
+      <ul>
+        <li><a href="pages/guia_geral.html">Guia</a></li>
+        <li><a href="pages/eventos.html">Eventos</a></li>
+        <li><a href="pages/combat.html">Combate</a></li>
+        <li><a href="pages/gerador_item.html">Gerador de Itens</a></li>
+        <li><a href="pages/criador_npc.html">Criador de NPC</a></li>
+        <li><a href="pages/mapa_eder.html">Mapa</a></li>
+        <li><a href="pages/mesas.html">Mesas</a></li>
+      </ul>
+    </nav>
+    <div class="voltar-btn-container">
+      <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+    </div>
+  </header>
+  <div class="container">
+    <h1>Alabarda - Estilo Haghii</h1>
+    <div class="info">
+      <p><strong>Localização:</strong> Haghii</p>
+      <p><strong>Atributo:</strong> Força (FOR)</p>
+    </div>
+
+    <section>
+      <h2>Fundamentos</h2>
+      <p class="highlight">Manipulação de Alabarda:</p>
+      <p>Permite utilizar alabarda sem desvantagem. Ataques exigem Destreza e o dano é baseado na Força.</p>
+
+      <p class="highlight">Posturas de Combate:</p>
+      <ul>
+        <li><strong>Ataque:</strong> +1 ataque por ponto de Proficiência, +40% de dano, +4m de alcance, recebe +20% de dano.</li>
+        <li><strong>Defesa:</strong> -50% de dano causado, -30% de dano recebido, cura 12% da vida por rodada (ou 20% se não receber dano), -40% de letalidade recebida.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Habilidades</h2>
+
+      <p class="highlight">(Nível 5) Salto Decisivo:</p>
+      <ul>
+        <li><strong>Ataque:</strong> dano em área. Alvo principal sofre Ataque Básico + 60%. Inimigos com 20% ou menos de vida recebem 150% de dano.</li>
+        <li><strong>Defesa:</strong> mesmo dano ao alvo principal, inimigos ao redor são abalados. Se estiverem com 20% ou menos de vida, são derrubados.</li>
+      </ul>
+
+      <p class="highlight">(Nível 10) Behind Of None:</p>
+      <p>Ataca inimigo em flanco ou costas e ajusta a posição para frente dele.</p>
+      <ul>
+        <li><strong>Ataque:</strong> acerto crítico garante rolagem de letalidade com bônus +15.</li>
+        <li><strong>Defesa:</strong> acerto crítico desarma o alvo por uma rodada e interrompe conjuração.</li>
+      </ul>
+
+      <p class="highlight">(Nível 15) Combo Style - Duel:</p>
+      <p>Criar cratera de duelo ao executar um Salto Decisivo. Sacrifica ações de movimento para manter.</p>
+      <ul>
+        <li><strong>Ataque:</strong> Ataque Básico causa +5% da vida máxima do alvo. 15% de chance de Triple Strike (75/150/300%).</li>
+        <li><strong>Defesa:</strong> Se superar ataque inimigo, defende e contra-ataca com d20% da vida atual do alvo como dano não defensável, curando metade disso.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Master Trait</h2>
+      <div class="trait">
+        <strong>War Master:</strong>
+        <p>Torna-se um mestre de guerra, fortalecendo aliados e ampliando os efeitos das habilidades.</p>
+        <ul>
+          <li><strong>Salto Decisivo - Comando Ofensivo:</strong> 
+            <ul>
+              <li><strong>Ataque:</strong> aliados ganham ataques de oportunidade.</li>
+              <li><strong>Defesa:</strong> inimigos abalados recebem +30% de dano; derrubados recebem +50%.</li>
+            </ul>
+          </li>
+          <li><strong>Behind Of None - Comando Executar:</strong>
+            <ul>
+              <li><strong>Ataque:</strong> todos podem rolar letalidade contra o alvo reajustado.</li>
+              <li><strong>Defesa:</strong> aplica Defesa Destruída no alvo até o fim da rodada.</li>
+            </ul>
+          </li>
+          <li><strong>Combo Style - Union:</strong>
+            <p>Permite chamar até 3 aliados para a área do duelo. Troca de postura sem custo de ação.</p>
+            <ul>
+              <li><strong>Ataque:</strong> aliados ganham 1 vantagem e -1 no crítico.</li>
+              <li><strong>Defesa:</strong> aliados curam 15% da vida máxima no início da rodada.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

@@ -3,63 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <title>Bordão - Estilo Siaahra, Yggbrasil</title>
-  <style>
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9fb;
-  color: #333;
-}
+  <link rel="stylesheet" href="/public/styles/navbar.css">
+  <link rel="stylesheet" href="/public/styles/first_way.css">
 
-.container {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-}
 
-.title {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #6c8b5b;
-}
-
-.highlight {
-  background-color: #e6f2e0;
-  padding: 15px;
-  border-left: 5px solid #6c8b5b;
-  margin-bottom: 25px;
-  border-radius: 12px;
-}
-
-.trait {
-  margin-bottom: 30px;
-  padding: 20px;
-  border-radius: 12px;
-  background-color: #f3f6ff;
-  border-left: 5px solid #5b7cff;
-}
-
-.trait h2 {
-  color: #5b7cff;
-  margin-bottom: 10px;
-}
-
-ul {
-  padding-left: 20px;
-}
-
-ul li {
-  margin-bottom: 10px;
-}
-
-  </style>
 </head>
 <body>
+  <header>
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/imgs/woe_titulo.png" alt="Logo" />
+      </a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      &#9776; 
+    </button>
+    <nav class="menu">
+      <ul>
+        <li><a href="/pages/guia_geral.html">Guia</a></li>
+        <li><a href="/pages/combat.html">Combate</a></li>
+        <li><a href="/pages/ficha.html">Ficha de Personagem</a></li>
+        <li><a href="/pages/gerador_item.html">Gerador de Itens</a></li>
+      </ul>
+    </nav>
+    <div class="voltar-btn-container">
+      <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+    </div>
+  </header>
   <div class="container">
     <h1>Bordão - Estilo Siaahra, Yggbrasil</h1>
     <div class="info">

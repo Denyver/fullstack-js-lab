@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firegun - Revólver</title>
+    <link rel="stylesheet" href="/public/styles/navbar.css">
+    <link rel="stylesheet" href="/public/styles/first_way.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="/index.html">
+                <img src="/imgs/woe_titulo.png" alt="Logo" />
+            </a>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+            &#9776;
+        </button>
+        <nav class="menu">
+            <ul>
+                <li><a href="/pages/guia_geral.html">Guia</a></li>
+                <li><a href="/pages/eventos.html">Eventos</a></li>
+                <li><a href="/pages/combat.html">Combate</a></li>
+                <li><a href="/pages/ficha.html">Ficha de Personagem</a></li>
+                <li><a href="/pages/gerador_item.html">Gerador de Itens</a></li>
+                <li><a href="/pages/criador_npc.html">Criador de NPC</a></li>
+                <li><a href="/pages/mapa_eder.html">Mapa</a></li>
+                <li><a href="/pages/mesas.html">Mesas</a></li>
+            </ul>
+        </nav>
+        <div class="voltar-btn-container">
+            <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Firegun - Revólver</h1>
+        <p><strong>Manipulação de Revólver:</strong> você pode usar revólver sem desvantagem. Revolver causa dano
+            perfurante e tem grande alcance. Sempre que houver um ataque de oportunidade você dispara com seu revólver
+            com acerto garantido.</p>
+        <ul>
+            <li><strong>Alcance:</strong> 18m</li>
+            <li><strong>Dano Padrão:</strong> (Mod.DES)d12</li>
+            <li><strong>Disparo:</strong> 1-8 → Carregar</li>
+            <li><strong>Crítico:</strong> Normal</li>
+        </ul>
+
+        <h2>Ricochete</h2>
+        <p>Dispara um tiro contra o alvo com capacidade de ricochete. O próximo alvo sempre irá receber 25% de dano a
+            mais. A chance de ricochete é 25% com adicional de 1% por precisão que você tiver. Máximo de ricochete é 4.
+        </p>
+
+        <h2>Nível 5 - Pow Pow</h2>
+        <p>Você dá dois disparos para cima sem anunciar forçando os inimigos a fazer um teste de susto. A dificuldade é
+            dada por (Mod.DES+10+Mod.CAR/2). Os inimigos que falharem no teste receberão um ataque de oportunidade seu.
+            Recarga de 3 rodadas. Consome 2 de munição.</p>
+
+        <h2>Nível 10 - Desperado</h2>
+        <p>Quando empunhando duas armas você pode disparar deliberadamente todas as munições contidas em ambas para
+            todas as direções. A quantidade de disparos é exatamente a quantidade de munições que você tiver no momento.
+            Desperado é uma habilidade pertencente a dois treinamentos: Pistola e Revólver. Após usar, você fica
+            impossibilitado de recarregar suas armas usadas por 1 rodada global.</p>
+        <ul>
+            <li><strong>Revólver + Revólver:</strong> Cada projétil causa 50% do Ataque Básico de dano perfurante e tem
+                chance de Ricochete bônus de +30%.</li>
+            <li><strong>Pistola + Revólver:</strong> Cada projétil causa 30% do Ataque Básico de dano perfurante e tem
+                chance de 15% de bônus de Ricochete.</li>
+        </ul>
+
+        <h2>Nível 15 - Cassino Kill</h2>
+        <p>Quando tiver apenas uma munição no tambor do seu revólver esta habilidade pode ser utilizada. Também é
+            necessário ter pelo menos 2 inimigos. Os aliados serão considerados. Escolha 8 alvos, 4 inimigos e 3
+            aliados, inclua-se. Role 2d8, o primeiro d8 representa o slot da bala, o segundo representa o número do
+            alvo. O alvo que receber o disparo será morto.</p>
+        <p><strong>Aliados:</strong> Recebem vantagem para se levantar em todas as jogadas do tipo. Não há restrição
+            para Boss.</p>
+        <p><strong>Se for aliado:</strong> Você ganha 1 acúmulo de Guilty. <br>
+            <strong>Se for inimigo:</strong> Você ganha um acúmulo de Avenged.
+        </p>
+        <ul>
+            <li><strong>Guilty:</strong> Quando você for jogar um ataque, você irá rolar D100 com 50% de chance de
+                desistir da ação. Para cada acúmulo rola 1D100. Máximo de 3 acúmulos.</li>
+            <li><strong>Avenged:</strong> Adiciona 75% de dano a seus danos. Dura até o fim do combate ou até que você
+                caia. Máximo de 3 acúmulos.</li>
+        </ul>
+
+        <h2>Master Trait - Mercenário</h2>
+        <p>Você se torna mestre em Revólver. Adicionalmente adiciona +6% de dano por Mod.DES quando estiver usando
+            revólver. Ganha novas habilidades e talentos:</p>
+
+        <div class="trait">
+        <h3>Desperado - Chacina</h3><p>Seu Desperado evolui para uma versão completa. O dano do Ataque Básico agora é considerado integralmente.
+            Quando restar uma munição usa automaticamente Cassino Kill para cada revólver.</p>
+        
+            <h3>Procurado</h3>
+            <p>Substitui seus Guilty e Avenged por Wanted Mark. As Wanted Marks garantem 40% de dano bônus e 60% de dano
+                crítico bônus. Porém, você tem cura reduzida em 75% e não pode receber buffs de aliados, caso uma das
+                Wanted Marks seja proveniente de um Kill de aliado. Máximo de 6 Wanted Marks. É removida caso você caia.
+            </p>
+
+            <h3>O Procurado</h3>
+            <p>Quando você atingir 6 Wanted Marks pode ativar este estado. Dura 2 rodadas. Um uso por dia. Põe em
+                restrição o uso de Hyper Agent de Pistolas quando este for usado.</p>
+            <ul>
+                <li><strong>Bullet Shuttlecock:</strong> Aumenta o Ricochete para 6. O Ricochete pode acertar os mesmos
+                    alvos mais de uma vez, como um ping pong.</li>
+                <li><strong>Always One:</strong> Você pode encher o tambor com 1 bala cada e sempre executar o Cassino
+                    Kill. Tem vantagem para não acertar um aliado. Cada Kill aumenta a duração em 1 rodada, até +3
+                    rodadas.</li>
+                <li><strong>Dedo No Gatilho e Gritaria:</strong> Ao iniciar este estado você causa desespero nos
+                    inimigos ao redor. Todos os inimigos recebem ataques de oportunidade. A única maneira de resistir é
+                    com crítico ou 1 abaixo do crítico.</li>
+            </ul>
+        </div>
+    </div>
+    <h3>Desperado - Chacina</h3>
+
+</body>
+
+</html>
