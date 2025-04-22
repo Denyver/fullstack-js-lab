@@ -1,0 +1,88 @@
+:root {
+    --tooltip-color: blue;
+    --tooltip-hover-color: darkblue;
+    --tooltip-bg: #333;
+    --tooltip-text: #fff;
+    --tooltip-shadow: rgba(0, 0, 0, 0.2);
+    --tooltip-border: #555;
+    --tooltip-heading: #4CAF50;
+    --tooltip-highlight-bg: #444;
+    --tooltip-highlight-color: #ffffff;
+  }
+  
+  .tooltip-container {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+    color: var(--tooltip-color);
+    text-decoration: underline dotted;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .tooltip-container:hover {
+    color: var(--tooltip-hover-color);
+  }
+  
+  .tooltip-content {
+    visibility: hidden;
+    width: 300px;
+    background: var(--tooltip-bg);
+    color: var(--tooltip-text);
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 8px 20px var(--tooltip-shadow);
+    border: 2px solid var(--tooltip-border);
+  }
+  
+  .tooltip-container:hover .tooltip-content {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .tooltip-content h3 {
+    margin-top: 0;
+    color: var(--tooltip-heading);
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    border-bottom: 2px solid var(--tooltip-border);
+  }
+  
+  .tooltip-content p {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .tooltip-content hr {
+    border: none;
+    height: 1px;
+    background-color: var(--tooltip-border);
+    margin: 10px 0;
+  }
+  
+  .tooltip-highlight {
+    background-color: var(--tooltip-highlight-bg);
+    color: var(--tooltip-highlight-color);
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 2px 5px;
+  }
+
+  /* Tema --- */
+.theme-exemplo {
+    --tooltip-color: ;
+    --tooltip-hover-color: ;
+    --tooltip-bg: ;
+    --tooltip-text: ;
+    --tooltip-shadow: ;
+    --tooltip-border: ;
+    --tooltip-heading: ;
+    --tooltip-highlight-bg: ;
+    --tooltip-highlight-color: ;
+  }
