@@ -5,26 +5,24 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Gerador de NPCs para o sistema WOE (World of Eder)">
   <title>WOE: Gerador de NPC</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles/navbar.css">
   <link rel="stylesheet" href="/styles/criando_npc.css">
 </head>
 
-<body>
+<body onload="set_pc()">
+
   <header>
     <div class="logo">
-      <a href="/index.html" aria-label="Voltar para a página inicial">
-        <img src="/imgs/woe_titulo.png" alt="Logo WOE" width="150" height="50" />
+      <a href="/index.html">
+        <img src="/imgs/woe_titulo.png" alt="Logo" />
       </a>
     </div>
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu" aria-expanded="false">
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
       &#9776;
     </button>
-    <nav class="menu" aria-label="Menu principal">
+    <nav class="menu">
       <ul>
         <li><a href="pages/guia_geral.html">Guia</a></li>
         <li><a href="pages/eventos.html">Eventos</a></li>
@@ -40,85 +38,83 @@
     </div>
   </header>
 
-  <main id="container">
-    <section id="bloco1" aria-labelledby="gerador-titulo">
-      <h1 id="gerador-titulo">Gerador Simples de NPCs</h1>
-      
-      <div class="form-grid">
-        <div class="form-group">
-          <label for="nome">Nome:</label>
-          <input type="text" id="nome" name="nome" value="No Name" aria-label="Nome do NPC" />
-        </div>
+  <div id="container">
+    <div id="bloco1">
+      <h1>Gerador Simples de NPCs</h1>
+      <br />
+      <table>
+        <tr>
+          <td id="firstStatusb1">
+            <label for="nome">Nome:</label><br />
+            <input type="text" id="nome" name="nome" value="No Name" /><br /><br />
 
-        <div class="form-group">
-          <label for="vida_base">Vida Base:</label>
-          <input type="number" id="vida_base" name="vida_base" min="10" value="10" aria-label="Vida base do NPC" />
-        </div>
+            <label for="vida_base">Vida Base:</label><br />
+            <input type="number" class="numberRight" id="vida_base" name="vida_base" min="10" value="10" />
+            <br /><br />
 
-        <div class="form-group">
-          <label for="tier">Tier:</label>
-          <select id="tier" aria-label="Selecione o tier do NPC">
-            <option value="Normal" selected>Normal</option>
-            <option value="Elite">Elite</option>
-            <option value="Boss">Boss</option>
-          </select>
-        </div>
+            <label for="tier">Tier:</label><br />
+            <select id="tier">
+              <option value="Normal" selected>Normal</option>
+              <option value="Elite">Elite</option>
+              <option value="Boss">Boss</option>
+            </select>
+          </td>
 
-        <div class="form-group">
-          <label for="nivel">Nível:</label>
-          <input type="number" id="nivel" name="nivel" min="1" max="20" value="1" 
-                 aria-label="Nível do NPC" onchange="checkNivel()" />
-        </div>
+          <td id="firstStatusb2">
+            <label for="nivel">Nível:</label><br />
+            <input type="number" id="nivel" name="nivel" min="1" max="20" value="1" class="numberLeft"
+              onchange="checkNivel()" /><br /><br />
+            <label for="armadura">Armadura:</label><br />
+            <input type="number" id="armadura" name="armadura" class="numberLeft" min="0" value="0" /><br /><br />
 
-        <div class="form-group">
-          <label for="armadura">Armadura:</label>
-          <input type="number" id="armadura" name="armadura" min="0" value="0" aria-label="Armadura do NPC" />
-        </div>
+            <label for="arma">Arma:</label><br />
+            <select id="arma">
+              <option value="Adaga">Adaga [DES]</option>
+              <option value="Arco">Arco [DES]</option>
+              <option value="Besta">Besta [FOR]</option>
+              <option value="Firegun">Firegun [DES]</option>
+              <option value="Espada">Espada [DES]</option>
+              <option value="Espadão">Espadão [FOR]</option>
+              <option value="Machado">Machado [DES]</option>
+              <option value="Machadão">Machadão [FOR]</option>
+              <option value="Foice">Foice [DES]</option>
+              <option value="Orbe">Orbe [INT]</option>
+              <option value="Cajado">Cajado [INT]</option>
+              <option value="Dual">Dual [DES]</option>
+              <option value="Lança">Lança [FOR]</option>
+              <option value="Swallow">Swallow [FOR]</option>
+              <option value="Haloblade">Haloblade [DES]</option>
+              <option value="Katana">Katana [FOR]</option>
+              <option value="Estilingue">Estilingue [DES]</option>
+              <option value="Soqueira">Soqueira [FOR]</option>
+              <option value="Martelo">Martelo [FOR]</option>
+              <option value="Bordão">Bordão [FOR]</option>
+              <option value="Alabarda">Alabarda [FOR]</option>
+              <option value="Chainblade">Chainblade [FOR]</option>
+              <option value="Maça">Maça [FOR]</option>
+              <option value="Sem Arma" selected>Sem Arma [DES]+[FOR]</option>
+              <option value="FORÇA">Dano de FORÇA</option>
+              <option value="DESTREZA">Dano de DESTREZA</option>
+              <option value="CONSTITUIÇÃO">Dano de CONSTITUIÇÃO</option>
+              <option value="INTELIGÊNCIA">Dano de INTELIGÊNCIA</option>
+              <option value="SABEDORIA">Dano de SABEDORIA</option>
+              <option value="CARISMA">Dano de CARISMA</option>
 
-        <div class="form-group">
-          <label for="arma">Arma:</label>
-          <select id="arma" aria-label="Selecione a arma do NPC">
-            <option value="Adaga">Adaga [DES]</option>
-            <option value="Arco">Arco [DES]</option>
-            <option value="Besta">Besta [FOR]</option>
-            <option value="Firegun">Firegun [DES]</option>
-            <option value="Espada">Espada [DES]</option>
-            <option value="Espadão">Espadão [FOR]</option>
-            <option value="Machado">Machado [DES]</option>
-            <option value="Machadão">Machadão [FOR]</option>
-            <option value="Foice">Foice [DES]</option>
-            <option value="Orbe">Orbe [INT]</option>
-            <option value="Cajado">Cajado [INT]</option>
-            <option value="Dual">Dual [DES]</option>
-            <option value="Lança">Lança [FOR]</option>
-            <option value="Swallow">Swallow [FOR]</option>
-            <option value="Haloblade">Haloblade [DES]</option>
-            <option value="Katana">Katana [FOR]</option>
-            <option value="Estilingue">Estilingue [DES]</option>
-            <option value="Soqueira">Soqueira [FOR]</option>
-            <option value="Martelo">Martelo [FOR]</option>
-            <option value="Bordão">Bordão [FOR]</option>
-            <option value="Alabarda">Alabarda [FOR]</option>
-            <option value="Chainblade">Chainblade [FOR]</option>
-            <option value="Maça">Maça [FOR]</option>
-            <option value="Sem Arma" selected>Sem Arma [DES]+[FOR]</option>
-            <option value="FORÇA">Dano de FORÇA</option>
-            <option value="DESTREZA">Dano de DESTREZA</option>
-            <option value="CONSTITUIÇÃO">Dano de CONSTITUIÇÃO</option>
-            <option value="INTELIGÊNCIA">Dano de INTELIGÊNCIA</option>
-            <option value="SABEDORIA">Dano de SABEDORIA</option>
-            <option value="CARISMA">Dano de CARISMA</option>
-          </select>
-        </div>
-      </div>
-
-      <div id="escolas" class="schools-section">
-        <h2>Escolas Mágicas</h2>
-        <div class="schools-controls">
-          <div class="form-group">
-            <label for="schools">Escola:</label>
-            <select id="schools" onchange="show_rank()" aria-label="Selecione uma escola mágica">
-              <option disabled selected value="none">Escolha uma Escola</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <br />
+      <div id="escolas">
+        <table id="escolas_T">
+          <tr>
+            <th colspan="2">Escola : Rank</th>
+          </tr>
+          <td>
+            <select name="" id="schools" onchange="show_rank()">
+              <option disabled selected value="none">
+                Escolha uma Escola
+              </option>
               <optgroup label="Elementais">
                 <option value="Trovão">Trovão</option>
                 <option value="Glacial">Glacial</option>
@@ -139,6 +135,7 @@
                 <option value="Ar">Ar</option>
                 <option value="Luz">Luz</option>
               </optgroup>
+
               <optgroup label="Epiragon (Mundo)">
                 <option value="Ink Magic">Ink Magic</option>
                 <option value="Mons'Moncê">Mons'Moncê</option>
@@ -210,214 +207,197 @@
                 <option value="Jabuticabeira Celestial">Jabuticabeira Celestial</option>
               </optgroup>
             </select>
-          </div>
-          
-          <div class="form-group" id="rank-container" style="display: none;">
-            <label for="rank">Rank:</label>
-            <input type="number" id="rank" min="1" max="5" value="1" aria-label="Rank da escola mágica" />
-          </div>
-        </div>
-        
-        <p>Pontos de Conhecimento: <span id="ponto_conhecimento">0</span></p>
-        
-        <button type="button" id="add_escola" class="add-school-btn" onclick="list_schools()">
-          Adicionar Escola
-        </button>
-        
-        <div id="escolas_add" class="added-schools"></div>
+          </td>
+          <td>
+            <input type="number" name="" class="numberRight" max="5" min="1" id="rank" value="1"
+              style="display: None" />
+          </td>
+        </table>
+        <p>Pontos de Conhecimento: <span id="ponto_conhecimento"></span></p>
+        <br />
+        <span id="add_escola" onclick="list_schools()">Adicionar Escola</span>
+        <br />
+        <div id="escolas_add"></div>
       </div>
+      <br />
+      <h2>Atributos</h2>
+      <table>
+        <tr>
+          <td id="atributesLeft">
+            <label for="for">FOR:</label><br />
+            <input type="number" id="for" name="for" min="1" max="30" value="10" class="numberRight" /><br /><br />
 
-      <div class="attributes-section">
-        <h2>Atributos</h2>
-        <div class="attributes-grid">
-          <div class="attribute-group">
-            <label for="for">FOR:</label>
-            <input type="number" id="for" name="for" min="1" max="30" value="10" aria-label="Força" />
-          </div>
-          
-          <div class="attribute-group">
-            <label for="des">DES:</label>
-            <input type="number" id="des" name="des" min="1" max="30" value="10" aria-label="Destreza" />
-          </div>
-          
-          <div class="attribute-group">
-            <label for="con">CON:</label>
-            <input type="number" id="con" name="con" min="1" max="30" value="10" aria-label="Constituição" />
-          </div>
-          
-          <div class="attribute-group">
-            <label for="int">INT:</label>
-            <input type="number" id="int" name="int" min="1" max="30" value="10" aria-label="Inteligência" />
-          </div>
-          
-          <div class="attribute-group">
-            <label for="sab">SAB:</label>
-            <input type="number" id="sab" name="sab" min="1" max="30" value="10" aria-label="Sabedoria" />
-          </div>
-          
-          <div class="attribute-group">
-            <label for="car">CAR:</label>
-            <input type="number" id="car" name="car" min="1" max="30" value="10" aria-label="Carisma" />
-          </div>
-        </div>
-      </div>
+            <label for="des">DES:</label><br />
+            <input type="number" id="des" name="des" min="1" max="30" value="10" class="numberRight" /><br /><br />
 
-      <div class="options-section">
-        <label class="checkbox-label">
-          <input type="checkbox" id="aleatorio" name="random" />
-          <span class="checkbox-custom"></span>
-          Gerar Atributos Aleatórios
-        </label>
-        
-        <div id="hidden_box_tank">
-          <label class="checkbox-label">
-            <input type="checkbox" id="tank_type" name="tank-type" disabled />
-            <span class="checkbox-custom"></span>
-            TANK Talent
-            <span class="tooltip" tabindex="0" aria-label="Informação sobre talento TANK">
-              <span class="tooltip-icon">i</span>
-              <span class="tooltip-text">(REF: Na progressão ao atingir nivel 17 o jogador pode escolher
-                entre 3 talentos passivos. Esse aumenta a vida máxima em 35%.)</span>
-            </span>
-          </label>
-        </div>
-      </div>
+            <label for="con">CON:</label><br />
+            <input type="number" id="con" name="con" min="1" max="30" value="10" class="numberRight" /><br /><br />
+          </td>
+          <td id="atributesRight">
+            <label for="int">INT:</label><br />
+            <input type="number" id="int" name="int" min="1" max="30" value="10" class="numberLeft" /><br /><br />
 
-      <div class="action-buttons">
-        <button type="button" class="generate-btn" onclick="gerar_inimigo()" aria-label="Gerar NPC">
-          Gerar NPC
-        </button>
-        <button type="button" class="back-btn" onclick="location.href='/45187ee3-d56f-3afc-89b3-5d7905a131cf.html'" aria-label="Voltar">
-          Voltar
-        </button>
-      </div>
-    </section>
+            <label for="sab">SAB:</label><br />
+            <input type="number" id="sab" name="sab" min="1" max="30" value="10" class="numberLeft" /><br /><br />
 
-    <section id="bloco2" aria-labelledby="personagem-gerado-titulo">
-      <h1 id="personagem-gerado-titulo">Personagem Gerado</h1>
-      <div id="card_char" class="character-card">
-        <h2 id="char_name" class="character-name">Nome do NPC</h2>
-        
-        <div class="character-stats">
-          <div class="stat-group">
-            <span class="stat-label">Nível:</span>
-            <span id="char_lvl" class="stat-value">1</span>
-          </div>
-          
-          <div class="stat-group">
-            <span class="stat-label">Tier:</span>
-            <span id="char_tier" class="stat-value">Normal</span>
-          </div>
-          
-          <div class="stat-group">
-            <span class="stat-label">Mana:</span>
-            <span id="char_mana" class="stat-value">0</span>
-          </div>
-          
-          <div class="stat-group">
-            <span class="stat-label">Vida:</span>
-            <span id="char_vida" class="stat-value">10</span>
-          </div>
-          
-          <div class="stat-group">
-            <span class="stat-label">CA:</span>
-            <span id="char_ca" class="stat-value">10</span>
-          </div>
-          
-          <div class="stat-group">
-            <span class="stat-label">Armadura:</span>
-            <span id="char_armadura" class="stat-value">0</span>
-          </div>
-          
-          <div class="stat-group full-width">
-            <span class="stat-label">Arma:</span>
-            <span id="char_arma" class="stat-value">Nenhuma</span>
-          </div>
-          
-          <div class="stat-group full-width">
-            <span class="stat-label">Ataque:</span>
-            <span id="char_ataque" class="stat-value">+0</span>
-          </div>
-          
-          <div class="stat-group full-width">
-            <span class="stat-label">Dano:</span>
-            <span id="char_dano" class="stat-value">1d4</span>
-          </div>
-        </div>
-        
-        <div class="character-attributes">
-          <div class="attribute-display">
-            <span class="attr-name">Força</span>
-            <span id="e_forca" class="attr-value">10</span>
-            <span id="mod_for" class="attr-mod">+0</span>
-          </div>
-          
-          <div class="attribute-display">
-            <span class="attr-name">Inteligência</span>
-            <span id="e_inteligencia" class="attr-value">10</span>
-            <span id="mod_int" class="attr-mod">+0</span>
-          </div>
-          
-          <div class="attribute-display">
-            <span class="attr-name">Destreza</span>
-            <span id="e_destreza" class="attr-value">10</span>
-            <span id="mod_des" class="attr-mod">+0</span>
-          </div>
-          
-          <div class="attribute-display">
-            <span class="attr-name">Sabedoria</span>
-            <span id="e_sabedoria" class="attr-value">10</span>
-            <span id="mod_sab" class="attr-mod">+0</span>
-          </div>
-          
-          <div class="attribute-display">
-            <span class="attr-name">Constituição</span>
-            <span id="e_constituicao" class="attr-value">10</span>
-            <span id="mod_con" class="attr-mod">+0</span>
-          </div>
-          
-          <div class="attribute-display">
-            <span class="attr-name">Carisma</span>
-            <span id="e_carisma" class="attr-value">10</span>
-            <span id="mod_car" class="attr-mod">+0</span>
-          </div>
-        </div>
-        
-        <div class="character-schools">
-          <h3>Escolas</h3>
-          <div id="myschools" class="schools-list"></div>
-        </div>
+            <label for="car">CAR:</label><br />
+            <input type="number" id="car" name="car" min="1" max="30" value="10" class="numberLeft" /><br /><br />
+          </td>
+        </tr>
+      </table>
+      <label>
+        <input class="checkbox" id="aleatorio" type="checkbox" name="random" value="random" />
+        Gerar Atributos Aleatórios </label><br />
+      <div id="hidden_box_tank">
+        <label id="tank_type_label">
+          <input class="checkbox" id="tank_type" type="checkbox" name="tank-type" value="tank" disabled="true" />
+          TANK Talent
+          <span class="information_t1">(REF: Na progressão ao atingir nivel 17 o jogador pode escolher
+            entre 3 talentos passivos. Esse aumenta a vida máxima em
+            35%.)</span></label>
       </div>
-      
-      <div class="card-actions">
-        <button type="button" id="save-image-btn" class="save-btn" aria-label="Salvar imagem do personagem">
-          Salvar Imagem
-        </button>
-        <button type="button" id="reload" class="reload-btn" onclick="reloadPage()" aria-label="Gerar novo NPC">
-          Novo NPC
-        </button>
-      </div>
-    </section>
-  </main>
+      <button class="noselect" onclick="gerar_inimigo()">
+        Gerar NPC<span aria-hidden></span>
+      </button>
+      <button class="cybr-btn" onclick="location.href='/45187ee3-d56f-3afc-89b3-5d7905a131cf.html'">
+        Voltar<span aria-hidden></span>
+      </button>
+    </div>
+    <br />
 
-  <script src="/scripts/criador_npc.js" defer></script>
-  <script src="/scripts/navbar.js" defer></script>
+    <div id="bloco2">
+      <h1>Personagem Gerado</h1>
+      <div id="card_char">
+        <br /><br />
+        <pname id="char_name"></pname>
+
+        <table id="char_stats">
+          <tr>
+            <td id="td_b1">
+              <nivel></nivel>
+              <ns1 id="char_lvl"></ns1></span>
+            </td>
+            <td id="td_b1">
+              <tier></tier><span id="char_tier"></span>
+            </td>
+          </tr>
+          <tr>
+            <td id="td_b1">
+              <mana></mana>
+              <ns1 id="char_mana"></ns1>
+            </td>
+            <td id="td_b1">
+              <vida></vida>
+              <ns1 id="char_vida"></ns1>
+            </td>
+          </tr>
+          <tr>
+            <td id="td_b1">
+              <ca></ca>
+              <ns1 id="char_ca"></ns1>
+            </td>
+            <td id="td_b1">
+              <armadura></armadura>
+              <ns1 id="char_armadura"></ns1>
+            </td>
+          </tr>
+          <tr>
+            <td id="td_b1" colspan="2">
+              <arma></arma>
+              <ns1 id="char_arma"></ns1>
+            </td>
+          </tr>
+          <tr>
+            <td id="td_b1" colspan="2">
+              <ataque></ataque>
+              <ns1 id="char_ataque"></ns1>
+            </td>
+          </tr>
+          <tr>
+            <td id="td_b1" colspan="2">
+              <dmg></dmg>
+              <ns1 id="char_dano"></ns1>
+            </td>
+          </tr>
+        </table>
+        <br /><br />
+
+        <table id="char_atributes">
+          <tr>
+            <td id="td_b2">
+              <for>
+                <p>Força</p>
+              </for>
+              <ns2 id="e_forca" class="atrb"></ns2>&nbsp;<br><br>
+              <ns2 id="mod_for" class="mod"></ns2>
+            </td>
+            <td id="td_b2">
+              <int>
+                <p>Inteligência</p>
+              </int>
+              <ns2 id="e_inteligencia" class="atrb"></ns2>&nbsp;<br><br>
+              <ns2 id="mod_int" class="mod"></ns2>
+            </td>
+          </tr>
+          <tr>
+            <td id="td_b2">
+              <dex>
+                <p>Destreza</p>
+              </dex>
+              <ns2 id="e_destreza" class="atrb"></ns2>&nbsp;<br><br>
+              <ns2 id="mod_des" class="mod"></ns2>
+            </td>
+            <td id="td_b2">
+              <sab>
+                <p>Sabedoria</p>
+              </sab>
+              <ns2 id="e_sabedoria" class="atrb"></ns2>&nbsp;<br><br>
+              <ns2 id="mod_sab" class="mod"></ns2>
+            </td>
+          </tr>
+          <tr>
+            <td id="td_b2">
+              <con>
+                <p>Constituição</p>
+              </con>
+              <ns2 id="e_constituicao" class="atrb"></ns2>&nbsp;<br><br>
+              <ns2 id="mod_con" class="mod"></ns2>
+            </td>
+            <td id="td_b2">
+              <car>
+                <p>Carisma</p>
+              </car>
+              <ns2 id="e_carisma" class="atrb"></ns2>&nbsp;<br><br>
+              <ns2 id="mod_car" class="mod"></ns2>
+            </td>
+          </tr>
+        </table>
+
+
+        <br /><br />
+        <h2>Escolas</h2>
+        <div id="myschools"></div>
+
+        <br /><br /><br />
+      </div>
+      <button id="reload" onclick="reloadPage()">Novo NPC</button><br />
+    </div>
+  </div>
+
+
+  <script src="/scripts/criador_npc.js"></script>
+  <script src="/scripts/navbar.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Inicializa o gerador quando a página carrega
-      set_pc();
-      
-      // Configura o botão de salvar imagem
-      document.getElementById("save-image-btn").addEventListener("click", function() {
-        html2canvas(document.getElementById("card_char")).then(function(canvas) {
-          const link = document.createElement('a');
-          link.href = canvas.toDataURL("image/png");
-          link.download = "personagem.png";
-          link.click();
-        });
+    document.getElementById("save-image-btn").addEventListener("click", function () {
+      html2canvas(document.getElementById("card_char")).then(function (canvas) {
+        var link = document.createElement('a');
+        link.href = canvas.toDataURL("image/png");
+        link.download = "personagem.png";
+        link.click();
       });
     });
+
   </script>
 </body>
 
