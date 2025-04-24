@@ -26,10 +26,10 @@
   
   .tooltip-content {
     visibility: hidden;
-    width: 100px;
+    width: 300px;
     background: var(--tooltip-bg);
     color: var(--tooltip-text);
-    text-align: left;
+    text-align: right;
     border-radius: 6px;
     padding: 10px;
     position: absolute;
