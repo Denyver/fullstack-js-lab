@@ -29,9 +29,9 @@
     width: 100px;
     background: var(--tooltip-bg);
     color: var(--tooltip-text);
-    text-align: left;
+    text-align: center;
     border-radius: 6px;
-    padding: 20px;
+    padding: 10px;
     position: absolute;
     z-index: 1000;
     opacity: 0;
