@@ -17,7 +17,6 @@ body {
   transition: background-color 0.3s ease;
 }
 
-/* Estilos para as categorias e os links */
 .category {
   margin-top: 100px;
   margin-bottom: 40px;
@@ -36,7 +35,6 @@ body {
   font-weight: bold;
 }
 
-/* Modificações para colocar as seções lado a lado */
 main {
   display: flex;
   justify-content: space-evenly;
@@ -44,7 +42,6 @@ main {
   padding: 20px;
 }
 
-/* Modificações apenas para os itens de lista fora do header */
 main .menu ul {
   padding: 0;
   display: flex;
