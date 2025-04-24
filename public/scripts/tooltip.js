@@ -99,7 +99,7 @@ function criarTooltips() {
             
             // Também ajusta quando a janela é redimensionada
             window.addEventListener('resize', () => {
-                if (getComputedStyle(tooltipContent.style.visibility === 'visible')) {
+                if (getComputedStyle(tooltipContent).visibility === 'visible') {
                     ajustarPosicaoTooltip(tooltipContent, elemento);
                 }
             });
