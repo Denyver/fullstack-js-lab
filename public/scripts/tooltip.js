@@ -46,13 +46,13 @@ function ajustarPosicaoTooltip(tooltip, elemento) {
     tooltip.style.opacity = originalOpacity;
 
     // Posição padrão (acima do elemento)
-    let top = elementoRect.top - tooltipHeight - 10;
+    let top = elementoRect.top - tooltipHeight - 7;
     let left = elementoRect.left + (elementoRect.width / 2) - (tooltipWidth / 2);
     
     // Verifica se o tooltip sai pela parte inferior da tela
 
     if (top < 0) { 
-        top = elementoRect.bottom + 10; // Coloca abaixo do elemento 
+        top = elementoRect.bottom + 7; // Coloca abaixo do elemento 
     }
     
     // Verifica se o tooltip sai pela esquerda da tela
