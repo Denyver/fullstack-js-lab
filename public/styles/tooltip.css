@@ -11,7 +11,7 @@
   }
   
   .tooltip-container {
-    position: absolute;
+    position: relative;
     display: inline-block;
     cursor: help;
     color: var(--tooltip-color);
