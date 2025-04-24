@@ -40,6 +40,8 @@ function ajustarPosicaoTooltip(tooltip, elemento) {
     const tooltipWidth = tooltip.offsetWidth;
     const tooltipHeight = tooltip.offsetHeight;
     const elementoRect = elemento.getBoundingClientRect()
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
 
     tooltip.style.visibility = originalVisibility;
     tooltip.style.display = originalDisplay;
@@ -55,11 +57,21 @@ function ajustarPosicaoTooltip(tooltip, elemento) {
         top = elementoRect.bottom + 9; // Coloca abaixo do elemento 
     }
     
+    // Verifica se o tooltip sai pela parte inferior da tela
+    if (top +tooltipHeight > viewportHeight) {
+        top = viewportHeight - tooltipHeight - 9; // Ajusta para não sair da parte inferior
+    }
+
     // Verifica se o tooltip sai pela esquerda da tela
     if (left < 0) {
         left = 10;
     }
     
+    //Verifica se o tooltip sai pela direita da tela.
+    if (left +tooltipWidth > viewportWidth) {
+        left = viewportWidth - tooltipWidth - 10; //ajusta para não sair pela parte direita
+    }
+
     // Aplica as posições calculadas
     tooltip.style.top = `${top}px`;
     tooltip.style.left = `${left}px`;
