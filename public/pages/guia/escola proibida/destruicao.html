@@ -22,6 +22,37 @@
       margin-bottom: 20px;
       background-color: #1c1c1c;
     }
+    .rank-v {
+      border: 2px solid #ff0000;
+      box-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000 inset;
+      animation: pulsate 2s infinite alternate;
+      background: linear-gradient(to bottom, #2a0000, #1c1c1c);
+    }
+    @keyframes pulsate {
+      0% { box-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000 inset; }
+      100% { box-shadow: 0 0 25px #ff0000, 0 0 50px #ff0000 inset; }
+    }
+    .rank-v h2 {
+      color: #ff5555;
+      text-shadow: 0 0 10px #ff0000;
+    }
+    .rank-v h3 {
+      color: #ff3333;
+    }
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #e63946, transparent);
+      margin: 15px 0;
+    }
+    .power-description {
+      font-style: italic;
+      color: #ff9999;
+      background-color: #2a0000;
+      padding: 10px;
+      border-left: 3px solid #ff0000;
+      margin: 10px 0;
+    }
+
     .talentos, .habilidades {
       margin-top: 10px;
     }
@@ -122,18 +153,38 @@
     </div>
   </div>
 
-  <div class="rank">
-    <h2>RANK V</h2>
-    <h3>Arauto da Destruição</h3>
-    <p>Presságios da Guerra: a cada vez que houver ataque ou dano causado dentro da batalha você acumula 50 de Presságio da Guerra.</p>
+  <div class="rank rank-v">
+    <h2>RANK V - ARAUTO DA DESTRUIÇÃO</h2>
+    <div class="divider"></div>
+    
+    <div class="power-description">
+      "O Arauto não é mais um mero agente da destruição - ele é a própria encarnação do fim. Quando surge no campo de batalha, reinos caem, deuses tremem e a realidade se desfaz."
+    </div>
+    
+    <div class="ability">
+      <div class="ability-name">Presságios da Guerra</div>
+      <p>A cada ataque ou dano causado na batalha, acumula <span class="highlight">50 Presságios da Guerra</span>. Usado para executar habilidades do Arauto.</p>
+    </div>
+    
     <div class="habilidades">
-      <h3>Habilidades</h3>
-      <ul>
-        <li>Encarnação do Fim - End’Athor</li>
-        <li>Calamidade</li>
-      </ul>
+      <h3>HABILIDADES APOCALÍPTICAS</h3>
+      
+      <div class="ability">
+        <div class="ability-name">Encarnação do Fim - End'Athor</div>
+        <p>Consome <span class="highlight">1000 Presságios</span> para encarnar o Elysion Final End'Athor. Risco extremo - pode destruir o próprio usuário.</p>
+        <ul>
+          <li>A cada rodada, rola <span class="highlight">letalidade</span> (base 1 na 1ª rodada, dobrando a cada rodada)</li>
+          <li>Na 1ª rodada: <span class="highlight">+100% de dano</span> (dobra a cada rodada)</li>
+          <li>Forma final de destruição - poder além da compreensão mortal</li>
+        </ul>
+      </div>
+      
+      <div class="ability">
+        <div class="ability-name">Calamidade</div>
+        <p>Quando um aliado causar dano, tem <span class="highlight">25% de chance</span> de atacar o mesmo alvo automaticamente (Ataque Básico, não crítico). Pode ocorrer contra até <span class="highlight">3 inimigos por rodada</span>.</p>
+        <p class="power-description">"O Arauto não precisa mais se mover para destruir - a própria realidade executa sua vontade."</p>
+      </div>
     </div>
   </div>
-
 </body>
 </html>
