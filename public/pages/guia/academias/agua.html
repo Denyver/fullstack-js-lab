@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/navbar.css">
     <link rel="stylesheet" href=/styles/aca_elementais.css>
+    <link rel="stylesheet" href="/styles/tooltip.css">
+    <script src="/scripts/tooltip.js"></script>
     <title>Academia das Águas - Elemento Água</title>
 </head>
 
@@ -61,7 +63,8 @@
             <h3>Talentos</h3>
             <ul>
                 <li><span class="talent-name">Molhado</span>: magias de água aplicam efeito <span
-                        class="highlight">molhado</span> no alvo. O efeito molhado previne e remove o efeito de
+                        class="highlight  tooltip-container" id="re3">molhado</span> no alvo. O efeito molhado previne e
+                    remove o efeito de
                     queimando do alvo. Efeito molhado faz o afetado receber o dobro do dano do tipo trovão e dobra a
                     chance de congelamento. Magias de água tem chance de 30% de deixar <i>Poças.</i>
                     <br>
@@ -183,7 +186,7 @@
                     Respeito Oceanico: todos os aliados ficam imunes a efeito molhado por 2 rodadas.
                     <br>
                     Poder Oceanico: todos os aliados recebem encantamento do oceano por 3 rodadas e causando 120% do
-                    dano do ataque como <span class="highlight">dano de água.</span>
+                    dano do ataque como <span class="highlight  tooltip-container" id="re3">dano de água.</span>
                 </li>
             </ul>
         </section>
@@ -197,10 +200,12 @@
                     elementos. Conjuração de 8 rodadas. Reduza a conjuração em 70% se você estiver dentro d’água. Área
                     de Ação é todo combate. Dano de Tsunami é (Nível)d16+arcanismo.
                     <br>
-                    Pedregulhos Violentos: se combinado com algum efeito de projétil da academia da dureza ou se tiver
+                    Pedregulhos Violentos: se combinado com algum efeito de projétil da <span
+                        class="highlight  tooltip-container" id="re3">academia da dureza</span> ou se tiver
                     construções no caminho, causa 16d30 de dano físico adicional a cada alvo.
                     <br>
-                    Mar Glacial: ao final da rodada Tsunami se torna gelo puro, causando congelamento a todos os
+                    Mar Glacial: ao final da rodada Tsunami se torna gelo puro, causando <span
+                        class="highlight  tooltip-container" id="re3">congelamento</span> a todos os
                     inimigos atingidos. A batalha poderá terminar ali. Todos os inimigos devem rolar teste de
                     congelamento com ND → Mod.INT+proficiência do conjurador.
                 </li>
