@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
@@ -50,7 +50,7 @@
         <br>
         -Rank II: Receber dano de Fogo recupera 1d20 de mana
         <br>
-        -Rank III: A reação de Burning causada agora é Burning Melhorado.
+        -Rank III: A reação de <span class="highlight">Burning</span> causada agora é Burning Melhorado.
         <br>
         -Rank IV: Ganha +30 de poder para as habilidades de Fogo
         <br>
@@ -59,35 +59,39 @@
     <section class="section talents">
       <h3>Talentos</h3>
       <ul>
-        <li><span class="talent-name">Condutor</span>: utilizar habilidades de trovão em alvos os marca com um símbolo
-          condutor representado pela letra <i>kaijot</i>, alvos marcados que receberem dano de trovão irão iniciar uma
-          reação elétrica que causa 1d4+arcanismo como dano de trovão. Se tiverem alvos num raio de 9m entre eles, irão
-          conduzir eletricidade recebendo o dano em cadeia. Os danos para os alvos seguintes devem ser rolados. Remove o
-          símbolo ao ocorrer. Nos níveis 5, 10 e 15 adiciona 1d4 de dano de trovão.
+        <li><span class="talent-name">Burning Strike</span>: Atacar aplica 1 acúmulo de fogo pequeno, habilidades
+          garantem 2 acúmulos. Quando atinge 3 acúmulos o alvo sofre <i>burning melhorado.</i>
+          <br>
+          <span class="highlight">Burning Melhorado:</span> causa 7% da vida máxima do alvo por rodada durante 3
+          rodadas.
         </li>
-        <li><span class="talent-name">Zapping</span>: alvos que sofrerem dano elétrico tem 25% de chance de serem
-          interrompidos na rodada. Isso implica que se a ação deles ainda não foi realizada, ela será anulada para
-          rodada vigente. Imcapacitado na rodada vigente.</li>
-        <li><span class="talent-name">Thunder Skin</span>: quando você recebe dano corpo a corpo ou algum alvo com
-          efeito molhado chega perto de você ele recebe 1d4+arcanismo/2 como dano de trovão por acerto no caso de lhe
-          atacar e por rodada caso esteja perto. Pode ocorrer reação elemental. Nos níveis 6, 12 e 18 adiciona 1d4 de
-          dano de trovão.</li>
+        <li><span class="talent-name">Melting</span>: se uma arma com <i>Solar Enchant</i> atacar um alvo com armadura
+          de metal
+          ou defender um golpe recebido de uma arma de metal, a arma ou armadura do oponente que recebe/desferiu o
+          ataque tem chance de 10% de ser <i>derretido.</i>
+          <br>
+          Derretida: A armadura ou a arma derretida ficam impossibilitadas de serem utilizadas até que sejam mandadas
+          para uma forja, a armadura perde sua capacidade de defesa e a arma perde sua capacidade
+          de causar dano.
+        </li>
+        <li><span class="talent-name">Fire Resistence</span>: aumenta a resistência a dano de fogo. Resiste 50% do dano
+          recebido. Pode acumular com outras resistências</li>
       </ul>
     </section>
     <section class="section abilities">
       <h3>Habilidades</h3>
       <ul>
-        <li><span class="ability-name">Thunderbolt</span>: concentra energia na mão e a direciona para um alvo causando
-          3d6+arcanismo como dano de trovão. Aplica o efeito <i>condutor.</i> Sem preparação. Consome 2+(Nível/2) de MP.
-          Usar esta habilidade em alvos com condutor aumenta o dano em 1d12 e zera o custo de mana. Alcance 25m. Nos
-          níveis 6, 12 e 18 aumenta o dano causado caso esteja com condutor em 1d12.</li>
-        <li><span class="ability-name">Relâmpago</span>: concentra-se para conjurar um raio no alvo escolhido causando
-          2d8+arcanismo como dano. Alvos próximos recebem metade do dano. Consome 2+(Nível/2) de MP. 3 turnos de
-          preparação. Críticos Causam 3x o dano. Alcance 30m. Nos níveis 8 e 16 adiciona 2d8 de dano de trovão.</li>
-        <li><span class="ability-name">Thunder Enchant</span>: encanta a arma ou armadura com eletricidade. Ao causar
-          dano será adicionado dano extra de 1d6+arcanismo como dano de trovão e aplicar efeito <i>condutor.</i> Consome
-          2+(Nível/2) de MP. Sem preparação. Dura 2+(mod.INT) ataques. Nos níveis 6,12, e 18 adiciona 1d6 de dano de
-          trovão.
+        <li><span class="ability-name">Solar Spark</span>: invoca o poder do sol para conjurar uma labareda solar contra
+          o alvo causando 1d8+arcanismo como dano de fogo. Nos níveis 5,10,15 o dano aumenta em 1d8 de dano de fogo.
+          Consome 6+(Nível/2) de MP. Conjuração de 3 turnos.</li>
+        <li><span class="ability-name">Erupção</span>: invoca o poder do sol para criar uma mini erupção abaixo do alvo
+          causando 1d10+arcanismo como dano de fogo por rodada enquanto ele estiver na área de efeito, a área da erupção
+          e 2+(Mod.INT) metros. Erupção causa aumento de temperatura e dura 1d6 rodadas. Nos níveis 5,10,15 o dano
+          aumenta em 1d10 como dano de fogo. Consome 5+(Nível/2) de MP. Conjuração de 5 turnos.</li>
+        <li><span class="ability-name">Solar Enchant</span>: Invoca o poder do sol para encantar a arma com poder solar.
+          Arma terá um adicional de 1d6+arcanismo do conjurador como dano adicional toda vez que desferir um ataque. Nos
+          níveis 6,12,18 o dano aumenta em 1d6 de dano de fogo. O efeito dura 2+(Mod.INT) ataques. Conjuração
+          instantânea. Consome 2+(Nível/2) de MP.
         </li>
       </ul>
     </section>
@@ -175,4 +179,5 @@
     Academia do Trovão &copy; 2025
   </footer>
 </body>
+
 </html>
