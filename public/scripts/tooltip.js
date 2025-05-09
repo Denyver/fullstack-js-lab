@@ -58,7 +58,7 @@ function ajustarPosicaoTooltip(tooltip, elemento) {
     }
     
     // Verifica se o tooltip sai pela parte inferior da tela
-    if (top +tooltipHeight > viewportHeight) {
+    if (top + tooltipHeight > viewportHeight) {
         top = viewportHeight - tooltipHeight - 10; // Ajusta para não sair da parte inferior
     }
 
@@ -68,7 +68,7 @@ function ajustarPosicaoTooltip(tooltip, elemento) {
     }
     
     //Verifica se o tooltip sai pela direita da tela.
-    if (left +tooltipWidth > viewportWidth) {
+    if (left + tooltipWidth > viewportWidth) {
         left = viewportWidth - tooltipWidth - 10; //ajusta para não sair pela parte direita
     }
 
