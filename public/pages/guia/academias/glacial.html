@@ -39,20 +39,20 @@
 
   <div class="container">
     <h1>Academia Glacial</h1>
-    <p><span class="highlight">Modificador de Dureza</span> &rarr; mod.CON.</p>
+    <p><span class="highlight">Modificador de Gelo</span> &rarr; mod.INT.</p>
     <section class="rank">
       <h2>RANK I</h2>
     </section>
     <section class="certificado">
-      <h3>Certificado de Dureza:
+      <h3>Certificado Glacial:
         <br>
-        -Rank I:Reduz a Resistência de Terra dos alvos em 50%.
+        -Rank I:Reduz a Resistência de Gelo dos alvos em 50%.
         <br>
-        -Rank II: Receber dano de terra recupera 1d20 de mana.
+        -Rank II: Receber dano de Gelo recupera 1d20 de mana.
         <br>
-        -Rank III: Aumenta a vida máxima em 50.
+        -Rank III: Acerto Crítico para habilidades de gelo -1.
         <br>
-        -Rank IV: Aumenta a vida máxima em 100.
+        -Rank IV: Aumenta o dano/efeito crítico das habilidades de gelo em +0.5x
         <br>
         -Rank V: (A descobrir)
       </h3>
@@ -60,35 +60,29 @@
     <section class="section talents">
       <h3>Talentos</h3>
       <ul>
-        <li><span class="talent-name">Camada de Rocha</span>: o corpo daqueles que manipulam magia de
-          terra/pedra é coberto por uma camada de pequenos grãos de rocha. Isso faz com que eles tenham uma
-          vida extra que é consumida antes da própria vida. A vida da camada é igual a 10+1 Dado de Vida
-          cheio. A camada é restituída a cada nova batalha. No nível 5 aumenta em +1 dado de vida, no nível 12
-          aumenta em +2 dados de vida. No nível 18 aumenta em mais 3 dados de vida. Os dados são cumulativos
-          somando eles. O total é de 7 dados de vida.</li>
-        <li><span class="talent-name">Sismologia</span>: Você pode sentir todos que estão próximos em um raio de
-          20m. Inimigos furtivos não podem se esconder de você enquanto estiverem em movimento com os pés no
-          chão.</li>
-        <li><span class="talent-name">Constituição Terraformada</span>: Recebe um dado de vida cheio+Mod.CON. A
-          cada 3 níveis começando no nível 3 você recebe 1 dado de vida cheio+Mod.CON.</li>
+        <li><span class="talent-name">Armadura Gelada</span>: aumenta a CA em 1+(mod.INT/2). Recebe metade do dano de
+          ataques com armas de metal. Reduz 50% o dano de gelo. Se você receber ataques de fogo sua CA proveniente desse
+          talento é ignorada.</li>
+        <li><span class="talent-name">Fragile Armor</span>: inimigos <span class="highlight">congelados</span> tem sua
+          Armadura reduzida em
+          1+(mod.INT/2). O efeito dura enquanto ele estiver <span class="highlight">congelado.</span></li>
+        <li><span class="talent-name">Criogenia</span>: aumenta o dano das habilidades de gelo em 1d4. Nos níveis
+          5,10,15,20 aumenta em 1d4 de dano de gelo.</li>
       </ul>
     </section>
     <section class="section abilities">
       <h3>Habilidades</h3>
       <ul>
-        <li><span class="ability-name">Armadura de Rocha</span>: Invoca o poder da terra para criar uma armadura
-          feita de rocha em si mesmo. A armadura aumenta a sua defesa total em 50% do valor atual e ainda
-          dobra o efeito de Camada de Rocha. Consequentemente você tem sua iniciativa reduzida em 50% e não
-          pode se esquivar enquanto durar a armadura. A armadura fica ativa enquanto tiver Camada de Rocha.
-          Consome 3+(Nível/2) de MP. Conjuração de 3 turnos.</li>
-        <li><span class="ability-name">Estalagmite</span>: invoca o poder da terra para fazer sair do chão
-          estalagmites que machucam seus alvos. Causa 3d4+arcanismo como dano de terra no raio de 5m do alvo
-          principal. Consome 4+(Nível/2) de MP. Conjuração de 2 turnos. Adiciona 1d4 nos níveis 5, 10, e 15.
-          Chance de 25% de causar sangramento equivalente a (Nivel/4)d6+Mod.CON.</li>
-        <li><span class="ability-name">Pedregulho</span>: invoca o poder da terra para conjurar um pedregulho
-          contra o alvo causando 1d6+arcanismo como dano de impacto. Pode atordoar o alvo por 1d3 rodadas.
-          Consome 2+(Nível/2) de MP. Conjuração instantânea. Nos níveis 5, 10 e 15 adiciona 1d6 de dano de
-          impacto.</li>
+        <li><span class="ability-name">Ice Enchant</span>: O usuário encanta a arma com gelo. O alvo recebe o dano da
+          arma mais um adicional de 1d6+arcanismo como dano de gelo durante 2+(Mod.INT) golpes. Pode aplicar
+          congelamento por 1d4 rodadas a chance de aplicar o efeito é de 25%. Nos níveis 6,12,18 aumenta em 1d6 de dano
+          de gelo. Consome 2+(Nível/2) de MP. Conjuração Instantânea.</li>
+        <li><span class="ability-name">Lanças de Gelo</span>: invoca o poder do gelo para conjurar 1+mod.INT lanças de
+          gelo no alvo. Causa 1d6+arcanismo por cada lança. Necessário rolar o ataque para cada lança. Conjuração de 3
+          turnos. Nos níveis 5,10,15 aumenta em 1d6 de dano de gelo cada lança. Consome 6+(Nível/2) de MP.</li>
+        <li><span class="ability-name">Criação de Gelo</span>: Invoca o poder do gelo para conjurar gelo. O gelo pode
+          absorver o dano de projéteis além de muitas outras coisas com criatividade. A vida da criação é a vida do
+          conjurador. Não pode criar seres com vida. Conjuração de 3 turnos. Consome 5+(Nível/2) de MP.</li>
       </ul>
     </section>
 
@@ -98,33 +92,28 @@
     <section class="section talents">
       <h3>Talentos</h3>
       <ul>
-        <li><span class="talent-name">Golem Provocante</span>: o golem irá chamar a atenção dos atacantes quando
-          estiver em combate. Os atacantes deverão rolar um dado de resistência de sabedoria e ter resultado
-          maior ou igual a 10+mod.CON do conjurador do golem.</li>
-        <li><span class="talent-name">Espinhos Rochosos</span>: enquanto estiver com Armadura Rochosa ativa
-          ataques desferidos contra você, parte do dano retorna para o atacante. Apenas dano corpo-a-corpo
-          retorna. Dano retornado é igual a 5+1d6+Mod.CON. Magias não podem ser retornadas. Nos níveis 10, 15
-          e 18 adiciona 1d6 de dano.</li>
-        <li><span class="talent-name">Critical Spikes</span>: quando você causar dano crítico com ataques não
-          mágicos, você irá fazer surgir estacas de pedra do chão ao redor de si mesmo. Causa 1d6+Mod.CON como
-          dano de terra aos atingidos. Tem 25% de chance de causar sangramento equivalente a
-          (Nivel/4)d6+Mod.CON. Nos níveis 10, 15 e 18 adiciona 1d6 de dano de terra.</li>
+        <li><span class="talent-name">Ice Weather</span>: ao conjurar magias de gelo você reduz em 1 grau a temperatura
+          da batalha. A temperatura de batalha comum é 25 graus, porém isso muda com o lugar. Ao atingir 0 grau. Todos
+          em batalha inclusive aliados irão receber penalidade pela temperatura. A CA é reduzida em 2, o movimento é
+          reduzido a metade. Se atingir -10 é aplicado o efeito <i>Abaixo de Zero</i>, que faz todos perderem 10% da
+          vida
+          máxima por rodada. Conjurações de Fogo aumentam a temperatura.</li>
+        <li><span class="talent-name">Ice Memory</span>: seus aliados e você se tornam imunes ao efeito de <i>Ice
+            Weather</i> aplicado por <i>você.</i></li>
       </ul>
     </section>
     <section class="section abilities">
       <h3>Habilidades</h3>
       <ul>
-        <li><span class="ability-name">Stone Golem</span>: Invoca o poder da terra para conjurar um golem de
-          pedra. O golem possui 1 dado cheio da vida ,mais metade da vida máxima do conjurador e causa
-          1d3+arcanismo como dano. A CA é 12+mod.CON. Conjuração de 3 turnos. Consome 15+(Nível) de MP.
-          <br>
-          Herança: escolha três talentos seus para o golem herdar.
+        <li><span class="ability-name">Servo de Gelo</span>: invoca o poder do gelo para conjurar um servo de gelo que
+          lutará ao seu lado. O serviço dura 3 dias. A vida do servo equivale à metade da vida do conjurador. O dano do
+          servo é corpo a corpo e equivale a 2d8+arcanismo como dano de gelo. Nos níveis 7,12,17 aumenta em 1d8 de dano
+          de gelo. Consome 7+(Nível/2) de MP.
         </li>
-        <li><span class="ability-name">Edificação Rochosa</span>: você cria um pilar abaixo do alvo desejado
-          levantando ele de maneira segura numa altura de 12+(3xmod.CON)m. O pilar permanece até que você o
-          desfaça ou que seja destruído. Caso seja destruída a criatura que estiver no pilar deverá rolar um
-          teste de acrobacia com dificuldade igual à altura do pilar, caso falhe no teste ele irá receber dano
-          de queda igual a 3d12+mod.CON. Conjuração de 5 turnos. Consome 8+(Nível/2) de MP.</li>
+        <li><span class="ability-name">Ice Shards</span>: Cria um círculo mágico que a cada rodada dispara múltiplos
+          estilhaços de gelo em direção aos inimigos, causando 2d6+Arcanismo de dano de gelo por rodada, dura
+          1+(Mod.Int/2) Rodadas no campo. Nos níveis 6,12,18 aumenta em 1d6 de dano de gelo. Consome 4+(Nível/2) de MP.
+          Conjuração de 2 turnos.</li>
       </ul>
     </section>
 
@@ -134,23 +123,26 @@
     <section class="section talents">
       <h3>Talentos</h3>
       <ul>
-        <li><span class="talent-name">Coração da Terra</span>: as criaturas que você cria podem receber o sopro
-          da vida recebendo um coração. Eles irão sentir os sentimentos humanos. Você pode inserir um
-          sentimento prévio, inclusive dando um alvo a este sentimento. Criaturas criadas por você vivem até
-          que sejam destruídas. Não há limites de criaturas, mas tenha consciência que elas sentem.</li>
-        <li><span class="talent-name">Coração da Terra - Aprendizado</span>: pode ensinar um treinamento que
-          você já tenha conhecimento para sua criação. A dificuldade é dada pelo mestre.</li>
+        <li><span class="talent-name">Frost And Frozen</span>: ataques aplicam acúmulos de congelamento no alvo. Quando
+          atingir 4 acúmulos o alvo será <span class="highlight">congelado</span> por 1 rodada. O efeito não aumenta a
+          duração de outros congelamentos
+          já aplicados ao alvo, porém aumenta o dano de gelo em 3d6. Quando o ambiente atinge 0 grau os acúmulos
+          necessários são 2.</li>
       </ul>
     </section>
     <section class="section abilities">
       <h3>Habilidades</h3>
       <ul>
-        <li><span class="ability-name">Terra Viva</span>: cria uma criatura a partir de terra e argila. A
-          criatura irá possuir sentimentos e pode ou não possuir afeto a você (sua escolha). Pode inserir um
-          sentimento e um alvo prévio para criatura na sua criação. A vida da criatura equivale a 80% da sua
-          vida máxima e seus atributos de combate são rolados em um sorteio dado pelo mestre. Elas não podem
-          aprender escolas comuns, mas podem aprender escolas do mundo. Não pode ser usado em combate. Consome
-          50% da mana máxima. Incubação da Criatura é de 10 dias.</li>
+        <li><span class="ability-name">Gelo Negro - Forma Livre</span>: pode criar uma forma com gelo negro. O gelo
+          negro tem vida propria. A forma causará 2d10+arcanismo como dano de gelo. A forma resiste a 1+(mod.INT) hits.
+          Pode existir (Mod.INT) de Formas de Gelo Negro simultaneamente. Para criar uma forma o jogador precisa ter
+          visto ela e rolar 1d20, a dificuldade é dada pelo mestre. Crítico cria uma forma perfeita. Nos níveis 7,12,17
+          aumenta em 1d10 de dano de gelo. Consome 10+(Nível/2) de MP.</li>
+        <li><span class="ability-name">Ice Mirror</span>: Cria um espelho de gelo que reflete ataques mágicos de volta
+          aos seus lançadores como dano de gelo, depois de refletir do dano o espelho se quebra, esta habilidade pode
+          ser usada como <i>reação ou como preparação.</i> Recarga global de 2 rodadas. Consome 12+(Nível/2) de MP. <i>Criogenia
+          se aplica nesta habilidade.</i>
+        </li>
       </ul>
     </section>
 
