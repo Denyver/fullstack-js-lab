@@ -98,6 +98,22 @@
     --footer-bg: #ff6600;
     --footer-color: #fff;
   }
+  /*Tema Glacial */
+  .theme-glacial {
+    --bg-color: #e0f7fa;
+    --text-color: #333;
+    --container-bg: #fff;
+    --container-border: #80deea;
+    --rank-bg: #e0f7fa;
+    --rank-color: #01579b;
+    --header-bg: #01579b;
+    --list-bg: #b3e5fc;
+    --title-color: #01579b;
+    --highlight-color: #0288d1;
+    --highlight-bg: #e3f2fd;
+    --footer-bg: #eaeaea;
+    --footer-color: #333;
+  }
 
   /* ESTILOS GERAIS (válidos para todos os temas) */
   body {
