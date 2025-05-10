@@ -70,7 +70,8 @@
           ou defender um golpe recebido de uma arma de metal, a arma ou armadura do oponente que recebe/desferiu o
           ataque tem chance de 10% de ser <i>derretido.</i>
           <br>
-          <span class="highlight">Derretida:</span> A armadura ou a arma derretida ficam impossibilitadas de serem utilizadas até que sejam mandadas
+          <span class="highlight">Derretida:</span> A armadura ou a arma derretida ficam impossibilitadas de serem
+          utilizadas até que sejam mandadas
           para uma forja, a armadura perde sua capacidade de defesa e a arma perde sua capacidade
           de causar dano.
         </li>
@@ -102,21 +103,21 @@
     <section class="section talents">
       <h3>Talentos</h3>
       <ul>
-        <li><span class="talent-name">Explosão de Eletricidade</span>: caso tenha resultado crítico ao conjurar magias
-          de eletricidade o dano de <i>condutor</i> será dobrado.</li>
+        <li><span class="talent-name">Solar Heat</span>: aumenta a temperatura em 3 Cº cada vez que conjurar uma
+          habilidade solar. Ao atingir 50 Cº reduz a eficácia de habilidades de água e natureza em 50%. Ao atingir 100
+          Cº os inimigos irão perder 4% da vida máxima por rodada, aliados perdem metade ao menos que tenham proteção.
+          Críticos triplicam o ganho de temperatura.</li>
       </ul>
     </section>
     <section class="section abilities">
       <h3>Habilidades</h3>
       <ul>
-        <li><span class="ability-name">Thunder Strike</span>: concentra energia de trovão na sua arma para causar
-          3d12+arcanismo como dano de trovão no próximo ataque desferido no alvo. Pode acumular com outras habilidades.
-          Consome 3+(Nível/2) de MP. 2 turnos de preparação. Nos níveis 8, 14 e 18 adiciona 1d12 de dano de trovão.</li>
-        <li><span class=ability-name>Corrente Elétrica</span>: cria uma corrente de eletricidade que se espalha para os
-          alvos causando 1d4+arcanismo como dano. Se os alvos estiverem marcados com condutor o efeito de condutor será
-          aplicado causando o dobro do dano e será necessário rolar apenas uma vez o dano. Consome 5+(Nível) de MP. Sem
-          Preparação. Atinge todos os alvos com distâncias de até 2m entre eles. Condutor expande o alcance para o
-          dobro. Nos níveis 8, 12 e 16 adiciona 1d4 de dano de trovão.
+        <li><span class="ability-name">Solar Flare</span>: invoca o poder do sol para conjurar uma labareda solar que
+          atinge o alvo e inimigos ao redor dele causando 2d12+arcanismo como dano de fogo em uma área de 12m. Nos
+          níveis 8,14,20 o dano aumenta em 1d12 como dano de fogo. Consome 12+(Nível/2) de MP. Conjuração 1 rodada.</li>
+        <li><span class=ability-name>Solar Ray</span>: invoca o poder do sol para conjurar um raio solar horizontal
+          contra o alvo podendo atingir até 2 alvos um após o outro. Causa 2d16+arcanismo como dano de fogo. Nos níveis
+          7,11,16 o dano aumenta em 1d16 como dano de fogo. Consome 8+(Nível/2) de MP. Conjuração de 6 turnos.
         </li>
       </ul>
     </section>
@@ -127,22 +128,21 @@
     <section class="section talents">
       <h3>Talentos</h3>
       <ul>
-        <li><span class="talent-name">Jump Bolt</span>: você pode usar sua ação de movimento para ir até um alvo com
-          <i>condutor.</i> O alvo sofre 1d3+arcanismo/2 como dano extra de trovão. Pode usar seu ataque no ato para
-          causar um
-          ataque com alvo desprevenido ignorando a CA vinda da destreza do alvo. Causa 1d6 de dano bônus de trovão se
-          atacar nesta ação. Nos níveis 5, 10 e 15 adiciona 1d6 de dano de trovão para a ação bônus.
+        <li><span class="talent-name">Fire Heal</span>: receber dano de fogo enquanto estiver na forma de <i>Fire
+            Avatar</i>cura sua vida no valor do dano causado.
         </li>
       </ul>
     </section>
     <section class="section abilities">
       <h3>Habilidades</h3>
       <ul>
-        <li><span class="ability-name">Para Thunder</span>: ergue a sua arma para o céu invocando o poder do trovão.
-          Pelas próximas 1d4 rodadas você ficará incapactidado de atacar, mas causará 1d16+arcanismo como dano de trovão
-          em 3+1d4 alvos por rodada. Adicionalmente você causará dano a inimigos que se aproximarem de você num raio de
-          16m. O valor do dano é o mesmo. Consome 6+(Nível/2) de MP. Nos níveis 8, 12 e 16 adiciona 1d16 de dano de
-          trovão extra.</li>
+        <li><span class="ability-name">Fire Avatar</span>: imbue se com o poder do fogo. Seu corpo se torna coberto por
+          chamas. Habilidades de fogo podem ser conjuradas sem custo e com conjuração reduzida em 80%. Dano de fogo é
+          aumentado em +25 de poder. A forma de avatar consome sua vida máxima por rodada e é desativada quando você
+          chega a 5% de vida ou menos. Consome 10% da vida máxima por rodada. Seu elemento passa ser fogo. Suas armas
+          recebem o <i>Fire Enchant</i> enquanto durar a forma. Inimigos recebem 5(+1 por mod.INT)% de suas vida máxima
+          como
+          dano de fogo sempre que golpes físicos atingirem você.</li>
       </ul>
     </section>
 
@@ -152,11 +152,14 @@
     <section class="section talents">
       <h3>Talentos</h3>
       <ul>
-        <li><span class="talent-name">Free Thunder</span>: a cada rodada um raio irá atingir um alvo aleatório. O alvo
-          poderá rolar um dado de esquiva considerando Acrobacia, Salvaguarda (DES), ou o mod.DES. O dano recebido pelo
-          alvo é de 3d18+arcanismo de trovão. Tem 10% de chance de causar <i>Hyper Volt.</i>
-          <br>
-          <span class="highlight">Hyper Volt</span>: causa 4x do dano como dano de trovão.
+        <li><span class="talent-name">Fastly Fire</span>: quando estiver em um <span class="highlight">Field Effect de
+            fogo/solar</span> suas
+          conjurações solares são reduzidas em 2 rodadas. O dano solar/fogo é aumentado em 3d8+arcanismo enquanto
+          estiver no Field Effect respectivo.
+        </li>
+        <li><span class="talent-name">Flying Avatar</span>: sua forma de <i>Fire Avatar</i> ganha a possibilidade de voar em
+          uma altura igual a (Mod.INT/2)xMovimento+4.
+
         </li>
       </ul>
     </section>
