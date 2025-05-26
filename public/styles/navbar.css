@@ -1,212 +1,139 @@
-header {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 30px;
-  background-color: #1a1a1a;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 90%;
-  z-index: 1000;
-  margin-top: 10px;
-  transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
-}
-
-header.hidden {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
-}
-
-header .logo img {
-  max-width: 150px;
-  transition: transform 0.3s ease;
-}
-
-header .logo img:hover {
-  transform: scale(1.1);
-}
-
-header .menu ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-header .menu ul li {
-  margin: 0 20px;
-}
-
-header .menu ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 1px;
-  position: relative;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-header .menu ul li a::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #007bff;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease;
-}
-
-header .menu ul li a:hover {
-  color: #007bff;
-}
-
-header .menu ul li a:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 30px;
-  background-color: transparent;
-  border: none;
-  color: white;
-  cursor: pointer;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.voltar-btn-container {
-  margin-left: 30px;
-}
-
-.voltar-btn {
-  padding: 10px 20px;
-  background-color: #f44336;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.voltar-btn:hover {
-  background-color: #d32f2f;
-  transform: scale(1.05);
-}
-
-@keyframes dropDown {
-  0% {
-    transform: translateY(-50%) scale(0);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideDownButton {
-  0% {
-    transform: translateY(-50%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    padding: 10px;
-  }
-
-  .menu.active {
+  header {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 1rem 2rem;
     display: flex;
-    animation: slideDown 0.5s ease-out forwards;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+  }
+
+  .logo-img {
+    height: 50px;
+    transition: var(--transition);
+  }
+
+  .logo-img:hover {
+    transform: scale(1.05);
   }
 
   .menu-toggle {
-    display: block;
-    font-size: 30px;
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    padding: 0.5rem;
+    transition: var(--transition);
   }
 
-  .menu-toggle.rotate {
-    transform: rotate(180deg);
+  .menu-toggle:hover {
+    color: var(--secondary-color);
   }
 
-  .menu-toggle.active {
-    animation: slideDownButton 1s ease-out forwards;
+  .menu {
+    display: flex;
   }
 
-  header {
+  .menu ul {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .menu a {
+    color: white;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .menu a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .menu a i {
+    width: 20px;
     text-align: center;
-    flex-direction: column;
-    padding: 15px 20px;
-    width: 90%;
-    top: 10px;
-    margin-top: 0;
-    border-radius: 20px;
-  }
-
-  header .logo img {
-    max-width: 120px;
-  }
-
-  header .menu ul {
-    flex-direction: column;
-    margin-top: 10px;
-  }
-
-  header .menu ul li {
-    margin: 10px 0;
   }
 
   .voltar-btn-container {
-    margin-left: 0;
-    margin-top: 10px;
+    margin-left: auto;
+    padding-left: 1rem;
   }
-}
+
+  .voltar-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+  }
+
+  .voltar-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Responsividade */
+  @media (max-width: 992px) {
+    .menu-toggle {
+      display: block;
+    }
+    
+    .menu {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background-color: var(--dark-color);
+      flex-direction: column;
+      align-items: stretch;
+      padding: 1rem 0;
+      transform: translateY(-150%);
+      transition: var(--transition);
+      z-index: 999;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .menu.active {
+      transform: translateY(0);
+    }
+    
+    .menu ul {
+      flex-direction: column;
+      gap: 0;
+    }
+    
+    .menu li {
+      width: 100%;
+      text-align: center;
+    }
+    
+    .menu a {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      border-radius: 0;
+    }
+  }
