@@ -5,11 +5,562 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WOE - Batalha</title>
-  <link rel="stylesheet" href="/styles/navbar.css" />
-  <link rel="stylesheet" href="/styles/combat.css">
+  <style>
+    /* Base Styles */
+    :root {
+      --primary-color: #6a1b9a;
+      --primary-dark: #4a148c;
+      --primary-light: #9c4dcc;
+      --secondary-color: #ffab00;
+      --secondary-dark: #ff8f00;
+      --secondary-light: #ffd54f;
+      --dark-color: #1a1a1a;
+      --light-color: #f5f5f5;
+      --gray-color: #757575;
+      --light-gray: #e0e0e0;
+      --success-color: #2e7d32;
+      --warning-color: #ff8f00;
+      --danger-color: #c62828;
+      --info-color: #0277bd;
+      --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --font-heading: 'Georgia', serif;
+      --transition: all 0.3s ease;
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+      --shadow-md: 0 4px 8px rgba(0,0,0,0.15);
+      --shadow-lg: 0 8px 16px rgba(0,0,0,0.2);
+      --border-radius: 8px;
+      --border-radius-lg: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--dark-color);
+      background-color: #f9f6ff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      margin-left: 280px;
+      padding: 2rem;
+      transition: var(--transition);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary-color);
+      color: var(--dark-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--secondary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--primary-dark);
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      border-radius: 2px;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 280px;
+      right: 0;
+      z-index: 900;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
+
+    .logo img {
+      height: 50px;
+      transition: var(--transition);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .menu {
+      display: flex;
+    }
+
+    .menu ul {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .menu a {
+      color: white;
+      font-weight: 500;
+      transition: var(--transition);
+      padding: 0.5rem 1rem;
+      border-radius: var(--border-radius);
+    }
+
+    .menu a:hover {
+      background-color: var(--primary-color);
+    }
+
+    .voltar-btn-container {
+      margin-left: auto;
+    }
+
+    .voltar-btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .voltar-btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Combat Page Styles */
+    .section {
+      background-color: white;
+      padding: 2rem;
+      border-radius: var(--border-radius-lg);
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .section:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .section h2 {
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      font-family: var(--font-heading);
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 0.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--dark-color);
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid var(--light-gray);
+      border-radius: var(--border-radius);
+      margin-bottom: 1rem;
+      transition: var(--transition);
+    }
+
+    input[type="text"]:focus,
+    input[type="number"]:focus {
+      border-color: var(--primary-color);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.2);
+    }
+
+    button {
+      padding: 0.75rem 1.5rem;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    button:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    #damage-result,
+    #dice-result {
+      padding: 1rem;
+      background-color: var(--light-gray);
+      border-radius: var(--border-radius);
+      margin-top: 1rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Health Bar Styles */
+    .health-bar {
+      margin-top: 1.5rem;
+    }
+
+    .bar {
+      height: 30px;
+      background-color: var(--light-gray);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .filled {
+      height: 100%;
+      transition: width 0.5s ease, background-color 0.3s ease;
+    }
+
+    .health-bar p {
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+
+    /* Timer Styles */
+    #timer {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background-color: var(--light-gray);
+      border-radius: var(--border-radius);
+    }
+
+    #timer-value {
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-left: 280px;
+      transition: var(--transition);
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 280px;
+      height: 100%;
+      background-color: var(--dark-color);
+      color: white;
+      padding: 1.5rem;
+      z-index: 1000;
+      transition: var(--transition);
+      overflow-y: auto;
+    }
+
+    .sidebar-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .sidebar-logo {
+      max-width: 180px;
+      margin: 0 auto;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      padding: 0.75rem 1rem;
+      border-radius: var(--border-radius);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: var(--transition);
+    }
+
+    .nav-link:hover, .nav-link.active {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .nav-link i {
+      width: 24px;
+      text-align: center;
+    }
+
+    .nav-divider {
+      height: 1px;
+      background-color: rgba(255,255,255,0.1);
+      margin: 1rem 0;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.25rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--secondary-color);
+    }
+
+    .copyright {
+      font-size: 0.8rem;
+      color: var(--gray-color);
+    }
+
+    /* Toggle Button */
+    .toggle-btn {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 1100;
+      transition: var(--transition);
+      box-shadow: var(--shadow-md);
+    }
+
+    .toggle-btn i {
+      font-size: 1.25rem;
+    }
+
+    .toggle-btn:hover {
+      background-color: var(--primary-dark);
+      transform: scale(1.1);
+    }
+
+    .toggle-btn.active {
+      transform: translateX(280px) scale(1.1);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .container {
+        margin-left: 0;
+        padding-top: 80px;
+      }
+
+      header {
+        left: 0;
+      }
+
+      footer {
+        margin-left: 0;
+      }
+
+      .sidebar {
+        transform: translateX(-100%);
+      }
+
+      .sidebar.active {
+        transform: translateX(0);
+      }
+
+      .toggle-btn {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--dark-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        transform: translateY(-150%);
+        transition: var(--transition);
+        z-index: 800;
+      }
+
+      .menu.active {
+        transform: translateY(0);
+      }
+
+      .menu ul {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+      }
+
+      .menu li {
+        width: 100%;
+        text-align: center;
+      }
+
+      .menu a {
+        display: block;
+        padding: 1rem;
+        border-radius: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="/imgs/woe_titulo.png" alt="WOE Logo" class="sidebar-logo">
+    </div>
+    <nav class="sidebar-nav">
+      <a href="/pages/guia_geral.html" class="nav-link">
+        <i>📚</i> Guia Geral
+      </a>
+      <a href="/pages/eventos.html" class="nav-link">
+        <i>🎉</i> Eventos
+      </a>
+      <a href="/pages/ficha.html" class="nav-link">
+        <i>📝</i> Ficha de Personagem
+      </a>
+      <a href="/pages/gerador_item.html" class="nav-link">
+        <i>🎲</i> Gerador de Itens
+      </a>
+      <a href="/pages/criador_npc.html" class="nav-link">
+        <i>👤</i> Criador de NPC
+      </a>
+      <a href="/pages/mapa_eder.html" class="nav-link">
+        <i>🗺️</i> Mapa
+      </a>
+      <a href="/pages/mesas.html" class="nav-link">
+        <i>🎮</i> Mesas
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="social-links">
+        <a href="#"><i>📱</i></a>
+        <a href="#"><i>💻</i></a>
+        <a href="#"><i>📧</i></a>
+      </div>
+      <p class="copyright">© 2024 WOE RPG</p>
+    </div>
+  </aside>
+
+  <!-- Toggle Button -->
+  <button class="toggle-btn" onclick="toggleSidebar()">
+    <i>☰</i>
+  </button>
+
+  <!-- Header -->
   <header>
     <div class="logo">
       <a href="/index.html">
@@ -35,6 +586,7 @@
     </div>
   </header>
 
+  <!-- Main Content -->
   <div class="container">
     <div class="section">
       <h2>Calculadora de Dano</h2>
@@ -51,9 +603,9 @@
         <input type="number" step="0.01" id="critical" placeholder="Ex: 1" />
       </div>
       <div>
-        <button id="calculate-damage">Calcular Dano</button>
+        <button id="calculate-damage" class="btn btn-primary">Calcular Dano</button>
       </div>
-      <div id="damage-result">O dano será exibido aqui.</div>
+      <div id="damage-result" class="result-box">O dano será exibido aqui.</div>
     </div>
 
     <div class="section">
@@ -61,24 +613,24 @@
 
       <label for="max-life">Vida Máxima</label>
       <input type="number" id="max-life" required />
-      <button id="set-max-life">Definir</button>
+      <button id="set-max-life" class="btn btn-primary">Definir</button>
 
       <label for="reduce-life">Reduzir Vida Máxima</label>
       <input type="text" id="reduce-life" placeholder="Ex: 10 ou 10%" />
-      <button id="reduce-life-btn">Aplicar na Vida Atual</button>
+      <button id="reduce-life-btn" class="btn btn-primary">Aplicar na Vida Atual</button>
 
       <label for="cure-life">Aumentar Vida Máxima</label>
       <input type="text" id="add-life" placeholder="Ex: 10 ou 10%">
-      <button id="add-life-btn">Aplicar na Vida Atual</button>
+      <button id="add-life-btn" class="btn btn-primary">Aplicar na Vida Atual</button>
 
       <label for="life">Vida Atual</label>
       <input type="number" id="lifebar" value="0" disabled>
 
       <div class="health-bar">
         <div class="bar">
-          <div id="life-bar" class="filled" style="width: 100%; background-color: #008d47"></div>
-          <p style="text-align: center;">Vida</p>
-        </div><br>
+          <div id="life-bar" class="filled" style="width: 100%; background-color: var(--success-color)"></div>
+          <p>Vida</p>
+        </div>
       </div>
     </div>
 
@@ -88,30 +640,204 @@
       <div>
         <label for="dice">Rolagem de Dados (ex: 1d20)</label>
         <input type="text" id="dice" />
-        <button onclick="rollDice()">Rolar</button>
-        <div id="dice-result">Resultado do Dado</div>
+        <button onclick="rollDice()" class="btn btn-secondary">Rolar</button>
+        <div id="dice-result" class="result-box">Resultado do Dado</div>
       </div>
 
       <div>
         <label for="turn">Turno do Jogador</label>
         <input type="number" id="turn" value="1" disabled />
-        <button id="next-turn">Próximo Turno</button>
+        <button id="next-turn" class="btn btn-secondary">Próximo Turno</button>
       </div>
 
       <div id="timer">
         <p>Sessão em andamento: <span id="timer-value">00:00</span></p>
-        <button id="start-timer">Iniciar Timer</button>
-        <button id="stop-timer" disabled>Parar Timer</button>
-        <button id="reset-timer" disabled>Resetar Timer</button>
+        <button id="start-timer" class="btn btn-primary">Iniciar Timer</button>
+        <button id="stop-timer" class="btn btn-secondary" disabled>Parar Timer</button>
+        <button id="reset-timer" class="btn btn-outline" disabled>Resetar Timer</button>
       </div>
     </div>
   </div>
+
   <footer>
     <p>&copy; 2024 Todos os direitos reservados.</p>
   </footer>
-  </div>
-  <script src="/scripts/navbar.js"></script>
-  <script src="/scripts/combat.js"></script>
+
+  <script>
+    // Sidebar Toggle
+    function toggleSidebar() {
+      const sidebar = document.querySelector('.sidebar');
+      const toggleBtn = document.querySelector('.toggle-btn');
+      sidebar.classList.toggle('active');
+      toggleBtn.classList.toggle('active');
+    }
+
+    // Menu Toggle for Mobile
+    function toggleMenu() {
+      const menu = document.querySelector('.menu');
+      menu.classList.toggle('active');
+    }
+
+    // Health Bar Logic
+    document.getElementById('set-max-life').addEventListener('click', function() {
+      const maxLife = parseInt(document.getElementById('max-life').value);
+      if (maxLife > 0) {
+        document.getElementById('lifebar').value = maxLife;
+        updateHealthBar(maxLife, maxLife);
+      }
+    });
+
+    document.getElementById('reduce-life-btn').addEventListener('click', function() {
+      adjustLife(false);
+    });
+
+    document.getElementById('add-life-btn').addEventListener('click', function() {
+      adjustLife(true);
+    });
+
+    function adjustLife(isAdd) {
+      const maxLife = parseInt(document.getElementById('max-life').value);
+      const currentLife = parseInt(document.getElementById('lifebar').value) || maxLife;
+      const input = isAdd ? document.getElementById('add-life').value : document.getElementById('reduce-life').value;
+      
+      if (!input) return;
+      
+      let adjustment;
+      if (input.includes('%')) {
+        const percentage = parseFloat(input.replace('%', '')) / 100;
+        adjustment = Math.round(maxLife * percentage);
+      } else {
+        adjustment = parseInt(input);
+      }
+      
+      let newLife;
+      if (isAdd) {
+        newLife = Math.min(currentLife + adjustment, maxLife);
+      } else {
+        newLife = Math.max(currentLife - adjustment, 0);
+      }
+      
+      document.getElementById('lifebar').value = newLife;
+      updateHealthBar(newLife, maxLife);
+    }
+
+    function updateHealthBar(current, max) {
+      const percentage = (current / max) * 100;
+      const healthBar = document.getElementById('life-bar');
+      healthBar.style.width = `${percentage}%`;
+      
+      // Change color based on health percentage
+      if (percentage > 60) {
+        healthBar.style.backgroundColor = 'var(--success-color)';
+      } else if (percentage > 30) {
+        healthBar.style.backgroundColor = 'var(--warning-color)';
+      } else {
+        healthBar.style.backgroundColor = 'var(--danger-color)';
+      }
+    }
+
+    // Damage Calculator
+    document.getElementById('calculate-damage').addEventListener('click', function() {
+      const baseDamage = parseFloat(document.getElementById('damage').value) || 0;
+      const percentages = document.getElementById('percentages').value;
+      const criticalMultiplier = parseFloat(document.getElementById('critical').value) || 1;
+      
+      let totalDamage = baseDamage;
+      
+      if (percentages) {
+        const percentageList = percentages.split(',').map(p => parseFloat(p.trim()));
+        for (const percent of percentageList) {
+          if (!isNaN(percent)) {
+            totalDamage += baseDamage * (percent / 100);
+          }
+        }
+      }
+      
+      totalDamage *= criticalMultiplier;
+      
+      document.getElementById('damage-result').textContent = `Dano Total: ${Math.round(totalDamage)}`;
+    });
+
+    // Dice Roller
+    function rollDice() {
+      const diceInput = document.getElementById('dice').value.toLowerCase();
+      const match = diceInput.match(/^(\d+)d(\d+)$/);
+      
+      if (match) {
+        const count = parseInt(match[1]);
+        const sides = parseInt(match[2]);
+        let total = 0;
+        let rolls = [];
+        
+        for (let i = 0; i < count; i++) {
+          const roll = Math.floor(Math.random() * sides) + 1;
+          rolls.push(roll);
+          total += roll;
+        }
+        
+        let resultText;
+        if (count === 1) {
+          resultText = `Resultado: ${total}`;
+        } else {
+          resultText = `Resultados: ${rolls.join(', ')} | Total: ${total}`;
+        }
+        
+        document.getElementById('dice-result').textContent = resultText;
+      } else {
+        document.getElementById('dice-result').textContent = 'Formato inválido. Use algo como "1d20" ou "2d6".';
+      }
+    }
+
+    // Turn Counter
+    document.getElementById('next-turn').addEventListener('click', function() {
+      const turnInput = document.getElementById('turn');
+      turnInput.value = parseInt(turnInput.value) + 1;
+    });
+
+    // Session Timer
+    let timerInterval;
+    let seconds = 0;
+    
+    document.getElementById('start-timer').addEventListener('click', function() {
+      if (!timerInterval) {
+        timerInterval = setInterval(updateTimer, 1000);
+        document.getElementById('start-timer').disabled = true;
+        document.getElementById('stop-timer').disabled = false;
+        document.getElementById('reset-timer').disabled = false;
+      }
+    });
+    
+    document.getElementById('stop-timer').addEventListener('click', function() {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      document.getElementById('start-timer').disabled = false;
+      document.getElementById('stop-timer').disabled = true;
+    });
+    
+    document.getElementById('reset-timer').addEventListener('click', function() {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      seconds = 0;
+      updateTimerDisplay();
+      document.getElementById('start-timer').disabled = false;
+      document.getElementById('stop-timer').disabled = true;
+      document.getElementById('reset-timer').disabled = true;
+    });
+    
+    function updateTimer() {
+      seconds++;
+      updateTimerDisplay();
+    }
+    
+    function updateTimerDisplay() {
+      const hours = Math.floor(seconds / 3600);
+      const minutes = Math.floor((seconds % 3600) / 60);
+      const remainingSeconds = seconds % 60;
+      
+      document.getElementById('timer-value').textContent = 
+        `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+    }
+  </script>
 </body>
 
 </html>
