@@ -3,170 +3,607 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="styles/index.css"/> 
-    <title>Página Principal - RPG</title>
+    <title>Eternia RPG - Portal para Aventuras Épicas</title>
   </head>
   <body>
-
-    <button class="toggle-btn" id="showSidebar"></button>
-
-    <div class="sidebar">
-      <a href="pages/guia_geral.html">Guia</a>
-      <a href="pages/eventos.html">Eventos</a>
-      <a href="pages/combat.html">Combate</a>
-      <a href="pages/ficha.html">Ficha de Personagem</a>
-      <a href="pages/gerador_item.html">Gerador de Itens</a>
-      <a href="pages/criador_npc.html">Criador de NPC</a>
-      <a href="pages/academias.html">Academias</a>
-      <a href="pages/mapa_eder.html">Mapa</a>
-      <a href="pages/mesas.html">Mesas</a>
+    <!-- Loading Screen -->
+    <div id="loadingScreen">
+      <div class="loader">
+        <div class="dice">
+          <div class="face front">1</div>
+          <div class="face back">6</div>
+          <div class="face right">4</div>
+          <div class="face left">3</div>
+          <div class="face top">5</div>
+          <div class="face bottom">2</div>
+        </div>
+        <p>Preparando sua aventura...</p>
+      </div>
     </div>
 
-    <div class="container">
-      <div id="logo">
-        <img src="/imgs/woe_titulo.png" alt="Logo" />
-      </div>
+    <!-- Mobile Menu Button -->
+    <button class="toggle-btn" id="showSidebar">
+      <i class="fas fa-bars"></i>
+    </button>
 
-      <section class="slider">
-        <div class="swiper-container">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <img src="/imgs/woe_titulo.png" alt="Eternia RPG" class="sidebar-logo" />
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Início</a>
+        <a href="#news" class="nav-link"><i class="fas fa-newspaper"></i> Notícias</a>
+        <a href="#campaigns" class="nav-link"><i class="fas fa-map"></i> Campanhas</a>
+        <a href="#resources" class="nav-link"><i class="fas fa-book"></i> Recursos</a>
+        <a href="#community" class="nav-link"><i class="fas fa-users"></i> Comunidade</a>
+        <div class="nav-divider"></div>
+        <a href="pages/guia_geral.html" class="nav-link"><i class="fas fa-book-open"></i> Guia</a>
+        <a href="pages/eventos.html" class="nav-link"><i class="fas fa-calendar-alt"></i> Eventos</a>
+        <a href="pages/combat.html" class="nav-link"><i class="fas fa-swords"></i> Combate</a>
+        <a href="pages/ficha.html" class="nav-link"><i class="fas fa-scroll"></i> Ficha de Personagem</a>
+        <a href="pages/gerador_item.html" class="nav-link"><i class="fas fa-wand-magic-sparkles"></i> Gerador de Itens</a>
+        <a href="pages/criador_npc.html" class="nav-link"><i class="fas fa-robot"></i> Criador de NPC</a>
+        <a href="pages/academias.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Academias</a>
+        <a href="pages/mapa_eder.html" class="nav-link"><i class="fas fa-map-marked-alt"></i> Mapa</a>
+        <a href="pages/mesas.html" class="nav-link"><i class="fas fa-dice-d20"></i> Mesas</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="social-links">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p class="copyright">© 2025 Eternia RPG</p>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container" id="home">
+      <!-- Hero Section -->
+      <header class="hero">
+        <div class="hero-content">
+          <h1>Explore o Mundo de Eternia</h1>
+          <p>Um universo de aventuras épicas espera por você</p>
+          <div class="hero-buttons">
+            <a href="#news" class="btn btn-primary">Últimas Notícias</a>
+            <a href="pages/ficha.html" class="btn btn-secondary">Crie Seu Personagem</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Featured Carousel -->
+      <section class="featured-slider">
+        <h2 class="section-title">Destaques</h2>
+        <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="/imgs/generator.png" alt="Slide 1"/>
-              <a href="gerador_item.html" class="slide-link"></a>
+              <div class="slide-content">
+                <img src="/imgs/generator.png" alt="Gerador de Itens Mágicos"/>
+                <div class="slide-overlay">
+                  <h3>Gerador de Itens Mágicos</h3>
+                  <p>Crie artefatos únicos para suas aventuras</p>
+                  <a href="gerador_item.html" class="btn btn-slide">Explorar</a>
+                </div>
+              </div>
             </div>
             <div class="swiper-slide">
-              <a href="pages/combat.html">
-                <img src="/imgs/combat.jpg" alt="Slide 2"/>
-              </a>
+              <div class="slide-content">
+                <img src="/imgs/combat.jpg" alt="Sistema de Combate"/>
+                <div class="slide-overlay">
+                  <h3>Sistema de Combate</h3>
+                  <p>Domine as mecânicas de batalha</p>
+                  <a href="pages/combat.html" class="btn btn-slide">Aprender</a>
+                </div>
+              </div>
             </div>
             <div class="swiper-slide">
-            <div class="swiper-slide">
-              <a href="#">
-                <img src="/imgs/damage.jpg" alt="Slide 3"/>
-              </a>
-            </div>
-              <a href="pages/academias.html">
-                <img src="/imgs/academia.jpg" alt="Slide 4"/>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="#">
-                <img src="/imgs/escola_mundo.jpg" alt="Slide 5"/>
-              </a>
+              <div class="slide-content">
+                <img src="/imgs/damage.jpg" alt="Calculadora de Dano"/>
+                <div class="slide-overlay">
+                  <h3>Calculadora de Dano</h3>
+                  <p>Calcule efeitos de ataques e magias</p>
+                  <a href="#" class="btn btn-slide">Calcular</a>
+                </div>
+              </div>
             </div>
             <div class="swiper-slide">
-              <a href="#"></a>
-              <img src="/imgs/proibida.png" alt="Slide 6"/>
+              <div class="slide-content">
+                <img src="/imgs/academia.jpg" alt="Academias de Eternia"/>
+                <div class="slide-overlay">
+                  <h3>Academias de Eternia</h3>
+                  <p>Descubra centros de treinamento</p>
+                  <a href="pages/academias.html" class="btn btn-slide">Visitar</a>
+                </div>
+              </div>
             </div>
             <div class="swiper-slide">
-              <a href="#">
-                <img src="/imgs/comunidade.png" alt="Slide 7"/>
-              </a>
+              <div class="slide-content">
+                <img src="/imgs/escola_mundo.jpg" alt="Escola do Mundo"/>
+                <div class="slide-overlay">
+                  <h3>Escola do Mundo</h3>
+                  <p>Aprenda sobre o lore de Eternia</p>
+                  <a href="#" class="btn btn-slide">Estudar</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <img src="/imgs/proibida.png" alt="Floresta Proibida"/>
+                <div class="slide-overlay">
+                  <h3>Floresta Proibida</h3>
+                  <p>Explore áreas perigosas</p>
+                  <a href="#" class="btn btn-slide">Aventurar-se</a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
           <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
       </section>
 
-      <div class="notification" id="notification">
-        Nova atualização disponível! Verifique a página de atualizações.
-      </div>
-
-      <section class="news">
-        <h2 style="text-align: center;">Últimas Notícias</h2><br><br>
-        <div class="news-grid">
-          <div class="news-item">
-            <h3>Atualização de Classe - Ethereal Warrior</h3>
-            <p>
-              Uma nova classe mística surgiu! O Ethereal Warrior chega com habilidades únicas que manipulam energia temporal e clones mágicos. Prepare-se para dominar técnicas como translocação, reversão de tempo e ataques com energia acumulada. Ideal para quem busca estilo, mobilidade e estratégia no campo de batalha.
-            </p>
-          </div>
-          <div class="news-item">
-            <h3>Nova Classe - Estilo Katana</h3>
-            <p>
-              O caminho do samurai se abre! A classe Katana combina velocidade, disciplina e força. Com técnicas como <i>Kishi Ko</i> e <i>Urumaken Kendoo</i>, essa classe permite jogadas defensivas e ofensivas em sequência. Ao atingir o Rank Master, o guerreiro domina o Bushido ou se torna um Nōbushi, com habilidades brutais e bônus críticos acumulativos.
-            </p>
-          </div>
-          <div class="news-item">
-            <h3>Expansão Visual</h3>
-            <p>
-              Agora os estilos ganham vida com novos layouts HTML! As classes foram adaptadas para uma estrutura elegante, clara e moderna — com destaque para atributos, progressão por nível e habilidades passivas. Tudo pronto para ser incorporado direto em fichas ou sites de campanha.
-            </p>
-          </div>
-          <div class="news-item">
-            <h3>Próximos Passos</h3>
-            <p>
-              O desenvolvimento não para! Novas árvores celestiais, talentos passivos, fusões elementais e sistemas de corrupção estão em fase de brainstorm. O mundo de Eternia está em constante expansão e você pode moldar os próximos capítulos com suas ideias e jogabilidade única.
-            </p>
-          </div>
-          <div class="news-item">
-            <h3>Enquete</h3>
-            <img src="/imgs/vilian.jpg" alt="">
-            <p>Qual classe tem mais estilo? Ethereal Warrior ou Samurai de Katana?</p>
-          </div>
-        </div>
-      </section>
-      
-
-      <footer>
-        <div class="container">
-            <p>&copy; 2025 Guia de Links. Todos os direitos reservados.</p>
-            <div class="footer-icons">
-                <a href="https://github.com/Denyver" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.spotify.com" target="_blank"><i class="fab fa-spotify"></i></a>
-                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <!-- Quick Access Tiles -->
+      <section class="quick-access" id="resources">
+        <h2 class="section-title">Recursos Rápidos</h2>
+        <div class="tile-grid">
+          <a href="pages/ficha.html" class="tile">
+            <div class="tile-icon">
+              <i class="fas fa-scroll"></i>
             </div>
+            <h3>Ficha de Personagem</h3>
+            <p>Crie e gerencie seu herói</p>
+          </a>
+          <a href="pages/combat.html" class="tile">
+            <div class="tile-icon">
+              <i class="fas fa-swords"></i>
+            </div>
+            <h3>Regras de Combate</h3>
+            <p>Domine o sistema de batalha</p>
+          </a>
+          <a href="pages/gerador_item.html" class="tile">
+            <div class="tile-icon">
+              <i class="fas fa-wand-magic-sparkles"></i>
+            </div>
+            <h3>Gerador de Itens</h3>
+            <p>Crie equipamentos mágicos</p>
+          </a>
+          <a href="pages/criador_npc.html" class="tile">
+            <div class="tile-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3>Criador de NPCs</h3>
+            <p>Popule seu mundo</p>
+          </a>
+          <a href="pages/mapa_eder.html" class="tile">
+            <div class="tile-icon">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <h3>Mapa Interativo</h3>
+            <p>Explore Eternia</p>
+          </a>
+          <a href="pages/mesas.html" class="tile">
+            <div class="tile-icon">
+              <i class="fas fa-dice-d20"></i>
+            </div>
+            <h3>Encontre Mesas</h3>
+            <p>Jogue com outros</p>
+          </a>
         </div>
+      </section>
+
+      <!-- News Section -->
+      <section class="news-section" id="news">
+        <h2 class="section-title">Últimas Notícias</h2>
+        <div class="news-grid">
+          <article class="news-card featured">
+            <div class="news-image">
+              <img src="/imgs/vilian.jpg" alt="Ethereal Warrior vs Samurai">
+            </div>
+            <div class="news-content">
+              <span class="news-category">Enquete</span>
+              <h3>Qual classe tem mais estilo?</h3>
+              <p>Ethereal Warrior ou Samurai de Katana? Participe da nossa votação e comente qual você prefere e por quê!</p>
+              <div class="news-meta">
+                <span class="news-date"><i class="far fa-calendar"></i> 2 dias atrás</span>
+                <span class="news-comments"><i class="far fa-comment"></i> 42 comentários</span>
+              </div>
+              <div class="poll-options">
+                <button class="poll-btn">Ethereal Warrior</button>
+                <button class="poll-btn">Samurai</button>
+              </div>
+            </div>
+          </article>
+          
+          <article class="news-card">
+            <div class="news-image">
+              <img src="/imgs/ethereal.jpg" alt="Ethereal Warrior">
+            </div>
+            <div class="news-content">
+              <span class="news-category">Atualização</span>
+              <h3>Nova Classe - Ethereal Warrior</h3>
+              <p>Uma classe mística que manipula energia temporal e clones mágicos. Domine técnicas como translocação e reversão de tempo.</p>
+              <div class="news-meta">
+                <span class="news-date"><i class="far fa-calendar"></i> 1 semana atrás</span>
+                <span class="news-comments"><i class="far fa-comment"></i> 28 comentários</span>
+              </div>
+              <a href="#" class="news-link">Leia mais <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+          
+          <article class="news-card">
+            <div class="news-image">
+              <img src="/imgs/samurai.jpg" alt="Estilo Katana">
+            </div>
+            <div class="news-content">
+              <span class="news-category">Novidade</span>
+              <h3>Nova Classe - Estilo Katana</h3>
+              <p>O caminho do samurai se abre! Combina velocidade, disciplina e força com técnicas como Kishi Ko e Urumaken Kendoo.</p>
+              <div class="news-meta">
+                <span class="news-date"><i class="far fa-calendar"></i> 2 semanas atrás</span>
+                <span class="news-comments"><i class="far fa-comment"></i> 35 comentários</span>
+              </div>
+              <a href="#" class="news-link">Leia mais <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+          
+          <article class="news-card">
+            <div class="news-image">
+              <img src="/imgs/expansion.jpg" alt="Expansão Visual">
+            </div>
+            <div class="news-content">
+              <span class="news-category">Melhoria</span>
+              <h3>Expansão Visual</h3>
+              <p>Classes agora com layouts HTML modernos, destacando atributos, progressão por nível e habilidades passivas.</p>
+              <div class="news-meta">
+                <span class="news-date"><i class="far fa-calendar"></i> 3 semanas atrás</span>
+                <span class="news-comments"><i class="far fa-comment"></i> 15 comentários</span>
+              </div>
+              <a href="#" class="news-link">Leia mais <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+          
+          <article class="news-card">
+            <div class="news-image">
+              <img src="/imgs/roadmap.jpg" alt="Próximos Passos">
+            </div>
+            <div class="news-content">
+              <span class="news-category">Roadmap</span>
+              <h3>Próximos Passos</h3>
+              <p>Novas árvores celestiais, talentos passivos, fusões elementais e sistemas de corrupção em desenvolvimento.</p>
+              <div class="news-meta">
+                <span class="news-date"><i class="far fa-calendar"></i> 1 mês atrás</span>
+                <span class="news-comments"><i class="far fa-comment"></i> 56 comentários</span>
+              </div>
+              <a href="#" class="news-link">Leia mais <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+        
+        <div class="news-cta">
+          <a href="#" class="btn btn-outline">Ver Todas as Notícias</a>
+        </div>
+      </section>
+
+      <!-- Campaigns Section -->
+      <section class="campaigns-section" id="campaigns">
+        <h2 class="section-title">Campanhas em Destaque</h2>
+        <div class="campaigns-grid">
+          <div class="campaign-card">
+            <div class="campaign-banner">
+              <img src="/imgs/campaign1.jpg" alt="Reinos Perdidos">
+              <span class="campaign-tag">Nova</span>
+            </div>
+            <div class="campaign-info">
+              <h3>Reinos Perdidos</h3>
+              <p>Uma jornada para descobrir civilizações esquecidas e artefatos antigos.</p>
+              <div class="campaign-stats">
+                <span><i class="fas fa-users"></i> 4/6 jogadores</span>
+                <span><i class="fas fa-calendar-alt"></i> Quintas, 20h</span>
+              </div>
+              <div class="campaign-dm">
+                <img src="/imgs/dm1.jpg" alt="Mestre">
+                <span>Mestre: Altharion</span>
+              </div>
+              <a href="#" class="btn btn-campaign">Detalhes</a>
+            </div>
+          </div>
+          
+          <div class="campaign-card">
+            <div class="campaign-banner">
+              <img src="/imgs/campaign2.jpg" alt="Guerra das Sombras">
+              <span class="campaign-tag">Em Andamento</span>
+            </div>
+            <div class="campaign-info">
+              <h3>Guerra das Sombras</h3>
+              <p>Um conflito secreto que ameaça consumir o reino de Eder.</p>
+              <div class="campaign-stats">
+                <span><i class="fas fa-users"></i> 5/5 jogadores</span>
+                <span><i class="fas fa-calendar-alt"></i> Sábados, 15h</span>
+              </div>
+              <div class="campaign-dm">
+                <img src="/imgs/dm2.jpg" alt="Mestre">
+                <span>Mestre: Sylphrena</span>
+              </div>
+              <a href="#" class="btn btn-campaign">Detalhes</a>
+            </div>
+          </div>
+          
+          <div class="campaign-card">
+            <div class="campaign-banner">
+              <img src="/imgs/campaign3.jpg" alt="Ascensão dos Dragões">
+              <span class="campaign-tag">Recrutando</span>
+            </div>
+            <div class="campaign-info">
+              <h3>Ascensão dos Dragões</h3>
+              <p>Os dragões antigos despertam e o mundo precisa de heróis.</p>
+              <div class="campaign-stats">
+                <span><i class="fas fa-users"></i> 2/5 jogadores</span>
+                <span><i class="fas fa-calendar-alt"></i> Domingos, 18h</span>
+              </div>
+              <div class="campaign-dm">
+                <img src="/imgs/dm3.jpg" alt="Mestre">
+                <span>Mestre: Drakthar</span>
+              </div>
+              <a href="#" class="btn btn-campaign">Detalhes</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Community Section -->
+      <section class="community-section" id="community">
+        <div class="community-content">
+          <h2 class="section-title">Junte-se à Comunidade</h2>
+          <p>Conecte-se com outros jogadores, compartilhe ideias e participe de eventos especiais.</p>
+          <div class="community-stats">
+            <div class="stat-item">
+              <div class="stat-number">1,245</div>
+              <div class="stat-label">Jogadores</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">78</div>
+              <div class="stat-label">Campanhas Ativas</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">356</div>
+              <div class="stat-label">Personagens</div>
+            </div>
+          </div>
+          <div class="community-actions">
+            <a href="#" class="btn btn-discord"><i class="fab fa-discord"></i> Discord</a>
+            <a href="#" class="btn btn-forum"><i class="fas fa-comments"></i> Fórum</a>
+          </div>
+        </div>
+        <div class="community-image">
+          <img src="/imgs/comunidade.png" alt="Comunidade RPG">
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+      <section class="newsletter">
+        <div class="newsletter-content">
+          <h3>Receba Atualizações</h3>
+          <p>Inscreva-se para receber notícias, atualizações e conteúdo exclusivo diretamente no seu e-mail.</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Seu melhor e-mail" required>
+          <button type="submit" class="btn btn-newsletter">Assinar</button>
+        </form>
+      </section>
+
+      <!-- Back to Top Button -->
+      <button id="backToTop" class="back-to-top" title="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+      <div class="notification-content">
+        <span class="notification-icon"><i class="fas fa-exclamation-circle"></i></span>
+        <span>Nova atualização disponível! Verifique a página de atualizações.</span>
+      </div>
+      <button class="notification-close" id="closeNotification">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img src="/imgs/woe_titulo.png" alt="Eternia RPG">
+          <p>Um mundo de aventuras infinitas</p>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Explorar</h4>
+            <ul>
+              <li><a href="#home">Início</a></li>
+              <li><a href="#news">Notícias</a></li>
+              <li><a href="#campaigns">Campanhas</a></li>
+              <li><a href="#resources">Recursos</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Recursos</h4>
+            <ul>
+              <li><a href="pages/ficha.html">Fichas</a></li>
+              <li><a href="pages/combat.html">Combate</a></li>
+              <li><a href="pages/gerador_item.html">Geradores</a></li>
+              <li><a href="pages/mapa_eder.html">Mapas</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Comunidade</h4>
+            <ul>
+              <li><a href="#">Fórum</a></li>
+              <li><a href="#">Discord</a></li>
+              <li><a href="#">Eventos</a></li>
+              <li><a href="#">Guias</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Sobre</h4>
+            <ul>
+              <li><a href="#">Equipe</a></li>
+              <li><a href="#">Contato</a></li>
+              <li><a href="#">Termos</a></li>
+              <li><a href="#">Privacidade</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="social-links">
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 Eternia RPG. Todos os direitos reservados.</p>
+      </div>
     </footer>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
+        // Sidebar toggle
         const sidebar = document.querySelector(".sidebar");
         const toggleBtn = document.getElementById("showSidebar");
 
         toggleBtn.addEventListener("click", () => {
           sidebar.classList.toggle("active");
           toggleBtn.classList.toggle("active");
-
-          toggleBtn.style.transition = "transform 0.5s ease"; 
-          toggleBtn.style.transform = sidebar.classList.contains("active")
-            ? "translateX(250px)"
-            : "translateX(0)";
         });
-      });
 
-      window.onload = function () {
-        document.getElementById("loadingScreen").style.display = "none";
-      };
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+              link.classList.remove('active');
+            });
+            this.classList.add('active');
+            
+            // Scroll to target
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+              targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          });
+        });
 
-      setTimeout(function () {
-        document.getElementById("notification").style.display = "block";
-        setTimeout(function () {
-          document.getElementById("notification").style.display = "none";
-        }, 5000);
-      }, 2000);
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > 300) {
+            backToTopBtn.style.display = 'block';
+          } else {
+            backToTopBtn.style.display = 'none';
+          }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
 
-      const swiper = new Swiper(".swiper-container", {
-        loop: true,
-        effect: "fade",
-        fadeEffect: {
-          crossFade: true,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
+        // Close notification
+        const closeNotificationBtn = document.getElementById('closeNotification');
+        const notification = document.getElementById('notification');
+        
+        closeNotificationBtn.addEventListener('click', () => {
+          notification.style.display = 'none';
+        });
+
+        // Show notification after delay
+        setTimeout(() => {
+          notification.style.display = 'flex';
+        }, 3000);
+
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper', {
+          loop: true,
+          effect: 'coverflow',
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          coverflowEffect: {
+            rotate: 20,
+            stretch: 0,
+            depth: 200,
+            modifier: 1,
+            slideShadows: true,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-pagination',
+          },
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+        });
+
+        // Loading screen
+        window.addEventListener('load', () => {
+          setTimeout(() => {
+            document.getElementById('loadingScreen').style.opacity = '0';
+            setTimeout(() => {
+              document.getElementById('loadingScreen').style.display = 'none';
+            }, 500);
+          }, 1500);
+        });
+
+        // Highlight current section in nav
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+          let current = '';
+          
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if(pageYOffset >= (sectionTop - 300)) {
+              current = section.getAttribute('id');
+            }
+          });
+          
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === `#${current}`) {
+              link.classList.add('active');
+            }
+          });
+        });
       });
     </script>
   </body>
