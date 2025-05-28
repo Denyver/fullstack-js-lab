@@ -5,698 +5,1063 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles/navbar.css">
-    <link rel="stylesheet" href="/styles/guia_geral.css">
     <title>Guia Geral</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
+<style>
+    :root {
+        --primary-color: #6a1b9a;
+        --primary-dark: #4a148c;
+        --primary-light: #ffffff;
+        --secondary-color: #ffffff;
+        --secondary-dark: #ff8f00;
+        --secondary-light: #ffd54f;
+        --dark-color: #1a1a1a;
+        --light-color: #f5f5f5;
+        --gray-color: #757575;
+        --light-gray: #e0e0e0;
+        --success-color: #2e7d32;
+        --warning-color: #ff8f00;
+        --danger-color: #c62828;
+        --info-color: #0277bd;
+        --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        --font-heading: 'Georgia', serif;
+        --transition: all 0.3s ease;
+        --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+        --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+        --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+        --border-radius: 8px;
+        --border-radius-lg: 12px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px; /* Espaço para o header fixo */
+    }
+
+    body {
+        font-family: var(--font-main);
+        color: var(--light-color);
+        background: linear-gradient(90deg, #393E46, #222831);
+        line-height: 1.6;
+        min-height: 100vh;
+    }
+
+    /* ===== TIPOGRAFIA ===== */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading);
+        margin-bottom: 1rem;
+        line-height: 1.3;
+        color: var(--light-color);
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        border-bottom: 3px solid var(--secondary-color);
+        padding-bottom: 0.5rem;
+        margin: 1.5rem 0;
+    }
+
+    h2 {
+        font-size: 2rem;
+        color: var(--secondary-light);
+        margin: 2rem 0 1rem;
+        padding-left: 0.5rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+        color: var(--primary-light);
+        margin: 1.5rem 0 0.75rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+        color: var(--light-gray);
+        margin: 1.25rem 0 0.5rem;
+        padding-left: 0.75rem;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+        color: var(--secondary-color);
+        margin: 1rem 0 0.5rem;
+        font-style: italic;
+    }
+
+    p {
+        font-size: 1.1rem;
+        margin-bottom: 1.25rem;
+        color: var(--light-gray);
+    }
+
+    /* ===== ESTRUTURA PRINCIPAL ===== */
+    .container {
+        margin-left: 280px;
+        padding: 2rem;
+        transition: var(--transition);
+    }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100%;
+        background-color: var(--dark-color);
+        color: white;
+        padding: 1.5rem;
+        z-index: 1000;
+        transition: var(--transition);
+        overflow-y: auto;
+    }
+
+    .sidebar-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .sidebar-logo {
+        max-width: 180px;
+        margin: 0 auto;
+    }
+
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        padding: 0.75rem 1rem;
+        border-radius: var(--border-radius);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        transition: var(--transition);
+        color: var(--light-gray);
+    }
+
+    .nav-link:hover, 
+    .nav-link.active {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .nav-link i {
+        width: 24px;
+        text-align: center;
+        color: var(--secondary-color);
+    }
+
+    .nav-divider {
+        height: 1px;
+        background-color: rgba(255,255,255,0.1);
+        margin: 1rem 0;
+    }
+
+    .sidebar-subtitle {
+        color: var(--secondary-light);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 1rem 0 0.5rem;
+        padding-left: 0.5rem;
+    }
+
+    .sidebar-footer {
+        margin-top: auto;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        text-align: center;
+    }
+
+    /* ===== BOTÃO TOGGLE ===== */
+    .toggle-btn {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1100;
+        transition: var(--transition);
+        box-shadow: var(--shadow-md);
+    }
+
+    .toggle-btn:hover {
+        background-color: var(--primary-dark);
+        transform: scale(1.1);
+    }
+
+    /* ===== SEÇÕES DE CONTEÚDO ===== */
+    .term-definition {
+        background-color: rgba(30, 30, 30, 0.7);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        transition: var(--transition);
+    }
+
+    :target {
+        animation: highlight 1.5s ease;
+        background-color: rgba(106, 27, 154, 0.2);
+    }
+
+    @keyframes highlight {
+        0% { transform: translateX(-5px); }
+        50% { transform: translateX(5px); }
+        100% { transform: translateX(0); }
+    }
+
+    /* ===== LISTAS ===== */
+    ul, ol {
+        margin: 1rem 0 1.5rem 2rem;
+    }
+
+    ul li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+        list-style-type: none;
+    }
+
+    ul li:before {
+        content: "•";
+        color: var(--secondary-color);
+        position: absolute;
+        left: 0;
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    /* ===== ELEMENTOS DE DESTAQUE ===== */
+    strong {
+        color: var(--secondary-light);
+        font-weight: 600;
+    }
+
+    .rpg-note {
+        background-color: rgba(255, 171, 0, 0.1);
+        padding: 1rem;
+        margin: 1.5rem 0;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    }
+
+    .rpg-warning {
+        background-color: rgba(198, 40, 40, 0.1);
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .rpg-tip {
+        background-color: rgba(46, 125, 50, 0.1);
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .example {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        margin: 1rem 0;
+        border-left: 3px solid var(--info-color);
+    }
+
+    /* ===== CLASSES TEMÁTICAS ===== */
+    .text-magic {
+        color: var(--primary-light);
+        text-shadow: 0 0 5px rgba(156, 77, 204, 0.5);
+    }
+
+    .text-rare {
+        color: var(--secondary-light);
+        text-shadow: 0 0 5px rgba(255, 213, 79, 0.5);
+    }
+
+    .text-epic {
+        background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: bold;
+    }
+
+    /* ===== RESPONSIVIDADE ===== */
+    @media (max-width: 992px) {
+        .container {
+            margin-left: 0;
+            padding-top: 6rem;
         }
-        h1, h2, h3, h4 {
-            color: #000000;
-            margin-top: 30px;
+        
+        .sidebar {
+            transform: translateX(-100%);
         }
+        
+        .sidebar.active {
+            transform: translateX(0);
+        }
+        
+        .toggle-btn.active {
+            transform: translateX(280px) scale(1.1);
+        }
+
+        html {
+            scroll-padding-top: 80px;
+        }
+    }
+
+    @media (max-width: 768px) {
         h1 {
-            border-bottom: 2px solid #000000;
-            padding-bottom: 10px;
+            font-size: 2rem;
         }
+        
         h2 {
-            padding-left: 15px;
-            background-color: #eaf2f8;
+            font-size: 1.75rem;
         }
-        h3 {
-            color: #000000;
+        
+        .container {
+            padding: 1.5rem;
         }
-        .term-definition {
-            background-color: #fff;
-            padding: 10px 15px;
-            margin: 15px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        
+        ul, ol {
+            margin-left: 1.5rem;
         }
-        .term-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px 12px;
-            text-align: center;
-        }
-        th {
-            background-color: #000000;
-            color: white;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        tr:hover {
-            background-color: #e3f2fd;
-        }
-        .note {
-            background-color: #fffde7;
-            border-left: 4px solid #ffd600;
-            padding: 10px 15px;
-            margin: 15px 0;
-        }
-        .warning {
-            background-color: #ffebee;
-            border-left: 4px solid #f44336;
-            padding: 10px 15px;
-            margin: 15px 0;
-        }
-        .example {
-            background-color: #dbdbdb;
-            padding: 10px 15px;
-            margin: 15px 0;
-            font-style: italic;
-            border-radius: 10px;
-        }
-        code {
-            background-color: #f1f1f1;
-            padding: 2px 5px;
-            border-radius: 3px;
-            font-family: monospace;
-        }
-    </style>
+    }
+</style>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <a href="/index.html">
-                <img src="/imgs/woe_titulo.png" alt="Logo" />
-            </a>
+    <!-- Mobile Menu Button -->
+    <button class="toggle-btn" id="showSidebar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="/imgs/woe_titulo.png" alt="Eternia RPG" class="sidebar-logo" />
         </div>
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
-            &#9776;
-        </button>
-        <nav class="menu">
-            <ul>
-                <li><a href="/pages/eventos.html">Eventos</a></li>
-                <li><a href="/pages/combat.html">Combate</a></li>
-                <li><a href="/pages/ficha.html">Ficha de Personagem</a></li>
-                <li><a href="/pages/gerador_item.html">Gerador de Itens</a></li>
-                <li><a href="/pages/criador_npc.html">Criador de NPC</a></li>
-                <li><a href="/pages/mapa_eder.html">Mapa</a></li>
-                <li><a href="/pages/mesas.html">Mesas</a></li>
-                <li><a href="/pages/guia/planares.html">Planares</a></li>
-            </ul>
+        <nav class="sidebar-nav">
+            <a href="/index.html" class="nav-link"><i class="fas fa-home"></i> Início</a>
+            <a href="#news" class="nav-link"><i class="fas fa-newspaper"></i> Notícias</a>
+            <a href="#campaigns" class="nav-link"><i class="fas fa-map"></i> Campanhas</a>
+            <a href="#resources" class="nav-link"><i class="fas fa-book"></i> Recursos</a>
+            <a href="#community" class="nav-link"><i class="fas fa-users"></i> Comunidade</a>
+
+            <div class="nav-divider"></div>
+            <h3 class="sidebar-subtitle">Termos do Sistema</h3>
+            <a href="#personagem" class="nav-link"><i class="fas fa-user"></i> Personagem</a>
+            <a href="#pontos-vida" class="nav-link"><i class="fas fa-heart"></i> Pontos de Vida</a>
+            <a href="#pontos-mana" class="nav-link"><i class="fas fa-gem"></i> Pontos de Mana</a>
+            <a href="#classe-armadura" class="nav-link"><i class="fas fa-shield-alt"></i> Classe de Armadura</a>
+            <a href="#deslocamento" class="nav-link"><i class="fas fa-running"></i> Deslocamento</a>
+            <a href="#iniciativa" class="nav-link"><i class="fas fa-swords"></i> Iniciativa</a>
+            <a href="#pericias" class="nav-link"><i class="fas fa-scroll"></i> Perícias</a>
+            <a href="#atributos" class="nav-link"><i class="fas fa-dumbbell"></i> Atributos</a>
+            <a href="#modificador" class="nav-link"><i class="fas fa-calculator"></i> Modificador</a>
+            <a href="#proficiencia" class="nav-link"><i class="fas fa-award"></i> Proficiência</a>
+            <div class="nav-divider"></div>
+            <h3 class="sidebar-subtitle">Criação de Personagem</h3>
+            <a href="#criacao-progressao" class="nav-link"><i class="fas fa-user-plus"></i> Criação e Progressão</a>
+            <a href="#processo-criacao" class="nav-link"><i class="fas fa-cogs"></i> Processo de Criação</a>
+            <a href="#atributos" class="nav-link"><i class="fas fa-chart-bar"></i> Atributos</a>
+            <a href="#pv-iniciais" class="nav-link"><i class="fas fa-heartbeat"></i> PV Iniciais</a>
+            <a href="#mp-iniciais" class="nav-link"><i class="fas fa-magic"></i> MP Iniciais</a>
+            <a href="#pericias-iniciais" class="nav-link"><i class="fas fa-scroll"></i> Perícias Iniciais</a>
+            <a href="#pericias-forca" class="nav-link"><i class="fas fa-dumbbell"></i> Perícias de Força</a>
+            <a href="#pericias-destreza" class="nav-link"><i class="fas fa-running"></i> Perícias de Destreza</a>
+            <a href="#pericias-constituicao" class="nav-link"><i class="fas fa-shield-alt"></i> Perícias de
+                Constituição</a>
+            <a href="#pericias-inteligencia" class="nav-link"><i class="fas fa-brain"></i> Perícias de Inteligência</a>
+
+            <div class="nav-divider"></div>
+            <a href="/pages/guia_geral.html" class="nav-link active"><i class="fas fa-book-open"></i> Guia</a>
+            <a href="/pages/eventos.html" class="nav-link"><i class="fas fa-calendar-alt"></i> Eventos</a>
+            <a href="/pages/combat.html" class="nav-link"><i class="fas fa-swords"></i> Combate</a>
+            <a href="/pages/ficha.html" class="nav-link"><i class="fas fa-scroll"></i> Ficha de Personagem</a>
+            <a href="/pages/gerador_item.html" class="nav-link"><i class="fas fa-wand-magic-sparkles"></i> Gerador de
+                Itens</a>
+            <a href="/pages/criador_npc.html" class="nav-link"><i class="fas fa-robot"></i> Criador de NPC</a>
+            <a href="/pages/academias.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Academias</a>
+            <a href="/pages/mapa_eder.html" class="nav-link"><i class="fas fa-map-marked-alt"></i> Mapa</a>
+            <a href="/pages/mesas.html" class="nav-link"><i class="fas fa-dice-d20"></i> Mesas</a>
         </nav>
-        <div class="voltar-btn-container">
-            <button class="voltar-btn" onclick="window.history.back()">Voltar</button>
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="copyright">© 2025 Eternia RPG</p>
         </div>
-    </header>
-
-    <h1>Documentação Completa do Sistema de RPG</h1>
-
-    <h2>Explicando Alguns Termos</h2>
-
-    <div class="term-definition">
-        <div class="term-title">Personagem</div>
-        <p>Um Personagem é a entidade controlada por um jogador em um jogo de RPG. Pode ser um herói, vilão ou qualquer
-            figura com uma história e habilidades próprias dentro do universo do jogo. Cada personagem tem atributos,
-            habilidades, pontos de vida, pontos de mana, entre outros elementos que determinam suas capacidades e sua
-            evolução ao longo da aventura.</p>
     </div>
 
-    <div class="term-definition">
-        <div class="term-title">Pontos de Vida (PV)</div>
-        <p>Os Pontos de Vida representam a saúde ou vitalidade de um personagem. Eles indicam o quanto de dano um
-            personagem pode suportar antes de ficar inconsciente ou morrer. À medida que um personagem sofre dano, seus
-            Pontos de Vida são reduzidos. Quando chegam a zero, o personagem geralmente fica incapacitado. Caso o
-            personagem sofra mais dano que a sua vida máxima, o mesmo irá morrer instantaneamente.</p>
-    </div>
+    <div class="container">
+        <h1>Documentação Completa do Sistema de RPG</h1>
 
-    <div class="term-definition">
-        <div class="term-title">Pontos de Mana (MP)</div>
-        <p>Os Pontos de Mana são uma medida dos recursos mágicos de um personagem. Eles são usados para realizar ações
-            mágicas. Cada habilidade mágica consome uma quantidade específica de Mana. Quando os Pontos de Mana de um
-            personagem se esgotam, ele não pode mais lançar magias até recuperar Mana, o que pode ocorrer através de
-            descanso, poções ou outras formas de recarga mágica.</p>
-    </div>
+        <h2>Explicando Alguns Termos</h2>
 
-    <div class="term-definition">
-        <div class="term-title">Classe de Armadura (CA)</div>
-        <p>A Classe de Armadura é um valor que representa a dificuldade de acertar um personagem em combate. Quanto
-            maior a CA, mais difícil é atingir o personagem. A CA é determinada por fatores como a armadura que o
-            personagem está usando, seu escudo, destreza e outras habilidades ou magias que possam aumentar sua
-            proteção.</p>
-    </div>
+        <div id="personagem" class="term-definition">
+            <div class="term-title">Personagem</div>
+            <p>Um Personagem é a entidade controlada por um jogador em um jogo de RPG. Pode ser um herói, vilão ou
+                qualquer
+                figura com uma história e habilidades próprias dentro do universo do jogo. Cada personagem tem
+                atributos,
+                habilidades, pontos de vida, pontos de mana, entre outros elementos que determinam suas capacidades e
+                sua
+                evolução ao longo da aventura.</p>
+        </div>
 
-    <div class="term-definition">
-        <div class="term-title">Deslocamento</div>
-        <p>O Deslocamento indica a velocidade com que um personagem pode se mover. Geralmente é medido em pés ou metros
-            por rodada (um turno de combate). O Deslocamento pode ser afetado por fatores como o terreno, a armadura que
-            o personagem está vestindo e quaisquer habilidades especiais que ele possa ter.</p>
-    </div>
+        <div id="pontos-vida" class="term-definition">
+            <div class="term-title">Pontos de Vida (PV)</div>
+            <p>Os Pontos de Vida representam a saúde ou vitalidade de um personagem. Eles indicam o quanto de dano um
+                personagem pode suportar antes de ficar inconsciente ou morrer. À medida que um personagem sofre dano,
+                seus
+                Pontos de Vida são reduzidos. Quando chegam a zero, o personagem geralmente fica incapacitado. Caso o
+                personagem sofra mais dano que a sua vida máxima, o mesmo irá morrer instantaneamente.</p>
+        </div>
 
-    <div class="term-definition">
-        <div class="term-title">Iniciativa</div>
-        <p>A Iniciativa determina a ordem dos turnos em combate. Cada personagem rola um dado (geralmente um d20) e
-            adiciona seu modificador de Destreza. O resultado determina a ordem em que os personagens e monstros agem,
-            do maior para o menor. Isso pode ser crucial para a estratégia, pois agir primeiro pode significar a
-            diferença entre vida e morte em uma batalha.</p>
-    </div>
+        <div id="pontos-mana" class="term-definition">
+            <div class="term-title">Pontos de Mana (MP)</div>
+            <p>Os Pontos de Mana são uma medida dos recursos mágicos de um personagem. Eles são usados para realizar
+                ações
+                mágicas. Cada habilidade mágica consome uma quantidade específica de Mana. Quando os Pontos de Mana de
+                um
+                personagem se esgotam, ele não pode mais lançar magias até recuperar Mana, o que pode ocorrer através de
+                descanso, poções ou outras formas de recarga mágica.</p>
+        </div>
 
-    <div class="term-definition">
-        <div class="term-title">Perícias</div>
-        <p>As Perícias representam as habilidades e conhecimentos específicos de um personagem. Elas são usadas para
-            resolver ações fora de combate, como escalar uma parede, detectar armadilhas, persuadir um NPC ou procurar
-            pistas. Cada personagem tem um conjunto de perícias em que é treinado, o que geralmente é determinado pela
-            sua classe e histórico.</p>
-    </div>
+        <div id="classe-armadura" class="term-definition">
+            <div class="term-title">Classe de Armadura (CA)</div>
+            <p>A Classe de Armadura é um valor que representa a dificuldade de acertar um personagem em combate. Quanto
+                maior a CA, mais difícil é atingir o personagem. A CA é determinada por fatores como a armadura que o
+                personagem está usando, seu escudo, destreza e outras habilidades ou magias que possam aumentar sua
+                proteção.</p>
+        </div>
 
-    <div class="term-definition">
-        <div class="term-title">Atributos</div>
-        <p>Os atributos são as características fundamentais que definem as capacidades físicas e mentais de um
-            personagem. Eles incluem Força, Destreza, Constituição, Inteligência, Sabedoria e Carisma. Cada atributo tem
-            um valor numérico que influencia diretamente as ações e habilidades do personagem.</p>
-    </div>
+        <div id="deslocamento" class="term-definition">
+            <div class="term-title">Deslocamento</div>
+            <p>O Deslocamento indica a velocidade com que um personagem pode se mover. Geralmente é medo em pés ou
+                metros
+                por rodada (um turno de combate). O Deslocamento pode ser afetado por fatores como o terreno, a armadura
+                que
+                o personagem está vestindo e quaisquer habilidades especiais que ele possa ter.</p>
+        </div>
 
-    <div class="term-definition">
-        <div class="term-title">Modificador</div>
-        <p>O Modificador é um número derivado do valor de um tributo e é usado para ajustar rolamentos de dados. Por
-            exemplo, um valor alto em Destreza pode dar um modificador positivo que é adicionado aos rolamentos de
-            ataque à distância ou testes de perícia relacionados à agilidade. O cálculo dos modificadores geralmente
-            segue uma fórmula padrão, como (Atributo/2) - 5 arredondado para baixo.</p>
+        <div id="iniciativa" class="term-definition">
+            <div class="term-title">Iniciativa</div>
+            <p>A Iniciativa determina a ordem dos turnos em combate. Cada personagem rola um dado (geralmente um d20) e
+                adiciona seu modificador de Destreza. O resultado determina a ordem em que os personagens e monstros
+                agem,
+                do maior para o menor. Isso pode ser crucial para a estratégia, pois agir primeiro pode significar a
+                diferença entre vida e morte em uma batalha.</p>
+        </div>
+
+        <div id="pericias" class="term-definition">
+            <div class="term-title">Perícias</div>
+            <p>As Perícias representam as habilidades e conhecimentos específicos de um personagem. Elas são usadas para
+                resolver ações fora de combate, como escalar uma parede, detectar armadilhas, persuadir um NPC ou
+                procurar
+                pistas. Cada personagem tem um conjunto de perícias em que é treinado, o que geralmente é determinado
+                pela
+                sua classe e histórico.</p>
+        </div>
+
+        <div id="atributos" class="term-definition">
+            <div class="term-title">Atributos</div>
+            <p>Os atributos são as características fundamentais que definem as capacidades físicas e mentais de um
+                personagem. Eles incluem Força, Destreza, Constituição, Inteligência, Sabedoria e Carisma. Cada atributo
+                tem
+                um valor numérico que influencia diretamente as ações e habilidades do personagem.</p>
+        </div>
+
+        <div id="modificador" class="term-definition">
+            <div class="term-title">Modificador</div>
+            <p>O Modificador é um número derivado do valor de um tributo e é usado para ajustar rolamentos de dados. Por
+                exemplo, um valor alto em Destreza pode dar um modificador positivo que é adicionado aos rolamentos de
+                ataque à distância ou testes de perícia relacionados à agilidade. O cálculo dos modificadores geralmente
+                segue uma fórmula padrão, como (Atributo/2) - 5 arredondado para baixo.</p>
+
+            <div class="example">
+                <p>Imagine que seu personagem tem 16 de Força, dando um modificador de +3. Ele tenta derrubar uma porta
+                    e
+                    rola um dado de 20 lados (d20), obtendo um 11. Com o modificador, o resultado final é 14 (11+3). Se
+                    o
+                    Mestre do Jogo definiu que é necessário um 15 ou mais para derrubar a porta, seu personagem não teve
+                    sucesso. Esse é o papel do modificador: ajustar o resultado da rolagem de acordo com os atributos do
+                    personagem.</p>
+            </div>
+
+            <p>O Modificador é referenciado pela sua abreviação "Mod" acompanhado da abreviação do atributo ao qual
+                pertence
+                que é dado pela três primeiras letras do mesmo,, por exemplo o modificador do atributo de sabedoria por
+                ser
+                referenciado pela abreviação "Mod.SAB"(Mod + Sabedoria(SAB)).</p>
+        </div>
+
+        <div id="proficiencia" class="term-definition">
+            <div class="term-title">Proficiência</div>
+            <p>A proficiência também referida como Prof., é uma medida da experiência e habilidade do personagem e
+                reflete o
+                crescimento contínuo do personagem à medida que ele ganha experiência enfrentando desafios e interagindo
+                com
+                o mundo do jogo. A proficiência ajuda a determinar quão hábil o personagem é em certas ações ou testes,
+                influenciando diretamente suas chances de sucesso em diversas situações dentro da aventura.</p>
+        </div>
+
+        <h2 id="criacao-progressao">Criação e Progressão de personagem</h2>
+
+        <h3 id="processo-criacao">Processo de Criação</h3>
+
+        <h4 id="atributos">Atributos</h4>
+        <p>Os atributos principais do éder são:</p>
+        <ul>
+            <li>Força (FOR) - Medida de força física e capacidade de carga.</li>
+            <li>Destreza (DES) - Agilidade, reflexos e equilíbrio.</li>
+            <li>Constituição (CON) - Saúde e resistência física.</li>
+            <li>Inteligência (INT) - Capacidade de raciocínio e conhecimento.</li>
+            <li>Sabedoria (SAB) - Percepção, intuição e força de vontade.</li>
+            <li>Carisma (CAR) - Força de personalidade, persuasão e magnetismo.</li>
+        </ul>
+
+        <p>Na criação do personagem o jogador poderá distribuir as seguinte configuração de atributo no seu personagem
+            no
+            nível 1:</p>
+        <ul>
+            <li>8 = -1 no modificador</li>
+            <li>10 = 0 no modificador</li>
+            <li>12 = +1 no modificador</li>
+            <li>13 = +1 no modificador</li>
+            <li>14 = +2 no modificador</li>
+            <li>15 = +2 no modificador</li>
+        </ul>
+
+        <p>Essa é a distribuição de atributos mais recomendada, onde o jogador poderá distribuir esses pontos nos
+            atributos
+            do seu personagem de acordo com sua preferência. Porém o jogador pode mudar essa configuração a sua vontade
+            contanto que não adicione nem subtraia nenhum valor da soma total de todos os atributos da configuração
+            recomendada. Assim que o jogador definir os atributos do seu personagem eles nao poderao ser modificados a
+            não
+            ser em caso de progressão do personagem.</p>
+
+        <h4 id="pv-iniciais">Pontos de Vida (PV) iniciais</h4>
+        <p>O jogador irá rolar e dados correspondentes a raça do seu personagem com o adicional do seu modificador de
+            constituição.O jogador deve escolher o melhor resultado das 3 rolagens. Imagine um personagem que seja um
+            northun e tenha 12 de constituição, logo o jogador irá rolar 3x1d12+Mod.CON de vida inicial para o nível 1.
+        </p>
+
+        <h4 id="mp-iniciais">Pontos de Mana (MP) iniciais</h4>
+        <p>O jogador deve escolher o melhor resultado das 3 rolagens. Role 3d12+(Mod.INT) este será o seus pontos de MP
+            iniciais. MP são recuperados a cada 2 rodadas. A quantidade recuperada é 1, porém há habilidades e talentos
+            que
+            podem aumentar essa recuperação.</p>
+
+        <h4 id="pericias-iniciais">Perícias Iniciais</h4>
+        <p>Durante a criação de personagens o jogador poderá escolher as perícias do seu personagem, essa quantidade de
+            perícias iniciais é definida por 4 + Mod.INT. O valor das perícias em si é dado pela soma do modificador do
+            atributo da perícia com a sua proficiência. As perícias disponíveis para os personagens são as seguintes:
+        </p>
+
+        <h5 id="pericias-forca">Atributo de Força</h5>
+        <ul>
+            <li><strong>Atletismo:</strong> é usado para ações físicas que exigem força, como escalar, saltar, nadar, e
+                manter o equilíbrio em situações difíceis. Também é usado para resistir a tentativas de agarrar ou
+                empurrar.
+            </li>
+            <li><strong>Força Bruta:</strong> é usada para ações que requerem pura força física, como arrombar portas,
+                levantar objetos extremamente pesados, quebrar correntes, ou realizar outras tarefas que exigem grande
+                esforço físico.</li>
+        </ul>
+
+        <h5 id="pericias-destreza">Atributo de Destreza</h5>
+        <ul>
+            <li><strong>Acrobacia:</strong> Utilizada para manobras de agilidade, como equilibrar-se em superfícies
+                estreitas, saltar por cima de obstáculos, escapar de restrições e evitar quedas.</li>
+            <li><strong>Furtividade:</strong> são usados para se mover silenciosamente, esconder-se e evitar ser
+                detectado.
+            </li>
+            <li><strong>Crime:</strong> é utilizada para realizar atos ilícitos, como roubo, arrombamento, falsificação
+                de
+                documentos, manipulação de fechaduras e outras atividades criminosas sem ser pego.</li>
+            <li><strong>Esquiva:</strong> é usado para evitar ataques, esquivar de projéteis e realizar manobras
+                evasivas
+                durante o combate ou em situações perigosas.</li>
+        </ul>
+
+        <h5 id="pericias-constituicao">Atributo de Constituição</h5>
+        <ul>
+            <li><strong>Fortitude:</strong> é usada para resistir a efeitos que afetem a saúde física, como venenos,
+                doenças, exaustão e outras condições debilitantes. É uma medida da resistência física e capacidade de
+                suportar danos.</li>
+        </ul>
+
+        <h5 id="pericias-inteligencia">Atributo de Inteligência</h5>
+        <ul>
+            <li><strong>Arcanismo:</strong> permite reconhecer e entender e utilizar magias, rituais, criaturas mágicas,
+                símbolos e tradições místicas.</li>
+            <li><strong>História:</strong> Utilizada para recordar informações sobre eventos históricos, lendas, reinos
+                antigos, batalhas passadas e genealogias.</li>
+            <li><strong>Investigação:</strong> é usada para encontrar pistas, resolver mistérios, examinar locais em
+                busca
+                de detalhes ocultos e desvendar segredos.</li>
+        </ul>
+
+        <h5>Atributos de Sabedoria</h5>
+        <ul>
+            <li><strong>Intuição:</strong> permite discernir as verdadeiras intenções de uma criatura, identificar
+                mentiras,
+                prever ações de oponentes e compreender sentimentos.</li>
+            <li><strong>Medicina:</strong> Usada para estabilizar criaturas moribundas, diagnosticar doenças, aplicar
+                primeiros socorros e tratar ferimentos.</li>
+            <li><strong>Percepção:</strong> é usada para notar detalhes no ambiente, ouvir sons distantes, ver coisas
+                escondidas e detectar perigos.</li>
+            <li><strong>Sobrevivência:</strong> permite rastrear criaturas, encontrar alimentos e água, prever o clima,
+                identificar sinais de perigo natural e navegar em ambientes selvagens.</li>
+            <li><strong>Natureza:</strong> utilizada para reconhecer deuses, símbolos religiosos, rituais sagrados,
+                textos
+                sagrados e cultos.</li>
+            <li><strong>Religião:</strong> permite identificar plantas, animais, terrenos naturais e fenômenos
+                meteorológicos. Também é usada para lembrar conhecimentos sobre o mundo natural.</li>
+        </ul>
+
+        <h5>Atributos de Carisma</h5>
+        <ul>
+            <li><strong>Atuação:</strong> usada para entreter uma audiência com música, dança, atuação, contação de
+                histórias e outros talentos artísticos.</li>
+            <li><strong>Enganação:</strong> permite mentir, blefar, disfarçar-se e enganar outras pessoas.</li>
+            <li><strong>Intimidação:</strong> Usada para assustar ou coagir alguém através de ameaças, demonstrações de
+                força ou presença intimidadora.</li>
+            <li><strong>Persuasão:</strong> permite influenciar outros através de diplomacia, argumentos convincentes,
+                charme e negociação.</li>
+        </ul>
+
+        <h4>Classe de Armadura (CA)</h4>
+        <p>Todo Personagem possui uma base de CA de 10 + Mod.DES, esse número pode ser somado com efeitos, armaduras
+            equipadas, passivas e itens.</p>
+
+        <h4>Escolas e Treinamentos</h4>
+        <p>Na criação de um personagem nível 1 o jogador poderá escolher 1 Escola para seu personagem e 2 treinamentos,
+            mais
+            escolas e treinamentos só poderão ser obtidos através da progressão do personagem.</p>
+
+        <h4>Dados de dano iniciais para treinamentos</h4>
+        <p>Todo jogador começa com 1 dado de dano para cada um de seus treinamentos.</p>
+
+        <h4>Deslocamento</h4>
+        <p>Todo o personagem tem por padrão um deslocamento base de 9m, esse número não é escalado para na progressão do
+            personagem, só podendo ser aumentado com passivas, efeitos, itens e armaduras equipadas.</p>
+
+        <h4>Proficiência</h4>
+        <p>Todo o personagem tem por padrão a proficiência base de 1 esse número só é escalado com a progressão do
+            personagem.</p>
+
+        <h3>Defesa</h3>
+
+        <h4>Defesa Base</h4>
+        <p>O intuito da defesa é reduzir o dano recebido. O jogador irá rolar um dado de defesa com base na sua raça + o
+            (Mod.CON) e o resultado dessa rolagem será a defesa base inicial do personagem no nível 1. Efeitos que
+            causam
+            dano com base na vida maxima nao podem ser reduzidos por defesa.</p>
+
+        <h4>Defesa Total</h4>
+        <p>Além da defesa base, o personagem também possui a defesa total que é igual a defesa base do personagem com os
+            adicionais de bônus vindos de talentos, itens, efeitos, buffs e habilidades.</p>
+
+        <h4>Bloqueio</h4>
+        <p>O sistema de bloqueio abrange todos os tipos de armas físicas, o bloqueio permite que usuários de armas
+            físicas
+            possam fazer um teste de 1d20 + proficiência + Modificador, para bloquear o ataque usando a arma, bônus de
+            ataques não se aplicam nessa reação.</p>
+
+        <h3>Progressão de Personagem</h3>
+
+        <h4>Progressão de Atributos</h4>
+        <p>A cada 2 níveis o jogador ganha 1 ponto de atributo. Ao nível 20 o personagem terá 10 pontos de atributo no
+            total.</p>
+
+        <h4>Progressão de Pontos de Vida (PV)</h4>
+        <p>Todo nível após o 1 o jogador ganha um dado de vida de acordo com a sua raça.</p>
+
+        <h4>Progressão de Mana (MP)</h4>
+        <p>Todo nível após o 1 o jogador ganha 1+(Mod.INT) de MP.</p>
+
+        <h4>Progressão de Proficiência</h4>
+        <p>Todo personagem possui proficiência que é calculada como metade do seu nível. Por exemplo, se um personagem
+            está
+            no nível 4, sua proficiência é 2.</p>
+
+        <h4>Progressão da Defesa</h4>
+        <p>Todo nível após o 1 o jogador ganha 2+(Mod.Con) de defesa.</p>
+
+        <h4>Progressão de dados de dano</h4>
+        <p>A cada 4 níveis, o jogador recebe 1 dado de dano exclusivamente para seus treinamentos, pois escolas utilizam
+            um
+            método diferente. Para calcular a quantidade total de dados de dano, pode-se usar a seguinte fórmula,
+            arredondando o resultado para baixo:</p>
+
+        <p><code>D = N / 4</code></p>
+
+        <p>Onde:</p>
+        <ul>
+            <li>D é a quantidade de dados de dano;</li>
+            <li>N é o nível do personagem;</li>
+            <li>4 representa a quantidade de níveis necessários para ganhar 1 dado de dano.</li>
+        </ul>
 
         <div class="example">
-            <p>Imagine que seu personagem tem 16 de Força, dando um modificador de +3. Ele tenta derrubar uma porta e
-                rola um dado de 20 lados (d20), obtendo um 11. Com o modificador, o resultado final é 14 (11+3). Se o
-                Mestre do Jogo definiu que é necessário um 15 ou mais para derrubar a porta, seu personagem não teve
-                sucesso. Esse é o papel do modificador: ajustar o resultado da rolagem de acordo com os atributos do
-                personagem.</p>
+            <p>Exemplo:</p>
+            <p>Se um personagem estiver no nível 10, o cálculo será:</p>
+            <p><code>D = 10 / 4</code></p>
+            <p><code>D = 2,5</code></p>
+            <p>Como arredondamos para baixo, D = 2.</p>
         </div>
 
-        <p>O Modificador é referenciado pela sua abreviação "Mod" acompanhado da abreviação do atributo ao qual pertence
-            que é dado pela três primeiras letras do mesmo,, por exemplo o modificador do atributo de sabedoria por ser
-            referenciado pela abreviação "Mod.SAB"(Mod + Sabedoria(SAB)).</p>
-    </div>
+        <h4>Resistência Elemental</h4>
+        <p>A resistência elemental comum é metade da defesa do usuário. O jogador pode escolher 1 + Mod.INT elementos
+            para
+            ter resistência plena.</p>
+        <ul>
+            <li>Resistência Elemental Comum: equivale a metade da Defesa Total.</li>
+            <li>Resistência Elemental Plena: equivale a Defesa Total mais metade dela mesma para o elemento designado.
+            </li>
+        </ul>
+        <p>Outros aumentos de resistência podem ser garantidos pelas escolas que o usuário tiver. Se um usuário possui
+            escola elemental do elemento ele garante resistência elemental plena para o elemento da escola.</p>
 
-    <div class="term-definition">
-        <div class="term-title">Proficiência</div>
-        <p>A proficiência também referida como Prof., é uma medida da experiência e habilidade do personagem e reflete o
-            crescimento contínuo do personagem à medida que ele ganha experiência enfrentando desafios e interagindo com
-            o mundo do jogo. A proficiência ajuda a determinar quão hábil o personagem é em certas ações ou testes,
-            influenciando diretamente suas chances de sucesso em diversas situações dentro da aventura.</p>
-    </div>
+        <h4>Pontos de Conhecimento</h4>
+        <p>Os pontos de conhecimento adquiridos durante a progressão, os mesmos mostrados na tabela de progressão, são
+            utilizados na progressão de personagem para adquirir todos os tipos de escolas e suas especializações
+            obedecendo
+            às regras relacionadas a escolas e as regras da mesa do jogador.</p>
 
-    <h2>Criação e Progressão de personagem</h2>
+        <h3>Heroic Tier</h3>
+        <p>O Heroic Tier é um título dado aos jogadores que atingiram o nível máximo. Não é possível passar do nível 20,
+            porém é possível subir o rank do tier. O jogador ganhará 1 Valor do Heroico quando subir de tier. Existe uma
+            fórmula padrão de experiência heroica padrão chamada de ponto heroico.</p>
 
-    <h3>Processo de Criação</h3>
+        <p>Os pontos heroicos podem ser usados numa loja para adquirir itens e habilidades únicas chamadas de poderes
+            heroicos. Acesso aos poderes heroicos: Heroic Tier e Poderes Heroicos.</p>
 
-    <h4>Atributos</h4>
-    <p>Os atributos principais do éder são:</p>
-    <ul>
-        <li>Força (FOR) - Medida de força física e capacidade de carga.</li>
-        <li>Destreza (DES) - Agilidade, reflexos e equilíbrio.</li>
-        <li>Constituição (CON) - Saúde e resistência física.</li>
-        <li>Inteligência (INT) - Capacidade de raciocínio e conhecimento.</li>
-        <li>Sabedoria (SAB) - Percepção, intuição e força de vontade.</li>
-        <li>Carisma (CAR) - Força de personalidade, persuasão e magnetismo.</li>
-    </ul>
+        <p>Para subir de rank o jogador precisa completar 100 pontos heroicos. Essa fórmula é padrão para todos os
+            ranks.
+            Porém a cada 10 ranks ele precisa fazer uma missão única para completar o os 10 níveis de rank e liberar o
+            próximo. Ao completar ele recebe 15 Valor Heroico.</p>
 
-    <p>Na criação do personagem o jogador poderá distribuir as seguinte configuração de atributo no seu personagem no
-        nível 1:</p>
-    <ul>
-        <li>8 = -1 no modificador</li>
-        <li>10 = 0 no modificador</li>
-        <li>12 = +1 no modificador</li>
-        <li>13 = +1 no modificador</li>
-        <li>14 = +2 no modificador</li>
-        <li>15 = +2 no modificador</li>
-    </ul>
+        <ul>
+            <li>Inimigo Comum da 1 ponto heroico.</li>
+            <li>Inimigo Elite da 5 pontos heroicos.</li>
+            <li>O Inimigo Boss dá 15-25 pontos heroicos.</li>
+            <li>Missão Comum 10 pontos heroicos.</li>
+            <li>Missão Impacto 35 pontos heroicos.</li>
+        </ul>
 
-    <p>Essa é a distribuição de atributos mais recomendada, onde o jogador poderá distribuir esses pontos nos atributos
-        do seu personagem de acordo com sua preferência. Porém o jogador pode mudar essa configuração a sua vontade
-        contanto que não adicione nem subtraia nenhum valor da soma total de todos os atributos da configuração
-        recomendada. Assim que o jogador definir os atributos do seu personagem eles nao poderao ser modificados a não
-        ser em caso de progressão do personagem.</p>
+        <p>Caso o jogador possua mais de uma escola do mundo ele também poderá usar duas escolas do mundo ao mesmo
+            tempo,
+            para isso o jogador terá que definir uma Main School para o seu personagem que não poderá ser mudada em
+            hipótese
+            alguma. A outra escola pode ser mudada de acordo com a vontade do player antes de cada sessão.</p>
 
-    <h4>Pontos de Vida (PV) iniciais</h4>
-    <p>O jogador irá rolar e dados correspondentes a raça do seu personagem com o adicional do seu modificador de
-        constituição.O jogador deve escolher o melhor resultado das 3 rolagens. Imagine um personagem que seja um
-        northun e tenha 12 de constituição, logo o jogador irá rolar 3x1d12+Mod.CON de vida inicial para o nível 1.</p>
+        <p>Ao morrer no Heroic Tier o personagem retorna ao nível 19, você receberá 50% de penalidade nos bônus ganhos
+            ao
+            conseguir o Heroic Tier e irá reviver em um templo de um deus ou árvore celestial com o xp zerado. Tier até
+            retornar ao nível 20. OBS: Sacrifício e Vida só está disponível ao nível 20+.</p>
 
-    <h4>Pontos de Mana (MP) iniciais</h4>
-    <p>O jogador deve escolher o melhor resultado das 3 rolagens. Role 3d12+(Mod.INT) este será o seus pontos de MP
-        iniciais. MP são recuperados a cada 2 rodadas. A quantidade recuperada é 1, porém há habilidades e talentos que
-        podem aumentar essa recuperação.</p>
+        <h3>Tabela de Progressão</h3>
+<div style="align-items: center; text-align: center;">
+<table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; align-items: center; color: #f0f0f0; background-color: #2b2b2b; border: 1px solid #444;">
+    <tr style="background-color: #1a1a1a;">
+        <th style="padding: 12px; border: 1px solid #444;">Nível (Exp Necessária)</th>
+        <th style="padding: 12px; border: 1px solid #444;">Opção 1</th>
+        <th style="padding: 12px; border: 1px solid #444;">Opção 2</th>
+        <th style="padding: 12px; border: 1px solid #444;">Opção 3</th>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">1</td>
+        <td colspan="3" style="padding: 10px; border: 1px solid #444;">1 Ponto de Conhecimento. +2 Treinamentos.</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">2 (125)</td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">3 (300)</td>
+        <td style="padding: 10px; border: 1px solid #444;">+4 de vida por Mod.CON.</td>
+        <td style="padding: 10px; border: 1px solid #444;">+3 de Poder</td>
+        <td style="padding: 10px; border: 1px solid #444;">+1 na rolagem de ataque</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">4 (725)</td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">5 (1550)</td>
+        <td colspan="3" style="padding: 10px; border: 1px solid #444;">1 Ponto de Conhecimento, 1 dado de vida cheio.</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">6 (3200)</td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">7 (6700)</td>
+        <td style="padding: 10px; border: 1px solid #444;">+6 de vida por Mod.CON.</td>
+        <td style="padding: 10px; border: 1px solid #444;">+4 de poder</td>
+        <td style="padding: 10px; border: 1px solid #444;">+2 na rolagem de ataque</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">8 (14000)</td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">9 (30000)</td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">10 (64K)</td>
+        <td colspan="3" style="padding: 10px; border: 1px solid #444;">1 Ponto de Conhecimento, 1 dado de vida cheio. +1 Treinamento.</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">11 (140K)</td>
+        <td style="padding: 10px; border: 1px solid #444;">+8 de vida por Mod.CON.</td>
+        <td style="padding: 10px; border: 1px solid #444;">+8 de poder</td>
+        <td style="padding: 10px; border: 1px solid #444;">+3 na rolagem de ataque</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">12 (260K)</td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">13 (600k)</td>
+        <td colspan="3" style="padding: 10px; border: 1px solid #444;">+15 de Vida por Mod.CON., 1 Master Trait, +2 Pontos de Atributo.</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">14 (1300k)</td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+        <td style="padding: 10px; border: 1px solid #444;"></td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">15 (2725k)</td>
+        <td colspan="3" style="padding: 10px; border: 1px solid #444;">1 Ponto de Conhecimento, 2 dados de vida cheios.</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">16 (6000k)</td>
+        <td style="padding: 10px; border: 1px solid #444;">+10 de vida por Mod.CON.</td>
+        <td style="padding: 10px; border: 1px solid #444;">+16 de poder</td>
+        <td style="padding: 10px; border: 1px solid #444;">+4 na rolagem de ataque</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">17 (13000k)</td>
+        <td style="padding: 10px; border: 1px solid #444;">Magician Power (Passiva) +30 Mágico/Elemental</td>
+        <td style="padding: 10px; border: 1px solid #444;">Warrior Power (Passiva) +15 Dano Físico</td>
+        <td style="padding: 10px; border: 1px solid #444;">Tank Power (Passiva) +45 Vida Máxima</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">18 (28000k)</td>
+        <td style="padding: 10px; border: 1px solid #444;">+50 Vida Máxima, +15 Letalidade, Reduz acerto crítico em 1.</td>
+        <td style="padding: 10px; border: 1px solid #444;">+100 Mana, +65 Vida, -1 Rodada Conjuração.</td>
+        <td style="padding: 10px; border: 1px solid #444;">+100 Vida, +3 CA, +30 de Defesa Base.</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">19 (70000k)</td>
+        <td colspan="3" style="padding: 10px; border: 1px solid #444;">6 pontos de atributos para distribuir</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border: 1px solid #444;">20 (200000k)</td>
+        <td colspan="3" style="padding: 10px; border: 1px solid #444;">Acesso ao Heroic Tier (Lvl.20).</td>
+    </tr>
+</table>
+</div>
+        <h2>Regras</h2>
 
-    <h4>Perícias Iniciais</h4>
-    <p>Durante a criação de personagens o jogador poderá escolher as perícias do seu personagem, essa quantidade de
-        perícias iniciais é definida por 4 + Mod.INT. O valor das perícias em si é dado pela soma do modificador do
-        atributo da perícia com a sua proficiência. As perícias disponíveis para os personagens são as seguintes:</p>
+        <h3>Atributos</h3>
+        <p>O máximo que um personagem poderá alcançar através da progressão normal de atributo será 30, a partir deste
+            ponto
+            o atributo só poderá ser aumentado através de efeitos, talentos, habilidades, itens e armaduras.</p>
 
-    <h5>Atributo de Força</h5>
-    <ul>
-        <li><strong>Atletismo:</strong> é usado para ações físicas que exigem força, como escalar, saltar, nadar, e
-            manter o equilíbrio em situações difíceis. Também é usado para resistir a tentativas de agarrar ou empurrar.
-        </li>
-        <li><strong>Força Bruta:</strong> é usada para ações que requerem pura força física, como arrombar portas,
-            levantar objetos extremamente pesados, quebrar correntes, ou realizar outras tarefas que exigem grande
-            esforço físico.</li>
-    </ul>
+        <h3>Ataque</h3>
+        <p>O personagem do jogador pode realizar vários ataques em seu turno caso tenha acumulado habilidades e talentos
+            para isso proveniente tanto de treinamento quanto escolas, porém caso o player possua mais de 3 ataques o
+            mesmo
+            irá realizar 3 vezes a sua rolagem de dano e pegar apenas o melhor resultado.</p>
 
-    <h5>Atributo de Destreza</h5>
-    <ul>
-        <li><strong>Acrobacia:</strong> Utilizada para manobras de agilidade, como equilibrar-se em superfícies
-            estreitas, saltar por cima de obstáculos, escapar de restrições e evitar quedas.</li>
-        <li><strong>Furtividade:</strong> são usados para se mover silenciosamente, esconder-se e evitar ser detectado.
-        </li>
-        <li><strong>Crime:</strong> é utilizada para realizar atos ilícitos, como roubo, arrombamento, falsificação de
-            documentos, manipulação de fechaduras e outras atividades criminosas sem ser pego.</li>
-        <li><strong>Esquiva:</strong> é usado para evitar ataques, esquivar de projéteis e realizar manobras evasivas
-            durante o combate ou em situações perigosas.</li>
-    </ul>
+        <h3>Conjuração</h3>
+        <p>A conjuração é o tempo necessário para uma magia ser executada. A conjuração requer concentração e se um
+            conjurador receber dano ele pode perder a concentração sendo necessário um teste de concentração. A
+            conjuração
+            pode ser em turnos ou rodadas. Porém existe uma regra que uma conjuração que tenha x turnos, mas a
+            quantidade de
+            indivíduos no combate seja menor que os turnos da conjuração, o conjurador irá conjurá-la ao fim da rodada.
+        </p>
 
-    <h5>Atributo de Constituição</h5>
-    <ul>
-        <li><strong>Fortitude:</strong> é usada para resistir a efeitos que afetem a saúde física, como venenos,
-            doenças, exaustão e outras condições debilitantes. É uma medida da resistência física e capacidade de
-            suportar danos.</li>
-    </ul>
+        <h3>Uso de Bloqueio na Ação de Reação</h3>
+        <p>Em uma ação de bloqueio, o personagem pode bloquear uma quantidade de ataques igual ao seu Mod.DES, sendo
+            necessário após o segundo bloqueio, acertar o bloqueio anterior para bloquear o próximo ataque.</p>
 
-    <h5>Atributo de Inteligência</h5>
-    <ul>
-        <li><strong>Arcanismo:</strong> permite reconhecer e entender e utilizar magias, rituais, criaturas mágicas,
-            símbolos e tradições místicas.</li>
-        <li><strong>História:</strong> Utilizada para recordar informações sobre eventos históricos, lendas, reinos
-            antigos, batalhas passadas e genealogias.</li>
-        <li><strong>Investigação:</strong> é usada para encontrar pistas, resolver mistérios, examinar locais em busca
-            de detalhes ocultos e desvendar segredos.</li>
-    </ul>
+        <h3>Uso de Buffs</h3>
+        <p>Os buffs no nosso sistema agora são limitados a 2 buffs self (do próprio jogador) e 1 buff externo (de outros
+            usuários). Além disso, são permitidos efeitos de comidas e poções. Ficando assim:</p>
+        <ul>
+            <li>Self Buffs: 2.</li>
+            <li>Ally Buffs: 1.</li>
+            <li>Food Buffs: 1.</li>
+            <li>Potion Effect Buffs: 1.</li>
+        </ul>
+        <p>Esses valores podem mudar com talentos que aumentem esse efeito.</p>
 
-    <h5>Atributos de Sabedoria</h5>
-    <ul>
-        <li><strong>Intuição:</strong> permite discernir as verdadeiras intenções de uma criatura, identificar mentiras,
-            prever ações de oponentes e compreender sentimentos.</li>
-        <li><strong>Medicina:</strong> Usada para estabilizar criaturas moribundas, diagnosticar doenças, aplicar
-            primeiros socorros e tratar ferimentos.</li>
-        <li><strong>Percepção:</strong> é usada para notar detalhes no ambiente, ouvir sons distantes, ver coisas
-            escondidas e detectar perigos.</li>
-        <li><strong>Sobrevivência:</strong> permite rastrear criaturas, encontrar alimentos e água, prever o clima,
-            identificar sinais de perigo natural e navegar em ambientes selvagens.</li>
-        <li><strong>Natureza:</strong> utilizada para reconhecer deuses, símbolos religiosos, rituais sagrados, textos
-            sagrados e cultos.</li>
-        <li><strong>Religião:</strong> permite identificar plantas, animais, terrenos naturais e fenômenos
-            meteorológicos. Também é usada para lembrar conhecimentos sobre o mundo natural.</li>
-    </ul>
+        <h3>Uso de Treinamentos</h3>
+        <p>Habilidades ativas de treinamentos têm resfriamento de 1 rodada. Isso ocorre para que não se crie vício de
+            uso de
+            habilidades e estrague a experiência de jogo.</p>
 
-    <h5>Atributos de Carisma</h5>
-    <ul>
-        <li><strong>Atuação:</strong> usada para entreter uma audiência com música, dança, atuação, contação de
-            histórias e outros talentos artísticos.</li>
-        <li><strong>Enganação:</strong> permite mentir, blefar, disfarçar-se e enganar outras pessoas.</li>
-        <li><strong>Intimidação:</strong> Usada para assustar ou coagir alguém através de ameaças, demonstrações de
-            força ou presença intimidadora.</li>
-        <li><strong>Persuasão:</strong> permite influenciar outros através de diplomacia, argumentos convincentes,
-            charme e negociação.</li>
-    </ul>
+        <p>Letalidade é mostrada como bônus e base nos treinamentos e habilidades. A letalidade base é dobrada no ataque
+            preciso. A letalidade bônus é adicionada.</p>
 
-    <h4>Classe de Armadura (CA)</h4>
-    <p>Todo Personagem possui uma base de CA de 10 + Mod.DES, esse número pode ser somado com efeitos, armaduras
-        equipadas, passivas e itens.</p>
-
-    <h4>Escolas e Treinamentos</h4>
-    <p>Na criação de um personagem nível 1 o jogador poderá escolher 1 Escola para seu personagem e 2 treinamentos, mais
-        escolas e treinamentos só poderão ser obtidos através da progressão do personagem.</p>
-
-    <h4>Dados de dano iniciais para treinamentos</h4>
-    <p>Todo jogador começa com 1 dado de dano para cada um de seus treinamentos.</p>
-
-    <h4>Deslocamento</h4>
-    <p>Todo o personagem tem por padrão um deslocamento base de 9m, esse número não é escalado para na progressão do
-        personagem, só podendo ser aumentado com passivas, efeitos, itens e armaduras equipadas.</p>
-
-    <h4>Proficiência</h4>
-    <p>Todo o personagem tem por padrão a proficiência base de 1 esse número só é escalado com a progressão do
-        personagem.</p>
-
-    <h3>Defesa</h3>
-
-    <h4>Defesa Base</h4>
-    <p>O intuito da defesa é reduzir o dano recebido. O jogador irá rolar um dado de defesa com base na sua raça + o
-        (Mod.CON) e o resultado dessa rolagem será a defesa base inicial do personagem no nível 1. Efeitos que causam
-        dano com base na vida maxima nao podem ser reduzidos por defesa.</p>
-
-    <h4>Defesa Total</h4>
-    <p>Além da defesa base, o personagem também possui a defesa total que é igual a defesa base do personagem com os
-        adicionais de bônus vindos de talentos, itens, efeitos, buffs e habilidades.</p>
-
-    <h4>Bloqueio</h4>
-    <p>O sistema de bloqueio abrange todos os tipos de armas físicas, o bloqueio permite que usuários de armas físicas
-        possam fazer um teste de 1d20 + proficiência + Modificador, para bloquear o ataque usando a arma, bônus de
-        ataques não se aplicam nessa reação.</p>
-
-    <h3>Progressão de Personagem</h3>
-
-    <h4>Progressão de Atributos</h4>
-    <p>A cada 2 níveis o jogador ganha 1 ponto de atributo. Ao nível 20 o personagem terá 10 pontos de atributo no
-        total.</p>
-
-    <h4>Progressão de Pontos de Vida (PV)</h4>
-    <p>Todo nível após o 1 o jogador ganha um dado de vida de acordo com a sua raça.</p>
-
-    <h4>Progressão de Mana (MP)</h4>
-    <p>Todo nível após o 1 o jogador ganha 1+(Mod.INT) de MP.</p>
-
-    <h4>Progressão de Proficiência</h4>
-    <p>Todo personagem possui proficiência que é calculada como metade do seu nível. Por exemplo, se um personagem está
-        no nível 4, sua proficiência é 2.</p>
-
-    <h4>Progressão da Defesa</h4>
-    <p>Todo nível após o 1 o jogador ganha 2+(Mod.Con) de defesa.</p>
-
-    <h4>Progressão de dados de dano</h4>
-    <p>A cada 4 níveis, o jogador recebe 1 dado de dano exclusivamente para seus treinamentos, pois escolas utilizam um
-        método diferente. Para calcular a quantidade total de dados de dano, pode-se usar a seguinte fórmula,
-        arredondando o resultado para baixo:</p>
-
-    <p><code>D = N / 4</code></p>
-
-    <p>Onde:</p>
-    <ul>
-        <li>D é a quantidade de dados de dano;</li>
-        <li>N é o nível do personagem;</li>
-        <li>4 representa a quantidade de níveis necessários para ganhar 1 dado de dano.</li>
-    </ul>
-
-    <div class="example">
-        <p>Exemplo:</p>
-        <p>Se um personagem estiver no nível 10, o cálculo será:</p>
-        <p><code>D = 10 / 4</code></p>
-        <p><code>D = 2,5</code></p>
-        <p>Como arredondamos para baixo, D = 2.</p>
-    </div>
-
-    <h4>Resistência Elemental</h4>
-    <p>A resistência elemental comum é metade da defesa do usuário. O jogador pode escolher 1 + Mod.INT elementos para
-        ter resistência plena.</p>
-    <ul>
-        <li>Resistência Elemental Comum: equivale a metade da Defesa Total.</li>
-        <li>Resistência Elemental Plena: equivale a Defesa Total mais metade dela mesma para o elemento designado.</li>
-    </ul>
-    <p>Outros aumentos de resistência podem ser garantidos pelas escolas que o usuário tiver. Se um usuário possui
-        escola elemental do elemento ele garante resistência elemental plena para o elemento da escola.</p>
-
-    <h4>Pontos de Conhecimento</h4>
-    <p>Os pontos de conhecimento adquiridos durante a progressão, os mesmos mostrados na tabela de progressão, são
-        utilizados na progressão de personagem para adquirir todos os tipos de escolas e suas especializações obedecendo
-        às regras relacionadas a escolas e as regras da mesa do jogador.</p>
-
-    <h3>Heroic Tier</h3>
-    <p>O Heroic Tier é um título dado aos jogadores que atingiram o nível máximo. Não é possível passar do nível 20,
-        porém é possível subir o rank do tier. O jogador ganhará 1 Valor do Heroico quando subir de tier. Existe uma
-        fórmula padrão de experiência heroica padrão chamada de ponto heroico.</p>
-
-    <p>Os pontos heroicos podem ser usados numa loja para adquirir itens e habilidades únicas chamadas de poderes
-        heroicos. Acesso aos poderes heroicos: Heroic Tier e Poderes Heroicos.</p>
-
-    <p>Para subir de rank o jogador precisa completar 100 pontos heroicos. Essa fórmula é padrão para todos os ranks.
-        Porém a cada 10 ranks ele precisa fazer uma missão única para completar o os 10 níveis de rank e liberar o
-        próximo. Ao completar ele recebe 15 Valor Heroico.</p>
-
-    <ul>
-        <li>Inimigo Comum da 1 ponto heroico.</li>
-        <li>Inimigo Elite da 5 pontos heroicos.</li>
-        <li>O Inimigo Boss dá 15-25 pontos heroicos.</li>
-        <li>Missão Comum 10 pontos heroicos.</li>
-        <li>Missão Impacto 35 pontos heroicos.</li>
-    </ul>
-
-    <p>Caso o jogador possua mais de uma escola do mundo ele também poderá usar duas escolas do mundo ao mesmo tempo,
-        para isso o jogador terá que definir uma Main School para o seu personagem que não poderá ser mudada em hipótese
-        alguma. A outra escola pode ser mudada de acordo com a vontade do player antes de cada sessão.</p>
-
-    <p>Ao morrer no Heroic Tier o personagem retorna ao nível 19, você receberá 50% de penalidade nos bônus ganhos ao
-        conseguir o Heroic Tier e irá reviver em um templo de um deus ou árvore celestial com o xp zerado. Tier até
-        retornar ao nível 20. OBS: Sacrifício e Vida só está disponível ao nível 20+.</p>
-
-    <h3>Tabela de Progressão</h3>
-
-    <table>
-        <tr>
-            <th>Nível (Exp Necessaria)</th>
-            <th>Opção 1</th>
-            <th>Opção 2</th>
-            <th>Opção 3</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td colspan="3">1 Ponto de Conhecimento. +2 Treinamentos.</td>
-        </tr>
-        <tr>
-            <td>2 (125)</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>3 (300)</td>
-            <td>+4 de vida por Mod.CON.</td>
-            <td>+3 de Poder</td>
-            <td>+1 na rolagem de ataque</td>
-        </tr>
-        <tr>
-            <td>4 (725)</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>5 (1550)</td>
-            <td colspan="3">1 Ponto de Conhecimento, 1 dado de vida cheio.</td>
-        </tr>
-        <tr>
-            <td>6 (3200)</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>7 (6700)</td>
-            <td>+6 de vida por Mod.CON.</td>
-            <td>+4 de poder</td>
-            <td>+2 na rolagem de ataque</td>
-        </tr>
-        <tr>
-            <td>8 (14000)</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>9 (30000)</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>10 (64K)</td>
-            <td colspan="3">1 Ponto de Conhecimento, 1 dado de vida cheio. +1 Treinamento.</td>
-        </tr>
-        <tr>
-            <td>11 (140K)</td>
-            <td>+8 de vida por Mod.CON.</td>
-            <td>+8 de poder</td>
-            <td>+3 na rolagem de ataque</td>
-        </tr>
-        <tr>
-            <td>12 (260K)</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>13 (600k)</td>
-            <td colspan="3">+15 de Vida por Mod.CON., 1 Master Trait, +2 Pontos de Atributo.</td>
-        </tr>
-        <tr>
-            <td>14 (1300k)</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>15 (2725k)</td>
-            <td colspan="3">1 Ponto de Conhecimento, 2 dados de vida cheios.</td>
-        </tr>
-        <tr>
-            <td>16 (6000k)</td>
-            <td>+10 de vida por Mod.CON.</td>
-            <td>+16 de poder</td>
-            <td>+4 na rolagem de ataque</td>
-        </tr>
-        <tr>
-            <td>17 (13000k)</td>
-            <td>Magician Power (Passiva) +30 Mágico/Elemental</td>
-            <td>Warrior Power (Passiva) +15 Dano Físico</td>
-            <td>Tank Power (Passiva) +45 Vida Maxima</td>
-        </tr>
-        <tr>
-            <td>18 (28000k)</td>
-            <td>+50 Vida Maxima, +15 Letalidade, Reduz acerto crítico em 1.</td>
-            <td>+100 Mana, +65 Vida, -1 Rodada Conjuração.</td>
-            <td>+100 Vida, +3 CA, +30 de Defesa Base.</td>
-        </tr>
-        <tr>
-            <td>19 (70000k)</td>
-            <td colspan="3">6 pontos de atributos para distribuir</td>
-        </tr>
-        <tr>
-            <td>20 (200000k)</td>
-            <td colspan="3">Acesso ao Heroic Tier (Lvl.20).</td>
-        </tr>
-    </table>
-
-    <h2>Regras</h2>
-
-    <h3>Atributos</h3>
-    <p>O máximo que um personagem poderá alcançar através da progressão normal de atributo será 30, a partir deste ponto
-        o atributo só poderá ser aumentado através de efeitos, talentos, habilidades, itens e armaduras.</p>
-
-    <h3>Ataque</h3>
-    <p>O personagem do jogador pode realizar vários ataques em seu turno caso tenha acumulado habilidades e talentos
-        para isso proveniente tanto de treinamento quanto escolas, porém caso o player possua mais de 3 ataques o mesmo
-        irá realizar 3 vezes a sua rolagem de dano e pegar apenas o melhor resultado.</p>
-
-    <h3>Conjuração</h3>
-    <p>A conjuração é o tempo necessário para uma magia ser executada. A conjuração requer concentração e se um
-        conjurador receber dano ele pode perder a concentração sendo necessário um teste de concentração. A conjuração
-        pode ser em turnos ou rodadas. Porém existe uma regra que uma conjuração que tenha x turnos, mas a quantidade de
-        indivíduos no combate seja menor que os turnos da conjuração, o conjurador irá conjurá-la ao fim da rodada.</p>
-
-    <h3>Uso de Bloqueio na Ação de Reação</h3>
-    <p>Em uma ação de bloqueio, o personagem pode bloquear uma quantidade de ataques igual ao seu Mod.DES, sendo
-        necessário após o segundo bloqueio, acertar o bloqueio anterior para bloquear o próximo ataque.</p>
-
-    <h3>Uso de Buffs</h3>
-    <p>Os buffs no nosso sistema agora são limitados a 2 buffs self (do próprio jogador) e 1 buff externo (de outros
-        usuários). Além disso, são permitidos efeitos de comidas e poções. Ficando assim:</p>
-    <ul>
-        <li>Self Buffs: 2.</li>
-        <li>Ally Buffs: 1.</li>
-        <li>Food Buffs: 1.</li>
-        <li>Potion Effect Buffs: 1.</li>
-    </ul>
-    <p>Esses valores podem mudar com talentos que aumentem esse efeito.</p>
-
-    <h3>Uso de Treinamentos</h3>
-    <p>Habilidades ativas de treinamentos têm resfriamento de 1 rodada. Isso ocorre para que não se crie vício de uso de
-        habilidades e estrague a experiência de jogo.</p>
-
-    <p>Letalidade é mostrada como bônus e base nos treinamentos e habilidades. A letalidade base é dobrada no ataque
-        preciso. A letalidade bônus é adicionada.</p>
-
-    <div class="example">
-        <p>Ex: Base: 10 letalidade, bônus +10 de algum talento ou habilidade. → Ataque Preciso efetuado → Total
-            (Base*2)+Bônus → (10*2)+10 = 30 de letalidade total.</p>
-    </div>
-
-    <p>Uso das armas requerem pelo menos +1 de Modificador do atributo descrito nela, em caso de armas Atributo ou
-        Atributo, basta ter o que você escolheu.</p>
-
-    <h3>Uso de Escolas</h3>
-    <p>As Especializações das Escolas do mundo podem ser adquiridas no nível 8, a única exceção é a raça dos humanos. É
-        possível acumular especializações. O custo de especializações é 1 ponto de conhecimento (os mesmos usados em
-        upgrades e aquisições de escolas elementais), porém o custo é dobrado se você já tiver uma especialização
-        daquela escola.</p>
-
-    <p>Arcontes são exclusivos do RANK 5 das escolas elementais. Apenas um arconte pode ser adquirido por personagem.
-    </p>
-
-    <p>Antes do nível 20 o personagem só pode manter uma escola do mundo ativa por sessão, todo início de sessão deve
-        falar qual irá manter ativada na sessão. No nível 20 o personagem pode manter duas escolas do mundo ativa, assim
-        como descrito no Heroic Tier. Itens antes do nível 20 podem permitir que o usuário use duas escolas do mundo.
-    </p>
-
-    <h3>Uso de Letalidade</h3>
-    <p>A letalidade é uma característica do personagem. A letalidade permite que o jogador desfira golpes mortais contra
-        um foco ou de maneira furtiva no alvo. A letalidade pode matar o alvo ou destruir membros dele. A letalidade
-        pode ser focada ou furtiva. Furtivamente seus golpes permitirão letalidade. Focando a sua letalidade pode ser
-        direcionada para uma parte específica do corpo do alvo.</p>
-    <main>
-        <section class="category">
-            <h2>Escolas</h2>
-            <ul class="menu">
-                <li><a href="/pages/academias.html">Academias Elementais</a></li>
-                <li><a href="/pages/guia/escola proibida/">Escolas Proibidas</a></li>
-                <li><a href="/pages/guia/escola esquecida/">Escolas Esquecidas</a></li>
-                <li><a href="/pages/guia/escola do mundo/em_thundaera.html">Escolas do Mundo de Thundaera</a></li>
-                <li><a href="/pages/guia/escola do mundo/em_epiragon.html">Escolas do Mundo de Epiragon</a></li>
-                <li><a href="/pages/guia/escola do mundo/em_novyat.html">Escolas do Mundo de Novyat</a></li>
-                <li><a href="/pages/guia/escola do mundo/em_yggdrasil.html">Escolas do Mundo de Yggdrasil</a></li>
-                <li><a href="/pages/guia/escola do mundo/em_glaciterno.html">Escolas do Mundo de Glaciterno</a></li>
-                <li><a href="/pages/guia/escola do mundo/em_siaahra.html">Escolas do Mundo de Siaahra</a></li>
-                <li><a href="/pages/guia/escola do mundo/em_maera.html">Escolas do Mundo de Maera</a></li>
-                <li><a href="/pages/guia/escola do mundo/em_ybity.html">Escolas do Mundo de Ybyty</a></li>
-                <li><a href="/pages/guia/escola do mundo/em_pyr.html">Escolas do Mundo de Pyr</a></li>
-                <li><a href="/pages/guia/especializacoes.html">Especializações das Escolas do Mundo</a></li>
-                <li><a href="/pages/guia/eixo_elemental.html">Eixos Elementais</a></li>
-            </ul>
-        </section>
-
-        <section class="category">
-            <h2>Árvores Celestiais</h2>
-            <ul class="menu">
-                <li><a href="/pages/guia/arvores_celestiais/acaizeiro.html">Acaizeiro Celestial</a></li>
-                <li><a href="/pages/guia/arvores_celestiais/baoba.html">Baobá Celestial</a></li>
-                <li><a href="/pages/guia/arvores_celestiais/bordo.html">Bordo Celestial</a></li>
-                <li><a href="/pages/guia/arvores_celestiais/calcaria.html">Calcária Celestial</a></li>
-                <li><a href="/pages/guia/arvores_celestiais/cerejeira.html">Cerejeira Celestial</a></li>
-                <li><a href="/pages/guia/arvores_celestiais/coqueiro.html">Coqueiro Celestial</a></li>
-                <li><a href="/pages/guia/arvores_celestiais/ethereal_warrior.html">Guerreiro Etéreo</a></li>
-                <li><a href="/pages/guia/arvores_celestiais/jaqueira.html">Jaqueira Celestial</a></li>
-                <li><a href="/pages/guia/arvores_celestiais/mangueira.html">Mangueira Celestial</a></li>
-                <li><a href="/pages/guia/arvores_celestiais/pinheiro.html">Pinheiro Celestial</a></li>
-                <li><a href="/pages/guia/arvores_celestiais/spiritual_guardian.html">Guardião Espiritual</a></li>
-                <li><a href="/pages/guia/arvores_celestiais/ype.html">Ipê Celestial</a></li>
-            </ul>
-
-        </section>
-
-        <section class="category">
-            <h2>Treinamentos</h2>
-            <ul class="menu">
-                <li><a href="/pages/guia/treinamentos/first_way.html">First Way</a></li>
-                <li><a href="/pages/guia/treinamentos/second_way.html">Second Way</a></li>
-                <li><a href="/pages/guia/treinamentos/outer_ways.html">Outer Ways</a></li>
-                <li><a href="/pages/guia/treinamentos/forgotten_powers.html">Forgotten Powers</a></li>
-            </ul>
-        </section>
-
-        <section class="category">
-            <h2>Personagem</h2>
-            <li><a href="/pages/guia/planares.html">Planares</a></li>
-            <li><a href="/pages/guia/guilda.html">Guilda das Pétalas</a></li>
-            <ul class="menu">
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Guia de Links. Todos os direitos reservados.</p>
-        <div class="footer-icons">
-            <a href="https://github.com/Denyver" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.spotify.com" target="_blank"><i class="fab fa-spotify"></i></a>
-            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        <div class="example">
+            <p>Ex: Base: 10 letalidade, bônus +10 de algum talento ou habilidade. → Ataque Preciso efetuado → Total
+                (Base*2)+Bônus → (10*2)+10 = 30 de letalidade total.</p>
         </div>
-    </footer>
 
-    <script src="/scripts/navbar.js"></script>
+        <p>Uso das armas requerem pelo menos +1 de Modificador do atributo descrito nela, em caso de armas Atributo ou
+            Atributo, basta ter o que você escolheu.</p>
+
+        <h3>Uso de Escolas</h3>
+        <p>As Especializações das Escolas do mundo podem ser adquiridas no nível 8, a única exceção é a raça dos
+            humanos. É
+            possível acumular especializações. O custo de especializações é 1 ponto de conhecimento (os mesmos usados em
+            upgrades e aquisições de escolas elementais), porém o custo é dobrado se você já tiver uma especialização
+            daquela escola.</p>
+
+        <p>Arcontes são exclusivos do RANK 5 das escolas elementais. Apenas um arconte pode ser adquirido por
+            personagem.
+        </p>
+
+        <p>Antes do nível 20 o personagem só pode manter uma escola do mundo ativa por sessão, todo início de sessão
+            deve
+            falar qual irá manter ativada na sessão. No nível 20 o personagem pode manter duas escolas do mundo ativa,
+            assim
+            como descrito no Heroic Tier. Itens antes do nível 20 podem permitir que o usuário use duas escolas do
+            mundo.
+        </p>
+
+        <h3>Uso de Letalidade</h3>
+        <p>A letalidade é uma característica do personagem. A letalidade permite que o jogador desfira golpes mortais
+            contra
+            um foco ou de maneira furtiva no alvo. A letalidade pode matar o alvo ou destruir membros dele. A letalidade
+            pode ser focada ou furtiva. Furtivamente seus golpes permitirão letalidade. Focando a sua letalidade pode
+            ser
+            direcionada para uma parte específica do corpo do alvo.</p>
+    </div>
+
+    <div class="container">
+        <main>
+            <section class="category">
+                <h2>Escolas</h2>
+                <ul class="menu">
+                    <li><a href="/pages/academias.html">Academias Elementais</a></li>
+                    <li><a href="/pages/guia/escola proibida/">Escolas Proibidas</a></li>
+                    <li><a href="/pages/guia/escola esquecida/">Escolas Esquecidas</a></li>
+                    <li><a href="/pages/guia/escola do mundo/em_thundaera.html">Escolas do Mundo de Thundaera</a></li>
+                    <li><a href="/pages/guia/escola do mundo/em_epiragon.html">Escolas do Mundo de Epiragon</a></li>
+                    <li><a href="/pages/guia/escola do mundo/em_novyat.html">Escolas do Mundo de Novyat</a></li>
+                    <li><a href="/pages/guia/escola do mundo/em_yggdrasil.html">Escolas do Mundo de Yggdrasil</a></li>
+                    <li><a href="/pages/guia/escola do mundo/em_glaciterno.html">Escolas do Mundo de Glaciterno</a></li>
+                    <li><a href="/pages/guia/escola do mundo/em_siaahra.html">Escolas do Mundo de Siaahra</a></li>
+                    <li><a href="/pages/guia/escola do mundo/em_maera.html">Escolas do Mundo de Maera</a></li>
+                    <li><a href="/pages/guia/escola do mundo/em_ybity.html">Escolas do Mundo de Ybyty</a></li>
+                    <li><a href="/pages/guia/escola do mundo/em_pyr.html">Escolas do Mundo de Pyr</a></li>
+                    <li><a href="/pages/guia/especializacoes.html">Especializações das Escolas do Mundo</a></li>
+                    <li><a href="/pages/guia/eixo_elemental.html">Eixos Elementais</a></li>
+                </ul>
+            </section>
+
+            <section class="category">
+                <h2>Árvores Celestiais</h2>
+                <ul class="menu">
+                    <li><a href="/pages/guia/arvores_celestiais/acaizeiro.html">Acaizeiro Celestial</a></li>
+                    <li><a href="/pages/guia/arvores_celestiais/baoba.html">Baobá Celestial</a></li>
+                    <li><a href="/pages/guia/arvores_celestiais/bordo.html">Bordo Celestial</a></li>
+                    <li><a href="/pages/guia/arvores_celestiais/calcaria.html">Calcária Celestial</a></li>
+                    <li><a href="/pages/guia/arvores_celestiais/cerejeira.html">Cerejeira Celestial</a></li>
+                    <li><a href="/pages/guia/arvores_celestiais/coqueiro.html">Coqueiro Celestial</a></li>
+                    <li><a href="/pages/guia/arvores_celestiais/ethereal_warrior.html">Guerreiro Etéreo</a></li>
+                    <li><a href="/pages/guia/arvores_celestiais/jaqueira.html">Jaqueira Celestial</a></li>
+                    <li><a href="/pages/guia/arvores_celestiais/mangueira.html">Mangueira Celestial</a></li>
+                    <li><a href="/pages/guia/arvores_celestiais/pinheiro.html">Pinheiro Celestial</a></li>
+                    <li><a href="/pages/guia/arvores_celestiais/spiritual_guardian.html">Guardião Espiritual</a></li>
+                    <li><a href="/pages/guia/arvores_celestiais/ype.html">Ipê Celestial</a></li>
+                </ul>
+            </section>
+
+            <section class="category">
+                <h2>Treinamentos</h2>
+                <ul class="menu">
+                    <li><a href="/pages/guia/treinamentos/first_way.html">First Way</a></li>
+                    <li><a href="/pages/guia/treinamentos/second_way.html">Second Way</a></li>
+                    <li><a href="/pages/guia/treinamentos/outer_ways.html">Outer Ways</a></li>
+                    <li><a href="/pages/guia/treinamentos/forgotten_powers.html">Forgotten Powers</a></li>
+                </ul>
+            </section>
+
+            <section class="category">
+                <h2>Personagem</h2>
+                <ul class="menu">
+                    <li><a href="/pages/guia/planares.html">Planares</a></li>
+                    <li><a href="/pages/guia/guilda.html">Guilda das Pétalas</a></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Guia de Links. Todos os direitos reservados.</p>
+            <div class="footer-icons">
+                <a href="https://github.com/Denyver" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.spotify.com" target="_blank"><i class="fab fa-spotify"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Toggle sidebar functionality
+        document.getElementById('showSidebar').addEventListener('click', function () {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+
+        // Close sidebar when clicking on a nav link (for mobile)
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function () {
+                if (window.innerWidth < 992) {
+                    document.querySelector('.sidebar').classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
